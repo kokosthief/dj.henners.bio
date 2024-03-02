@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface PastGigsProps {
   gigs: Gig[];
@@ -12,10 +12,18 @@ interface Gig {
 }
 
 const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
-  // Group gigs by location and count the occurrences
+  // Filter out future gigs
+  const pastGigs = gigs.filter((gig) => new Date(gig.date) < new Date());
+
+  // Group past gigs by location and count the occurrences
   const gigCounts: { [key: string]: number } = {};
-  gigs.forEach((gig) => {
+  const gigList: { [key: string]: Gig[] } = {};
+  pastGigs.forEach((gig) => {
     gigCounts[gig.venueEvent] = (gigCounts[gig.venueEvent] || 0) + 1;
+    if (!gigList[gig.venueEvent]) {
+      gigList[gig.venueEvent] = [];
+    }
+    gigList[gig.venueEvent].push(gig);
   });
 
   // Convert gigCounts object into an array of objects
@@ -27,22 +35,51 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
   // Sort the array by count in descending order
   gigArray.sort((a, b) => b.count - a.count);
 
+  // Calculate total count of past gigs
+  const totalCount = pastGigs.length;
+
+  // State to track the expanded state of each venue
+  const [expandedVenue, setExpandedVenue] = useState<string | null>(null);
+
+  // Function to handle click event and toggle expansion
+  const handleVenueClick = (venue: string) => {
+    setExpandedVenue((prev) => (prev === venue ? null : venue));
+  };
+
   return (
-    <div className='pastGigs mb-10 px-4'>
-      <h1 className='my-6'>Past Ecstatic Dances</h1>
-      <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
+    <div className='pastGigs mb-10'>
+      <h1 className='mb-3 mt-5'>{totalCount} edances & counting</h1>
+      <ul className='list-none'>
         {gigArray.map(({ venueEvent, count }) => (
-          <div
+          <li
             key={venueEvent}
-            className='rounded-lg bg-gray-100 p-4 dark:bg-indigo-900'
+            className='mb-3'
+            onClick={() => handleVenueClick(venueEvent)}
+            style={{ cursor: 'pointer' }}
           >
-            <p className='text-md font-secondary md:text-xl'>{venueEvent}</p>
-            <p className='mt-1 text-gray-700 md:text-lg dark:text-gray-100'>
-              {count} Ecstatic Dances
-            </p>
-          </div>
+            <div className='flex items-center justify-between'>
+              <p className='mx-2 text-lg font-semibold'>{venueEvent}</p>
+              <span className='mx-2'>{count}</span>
+            </div>
+            {expandedVenue === venueEvent && (
+              <ul className='list-none'>
+                {gigList[venueEvent].map((gig, index) => (
+                  <li
+                    key={index}
+                    className='ml-6 flex items-center justify-between'
+                  >
+                    <p className='mx-2 text-lg font-semibold'>
+                      {' '}
+                      {gig.description}
+                    </p>
+                    <span className='mx-2'>{gig.date}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

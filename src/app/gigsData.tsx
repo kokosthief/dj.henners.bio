@@ -446,9 +446,9 @@ export const gigs: Gig[] = [
   },
   {
     date: '2024-03-17',
-    description: 'Saturday',
-    location: 'Amsterdam, NL',
-    venueEvent: 'Odessa Veemkade',
+    description: 'Bluebirds',
+    location: 'Haarlem, NL',
+    venueEvent: 'The Movement Journey',
   },
   {
     date: '2024-03-20',

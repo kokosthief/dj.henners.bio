@@ -96,11 +96,11 @@ export default function HomePage() {
               alt='DJ Henners'
             ></Image>
 
-            <header className='mb-3 text-center md:mb-0 md:pt-6'>
+            <header className='mb-3 px-2 text-center md:mb-0 md:pt-6'>
               <h1 className=' fade-up mt-5 text-4xl font-medium ease-in md:text-5xl'>
                 DJ Henners
-                <span className='fade-up mt-2 block text-3xl delay-100 ease-in md:text-4xl'>
-                  Ecstatic Dance
+                <span className='fade-up mt-4 block text-xl delay-100 ease-in md:text-3xl'>
+                  as a dj, i want to make you cry
                 </span>
               </h1>
             </header>
@@ -108,7 +108,7 @@ export default function HomePage() {
             <section className=' scale-150 pb-7 pt-5 delay-100 md:scale-125 md:pb-5 md:pt-8'>
               <a
                 href='mailto:dj@henners.bio'
-                className='fade-up m-1 '
+                className='fade-up m-2 '
                 aria-label='Email Me'
                 target='_blank'
               >
@@ -122,7 +122,7 @@ export default function HomePage() {
               </a>
               <a
                 href={phoneLink}
-                className='fade-up m-1 '
+                className='fade-up m-2 '
                 aria-label="Let's connect"
                 target='_blank'
                 rel='noopener noreferrer'
@@ -137,7 +137,7 @@ export default function HomePage() {
               </a>
               <a
                 href='https://soundcloud.com/henners-ecstatic-dance'
-                className='fade-up m-1 '
+                className='fade-up m-2 '
                 aria-label='Listen to my sets on Soundcloud'
                 target='_blank'
               >
@@ -151,20 +151,15 @@ export default function HomePage() {
               </a>
             </section>
 
-            <section className='my-5 px-5'>
-              <p className='fade-up mb-3 text-xl font-medium delay-150 ease-in md:text-2xl'>
-                as a dj, i want to make you cry<br></br>
-              </p>
-              <p className='fade-up mb-3 text-xl font-medium delay-200 ease-in md:text-2xl'>
-                of course also to have fun<br></br>
-              </p>
-              <p className=' fade-up delay-350 mb-3 text-xl font-medium ease-in md:text-2xl'>
-                but to experience something meaningful{' '}
-              </p>
-            </section>
-
             <SoundCloudWidget />
             <UpcomingGigs gigs={gigs} />
+
+            <section className='my-5 px-5 sm:w-5/12'>
+              <p className='fade-up mb-3  text-xl font-medium delay-150 ease-in md:text-2xl'>
+                I yearn to move your soul through music, to evoke both joy and
+                tears, a journey that awakens the spirit within.
+              </p>
+            </section>
             <PastGigs gigs={gigs} />
             <section className='px-4 pb-12 pt-4 '>
               <a
