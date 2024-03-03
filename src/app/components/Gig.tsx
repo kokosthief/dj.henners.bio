@@ -33,7 +33,7 @@ const Gig: React.FC<GigProps> = ({ gig, isUpcoming }) => {
       <UnderlineLink href='https://hipsy.nl/events?query=Henners'>
         <p className='font-secondary text-2xl'>{formatDate(gig.date)}</p>
       </UnderlineLink>
-      <p className='font-primary text-1xl'>
+      <p className='font-primary text-xl font-semibold'>
         {gig.venueEvent} - {gig.location}
       </p>
     </div>

@@ -35,6 +35,15 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
   // Sort the array by count in descending order
   gigArray.sort((a, b) => b.count - a.count);
 
+  // Sort the gig list for each venue by date in descending order
+  Object.keys(gigList).forEach((venueEvent) => {
+    gigList[venueEvent].sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB.getTime() - dateA.getTime();
+    });
+  });
+
   // State to track the expanded state of each venue
   const [expandedVenue, setExpandedVenue] = useState<string | null>(null);
 

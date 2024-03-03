@@ -102,7 +102,7 @@ export default function HomePage() {
                 <span className='absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-red-500 via-orange-400 to-yellow-600'></span>
               </h1>
               <span className='fade-up mt-4 block text-xl delay-100 ease-in md:text-3xl'>
-                as a dj, i want to make you cry
+                I want to make you cry
               </span>
             </header>
 
@@ -157,7 +157,7 @@ export default function HomePage() {
 
             <section className='my-5 px-5 sm:w-4/12'>
               <p className='fade-up mb-3  text-xl font-medium delay-150 ease-in md:text-2xl'>
-                i yearn to move your soul through music, to evoke both joy and
+                I yearn to move your soul through music, to evoke both joy and
                 tears, on a journey that awakens the spirit and connects the
                 tribe.
               </p>
