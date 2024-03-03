@@ -46,12 +46,12 @@
 
   h1,
   .h1 {
-    @apply font-secondary text-2xl font-bold md:text-4xl;
+    @apply font-secondary text-3xl font-bold md:text-4xl;
   }
 
   h2,
   .h2 {
-    @apply font-primary text-xl font-bold md:text-3xl;
+    @apply font-primary text-2xl font-bold md:text-3xl;
   }
 
   h3,

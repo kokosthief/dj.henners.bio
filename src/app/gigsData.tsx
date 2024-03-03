@@ -14,13 +14,13 @@ export const gigs: Gig[] = [
   },
   {
     date: '2021-09-18',
-    description: 'Ecstatic Dance',
+    description: `Festival '21`,
     location: 'NA',
     venueEvent: 'Wijland Festival',
   },
   {
     date: '2021-10-31',
-    description: 'Haloween Ecstatic Dance',
+    description: 'Haloween ED',
     location: 'Amsterdam, NL',
     venueEvent: 'ReMo Studio',
   },
@@ -200,7 +200,7 @@ export const gigs: Gig[] = [
   },
   {
     date: '2022-08-10',
-    description: 'Community Ecstatic Dance',
+    description: 'Community ED',
     location: 'Ottermeer, NL',
     venueEvent: 'Landgoed Ottermeer',
   },
@@ -218,9 +218,9 @@ export const gigs: Gig[] = [
   },
   {
     date: '2022-09-01',
-    description: '2022',
+    description: `Festival '22`,
     location: 'Ottermeer, NL',
-    venueEvent: 'Het Grote Fijne Festival',
+    venueEvent: 'Het Grote Fijne',
   },
   {
     date: '2022-09-17',
@@ -233,12 +233,6 @@ export const gigs: Gig[] = [
     description: 'Saturday',
     location: 'Amsterdam, NL',
     venueEvent: 'Odessa Veemkade',
-  },
-  {
-    date: '2022-10-22',
-    description: 'Wilmer 48 Buto',
-    location: 'Amsterdam, NL',
-    venueEvent: 'ReMo Studio',
   },
   {
     date: '2022-10-28',
@@ -320,9 +314,9 @@ export const gigs: Gig[] = [
   },
   {
     date: '2023-09-07',
-    description: '2023',
+    description: `Festival '23`,
     location: 'Landgoed Energy Up',
-    venueEvent: 'Het Grote Fijne Festival',
+    venueEvent: 'Het Grote Fijne',
   },
   {
     date: '2023-09-02',
@@ -424,7 +418,7 @@ export const gigs: Gig[] = [
     date: '2024-02-21',
     description: 'WEDance',
     location: 'The Big Island, Hawaii',
-    venueEvent: 'Sundari Dance Temple, Hawaii',
+    venueEvent: 'Sundari - The Big Island, Hawaii',
   },
   {
     date: '2024-02-29',
@@ -467,5 +461,11 @@ export const gigs: Gig[] = [
     description: 'Sunday',
     location: 'Amsterdam, NL',
     venueEvent: 'Odessa Veemkade',
+  },
+  {
+    date: 'TBC',
+    description: 'Ecstatic Dance',
+    location: 'Leiden, NL',
+    venueEvent: 'Leiden',
   },
 ];

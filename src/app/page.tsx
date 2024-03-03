@@ -97,12 +97,13 @@ export default function HomePage() {
             ></Image>
 
             <header className='mb-3 px-2 text-center md:mb-0 md:pt-6'>
-              <h1 className=' fade-up mt-5 text-4xl font-medium ease-in md:text-5xl'>
-                DJ Henners
-                <span className='fade-up mt-4 block text-xl delay-100 ease-in md:text-3xl'>
-                  as a dj, i want to make you cry
-                </span>
+              <h1 className=' fade-up mx-auto mt-5 w-fit text-4xl font-medium ease-in md:text-5xl'>
+                Henners
+                <span className='absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-red-500 via-orange-400 to-yellow-600'></span>
               </h1>
+              <span className='fade-up mt-4 block text-xl delay-100 ease-in md:text-3xl'>
+                as a dj, i want to make you cry
+              </span>
             </header>
 
             <section className=' scale-150 pb-7 pt-5 delay-100 md:scale-125 md:pb-5 md:pt-8'>
@@ -154,10 +155,11 @@ export default function HomePage() {
             <SoundCloudWidget />
             <UpcomingGigs gigs={gigs} />
 
-            <section className='my-5 px-5 sm:w-5/12'>
+            <section className='my-5 px-5 sm:w-4/12'>
               <p className='fade-up mb-3  text-xl font-medium delay-150 ease-in md:text-2xl'>
-                I yearn to move your soul through music, to evoke both joy and
-                tears, a journey that awakens the spirit within.
+                i yearn to move your soul through music, to evoke both joy and
+                tears, on a journey that awakens the spirit and connects the
+                tribe.
               </p>
             </section>
             <PastGigs gigs={gigs} />
