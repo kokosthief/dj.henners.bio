@@ -131,7 +131,11 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
         {gigArray.map(({ venueEvent, count }) => (
           <li
             key={venueEvent}
-            className='m-1 rounded-xl border-2 border-transparent hover:border-cyan-700'
+            className={`m-1 rounded-xl border-2 border-transparent ${
+              expandedVenue === venueEvent
+                ? 'border-cyan-700'
+                : 'hover:border-cyan-700'
+            }`}
             onClick={() => handleVenueClick(venueEvent)}
             style={{ cursor: 'pointer' }}
           >

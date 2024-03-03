@@ -235,6 +235,12 @@ export const gigs: Gig[] = [
     venueEvent: 'Odessa Veemkade',
   },
   {
+    date: '2022-10-22',
+    description: `Wilmer's 49th`,
+    location: 'Amsterdam, NL',
+    venueEvent: 'ReMo Studio',
+  },
+  {
     date: '2022-10-28',
     description: 'Friday',
     location: 'Amsterdam, NL',
