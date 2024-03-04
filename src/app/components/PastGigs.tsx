@@ -120,18 +120,18 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
 
   return (
     <div className='pastGigs mb-10'>
-      <h1 className='mb-5 mt-5 underline decoration-red-500 decoration-solid decoration-4 underline-offset-8'>
+      <h1 className='mb-6 mt-5 underline decoration-red-500 decoration-solid decoration-4 underline-offset-8'>
         Past Ecstatic Dances
       </h1>
 
-      <h2 className='mb-3 mt-5'>
+      <h2 className='mb-4 mt-5'>
         <span ref={counterRef}>{count}</span> & counting
       </h2>
       <ul className='list-none'>
         {gigArray.map(({ venueEvent, count }) => (
           <li
             key={venueEvent}
-            className={`m-1 rounded-xl border-2 border-transparent ${
+            className={` my-2 rounded-xl border-2 ${
               expandedVenue === venueEvent
                 ? 'border-cyan-700'
                 : 'hover:border-cyan-700'
