@@ -8,7 +8,7 @@ interface UpcomingGigsProps {
 }
 const UpcomingGigs: React.FC<UpcomingGigsProps> = ({ gigs }) => {
   const currentDate = new Date();
-  // currentDate.setDate(currentDate.getDate() - 1); // Subtract one day from the current date
+  currentDate.setDate(currentDate.getDate() - 1); // Subtract one day from the current date
 
   const upcomingGigs = gigs.filter((gig) => new Date(gig.date) > currentDate);
 
