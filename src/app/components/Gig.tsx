@@ -23,7 +23,7 @@ const Gig: React.FC<GigProps> = ({ gig, isUpcoming }) => {
     <div>
       <h3>{formatDate(gig.date)}</h3>
       <h4>
-        {gig.description} @ {gig.venueEvent}, {gig.location}
+        {gig.event} @ {gig.venue}, {gig.location}
       </h4>
     </div>
   );
@@ -31,10 +31,12 @@ const Gig: React.FC<GigProps> = ({ gig, isUpcoming }) => {
   return isUpcoming ? (
     <div>
       <UnderlineLink href='https://hipsy.nl/events?query=Henners'>
-        <p className='font-secondary text-2xl'>{formatDate(gig.date)}</p>
+        <p className='font-secondary mb-2 text-2xl'>
+          {formatDate(gig.date)} - {gig.location}
+        </p>
       </UnderlineLink>
-      <p className='font-primary text-xl font-semibold'>
-        {gig.venueEvent} - {gig.location}
+      <p className='font-primary mb-1 text-xl font-semibold'>
+        {gig.event} | {gig.venue}
       </p>
     </div>
   ) : (

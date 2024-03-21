@@ -6,9 +6,10 @@ interface PastGigsProps {
 
 interface Gig {
   date: string;
-  description: string;
+  event: string;
   location: string;
-  venueEvent: string;
+  venue: string;
+  country: string;
 }
 
 const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
@@ -19,25 +20,26 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
   const gigCounts: { [key: string]: number } = {};
   const gigList: { [key: string]: Gig[] } = {};
   pastGigs.forEach((gig) => {
-    gigCounts[gig.venueEvent] = (gigCounts[gig.venueEvent] || 0) + 1;
-    if (!gigList[gig.venueEvent]) {
-      gigList[gig.venueEvent] = [];
+    gigCounts[gig.venue] = (gigCounts[gig.venue] || 0) + 1;
+    if (!gigList[gig.venue]) {
+      gigList[gig.venue] = [];
     }
-    gigList[gig.venueEvent].push(gig);
+    gigList[gig.venue].push(gig);
   });
 
   // Convert gigCounts object into an array of objects
-  const gigArray = Object.keys(gigCounts).map((venueEvent) => ({
-    venueEvent,
-    count: gigCounts[venueEvent],
+  const gigArray = Object.keys(gigCounts).map((venue) => ({
+    venue,
+    location: pastGigs.find((gig) => gig.venue === venue)?.location, // Find location corresponding to the venue
+    count: gigCounts[venue],
   }));
 
   // Sort the array by count in descending order
   gigArray.sort((a, b) => b.count - a.count);
 
   // Sort the gig list for each venue by date in descending order
-  Object.keys(gigList).forEach((venueEvent) => {
-    gigList[venueEvent].sort((a, b) => {
+  Object.keys(gigList).forEach((venue) => {
+    gigList[venue].sort((a, b) => {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
       return dateB.getTime() - dateA.getTime();
@@ -128,30 +130,32 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
         <span ref={counterRef}>{count}</span> & counting
       </h2>
       <ul className='list-none'>
-        {gigArray.map(({ venueEvent, count }) => (
+        {gigArray.map(({ venue, location, count }) => (
           <li
-            key={venueEvent}
+            key={venue}
             className={` my-2 rounded-xl border-2 ${
-              expandedVenue === venueEvent
+              expandedVenue === venue
                 ? 'border-cyan-700'
                 : 'hover:border-cyan-700'
             }`}
-            onClick={() => handleVenueClick(venueEvent)}
+            onClick={() => handleVenueClick(venue)}
             style={{ cursor: 'pointer' }}
           >
             <div className='mx-3 my-2 flex items-center justify-between'>
-              <p className='mx-2 text-lg font-semibold'>{venueEvent}</p>
+              <p className='mx-2 text-lg font-semibold'>
+                {venue} - {location}
+              </p>
               <span className='font-secondary mx-2 text-lg'>{count}</span>
             </div>
-            {expandedVenue === venueEvent && (
+            {expandedVenue === venue && (
               <ul className='mx-3 mb-2 list-none'>
-                {gigList[venueEvent].map((gig, index) => (
+                {gigList[venue].map((gig, index) => (
                   <li key={index} className='flex items-center justify-between'>
                     <p
                       className='mx-2 truncate text-lg font-semibold'
                       style={{ maxWidth: 'calc(100% - 2rem)' }}
                     >
-                      {gig.description}
+                      {gig.event}
                     </p>
                     <span className='mx-2'>{formatDate(gig.date)}</span>
                   </li>
