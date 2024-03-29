@@ -17,7 +17,7 @@ import SoundCloudWidget from '@/app/components/SoundCloudWidget';
 import UpcomingGigs from '@/app/components/UpcomingGigs';
 
 import { gigs } from '../app/gigsData';
-import Henners from '../../public/images/henners-sleeping.jpg';
+import Henners from '../../public/images/henners-djing.jpg';
 
 export default function HomePage() {
   const [phoneLink, setPhoneLink] = useState('tel:+31683421604');
