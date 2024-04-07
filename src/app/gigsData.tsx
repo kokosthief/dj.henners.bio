@@ -533,6 +533,13 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
+    date: '2024-04-06',
+    event: 'Saturday ED | Veemkade',
+    location: 'Amsterdam',
+    venue: 'Odessa',
+    country: 'NL',
+  },
+  {
     date: '2024-04-21',
     event: 'Sunday ED | Veemkade',
     location: 'Amsterdam',
