@@ -17,7 +17,7 @@ import SoundCloudWidget from '@/app/components/SoundCloudWidget';
 import UpcomingGigs from '@/app/components/UpcomingGigs';
 
 import { gigs } from '../app/gigsData';
-import Henners from '../../public/images/henners-djing.jpg';
+import Henners from '../../public/images/henners-dj.jpg';
 
 export default function HomePage() {
   const [phoneLink, setPhoneLink] = useState('tel:+31683421604');
@@ -137,7 +137,7 @@ export default function HomePage() {
                 />
               </a>
               <a
-                href='https://soundcloud.com/henners-ecstatic-dance'
+                href='https://soundcloud.com/dj_henners'
                 className='fade-up m-2 '
                 aria-label='Listen to my sets on Soundcloud'
                 target='_blank'

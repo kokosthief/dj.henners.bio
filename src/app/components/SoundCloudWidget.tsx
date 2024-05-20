@@ -10,7 +10,7 @@ const SoundCloudWidget: React.FC = () => {
         scrolling='no'
         frameBorder='yes'
         allow='autoplay'
-        src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1762056042&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+        src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1818443574&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
         title='SoundCloud Player'
       ></iframe>
       <div
