@@ -122,7 +122,7 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
 
   return (
     <div className='pastGigs mb-10'>
-      <h1 className='mb-6 mt-5 underline decoration-red-500 decoration-solid decoration-4 underline-offset-8'>
+      <h1 className='mb-6 mt-5 underline decoration-indigo-400 decoration-solid decoration-4 underline-offset-8'>
         Past Ecstatic Dances
       </h1>
 

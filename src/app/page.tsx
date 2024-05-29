@@ -99,7 +99,7 @@ export default function HomePage() {
             <header className='mb-3 px-2 text-center md:mb-0 md:pt-6'>
               <h1 className=' fade-up mx-auto mt-5 w-fit text-4xl font-medium ease-in md:text-5xl'>
                 Henners
-                <span className='absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-red-500 via-orange-400 to-yellow-600'></span>
+                <span className='absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-blue-300 to-yellow-300'></span>
               </h1>
               <span className='fade-up mt-4 block text-2xl font-bold delay-100 ease-in md:text-3xl'>
                 I want to make you cry

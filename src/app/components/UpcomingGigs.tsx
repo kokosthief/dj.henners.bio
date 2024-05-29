@@ -14,7 +14,7 @@ const UpcomingGigs: React.FC<UpcomingGigsProps> = ({ gigs }) => {
 
   return (
     <div id='upcomingGigs' className='upcomingGigs'>
-      <h1 className='mb-5 mt-5 underline decoration-red-500 decoration-solid decoration-4 underline-offset-8'>
+      <h1 className='mb-5 mt-5 underline decoration-indigo-400 decoration-solid decoration-4 underline-offset-8'>
         Upcoming
       </h1>
       {upcomingGigs.map((gig) => (

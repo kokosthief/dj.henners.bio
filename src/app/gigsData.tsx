@@ -255,8 +255,8 @@ export const gigs: Gig[] = [
   {
     date: '2022-09-01',
     event: `Festival '22 ED`,
-    location: 'Ottermeer',
-    venue: 'Het Grote Fijne',
+    location: '',
+    venue: 'Het Grote Fijne Festival',
     country: 'NL',
   },
   {
@@ -374,8 +374,8 @@ export const gigs: Gig[] = [
   {
     date: '2023-09-07',
     event: `Festival '23 ED`,
-    location: 'Landgoed Energy Up',
-    venue: 'Het Grote Fijne',
+    location: '',
+    venue: 'Het Grote Fijne Festival',
     country: 'NL',
   },
   {
@@ -460,6 +460,13 @@ export const gigs: Gig[] = [
     event: 'New Year Party ED | Muiderpoort',
     location: 'Amsterdam',
     venue: 'Odessa',
+    country: 'NL',
+  },
+  {
+    date: '2024-01-07',
+    event: `Winter Edition After Party '24`,
+    location: 'Kasteel De Berckt',
+    venue: 'Ecstatic Dance Festival Holland',
     country: 'NL',
   },
   {
@@ -575,15 +582,15 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
-    date: '2024-06-05',
-    event: 'Wednesday ED | Veemkade',
+    date: '2024-06-14',
+    event: 'Friday ED | Veemkade',
     location: 'Amsterdam',
     venue: 'Odessa',
     country: 'NL',
   },
   {
-    date: '2024-06-14',
-    event: 'Friday ED | Veemkade',
+    date: '2024-06-29',
+    event: 'Saturday ED | Veemkade',
     location: 'Amsterdam',
     venue: 'Odessa',
     country: 'NL',
