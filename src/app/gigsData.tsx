@@ -665,4 +665,11 @@ export const gigs: Gig[] = [
     venue: 'Odessa',
     country: 'NL',
   },
+  {
+    date: '2024-10-04',
+    event: 'ED',
+    location: 'Leiden',
+    venue: 'ED Leiden',
+    country: 'NL',
+  },
 ];
