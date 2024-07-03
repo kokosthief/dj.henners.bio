@@ -102,7 +102,7 @@ export default function HomePage() {
                 <span className='absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-blue-300 to-yellow-300'></span>
               </h1>
               <span className='fade-up mt-4 block text-2xl font-bold delay-100 ease-in md:text-3xl'>
-                I want to make you cry
+                Your vibe, my beats, our dance journey.
               </span>
             </header>
 

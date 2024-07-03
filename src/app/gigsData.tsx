@@ -464,8 +464,8 @@ export const gigs: Gig[] = [
   },
   {
     date: '2024-01-07',
-    event: `Winter Edition After Party '24`,
-    location: 'Kasteel De Berckt',
+    event: `EDFH Winter After Party '24`,
+    location: '',
     venue: 'Ecstatic Dance Festival Holland',
     country: 'NL',
   },
@@ -568,7 +568,7 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
-    date: '2024-05-08',
+    date: '2024-05-09',
     event: 'Thursday ED | Veemkade',
     location: 'Amsterdam',
     venue: 'Odessa',
@@ -582,8 +582,8 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
-    date: '2024-06-14',
-    event: 'Friday ED | Veemkade',
+    date: '2024-06-20',
+    event: 'Thursday ED | Veemkade',
     location: 'Amsterdam',
     venue: 'Odessa',
     country: 'NL',
@@ -603,8 +603,22 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
+    date: '2024-01-10',
+    event: `EDFH Summer '24`,
+    location: '',
+    venue: 'Ecstatic Dance Festival Holland',
+    country: 'NL',
+  },
+  {
     date: '2024-07-19',
     event: 'Friday ED | Veemkade',
+    location: 'Amsterdam',
+    venue: 'Odessa',
+    country: 'NL',
+  },
+  {
+    date: '2024-07-21',
+    event: 'Sunday ED | Veemkade',
     location: 'Amsterdam',
     venue: 'Odessa',
     country: 'NL',
@@ -640,6 +654,13 @@ export const gigs: Gig[] = [
   {
     date: '2024-08-29',
     event: 'Thursday ED | Veemkade',
+    location: 'Amsterdam',
+    venue: 'Odessa',
+    country: 'NL',
+  },
+  {
+    date: '2024-07-30',
+    event: 'Friday ED | Veemkade',
     location: 'Amsterdam',
     venue: 'Odessa',
     country: 'NL',
