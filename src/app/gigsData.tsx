@@ -603,7 +603,7 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
-    date: '2024-01-10',
+    date: '2024-07-10',
     event: `EDFH Summer '24`,
     location: '',
     venue: 'Ecstatic Dance Festival Holland',
