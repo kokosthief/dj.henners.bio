@@ -499,9 +499,9 @@ export const gigs: Gig[] = [
   },
   {
     date: '2024-02-21',
-    event: 'WEDance ED',
+    event: 'WEDance ED @ Sundari',
     location: 'Big Island, Hawaii',
-    venue: 'Sundari',
+    venue: '',
     country: 'USA',
   },
   {
@@ -612,20 +612,6 @@ export const gigs: Gig[] = [
   {
     date: '2024-07-19',
     event: 'Friday ED | Veemkade',
-    location: 'Amsterdam',
-    venue: 'Odessa',
-    country: 'NL',
-  },
-  {
-    date: '2024-07-21',
-    event: 'Sunday ED | Veemkade',
-    location: 'Amsterdam',
-    venue: 'Odessa',
-    country: 'NL',
-  },
-  {
-    date: '2024-07-27',
-    event: 'Saturday ED | Veemkade',
     location: 'Amsterdam',
     venue: 'Odessa',
     country: 'NL',
