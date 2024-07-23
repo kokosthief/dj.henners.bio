@@ -235,7 +235,7 @@ export const gigs: Gig[] = [
     date: '2022-08-10',
     event: 'Community ED',
     location: 'Ottermeer',
-    venue: 'Landgoed Ottermeer',
+    venue: 'Landgoed',
     country: 'NL',
   },
   {
@@ -255,8 +255,8 @@ export const gigs: Gig[] = [
   {
     date: '2022-09-01',
     event: `Festival '22 ED`,
-    location: '',
-    venue: 'Het Grote Fijne Festival',
+    location: 'Het Grote Fijne',
+    venue: 'Chocolate Club',
     country: 'NL',
   },
   {
@@ -374,8 +374,8 @@ export const gigs: Gig[] = [
   {
     date: '2023-09-07',
     event: `Festival '23 ED`,
-    location: '',
-    venue: 'Het Grote Fijne Festival',
+    location: 'Het Grote Fijne',
+    venue: 'Chocolate Club',
     country: 'NL',
   },
   {
@@ -464,9 +464,9 @@ export const gigs: Gig[] = [
   },
   {
     date: '2024-01-07',
-    event: `EDFH Winter After Party '24`,
-    location: '',
-    venue: 'Ecstatic Dance Festival Holland',
+    event: `Winter Edition After Party '24`,
+    location: 'Ecstatic Dance Festival Holland',
+    venue: 'Chocolate Club',
     country: 'NL',
   },
   {
@@ -499,9 +499,9 @@ export const gigs: Gig[] = [
   },
   {
     date: '2024-02-21',
-    event: 'WEDance ED @ Sundari',
+    event: ' ED @ Sundari',
     location: 'Big Island, Hawaii',
-    venue: '',
+    venue: 'WEDance',
     country: 'USA',
   },
   {
@@ -604,13 +604,20 @@ export const gigs: Gig[] = [
   },
   {
     date: '2024-07-10',
-    event: `EDFH Summer '24`,
-    location: '',
-    venue: 'Ecstatic Dance Festival Holland',
+    event: `Summer Edition Basement Set '24`,
+    location: 'Ecstatic Dance Festival Holland',
+    venue: 'Chocolate Club',
     country: 'NL',
   },
   {
     date: '2024-07-19',
+    event: 'Friday ED | Veemkade',
+    location: 'Amsterdam',
+    venue: 'Odessa',
+    country: 'NL',
+  },
+  {
+    date: '2024-07-26',
     event: 'Friday ED | Veemkade',
     location: 'Amsterdam',
     venue: 'Odessa',
@@ -631,13 +638,6 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
-    date: '2024-08-16',
-    event: 'Friday Cacao ED | Veemkade',
-    location: 'Amsterdam',
-    venue: 'Odessa',
-    country: 'NL',
-  },
-  {
     date: '2024-08-29',
     event: 'Thursday ED | Veemkade',
     location: 'Amsterdam',
@@ -652,10 +652,52 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
+    date: '2024-09-05',
+    event: 'Thursday ED | Veemkade',
+    location: 'Amsterdam',
+    venue: 'Odessa',
+    country: 'NL',
+  },
+  {
+    date: '2024-09-21',
+    event: 'Saturday ED | Veemkade',
+    location: 'Amsterdam',
+    venue: 'Odessa',
+    country: 'NL',
+  },
+  {
+    date: '2024-09-29',
+    event: 'Sunday ED | Veemkade',
+    location: 'Amsterdam',
+    venue: 'Odessa',
+    country: 'NL',
+  },
+  {
     date: '2024-10-04',
     event: 'ED',
     location: 'Leiden',
     venue: 'ED Leiden',
+    country: 'NL',
+  },
+  {
+    date: '2024-10-09',
+    event: 'Wednesday ED | Veemkade',
+    location: 'Amsterdam',
+    venue: 'Odessa',
+    country: 'NL',
+  },
+  {
+    date: '2024-10-25',
+    event: 'Wednesday ED | Veemkade',
+    location: 'Amsterdam',
+    venue: 'Odessa',
+    country: 'NL',
+  },
+  {
+    date: '2024-10-31',
+    event: 'Friday ED | Veemkade',
+    location: 'Amsterdam',
+    venue: 'Odessa',
     country: 'NL',
   },
 ];
