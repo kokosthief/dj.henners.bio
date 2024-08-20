@@ -638,6 +638,13 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
+    date: '2024-08-15',
+    event: `Landjuweel '24'`,
+    location: 'NL',
+    venue: 'Ruigoord',
+    country: 'NL',
+  },
+  {
     date: '2024-08-29',
     event: 'Thursday ED | Veemkade',
     location: 'NL',
