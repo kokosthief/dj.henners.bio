@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface PastGigsProps {
   gigs: Gig[];
@@ -123,7 +123,7 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
   return (
     <div className='pastGigs mb-10'>
       <h1 className='mb-6 mt-5 underline decoration-indigo-400 decoration-solid decoration-4 underline-offset-8'>
-        Past Ecstatic Dances
+        Past Gigs
       </h1>
 
       <h2 className='mb-4 mt-5'>

@@ -9,7 +9,7 @@ export interface Gig {
 export const gigs: Gig[] = [
   {
     date: '2021-09-12',
-    event: 'ED',
+    event: 'Community ED',
     location: 'NL',
     venue: 'ReMo Studio',
     country: 'NL',
@@ -527,9 +527,9 @@ export const gigs: Gig[] = [
   },
   {
     date: '2024-03-17',
-    event: 'Bluebirds',
-    location: 'Haarlem',
-    venue: 'The Movement Journey',
+    event: 'ED @ BlueBirds',
+    location: 'NL',
+    venue: 'Haarlem',
     country: 'NL',
   },
   {
