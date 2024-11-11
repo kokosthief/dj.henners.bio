@@ -234,8 +234,8 @@ export const gigs: Gig[] = [
   {
     date: '2022-08-10',
     event: 'Community ED',
-    location: 'Ottermeer',
-    venue: 'Landgoed',
+    location: 'NL',
+    venue: 'Ottermeer',
     country: 'NL',
   },
   {
@@ -256,7 +256,7 @@ export const gigs: Gig[] = [
     date: '2022-09-01',
     event: `Grote Fijne Festival '22`,
     location: 'NL',
-    venue: 'Chocolate Club',
+    venue: 'ED Festival Holland',
     country: 'NL',
   },
   {
@@ -375,7 +375,7 @@ export const gigs: Gig[] = [
     date: '2023-09-07',
     event: `Grote Fijne Festival '23`,
     location: 'NL',
-    venue: 'Chocolate Club',
+    venue: 'ED Festival Holland',
     country: 'NL',
   },
   {
@@ -466,7 +466,7 @@ export const gigs: Gig[] = [
     date: '2024-01-07',
     event: `EDFH Winter After Party '24`,
     location: 'NL',
-    venue: 'Chocolate Club',
+    venue: 'ED Festival Holland',
     country: 'NL',
   },
   {
@@ -500,7 +500,7 @@ export const gigs: Gig[] = [
   {
     date: '2024-02-21',
     event: ' ED @ Sundari',
-    location: 'Big Island, Hawaii',
+    location: 'Hawaii, USA',
     venue: 'WEDance',
     country: 'USA',
   },
@@ -577,8 +577,8 @@ export const gigs: Gig[] = [
   {
     date: '2024-05-18',
     event: 'Bezweefd ED @ OASE',
-    location: 'Rotterdam',
-    venue: 'Bezweefd',
+    location: 'NL',
+    venue: 'Rotterdam',
     country: 'NL',
   },
   {
@@ -606,7 +606,7 @@ export const gigs: Gig[] = [
     date: '2024-07-10',
     event: `EDFH Basement Set '24`,
     location: 'NL',
-    venue: 'Chocolate Club',
+    venue: 'ED Festival Holland',
     country: 'NL',
   },
   {
@@ -668,7 +668,7 @@ export const gigs: Gig[] = [
   {
     date: '2024-10-04',
     event: 'ED',
-    location: 'Leiden',
+    location: 'ED Leiden',
     venue: 'ED Leiden',
     country: 'NL',
   },

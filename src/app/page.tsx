@@ -102,8 +102,15 @@ export default function HomePage() {
                 <span className='absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-blue-300 to-yellow-300'></span>
               </h1>
               <span className='fade-up mt-4 block text-2xl font-bold delay-100 ease-in md:text-3xl'>
-                Ecstatic Dance DJ aiming to evoke both joy and tears
+                As an Ecstatic Dance DJ I am in flow with the dancers.
               </span>
+              <span className='fade-up mt-4 block text-2xl font-bold delay-100 ease-in md:text-3xl'>
+                When joy is evoked, I support that. When tears come, I nurture
+                them.
+              </span>
+              <p className='fade-up mb-3  text-xl font-medium delay-150 ease-in md:text-2xl'>
+                Let's move together on one of upcoming dates 👇🏼
+              </p>
             </header>
 
             <section className=' scale-150 pb-7 pt-5 delay-100 md:scale-125 md:pb-5 md:pt-8'>
@@ -159,9 +166,6 @@ export default function HomePage() {
               <p className='fade-up mb-5  text-xl font-medium delay-150 ease-in md:text-2xl'>
                 I yearn to move your soul through music, to take you on a
                 journey that awakens the spirit and connects the tribe.
-              </p>
-              <p className='fade-up mb-3  text-xl font-medium delay-150 ease-in md:text-2xl'>
-                Let's move together on one of upcoming dates 👇🏼
               </p>
             </section>
             <PastGigs gigs={gigs} />
