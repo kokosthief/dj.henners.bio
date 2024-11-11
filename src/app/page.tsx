@@ -65,7 +65,7 @@ export default function HomePage() {
   return (
     <main>
       <Head>
-        <title>HENNERS ECSTATIC DANCE</title>
+        <title>HENNERS | Ecstatic Dance DJ</title>
       </Head>
 
       <main className={clsx(mode === 'dark' ? 'bg-gradient-dark' : 'bg-white')}>
@@ -102,7 +102,7 @@ export default function HomePage() {
                 <span className='absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-blue-300 to-yellow-300'></span>
               </h1>
               <span className='fade-up mt-4 block text-2xl font-bold delay-100 ease-in md:text-3xl'>
-                Odessa Amsterdam Ecstatic Dance Resident DJ
+                Ecstatic Dance DJ aiming to evoke both joy and tears
               </span>
             </header>
 
@@ -157,12 +157,11 @@ export default function HomePage() {
 
             <section className='my-5 px-5 sm:w-4/12'>
               <p className='fade-up mb-5  text-xl font-medium delay-150 ease-in md:text-2xl'>
-                I yearn to move your soul through music, to evoke both joy and
-                tears, on a journey that awakens the spirit and connects the
-                tribe.
+                I yearn to move your soul through music, to take you on a
+                journey that awakens the spirit and connects the tribe.
               </p>
               <p className='fade-up mb-3  text-xl font-medium delay-150 ease-in md:text-2xl'>
-                Let's move through the journey of music and movement, together.
+                Let's move together on one of upcoming dates 👇🏼
               </p>
             </section>
             <PastGigs gigs={gigs} />
