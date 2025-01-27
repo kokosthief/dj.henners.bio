@@ -751,6 +751,13 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
+    date: '2025-01-31',
+    event: ' Sensual ED @ Shivari',
+    location: 'Koh Phangan, Thailand',
+    venue: 'Shivari',
+    country: 'TH',
+  },
+  {
     date: '2025-02-16',
     event: ' Sunday ED @ Kalani',
     location: 'Hawaii, USA',
