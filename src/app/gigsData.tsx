@@ -500,7 +500,7 @@ export const gigs: Gig[] = [
   {
     date: '2024-02-21',
     event: ' WEDance @ Sundari',
-    location: '',
+    location: 'USA',
     venue: 'Island of Hawaiʻi',
     country: 'USA',
   },
@@ -760,21 +760,21 @@ export const gigs: Gig[] = [
   {
     date: '2025-02-19',
     event: ' WEDance @ Sundari',
-    location: '',
+    location: 'USA',
     venue: 'Island of Hawaiʻi',
     country: 'USA',
   },
   {
     date: '2025-03-02',
     event: ' ED @ Kalani',
-    location: '',
+    location: 'USA',
     venue: 'Island of Hawaiʻi',
     country: 'USA',
   },
     {
     date: '2025-03-15',
     event: ' ED @ Honokaʻa',
-    location: '',
+    location: 'USA',
     venue: 'Island of Hawaiʻi',
     country: 'USA',
   },
