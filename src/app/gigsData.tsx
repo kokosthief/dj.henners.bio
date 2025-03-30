@@ -813,18 +813,39 @@ export const gigs: Gig[] = [
     venue: 'Odessa Amsterdam',
     country: 'NL',
   },
-    {
+  {
     date: '2025-04-26',
+    event: 'Ambrosia x Pinache Kingsday',
+    location: 'NL',
+    venue: 'Ambrosia',
+    country: 'NL',
+  }, 
+  {
+    date: '2025-05-17',
     event: 'Saturday ED | Veemkade',
     location: 'NL',
     venue: 'Odessa Amsterdam',
     country: 'NL',
   },
   {
-    date: '2025-04-26',
-    event: 'Ambrosia x Pinache Kingsday',
+    date: '2025-06-27',
+    event: 'Friday ED | Veemkade',
     location: 'NL',
-    venue: 'Ambrosia',
+    venue: 'Odessa Amsterdam',
+    country: 'NL',
+  },
+  {
+    date: '2025-07-27',
+    event: 'Sunday ED | Veemkade',
+    location: 'NL',
+    venue: 'Odessa Amsterdam',
+    country: 'NL',
+  },
+  {
+    date: '2025-08-29',
+    event: 'Friday ED | Veemkade',
+    location: 'NL',
+    venue: 'Odessa Amsterdam',
     country: 'NL',
   },
 ];
