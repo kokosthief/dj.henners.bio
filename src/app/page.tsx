@@ -144,7 +144,7 @@ export default function HomePage() {
                 />
               </a>
               <a
-                href='https://soundcloud.com/dj_henners'
+                href='https://soundcloud.com/henners_music'
                 className='fade-up m-2 '
                 aria-label='Listen to my sets on Soundcloud'
                 target='_blank'
