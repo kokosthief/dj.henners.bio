@@ -104,7 +104,7 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
     return () => {
       observer.disconnect();
     };
-  }, [animationTriggered]);
+  }, [animationTriggered, pastGigs.length]);
 
   // Function to animate the number counter
   const animateNumber = (target: number, duration: number) => {

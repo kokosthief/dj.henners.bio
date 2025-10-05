@@ -1,8 +1,10 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import * as React from 'react';
 import { RiAlarmWarningFill } from 'react-icons/ri';
+
 import HennersJungle from '../../public/images/henners-jungle.jpg';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Not Found',
@@ -23,7 +25,7 @@ export default function NotFound() {
             src={HennersJungle}
             alt='DJ Henners'
           ></Image>
-          <a href='/'>Back to home</a>
+          <Link href='/'>Back to home</Link>
         </div>
       </section>
     </main>
