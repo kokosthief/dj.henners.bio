@@ -35,7 +35,11 @@
 ### Key Features
 - **Responsive Design**: Mobile-first approach with dark/light mode toggle
 - **Dynamic Gig Management**: Automated upcoming/past gig filtering
-- **SoundCloud Integration**: Embedded music player
+- **Interactive Music Discovery**: Multi-track SoundCloud player with track selection
+- **Professional Media Package**: Complete media kit for event organizers
+- **Contact/Booking System**: Dedicated booking form with professional intake
+- **Dynamic Image Slideshow**: Randomized photo gallery with navigation controls
+- **Technical Rider**: Downloadable professional technical requirements
 - **Interactive Elements**: Animated counters, hover effects, scroll animations
 - **SEO Optimized**: Meta tags, Open Graph, Twitter cards
 - **Performance Optimized**: Image optimization, lazy loading
@@ -46,10 +50,17 @@
 src/
 ├── app/                    # Next.js App Router
 │   ├── components/         # Page-specific components
-│   │   ├── Gig.tsx         # Individual gig display
-│   │   ├── PastGigs.tsx    # Past gigs with venue grouping
-│   │   ├── SoundCloudWidget.tsx # Music player
+│   │   ├── ContactForm.tsx   # Professional booking form
+│   │   ├── Gig.tsx          # Individual gig display
+│   │   ├── ImageSlideshow.tsx # Dynamic photo gallery
+│   │   ├── PastGigs.tsx     # Past gigs with venue grouping
+│   │   ├── SoundCloudWidget.tsx # Interactive music player
+│   │   ├── TechnicalRider.tsx # Professional technical requirements
 │   │   └── UpcomingGigs.tsx # Upcoming events
+│   ├── contact/            # Dedicated contact/booking page
+│   │   └── page.tsx        # Contact form page
+│   ├── media-package/      # Professional media kit
+│   │   └── page.tsx        # Media package page
 │   ├── gigsData.tsx        # Centralized gig data
 │   ├── layout.tsx          # Root layout with metadata
 │   └── page.tsx            # Main homepage
@@ -143,11 +154,15 @@ npm run test         # Run Jest tests
 
 ## 🎵 Music Integration
 
-### SoundCloud Widget
-- **Embedded Player**: Direct SoundCloud track integration
-- **Custom Styling**: Branded player appearance
+### SoundCloud Integration
+- **Interactive Music Player**: Multi-track selection interface
+- **Track Selection**: Three featured tracks:
+  - Ecstatic Journey (original track)
+  - Ambrosia 7 - Richie Lee & Henners collaboration
+  - WeDance Sundari - Hawaii ecstatic dance experience
+- **Custom Styling**: Branded player appearance with selection interface
 - **Responsive Design**: Adapts to different screen sizes
-- **Track Selection**: Currently features track ID 1818443574
+- **Direct Links**: Links to original SoundCloud tracks
 
 ## 📱 Mobile Experience
 

@@ -45,7 +45,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         type='button'
         disabled={disabled}
         className={cn(
-          'inline-flex items-center justify-center rounded font-medium',
+          'inline-flex items-center justify-center rounded-xl font-medium',
           'focus-visible:ring-primary-500 focus:outline-none focus-visible:ring',
           'shadow-sm',
           'transition-colors duration-75',
