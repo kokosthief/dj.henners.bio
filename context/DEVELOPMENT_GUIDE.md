@@ -77,10 +77,13 @@ src/
 
 ### Important Files
 - **`src/app/page.tsx`**: Main homepage component
+- **`src/app/contact/page.tsx`**: Contact and booking page
+- **`src/app/media-package/page.tsx`**: Professional media package page
 - **`src/app/gigsData.tsx`**: Gig database (update this for new events)
 - **`src/constant/config.ts`**: Site configuration
 - **`tailwind.config.ts`**: Tailwind CSS configuration
 - **`next.config.js`**: Next.js configuration
+- **`.eslintrc.js`**: ESLint configuration (simplified for Next.js compatibility)
 
 ## 🔧 Common Development Tasks
 
@@ -104,14 +107,22 @@ src/
 3. **Social Links**: Update SoundCloud URL
 
 ### Adding New Images
-1. **Place Image**: Add to `public/images/`
-2. **Import**: Add import statement in component
-3. **Use**: Reference in Image component
+1. **Display Images**: Add to `public/images/` for website display
+2. **High-res Downloads**: Add to `public/downloads/high-res/` for press materials
+3. **Import**: Add import statement in component
+4. **Use**: Reference in Image component
+5. **Update Media Package**: Add to `mediaFiles.images` array in `media-package/page.tsx`
 
 ### Styling Changes
 1. **Tailwind Classes**: Use utility classes directly
 2. **Custom Styles**: Add to `src/styles/globals.css`
 3. **Component Styles**: Use CSS modules or styled-components
+
+### Adding Media Content
+1. **Videos**: Place in `public/downloads/videos/`
+2. **Documents**: Place PDFs in `public/downloads/documents/`
+3. **Update Arrays**: Add entries to respective arrays in `media-package/page.tsx`
+4. **File Formats**: MP4 for videos, PDF for documents, JPG/PNG for images
 
 ## 🎨 Design System Usage
 
@@ -293,10 +304,9 @@ npm test -- --coverage
 ## 🔧 Configuration Files
 
 ### ESLint (`.eslintrc.js`)
-- **Next.js**: Built-in Next.js rules
-- **TypeScript**: TypeScript-specific rules
-- **Prettier**: Prettier integration
-- **Custom**: Unused imports, import sorting
+- **Next.js**: Built-in Next.js rules and core web vitals
+- **Simplified**: Reduced configuration for compatibility
+- **Basic Rules**: Console warnings, unused variables, React-specific rules
 
 ### Prettier (`.prettierrc.js`)
 - **Tailwind**: Tailwind class sorting
@@ -319,9 +329,9 @@ npm test -- --coverage
 
 ### Documentation Structure
 - **README.md**: Project overview and setup
-- **TECHNICAL_ARCHITECTURE.md**: Technical details
-- **CONTENT_MANAGEMENT.md**: Content and data guide
-- **DEVELOPMENT_GUIDE.md**: This file
+- **TECHNICAL_ARCHITECTURE.md**: Technical details and architecture
+- **DEVELOPMENT_GUIDE.md**: This file - development workflows
+- **QUICK_REFERENCE.md**: Quick reference guide for developers
 
 ---
 

@@ -52,7 +52,7 @@ export function generateStructuredData() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "DJ Henners - Ecstatic Dance DJ Services",
-    "description": "Top-rated Ecstatic Dance DJ in Amsterdam providing transformative musical experiences for events, festivals, and ceremonies across the Netherlands.",
+    "description": "Ecstatic Dance DJ in Amsterdam providing transformative musical experiences for events, festivals, and ceremonies across the Netherlands.",
     "url": baseUrl,
     "telephone": "+31683421604",
     "email": "dj@henners.bio",

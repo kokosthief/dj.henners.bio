@@ -79,7 +79,7 @@ export default function HomePage() {
     <main>
       <Head>
         <title>DJ Henners | #1 Ecstatic Dance DJ Amsterdam & Netherlands</title>
-        <meta name="description" content="🥇 Top-rated Ecstatic Dance DJ in Amsterdam & Netherlands. DJ Henners creates transformative musical journeys with global rhythms, African beats & conscious dance. Book the best ecstatic dance DJ for festivals, events & ceremonies across Holland." />
+        <meta name="description" content="Ecstatic Dance DJ in Amsterdam & Netherlands. DJ Henners creates transformative musical journeys with global rhythms, African beats & conscious dance. Book the best ecstatic dance DJ for festivals, events & ceremonies across Holland." />
         <meta name="keywords" content="ecstatic dance dj nederland, ecstatic dance dj amsterdam, beste ecstatic dance dj holland, bewuste dans dj nederland, dj henners amsterdam, best ecstatic dance dj netherlands, conscious dance dj amsterdam" />
         <link rel="canonical" href="https://dj.henners.bio" />
       </Head>

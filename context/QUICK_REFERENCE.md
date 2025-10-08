@@ -17,8 +17,10 @@
 - **Responsive Design**: Mobile-first with dark/light mode
 - **Dynamic Gig Management**: Automatic upcoming/past filtering
 - **SoundCloud Integration**: Embedded music player
-- **Interactive Elements**: Animated counters, hover effects
-- **SEO Optimized**: Meta tags, Open Graph, performance optimized
+- **Professional Media Package**: Downloadable press materials
+- **Contact System**: Dedicated contact page with booking form
+- **Interactive Elements**: Animated counters, hover effects, image slideshow
+- **SEO Optimized**: Meta tags, Open Graph, sitemap, structured data, web manifest
 
 ## 🛠️ Quick Start
 ```bash
@@ -34,9 +36,12 @@ npm run dev
 
 ## 📁 Key Files
 - **`src/app/page.tsx`**: Main homepage component
+- **`src/app/contact/page.tsx`**: Contact and booking page
+- **`src/app/media-package/page.tsx`**: Professional media package page
 - **`src/app/gigsData.tsx`**: Central gig database (130+ entries)
 - **`src/constant/config.ts`**: Site configuration
 - **`tailwind.config.ts`**: Styling configuration
+- **`public/downloads/`**: Professional media downloads folder
 
 ## 🔄 Common Tasks
 
@@ -53,21 +58,41 @@ Edit `src/app/gigsData.tsx`:
 ```
 
 ### Update Contact Info
-- **Phone**: Edit `phoneLink` in `page.tsx`
-- **Email**: Update `mailto:` links
+- **Phone**: Edit `phoneLink` in `page.tsx` and contact page
+- **Email**: Update `mailto:` links across all pages
 - **SoundCloud**: Update URL in SoundCloudWidget
+
+### Add Media Content
+- **High-res Images**: Place in `public/downloads/high-res/`
+- **Videos**: Place in `public/downloads/videos/`
+- **Documents**: Place PDFs in `public/downloads/documents/`
+- **Update Media Package**: Add entries to arrays in `media-package/page.tsx`
 
 ### Deploy Changes
 - **Automatic**: Push to main branch (Vercel auto-deploy)
 - **Manual**: `vercel --prod`
 
 ## 📱 Content Sections
+
+### Homepage
 1. **Hero**: DJ image, tagline, contact buttons
 2. **SoundCloud**: Embedded music player
-3. **Upcoming Gigs**: Future performances
-4. **Past Gigs**: Venue-grouped performance history
-5. **Mission**: Spiritual journey messaging
-6. **Booking**: Contact form/email link
+3. **Image Slideshow**: Dynamic photo gallery
+4. **Upcoming Gigs**: Future performances
+5. **Past Gigs**: Venue-grouped performance history
+6. **Mission**: Spiritual journey messaging
+
+### Contact Page
+1. **Contact Form**: Professional booking inquiry system
+2. **Quick Contact**: Email, WhatsApp, SoundCloud links
+3. **Expectations**: What clients can expect
+
+### Media Package Page
+1. **Artist Bios**: Short, medium, and long descriptions
+2. **Photo Downloads**: High-resolution images
+3. **Video Downloads**: Promotional videos
+4. **Document Downloads**: Technical rider, press kit
+5. **Technical Rider**: Complete technical specifications
 
 ## 🎨 Design System
 - **Colors**: Blue gradient primary palette
@@ -121,10 +146,11 @@ npm run test         # Run tests
 
 ## 🔮 Future Enhancements
 - **CMS**: Admin panel for content management
-- **Analytics**: Google Analytics integration
 - **Newsletter**: Email list building
-- **Booking**: Integrated booking system
+- **Enhanced Booking**: Calendar integration and automated confirmations
 - **Multi-language**: International audience support
+- **Social Media**: Instagram feed integration
+- **Event Calendar**: Interactive calendar view of upcoming gigs
 
 ## 📞 Contact Information
 - **Email**: dj@henners.bio

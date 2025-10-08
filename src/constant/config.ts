@@ -1,6 +1,6 @@
 export const siteConfig = {
   title: 'DJ Henners | Ecstatic Dance DJ Amsterdam & Netherlands',
-  description: '🥇 Top-rated Ecstatic Dance DJ in Amsterdam & Netherlands. DJ Henners creates transformative musical journeys with global rhythms, African beats & conscious dance. Book the best ecstatic dance DJ for festivals, events & ceremonies across Holland.',
+  description: 'Ecstatic Dance DJ in Amsterdam & Netherlands. DJ Henners creates transformative musical journeys with global rhythms, African beats & conscious dance. Book the best ecstatic dance DJ for festivals, events & ceremonies across Holland.',
   url: 'https://dj.henners.bio',
   keywords: [
     // Primary Dutch/Netherlands terms

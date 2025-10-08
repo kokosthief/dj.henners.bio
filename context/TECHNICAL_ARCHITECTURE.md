@@ -132,15 +132,23 @@ HomePage (page.tsx)
 ### Component Hierarchy
 ```
 App Layout
-├── Root Layout (metadata, fonts)
-└── Home Page
-    ├── IconButton (reusable)
-    ├── Button (reusable)
-    ├── SoundCloudWidget
-    ├── UpcomingGigs
-    │   └── Gig (individual gig display)
-    └── PastGigs
-        └── Venue Grouping Logic
+├── Root Layout (metadata, fonts, analytics)
+├── Home Page
+│   ├── IconButton (reusable)
+│   ├── Button (reusable)
+│   ├── SoundCloudWidget
+│   ├── ImageSlideshow
+│   ├── UpcomingGigs
+│   │   └── Gig (individual gig display)
+│   └── PastGigs
+│       └── Venue Grouping Logic
+├── Contact Page
+│   ├── ContactForm
+│   └── Quick Contact Options
+└── Media Package Page
+    ├── ImageSlideshow
+    ├── TechnicalRider
+    └── Media Downloads (photos, videos, documents)
 ```
 
 ## 🎵 Data Management
@@ -194,7 +202,8 @@ interface Gig {
 ## 📊 Analytics & Monitoring
 
 ### Performance Monitoring
-- **Core Web Vitals**: LCP, FID, CLS tracking
+- **Core Web Vitals**: LCP, FID, CLS tracking with web-vitals.tsx
+- **Google Analytics**: Integrated tracking with google-analytics.tsx
 - **Bundle Analysis**: Webpack bundle analyzer
 - **Lighthouse Scores**: Performance auditing
 
@@ -225,9 +234,10 @@ interface Gig {
 ### Build Process
 1. **Dependency Installation**: npm install
 2. **Type Checking**: TypeScript compilation
-3. **Linting**: ESLint validation
-4. **Building**: Next.js production build
-5. **Deployment**: Vercel deployment
+3. **Linting**: ESLint validation (simplified configuration)
+4. **Building**: Next.js production build with sitemap generation
+5. **Asset Optimization**: Image and font optimization
+6. **Deployment**: Vercel deployment with analytics integration
 
 ---
 
