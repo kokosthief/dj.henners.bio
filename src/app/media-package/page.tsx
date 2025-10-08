@@ -1,16 +1,26 @@
 'use client';
+
 import clsx from 'clsx';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { FaDownload, FaFilePdf, FaFileZipper, FaMusic, FaVideo, FaImage } from 'react-icons/fa6';
+import { FaDownload, FaFilePdf, FaFileZipper, FaVideo, FaImage } from 'react-icons/fa6';
 import { IoMdArrowBack, IoMdMoon, IoMdSunny } from 'react-icons/io';
 
 import Button from '@/components/buttons/Button';
 import IconButton from '@/components/buttons/IconButton';
+
 import ImageSlideshow from '@/app/components/ImageSlideshow';
 import TechnicalRider from '@/app/components/TechnicalRider';
+
+// Media file interface
+interface MediaFile {
+  name: string;
+  format: string;
+  size: string;
+  downloadUrl: string;
+  description: string;
+}
 
 // Sample data - you'll replace these with your actual content
 const artistInfo = {
@@ -176,7 +186,7 @@ export default function MediaPackagePage() {
     return mode === 'dark' ? setMode('light') : setMode('dark');
   }
 
-  const handleDownload = (file: any, type: string) => {
+  const handleDownload = (file: MediaFile, _type: string) => {
     // Create a temporary link and trigger download
     const link = document.createElement('a');
     link.href = file.downloadUrl || file.name;
@@ -187,7 +197,7 @@ export default function MediaPackagePage() {
     document.body.removeChild(link);
   };
 
-  const handlePackageDownload = (packageType: string) => {
+  const handlePackageDownload = (_packageType: string) => {
     // For now, we'll create a simple package with links to all available files
     const packageContent = `DJ HENNERS - COMPLETE PRESS KIT
 

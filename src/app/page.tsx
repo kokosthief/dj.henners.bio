@@ -1,7 +1,6 @@
 'use client';
 import clsx from 'clsx';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { FaPhoneFlip } from 'react-icons/fa6';

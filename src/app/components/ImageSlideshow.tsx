@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 // Import all DJ Henners images
@@ -9,7 +9,7 @@ import HennersPfp from '../../../public/images/henners-pfp.jpg';
 import HennersSpaceholding from '../../../public/images/henners-spaceholding.jpg';
 
 interface ImageData {
-  src: any;
+  src: StaticImageData;
   alt: string;
   title?: string;
 }

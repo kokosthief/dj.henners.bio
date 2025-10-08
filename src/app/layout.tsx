@@ -4,6 +4,7 @@ import * as React from 'react';
 import '@/styles/globals.css';
 
 import { siteConfig } from '@/constant/config';
+
 import { generateStructuredData } from './structured-data';
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { FaDownload, FaFilePdf } from 'react-icons/fa6';
+import { FaDownload } from 'react-icons/fa6';
 
 import Button from '@/components/buttons/Button';
 

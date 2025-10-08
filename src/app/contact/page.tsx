@@ -1,7 +1,7 @@
 'use client';
 import clsx from 'clsx';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { FaArrowLeft, FaEnvelope, FaMusic, FaPhoneFlip } from 'react-icons/fa6';
 import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { PiSoundcloudLogoFill } from 'react-icons/pi';

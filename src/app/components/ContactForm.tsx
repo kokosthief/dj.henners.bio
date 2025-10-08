@@ -86,7 +86,7 @@ Sent via DJ Henners booking form
         setSubmitStatus('idle');
       }, 3000);
       
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
