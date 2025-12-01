@@ -898,7 +898,28 @@ export const gigs: Gig[] = [
     country: 'NL',
   },
   {
+    date: '2025-11-08',
+    event: 'Saturday ED',
+    location: 'NL',
+    venue: 'Odessa Amsterdam',
+    country: 'NL',
+  },
+  {
     date: '2025-11-14',
+    event: 'Friday ED',
+    location: 'NL',
+    venue: 'Odessa Amsterdam',
+    country: 'NL',
+  },
+  {
+    date: '2025-11-29',
+    event: 'Saturday ED',
+    location: 'NL',
+    venue: 'Odessa Amsterdam',
+    country: 'NL',
+  },
+  {
+    date: '2025-12-05',
     event: 'Friday ED',
     location: 'NL',
     venue: 'Odessa Amsterdam',
