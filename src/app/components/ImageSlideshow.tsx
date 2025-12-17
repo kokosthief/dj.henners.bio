@@ -2,45 +2,36 @@
 import Image, { StaticImageData } from 'next/image';
 import React, { useEffect, useState } from 'react';
 
+// Import JPG images (WebP served via Next.js optimization in production)
 import HennersCeremonyJpg from '../../../public/images/henners-ceremony.jpg';
-// Import WebP images with JPG fallbacks
-import HennersCeremonyWebp from '../../../public/images/henners-ceremony.webp';
 import HennersDjJpg from '../../../public/images/henners-dj.jpg';
-import HennersDjWebp from '../../../public/images/henners-dj.webp';
 import HennersPfpJpg from '../../../public/images/henners-pfp.jpg';
-import HennersPfpWebp from '../../../public/images/henners-pfp.webp';
 import HennersSpaceholdingJpg from '../../../public/images/henners-spaceholding.jpg';
-import HennersSpaceholdingWebp from '../../../public/images/henners-spaceholding.webp';
 
 interface ImageData {
-  webp: StaticImageData;
-  jpg: StaticImageData;
+  src: StaticImageData;
   alt: string;
   title?: string;
 }
 
 const images: ImageData[] = [
   {
-    webp: HennersDjWebp,
-    jpg: HennersDjJpg,
+    src: HennersDjJpg,
     alt: 'DJ Henners performing',
     title: 'In the Mix'
   },
   {
-    webp: HennersCeremonyWebp,
-    jpg: HennersCeremonyJpg,
+    src: HennersCeremonyJpg,
     alt: 'DJ Henners at ceremony',
     title: 'Ceremony'
   },
   {
-    webp: HennersPfpWebp,
-    jpg: HennersPfpJpg,
+    src: HennersPfpJpg,
     alt: 'DJ Henners portrait',
     title: 'Smile pls'
   },
   {
-    webp: HennersSpaceholdingWebp,
-    jpg: HennersSpaceholdingJpg,
+    src: HennersSpaceholdingJpg,
     alt: 'DJ Henners space holding',
     title: 'Holding Space'
   }
@@ -69,7 +60,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
         const link = document.createElement('link');
         link.rel = 'preload';
         link.as = 'image';
-        link.href = images[index].webp.src;
+        link.href = images[index].src.src;
         document.head.appendChild(link);
       }
     };
@@ -121,19 +112,15 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
       {/* Main Image Display */}
       <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white/20 md:rounded-3xl">
         <div className="relative">
-          <picture>
-            <source srcSet={images[currentIndex].webp.src} type="image/webp" />
-            <Image
-              src={images[currentIndex].jpg}
-              alt={images[currentIndex].alt}
-              className="w-full opacity-90 transition-all duration-700 ease-in-out hover:scale-105 dark:opacity-100"
-              priority={currentIndex === 0}
-              loading={currentIndex === 0 ? "eager" : "lazy"}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-            />
-          </picture>
+          <Image
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt}
+            className="w-full opacity-90 transition-all duration-700 ease-in-out hover:scale-105 dark:opacity-100"
+            priority={currentIndex === 0}
+            loading={currentIndex === 0 ? "eager" : "lazy"}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            placeholder="blur"
+          />
           {/* Subtle overlay for better text contrast */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
