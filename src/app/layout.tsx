@@ -96,6 +96,20 @@ export default function RootLayout({
           }}
         />
         <link rel="canonical" href={siteConfig.url} />
+        <link rel="preconnect" href="https://widget.sndcdn.com" />
+        <link rel="preconnect" href="https://w.soundcloud.com" />
+        <link rel="preconnect" href="https://i1.sndcdn.com" />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              .fade-up{animation:fadeUp 1s ease-out forwards}
+              @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+              .bg-gradient-dark{background:linear-gradient(135deg,#0a0a0a 0%,#0d324d 100%)}
+              .animate-gentle-pulse{animation:gentlePulse 3s ease-in-out infinite}
+              @keyframes gentlePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+            `,
+          }}
+        />
         <meta name="geo.region" content="NL-NH" />
         <meta name="geo.placename" content="Amsterdam" />
         <meta name="geo.position" content="52.3676;4.9041" />

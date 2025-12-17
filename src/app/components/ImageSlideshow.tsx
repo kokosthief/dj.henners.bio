@@ -116,10 +116,11 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
             className="w-full opacity-90 transition-all duration-700 ease-in-out hover:scale-105 dark:opacity-100"
-            priority={currentIndex === 0}
-            loading={currentIndex === 0 ? "eager" : "lazy"}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={true}
+            loading="eager"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 60vw, 40vw"
             placeholder="blur"
+            fetchPriority="high"
           />
           {/* Subtle overlay for better text contrast */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

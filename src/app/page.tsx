@@ -25,6 +25,7 @@ const PastGigs = dynamic(() => import('@/app/components/PastGigs'), {
 
 const SoundCloudWidget = dynamic(() => import('@/app/components/SoundCloudWidget'), {
   loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse"></div>,
+  ssr: false,
 });
 
 const UpcomingGigs = dynamic(() => import('@/app/components/UpcomingGigs'), {
@@ -115,8 +116,8 @@ export default function HomePage() {
         <meta name="keywords" content="ecstatic dance dj nederland, ecstatic dance dj amsterdam, beste ecstatic dance dj holland, bewuste dans dj nederland, dj henners amsterdam, best ecstatic dance dj netherlands, conscious dance dj amsterdam" />
         <link rel="canonical" href="https://dj.henners.bio" />
       </Head>
-      <GoogleAnalytics />
-      <WebVitals />
+      {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
+      {process.env.NODE_ENV === 'production' && <WebVitals />}
 
       <main className={clsx(mode === 'dark' ? 'bg-gradient-dark' : 'bg-white')}>
         <div
@@ -146,9 +147,9 @@ export default function HomePage() {
               <div className='relative mx-auto mb-6 w-full max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl'>
                 <ImageSlideshow
                   autoPlay={true}
-                  interval={6000}
+                  interval={8000}
                   showControls={true}
-                  className="fade-up w-full h-auto"
+                  className="w-full h-auto"
                 />
               </div>
 
