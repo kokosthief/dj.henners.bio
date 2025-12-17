@@ -188,8 +188,8 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-2 w-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ${index === currentIndex
-                  ? 'bg-blue-500 w-6'
+              className={`h-4 w-4 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ${index === currentIndex
+                  ? 'bg-blue-500 w-8'
                   : 'bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500'
                 }`}
               aria-label={`Go to image ${index + 1}`}

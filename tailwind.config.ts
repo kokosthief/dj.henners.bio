@@ -3,12 +3,12 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
   darkMode: 'class',
-  content: ['./src/**/*.{js,jsx,ts,tsx,css}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Overpass', ...defaultTheme.fontFamily.sans],
-        secondary: ['Rowdies', ...defaultTheme.fontFamily.sans],
+        primary: ['var(--font-overpass)', ...defaultTheme.fontFamily.sans],
+        secondary: ['var(--font-rowdies)', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {

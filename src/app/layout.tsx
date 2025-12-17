@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Overpass, Rowdies } from 'next/font/google';
 import * as React from 'react';
 
 import '@/styles/globals.css';
@@ -6,6 +7,21 @@ import '@/styles/globals.css';
 import { siteConfig } from '@/constant/config';
 
 import { generateStructuredData } from './structured-data';
+
+const overpass = Overpass({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-overpass',
+  preload: true
+});
+
+const rowdies = Rowdies({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  display: 'swap',
+  variable: '--font-rowdies',
+  preload: true
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -90,7 +106,7 @@ export default function RootLayout({
         <meta name="audience" content="all" />
         <meta name="coverage" content="Worldwide" />
       </head>
-      <body className='dark'>{children}</body>
+      <body className={`dark ${overpass.variable} ${rowdies.variable}`}>{children}</body>
     </html>
   );
 }

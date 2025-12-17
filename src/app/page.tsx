@@ -14,17 +14,29 @@ import Button from '@/components/buttons/Button';
 import IconButton from '@/components/buttons/IconButton';
 import UnderlineLink from '@/components/links/UnderlineLink';
 
+import dynamic from 'next/dynamic';
+
 import ImageSlideshow from '@/app/components/ImageSlideshow';
-import PastGigs from '@/app/components/PastGigs';
-import SoundCloudWidget from '@/app/components/SoundCloudWidget';
-import UpcomingGigs from '@/app/components/UpcomingGigs';
 import GoogleAnalytics from '@/app/google-analytics';
 import { WebVitals } from '@/app/web-vitals';
+
+const PastGigs = dynamic(() => import('@/app/components/PastGigs'), {
+  loading: () => <div className="h-48 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse"></div>,
+});
+
+const SoundCloudWidget = dynamic(() => import('@/app/components/SoundCloudWidget'), {
+  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse"></div>,
+});
+
+const UpcomingGigs = dynamic(() => import('@/app/components/UpcomingGigs'), {
+  loading: () => <div className="h-32 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse"></div>,
+});
 
 import { gigs } from '../app/gigsData';
 
 export default function HomePage() {
   const [phoneLink, setPhoneLink] = useState('tel:+31683421604');
+  const [mounted, setMounted] = useState(false);
 
   const [mode, setMode] = React.useState<'dark' | 'light'>('light');
   function toggleMode() {
@@ -34,6 +46,11 @@ export default function HomePage() {
       localStorage.setItem('theme-mode', newMode);
     }
   }
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const userAgent = navigator.userAgent;
@@ -147,7 +164,7 @@ export default function HomePage() {
                   <div className='absolute -inset-4 -z-10 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-xl transition-all duration-300 group-hover:blur-2xl'></div>
                 </h1>
 
-                <p className='fade-up mt-6 text-lg font-medium text-gray-600 delay-75 md:text-xl dark:text-gray-300'>
+                <p className='fade-up mt-6 text-lg font-medium text-gray-700 delay-75 md:text-xl dark:text-gray-200'>
                   Ecstatic Dance DJ • Amsterdam • Netherlands
                 </p>
 
@@ -235,7 +252,7 @@ export default function HomePage() {
               <div className='mb-8 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
               <div className='mb-8'>
                 <h3 className='text-2xl font-semibold mb-4'>For Event Organizers</h3>
-                <p className='text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto'>
+                <p className='text-gray-800 dark:text-gray-200 mb-6 max-w-2xl mx-auto'>
                   Access high-resolution photos, technical rider, artist bios, and all professional materials needed for bookings and promotions.
                 </p>
                 <Link href='/media-package'>
@@ -251,10 +268,10 @@ export default function HomePage() {
 
             {/* Footer */}
             <footer className='mt-12 pb-8 pt-8'>
-              <div className='text-center text-sm text-gray-500 dark:text-gray-400'>
+              <div className='text-center text-sm text-gray-700 dark:text-gray-300'>
                 <div className='mb-4 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
                 <p>
-                  © {new Date().getFullYear()} DJ Henners • Built by{' '}
+                  © {mounted ? new Date().getFullYear() : '2025'} DJ Henners • Built by{' '}
                   <UnderlineLink href='https://dev.hrwillmott.com' className='text-blue-500 hover:text-blue-600'>
                     HRWILLMOTT
                   </UnderlineLink>

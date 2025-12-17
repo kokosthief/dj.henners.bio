@@ -6,11 +6,10 @@ const nextConfig = {
 
   reactStrictMode: true,
 
-  // Performance optimizations - disabled due to dependency issues
-  // experimental: {
-  //   optimizeCss: true,
-  //   optimizePackageImports: ['react-icons'],
-  // },
+  experimental: {
+    optimizePackageImports: ['react-icons'],
+    typedRoutes: true,
+  },
   
   // Image optimization for better Core Web Vitals
   images: {
@@ -53,6 +52,24 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/favicon/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=2592000',
           },
         ],
       },
