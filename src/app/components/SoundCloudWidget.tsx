@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-import { FaPlay, FaMusic } from 'react-icons/fa6';
+import { FaMusic,FaPlay } from 'react-icons/fa6';
 
 interface Track {
   id: string;

@@ -2,36 +2,45 @@
 import Image, { StaticImageData } from 'next/image';
 import React, { useEffect, useState } from 'react';
 
-// Import all DJ Henners images
-import HennersCeremony from '../../../public/images/henners-ceremony.jpg';
-import HennersDj from '../../../public/images/henners-dj.jpg';
-import HennersPfp from '../../../public/images/henners-pfp.jpg';
-import HennersSpaceholding from '../../../public/images/henners-spaceholding.jpg';
+import HennersCeremonyJpg from '../../../public/images/henners-ceremony.jpg';
+// Import WebP images with JPG fallbacks
+import HennersCeremonyWebp from '../../../public/images/henners-ceremony.webp';
+import HennersDjJpg from '../../../public/images/henners-dj.jpg';
+import HennersDjWebp from '../../../public/images/henners-dj.webp';
+import HennersPfpJpg from '../../../public/images/henners-pfp.jpg';
+import HennersPfpWebp from '../../../public/images/henners-pfp.webp';
+import HennersSpaceholdingJpg from '../../../public/images/henners-spaceholding.jpg';
+import HennersSpaceholdingWebp from '../../../public/images/henners-spaceholding.webp';
 
 interface ImageData {
-  src: StaticImageData;
+  webp: StaticImageData;
+  jpg: StaticImageData;
   alt: string;
   title?: string;
 }
 
 const images: ImageData[] = [
   {
-    src: HennersDj,
+    webp: HennersDjWebp,
+    jpg: HennersDjJpg,
     alt: 'DJ Henners performing',
     title: 'In the Mix'
   },
   {
-    src: HennersCeremony,
+    webp: HennersCeremonyWebp,
+    jpg: HennersCeremonyJpg,
     alt: 'DJ Henners at ceremony',
     title: 'Ceremony'
   },
   {
-    src: HennersPfp,
+    webp: HennersPfpWebp,
+    jpg: HennersPfpJpg,
     alt: 'DJ Henners portrait',
     title: 'Smile pls'
   },
   {
-    src: HennersSpaceholding,
+    webp: HennersSpaceholdingWebp,
+    jpg: HennersSpaceholdingJpg,
     alt: 'DJ Henners space holding',
     title: 'Holding Space'
   }
@@ -52,6 +61,25 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
+
+  // Preload adjacent images for smoother transitions
+  useEffect(() => {
+    const preloadImage = (index: number) => {
+      if (index >= 0 && index < images.length) {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = images[index].webp.src;
+        document.head.appendChild(link);
+      }
+    };
+
+    // Preload next and previous images
+    const nextIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+    const prevIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    preloadImage(nextIndex);
+    preloadImage(prevIndex);
+  }, [currentIndex]);
 
   // Randomly select starting image on component mount
   useEffect(() => {
@@ -93,14 +121,19 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
       {/* Main Image Display */}
       <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white/20 md:rounded-3xl">
         <div className="relative">
-          <Image
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt}
-            className="w-full opacity-90 transition-all duration-700 ease-in-out hover:scale-105 dark:opacity-100"
-            priority
-            loading="eager"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          <picture>
+            <source srcSet={images[currentIndex].webp.src} type="image/webp" />
+            <Image
+              src={images[currentIndex].jpg}
+              alt={images[currentIndex].alt}
+              className="w-full opacity-90 transition-all duration-700 ease-in-out hover:scale-105 dark:opacity-100"
+              priority={currentIndex === 0}
+              loading={currentIndex === 0 ? "eager" : "lazy"}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+            />
+          </picture>
           {/* Subtle overlay for better text contrast */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 

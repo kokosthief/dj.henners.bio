@@ -8,6 +8,8 @@ import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { PiSoundcloudLogoFill } from 'react-icons/pi';
 import { TbMailFilled } from 'react-icons/tb';
 
+import { getFromLocalStorage } from '@/lib/helper';
+
 import Button from '@/components/buttons/Button';
 import IconButton from '@/components/buttons/IconButton';
 import UnderlineLink from '@/components/links/UnderlineLink';
@@ -26,7 +28,11 @@ export default function HomePage() {
 
   const [mode, setMode] = React.useState<'dark' | 'light'>('light');
   function toggleMode() {
-    return mode === 'dark' ? setMode('light') : setMode('dark');
+    const newMode = mode === 'dark' ? 'light' : 'dark';
+    setMode(newMode);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme-mode', newMode);
+    }
   }
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -41,25 +47,36 @@ export default function HomePage() {
       );
     }
 
-    const handleChange = (e?: MediaQueryListEvent) => {
-      const matches = e ? e.matches : mediaQuery.matches;
-      setMode(matches ? 'dark' : 'light');
-    };
-
-    if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener('change', handleChange);
+    // Check for saved theme preference first
+    const savedTheme = getFromLocalStorage('theme-mode');
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      setMode(savedTheme);
     } else {
-      mediaQuery.addListener(handleChange);
-    }
-    handleChange();
+      // Fall back to system preference if no saved theme
+      const handleChange = (e?: MediaQueryListEvent) => {
+        const matches = e ? e.matches : mediaQuery.matches;
+        const systemTheme = matches ? 'dark' : 'light';
+        setMode(systemTheme);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('theme-mode', systemTheme);
+        }
+      };
 
-    return () => {
-      if (mediaQuery.removeEventListener) {
-        mediaQuery.removeEventListener('change', handleChange);
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener('change', handleChange);
       } else {
-        mediaQuery.removeListener(handleChange);
+        mediaQuery.addListener(handleChange);
       }
-    };
+      handleChange();
+
+      return () => {
+        if (mediaQuery.removeEventListener) {
+          mediaQuery.removeEventListener('change', handleChange);
+        } else {
+          mediaQuery.removeListener(handleChange);
+        }
+      };
+    }
   }, []);
 
   useEffect(() => {

@@ -31,6 +31,7 @@ module.exports = [
         setInterval: 'readonly',
         clearInterval: 'readonly',
         sessionStorage: 'readonly',
+        localStorage: 'readonly',
         MediaQueryListEvent: 'readonly',
         HTMLInputElement: 'readonly',
         HTMLTextAreaElement: 'readonly',

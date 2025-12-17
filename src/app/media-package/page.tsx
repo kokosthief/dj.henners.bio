@@ -3,9 +3,11 @@
 import clsx from 'clsx';
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useState } from 'react';
-import { FaDownload, FaFilePdf, FaFileZipper, FaVideo, FaImage } from 'react-icons/fa6';
+import React, { useEffect,useState } from 'react';
+import { FaDownload, FaFilePdf, FaFileZipper, FaImage,FaVideo } from 'react-icons/fa6';
 import { IoMdArrowBack, IoMdMoon, IoMdSunny } from 'react-icons/io';
+
+import { getFromLocalStorage } from '@/lib/helper';
 
 import Button from '@/components/buttons/Button';
 import IconButton from '@/components/buttons/IconButton';
@@ -26,9 +28,9 @@ interface MediaFile {
 const artistInfo = {
   shortDescription: "Henners takes dancers on an electrifying journey, merging global beats to create an immersive experience where music stirs the soul, evoking both elation and introspection.",
 
-  mediumDescription: "Henners, a seasoned facilitator from Amsterdam's vibrant ecstatic dance scene with over three years of guiding dancers through soul-stirring journeys, weaves global rhythms to create spaces where joy, introspection, and connection flourish. Drawing inspiration from African rhythms and earthy beats from across the globe, his music invites you to bounce freely or introspect deeply. Rooted in his time aboard the 'Odessa' ship, Henners invites you to move freely, awaken your spirit, and dance the full spectrum of emotions that one encounters on life's journey.",
+  mediumDescription: "Henners, a seasoned facilitator from Amsterdam's vibrant ecstatic dance scene with over four years of guiding dancers through soul-stirring journeys, weaves global rhythms to create spaces where joy, introspection, and connection flourish. Drawing inspiration from African rhythms and earthy beats from across the globe, his music invites you to bounce freely or introspect deeply. Rooted in his time aboard the 'Odessa' ship, Henners invites you to move freely, awaken your spirit, and dance the full spectrum of emotions that one encounters on life's journey.",
 
-  longDescription: "In the vibrant heart of Amsterdam's Ecstatic Dance community, DJ Henners has carved out a unique niche in the world of conscious dance, creating transformative experiences that transport dancers on euphoric journeys through sound. Known for seamlessly blending diverse genres to craft immersive soundscapes, Henners draws inspiration from African rhythms, earthy beats, and global music traditions to invite dancers on profound journeys of self-discovery and expression.\n\nWith over three years as a seasoned facilitator in Amsterdam's thriving ecstatic dance scene, Henners has guided countless dancers through soul-stirring experiences. Rooted in his time aboard the iconic 'Odessa' venue in Amsterdam, he has mastered the art of creating spaces where joy, introspection, and connection flourish naturally. Whether you find yourself rooted in the earth or soaring through the cosmos, Henners' music invites you to move freely and awaken your spirit.\n\nBeyond the decks, Henners is a passionate advocate for the power of dance as a tool for community building and personal healing. His commitment to conscious dance extends beyond the dance floor, often collaborating with local artists and wellness practitioners to promote holistic well-being. Each set is carefully crafted to support dancers in experiencing the full spectrum of emotions that one encounters on life's journey - from ecstatic celebration to deep introspection.\n\nWith each musical journey, Henners inspires a deeper connection to the self, others, and the universal pulse of life, making every dance a sacred celebration of existence. His global reach extends from Amsterdam's premier venues to international retreats and festivals, bringing his unique approach to conscious dance communities worldwide."
+  longDescription: "In the vibrant heart of Amsterdam's Ecstatic Dance community, DJ Henners has carved out a unique niche in the world of conscious dance, creating transformative experiences that transport dancers on euphoric journeys through sound. Known for seamlessly blending diverse genres to craft immersive soundscapes, Henners draws inspiration from African rhythms, earthy beats, and global music traditions to invite dancers on profound journeys of self-discovery and expression.\n\nWith over four years as a seasoned facilitator in Amsterdam's thriving ecstatic dance scene, Henners has guided countless dancers through soul-stirring experiences. Rooted in his time aboard the iconic 'Odessa' venue in Amsterdam, he has mastered the art of creating spaces where joy, introspection, and connection flourish naturally. Whether you find yourself rooted in the earth or soaring through the cosmos, Henners' music invites you to move freely and awaken your spirit.\n\nBeyond the decks, Henners is a passionate advocate for the power of dance as a tool for community building and personal healing. His commitment to conscious dance extends beyond the dance floor, often collaborating with local artists and wellness practitioners to promote holistic well-being. Each set is carefully crafted to support dancers in experiencing the full spectrum of emotions that one encounters on life's journey - from ecstatic celebration to deep introspection.\n\nWith each musical journey, Henners inspires a deeper connection to the self, others, and the universal pulse of life, making every dance a sacred celebration of existence. His global reach extends from Amsterdam's premier venues to international retreats and festivals, bringing his unique approach to conscious dance communities worldwide."
 };
 
 const mediaFiles = {
@@ -183,8 +185,20 @@ export default function MediaPackagePage() {
   const [activeDescription, setActiveDescription] = useState<'short' | 'medium' | 'long'>('medium');
 
   function toggleMode() {
-    return mode === 'dark' ? setMode('light') : setMode('dark');
+    const newMode = mode === 'dark' ? 'light' : 'dark';
+    setMode(newMode);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme-mode', newMode);
+    }
   }
+
+  // Load saved theme preference on component mount
+  useEffect(() => {
+    const savedTheme = getFromLocalStorage('theme-mode');
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      setMode(savedTheme);
+    }
+  }, []);
 
   const handleDownload = (file: MediaFile, _type: string) => {
     // Create a temporary link and trigger download
@@ -247,9 +261,15 @@ All materials cleared for promotional use by event organizers and press.
         <div className={clsx('layout', mode === 'dark' ? 'text-white' : 'text-gray-900')}>
 
           {/* Header Navigation */}
-          <div className="py-6">
-            <Link href="/" className="flex items-center space-x-2 text-blue-500 hover:text-blue-600 transition-colors">
-              <IoMdArrowBack className="h-5 w-5" />
+          <div className="py-6 px-4 md:px-0">
+            <Link href="/" className={clsx(
+              "inline-flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300",
+              "border shadow-sm hover:shadow-md transform hover:-translate-y-0.5",
+              mode === 'dark' 
+                ? "bg-gray-800 border-gray-700 text-gray-200 hover:bg-gray-700 hover:text-white" 
+                : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            )}>
+              <IoMdArrowBack className="h-4 w-4" />
               <span className="font-medium">Back to Home</span>
             </Link>
           </div>
