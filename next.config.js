@@ -6,9 +6,10 @@ const nextConfig = {
 
   reactStrictMode: true,
 
+  typedRoutes: true,
+  
   experimental: {
     optimizePackageImports: ['react-icons'],
-    typedRoutes: true,
   },
   
   // Image optimization for better Core Web Vitals

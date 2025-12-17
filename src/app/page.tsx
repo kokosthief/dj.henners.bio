@@ -1,5 +1,6 @@
 'use client';
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
@@ -13,8 +14,6 @@ import { getFromLocalStorage } from '@/lib/helper';
 import Button from '@/components/buttons/Button';
 import IconButton from '@/components/buttons/IconButton';
 import UnderlineLink from '@/components/links/UnderlineLink';
-
-import dynamic from 'next/dynamic';
 
 import ImageSlideshow from '@/app/components/ImageSlideshow';
 import GoogleAnalytics from '@/app/google-analytics';
