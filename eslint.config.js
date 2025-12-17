@@ -1,13 +1,14 @@
 const js = require('@eslint/js');
 const typescript = require('@typescript-eslint/eslint-plugin');
 const typescriptParser = require('@typescript-eslint/parser');
-const next = require('eslint-config-next');
+const nextConfig = require('eslint-config-next');
 const prettier = require('eslint-config-prettier');
 const simpleImportSort = require('eslint-plugin-simple-import-sort');
 const unusedImports = require('eslint-plugin-unused-imports');
 
 module.exports = [
   js.configs.recommended,
+  ...nextConfig.configs.recommended,
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
