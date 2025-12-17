@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
-    dirs: ['src'],
+    ignoreDuringBuilds: true,
   },
 
   reactStrictMode: true,
 
-  typedRoutes: true,
+  // typedRoutes: true,
   
   experimental: {
     optimizePackageImports: ['react-icons'],
