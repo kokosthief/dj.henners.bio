@@ -17,7 +17,6 @@ import UnderlineLink from '@/components/links/UnderlineLink';
 
 import ImageSlideshow from '@/app/components/ImageSlideshow';
 import GoogleAnalytics from '@/app/google-analytics';
-import { WebVitals } from '@/app/web-vitals';
 
 const PastGigs = dynamic(() => import('@/app/components/PastGigs'), {
   loading: () => <div className="h-48 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse"></div>,
@@ -117,7 +116,6 @@ export default function HomePage() {
         <link rel="canonical" href="https://dj.henners.bio" />
       </Head>
       {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
-      {process.env.NODE_ENV === 'production' && <WebVitals />}
 
       <main className={clsx(mode === 'dark' ? 'bg-gradient-dark' : 'bg-white')}>
         <div
