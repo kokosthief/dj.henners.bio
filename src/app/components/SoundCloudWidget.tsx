@@ -46,7 +46,7 @@ const SoundCloudWidget: React.FC = () => {
           </span>
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mx-auto mb-4"></div>
-        <p className="text-gray-800 dark:text-gray-200">
+        <p className="text-gray-700 dark:text-gray-300">
           Experience the soundscapes that guide our ecstatic dance journeys
         </p>
       </div>
@@ -77,7 +77,7 @@ const SoundCloudWidget: React.FC = () => {
                   {selectedTrack.id === track.id ? (
                     <FaPlay className="w-4 h-4 text-white ml-1" />
                   ) : (
-                    <FaMusic className="w-4 h-4 text-gray-800 dark:text-gray-200" />
+                    <FaMusic className="w-4 h-4 text-gray-700 dark:text-gray-300" />
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -94,7 +94,7 @@ const SoundCloudWidget: React.FC = () => {
                     text-sm line-clamp-2
                     ${selectedTrack.id === track.id
                       ? 'text-orange-600 dark:text-orange-400'
-                      : 'text-gray-800 dark:text-gray-200'
+                      : 'text-gray-700 dark:text-gray-300'
                     }
                   `}>
                     {track.description}
@@ -124,15 +124,17 @@ const SoundCloudWidget: React.FC = () => {
             height='100%'
             scrolling='no'
             frameBorder='no'
-            allow='autoplay'
+            allow='autoplay; encrypted-media'
+            sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
             src={selectedTrack.embedUrl}
             title={`SoundCloud Player - ${selectedTrack.title}`}
+            loading='lazy'
           />
         </div>
         
         {/* Track Info */}
         <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-          <p className="text-gray-800 dark:text-gray-200 mb-3">
+          <p className="text-gray-700 dark:text-gray-300 mb-3">
             {selectedTrack.description}
           </p>
           <a
@@ -151,7 +153,7 @@ const SoundCloudWidget: React.FC = () => {
 
       {/* Call to Action */}
       <div className="text-center">
-        <p className="text-gray-800 dark:text-gray-200 mb-4">
+        <p className="text-gray-700 dark:text-gray-300 mb-4">
           Want to experience this music live at your event?
         </p>
         <a

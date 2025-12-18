@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
   reactStrictMode: true,
 
   // typedRoutes: true,
@@ -11,6 +7,14 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['react-icons'],
   },
+  
+  compiler: {
+    // Remove console logs in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  
+  // Add turbopack config for Next.js 15+
+  turbopack: {},
   
   // Image optimization for better Core Web Vitals
   images: {

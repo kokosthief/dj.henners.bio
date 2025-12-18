@@ -12,7 +12,8 @@ const overpass = Overpass({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-overpass',
-  preload: true
+  preload: true,
+  adjustFontFallback: true
 });
 
 const rowdies = Rowdies({
@@ -20,7 +21,8 @@ const rowdies = Rowdies({
   weight: ['300', '400', '700'],
   display: 'swap',
   variable: '--font-rowdies',
-  preload: true
+  preload: true,
+  adjustFontFallback: true
 });
 
 export const metadata: Metadata = {
@@ -96,6 +98,8 @@ export default function RootLayout({
           }}
         />
         <link rel="canonical" href={siteConfig.url} />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://widget.sndcdn.com" />
         <link rel="preconnect" href="https://w.soundcloud.com" />
         <link rel="preconnect" href="https://i1.sndcdn.com" />

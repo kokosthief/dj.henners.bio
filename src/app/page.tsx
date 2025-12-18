@@ -162,7 +162,7 @@ export default function HomePage() {
                   <div className='absolute -inset-4 -z-10 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-xl transition-all duration-300 group-hover:blur-2xl'></div>
                 </h1>
 
-                <p className='fade-up mt-6 text-lg font-medium text-gray-800 delay-75 md:text-xl dark:text-gray-100'>
+                <p className='fade-up mt-6 text-lg font-medium text-gray-900 delay-75 md:text-xl dark:text-gray-100'>
                   Ecstatic Dance DJ • Amsterdam • Netherlands
                 </p>
 
@@ -250,7 +250,7 @@ export default function HomePage() {
               <div className='mb-8 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
               <div className='mb-8'>
                 <h3 className='text-2xl font-semibold mb-4'>For Event Organizers</h3>
-                <p className='text-gray-800 dark:text-gray-200 mb-6 max-w-2xl mx-auto'>
+                <p className='text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto'>
                   Access high-resolution photos, technical rider, artist bios, and all professional materials needed for bookings and promotions.
                 </p>
                 <Link href='/media-package'>
@@ -266,7 +266,7 @@ export default function HomePage() {
 
             {/* Footer */}
             <footer className='mt-12 pb-8 pt-8'>
-              <div className='text-center text-sm text-gray-800 dark:text-gray-200'>
+              <div className='text-center text-sm text-gray-700 dark:text-gray-300'>
                 <div className='mb-4 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
                 <p>
                   © {mounted ? new Date().getFullYear() : '2025'} DJ Henners • Built by{' '}
