@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaMusic,FaPlay } from 'react-icons/fa6';
 
 interface Track {
@@ -35,6 +35,26 @@ const tracks: Track[] = [
 
 const SoundCloudWidget: React.FC = () => {
   const [selectedTrack, setSelectedTrack] = useState<Track>(tracks[0]);
+  const [isVisible, setIsVisible] = useState(false);
+  const widgetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (widgetRef.current) {
+      observer.observe(widgetRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="w-full max-w-4xl mx-auto">
@@ -107,7 +127,7 @@ const SoundCloudWidget: React.FC = () => {
       </div>
 
       {/* Current Track Display */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 mb-6">
+      <div ref={widgetRef} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 mb-6">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -117,19 +137,26 @@ const SoundCloudWidget: React.FC = () => {
         
         {/* SoundCloud Player */}
         <div className="relative">
-          <iframe
-            key={selectedTrack.id}
-            className='w-full h-[166px] md:h-[200px] rounded-lg'
-            width='100%'
-            height='100%'
-            scrolling='no'
-            frameBorder='no'
-            allow='autoplay; encrypted-media'
-            sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
-            src={selectedTrack.embedUrl}
-            title={`SoundCloud Player - ${selectedTrack.title}`}
-            loading='lazy'
-          />
+          {isVisible ? (
+            <iframe
+              key={selectedTrack.id}
+              className='w-full h-[166px] md:h-[200px] rounded-lg'
+              width='100%'
+              height='100%'
+              scrolling='no'
+              frameBorder='no'
+              allow='autoplay; encrypted-media'
+              sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
+              src={selectedTrack.embedUrl}
+              title={`SoundCloud Player - ${selectedTrack.title}`}
+              loading='lazy'
+              importance='low'
+            />
+          ) : (
+            <div className='w-full h-[166px] md:h-[200px] rounded-lg bg-gray-100 dark:bg-gray-700 animate-pulse flex items-center justify-center'>
+              <FaMusic className='w-8 h-8 text-gray-400' />
+            </div>
+          )}
         </div>
         
         {/* Track Info */}

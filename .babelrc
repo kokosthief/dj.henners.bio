@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "useBuiltIns": false,
+          "corejs": false
+        }
+      }
+    ]
+  ],
+  "plugins": []
+}

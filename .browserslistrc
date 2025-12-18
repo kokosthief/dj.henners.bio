@@ -1,7 +1,7 @@
-chrome >= 95
-firefox >= 91
-safari >= 14
-edge >= 95
-and_chr >= 95
-and_ff >= 91
-ios_saf >= 14
+chrome >= 100
+firefox >= 100
+safari >= 15.4
+edge >= 100
+and_chr >= 100
+and_ff >= 100
+ios_saf >= 15.4
