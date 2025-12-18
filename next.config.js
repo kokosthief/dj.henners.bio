@@ -11,10 +11,21 @@ const nextConfig = {
   compiler: {
     // Remove console logs in production
     removeConsole: process.env.NODE_ENV === 'production',
+    // Emotion support for better CSS-in-JS
+    emotion: false,
   },
   
+  // Optimize for modern browsers only
+  swcMinify: true,
+  
   // Add turbopack config for Next.js 15+
-  turbopack: {},
+  turbopack: {
+    resolveAlias: {
+      // Disable polyfills for modern features
+      'core-js': false,
+    }
+  },
+  
   
   // Image optimization for better Core Web Vitals
   images: {
@@ -93,7 +104,15 @@ const nextConfig = {
     ]
   },
 
-  webpack(config) {
+  webpack(config, { isServer }) {
+    // Disable polyfills for modern browsers
+    if (!isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'core-js': false,
+      };
+    }
+    
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg')

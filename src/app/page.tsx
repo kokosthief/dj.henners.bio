@@ -250,7 +250,7 @@ export default function HomePage() {
               <div className='mb-8 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
               <div className='mb-8'>
                 <h3 className='text-2xl font-semibold mb-4'>For Event Organizers</h3>
-                <p className='text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto'>
+                <p className='text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto'>
                   Access high-resolution photos, technical rider, artist bios, and all professional materials needed for bookings and promotions.
                 </p>
                 <Link href='/media-package'>
@@ -266,10 +266,10 @@ export default function HomePage() {
 
             {/* Footer */}
             <footer className='mt-12 pb-8 pt-8'>
-              <div className='text-center text-sm text-gray-700 dark:text-gray-300'>
+              <div className='text-center text-sm text-gray-600 dark:text-gray-400'>
                 <div className='mb-4 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
-                <p>
-                  © {mounted ? new Date().getFullYear() : '2025'} DJ Henners • Built by{' '}
+                <p suppressHydrationWarning>
+                  © {new Date().getFullYear()} DJ Henners • Built by{' '}
                   <UnderlineLink href='https://dev.hrwillmott.com' className='text-blue-500 hover:text-blue-600'>
                     HRWILLMOTT
                   </UnderlineLink>

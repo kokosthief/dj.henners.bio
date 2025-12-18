@@ -98,11 +98,13 @@ export default function RootLayout({
           }}
         />
         <link rel="canonical" href={siteConfig.url} />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://widget.sndcdn.com" />
-        <link rel="preconnect" href="https://w.soundcloud.com" />
-        <link rel="preconnect" href="https://i1.sndcdn.com" />
+        <link rel="preconnect" href="https://widget.sndcdn.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://w.soundcloud.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://api-widget.soundcloud.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://i1.sndcdn.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://wave.sndcdn.com" crossOrigin="anonymous" />
         <style
           dangerouslySetInnerHTML={{
             __html: `
