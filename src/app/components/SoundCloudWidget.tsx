@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { FaMusic,FaPlay } from 'react-icons/fa6';
+import React, { useEffect, useRef, useState } from 'react';
+import { FaMusic, FaPlay } from 'react-icons/fa6';
 
 interface Track {
   id: string;
@@ -36,7 +36,7 @@ const tracks: Track[] = [
 const SoundCloudWidget: React.FC = () => {
   const [selectedTrack, setSelectedTrack] = useState<Track>(tracks[0]);
   const [isVisible, setIsVisible] = useState(false);
-  const widgetRef = useRef<HTMLDivElement>(null);
+  const widgetRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

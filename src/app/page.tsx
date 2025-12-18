@@ -35,7 +35,6 @@ import { gigs } from '../app/gigsData';
 
 export default function HomePage() {
   const [phoneLink, setPhoneLink] = useState('tel:+31683421604');
-  const [mounted, setMounted] = useState(false);
 
   const [mode, setMode] = React.useState<'dark' | 'light'>('light');
   function toggleMode() {
@@ -45,10 +44,6 @@ export default function HomePage() {
       localStorage.setItem('theme-mode', newMode);
     }
   }
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
