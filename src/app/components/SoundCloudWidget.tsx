@@ -36,7 +36,7 @@ const tracks: Track[] = [
 const SoundCloudWidget: React.FC = () => {
   const [selectedTrack, setSelectedTrack] = useState<Track>(tracks[0]);
   const [isVisible, setIsVisible] = useState(false);
-  const widgetRef = useRef<any>(null);
+  const widgetRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
