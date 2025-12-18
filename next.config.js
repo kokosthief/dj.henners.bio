@@ -45,6 +45,18 @@ const nextConfig = {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
           },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://widget.sndcdn.com https://w.soundcloud.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i1.sndcdn.com https://www.google-analytics.com; connect-src 'self' https://api-widget.soundcloud.com https://playback.media-streaming.soundcloud.cloud https://wave.sndcdn.com https://www.google-analytics.com; frame-src https://w.soundcloud.com; media-src https://playback.media-streaming.soundcloud.cloud;",
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin',
+          },
         ],
       },
       {

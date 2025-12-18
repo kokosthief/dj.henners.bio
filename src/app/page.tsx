@@ -164,7 +164,7 @@ export default function HomePage() {
                   <div className='absolute -inset-4 -z-10 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-xl transition-all duration-300 group-hover:blur-2xl'></div>
                 </h1>
 
-                <p className='fade-up mt-6 text-lg font-medium text-gray-700 delay-75 md:text-xl dark:text-gray-200'>
+                <p className='fade-up mt-6 text-lg font-medium text-gray-800 delay-75 md:text-xl dark:text-gray-100'>
                   Ecstatic Dance DJ • Amsterdam • Netherlands
                 </p>
 
@@ -268,7 +268,7 @@ export default function HomePage() {
 
             {/* Footer */}
             <footer className='mt-12 pb-8 pt-8'>
-              <div className='text-center text-sm text-gray-700 dark:text-gray-300'>
+              <div className='text-center text-sm text-gray-800 dark:text-gray-200'>
                 <div className='mb-4 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
                 <p>
                   © {mounted ? new Date().getFullYear() : '2025'} DJ Henners • Built by{' '}

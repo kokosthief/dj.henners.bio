@@ -115,7 +115,11 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
           <Image
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
-            className="w-full opacity-90 transition-all duration-700 ease-in-out hover:scale-105 dark:opacity-100"
+            className="w-full opacity-90 transition-transform duration-700 ease-in-out hover:scale-105 dark:opacity-100"
+            style={{
+              willChange: 'transform',
+              backfaceVisibility: 'hidden'
+            }}
             priority={true}
             loading="eager"
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 60vw, 40vw"
@@ -189,10 +193,14 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-4 w-4 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 ${index === currentIndex
-                  ? 'bg-blue-500 w-8'
-                  : 'bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500'
+              className={`h-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300 transition-transform duration-300 ${index === currentIndex
+                  ? 'w-8 bg-blue-500 transform scale-110'
+                  : 'w-4 bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500 transform scale-100'
                 }`}
+              style={{
+                willChange: 'transform',
+                backfaceVisibility: 'hidden'
+              }}
               aria-label={`Go to image ${index + 1}`}
               type="button"
             />

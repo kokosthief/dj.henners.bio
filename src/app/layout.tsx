@@ -102,11 +102,20 @@ export default function RootLayout({
         <style
           dangerouslySetInnerHTML={{
             __html: `
+              *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
+              html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+              body{margin:0;line-height:inherit}
+              .dark{background:linear-gradient(135deg,#0a0a0a 0%,#0d324d 100%);color:#fff}
+              .bg-gradient-dark{background:linear-gradient(135deg,#0a0a0a 0%,#0d324d 100%)}
               .fade-up{animation:fadeUp 1s ease-out forwards}
               @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-              .bg-gradient-dark{background:linear-gradient(135deg,#0a0a0a 0%,#0d324d 100%)}
               .animate-gentle-pulse{animation:gentlePulse 3s ease-in-out infinite}
               @keyframes gentlePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+              .min-h-screen{min-height:100vh}
+              .flex{display:flex}
+              .items-center{align-items:center}
+              .justify-center{justify-content:center}
+              .text-center{text-align:center}
             `,
           }}
         />
