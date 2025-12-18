@@ -150,7 +150,6 @@ const SoundCloudWidget: React.FC = () => {
               src={selectedTrack.embedUrl}
               title={`SoundCloud Player - ${selectedTrack.title}`}
               loading='lazy'
-              importance='low'
             />
           ) : (
             <div className='w-full h-[166px] md:h-[200px] rounded-lg bg-gray-100 dark:bg-gray-700 animate-pulse flex items-center justify-center'>
