@@ -3,6 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  background-color: #f9fafb; /* Light mode - matches bg-gray-50 */
+  overscroll-behavior: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #0a0a0a; /* Dark mode - matches gradient start */
+  }
+}
+
 :root {
   /* #region  /**=========== Primary Color =========== */
   /* !STARTERCONF Customize these variable, copy and paste from /styles/colors.css for list of colors */

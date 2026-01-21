@@ -176,20 +176,6 @@ const SoundCloudWidget: React.FC = () => {
           </a>
         </div>
       </div>
-
-      {/* Call to Action */}
-      <div className="text-center">
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
-          Want to experience this music live at your event?
-        </p>
-        <a
-          href="/contact"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-        >
-          <FaMusic className="w-4 h-4" />
-          <span>Book DJ Henners</span>
-        </a>
-      </div>
     </div>
   );
 };
