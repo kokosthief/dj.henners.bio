@@ -939,4 +939,11 @@ export const gigs: Gig[] = [
     venue: 'Odessa Amsterdam',
     country: 'NL',
   },
+  {
+    date: '2026-07-08',
+    event: `EDFH Basement Set '26`,
+    location: 'NL',
+    venue: 'EDFH Basement',
+    country: 'NL',
+  },
 ];

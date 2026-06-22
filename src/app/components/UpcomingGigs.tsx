@@ -25,14 +25,8 @@ const UpcomingGigs: React.FC<UpcomingGigsProps> = ({ gigs }) => {
         ))
       ) : (
         <div className='text-center py-8'>
-          <p className='text-xl mb-4'>
-            Hey! I'm currently taking a pause from DJing and gigging.
-          </p>
-          <p className='text-lg mb-4 max-w-2xl mx-auto'>
-            After many beautiful dance floors, I'm giving myself some space to rest, listen, and let the next chapter unfold naturally.
-          </p>
           <p className='text-lg max-w-2xl mx-auto'>
-            Thank you for all the support, movement, and magic so far. I'll share new music and gatherings here when the time feels right.
+            New dates will appear here when they are confirmed.
           </p>
         </div>
       )}
