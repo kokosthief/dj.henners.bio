@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FaMusic } from 'react-icons/fa6';
+import React from 'react';
 
 const track = {
   title: "Friday Ecstatic Dance w/ Mozes' Soundbath @ Odessa 14-12-25",
@@ -9,27 +8,6 @@ const track = {
 };
 
 const SoundCloudWidget: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const widgetRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (widgetRef.current) {
-      observer.observe(widgetRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="text-center mb-8">
@@ -41,7 +19,7 @@ const SoundCloudWidget: React.FC = () => {
         <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mx-auto mb-4"></div>
       </div>
 
-      <div ref={widgetRef} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 mb-6">
+      <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 mb-6">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -49,35 +27,27 @@ const SoundCloudWidget: React.FC = () => {
           </h3>
         </div>
 
-        {isVisible ? (
-          <>
-            <iframe
-              className='w-full h-[166px] rounded-lg'
-              width='100%'
-              height='166'
-              scrolling='no'
-              frameBorder='no'
-              allow='autoplay; encrypted-media'
-              sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
-              src={track.embedUrl}
-              title={`SoundCloud Player - ${track.title}`}
-              loading='lazy'
-            />
-            <div className="mt-2 overflow-hidden text-ellipsis whitespace-nowrap break-normal text-[10px] font-thin text-gray-400" style={{ lineBreak: 'anywhere' }}>
-              <a href={track.artistUrl} title="HENNERS" target="_blank" rel="noopener noreferrer" className="text-gray-400 no-underline">
-                HENNERS
-              </a>{' '}
-              ·{' '}
-              <a href={track.trackUrl} title={track.title} target="_blank" rel="noopener noreferrer" className="text-gray-400 no-underline">
-                {track.title}
-              </a>
-            </div>
-          </>
-        ) : (
-          <div className='w-full h-[166px] rounded-lg bg-gray-100 dark:bg-gray-700 animate-pulse flex items-center justify-center'>
-            <FaMusic className='w-8 h-8 text-gray-400' />
-          </div>
-        )}
+        <iframe
+          className='w-full h-[166px] rounded-lg'
+          width='100%'
+          height='166'
+          scrolling='no'
+          frameBorder='no'
+          allow='autoplay; encrypted-media'
+          sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
+          src={track.embedUrl}
+          title={`SoundCloud Player - ${track.title}`}
+          loading='lazy'
+        />
+        <div className="mt-2 overflow-hidden text-ellipsis whitespace-nowrap break-normal text-[10px] font-thin text-gray-400" style={{ lineBreak: 'anywhere' }}>
+          <a href={track.artistUrl} title="HENNERS" target="_blank" rel="noopener noreferrer" className="text-gray-400 no-underline">
+            HENNERS
+          </a>{' '}
+          ·{' '}
+          <a href={track.trackUrl} title={track.title} target="_blank" rel="noopener noreferrer" className="text-gray-400 no-underline">
+            {track.title}
+          </a>
+        </div>
       </div>
     </div>
   );
