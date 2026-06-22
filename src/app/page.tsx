@@ -3,11 +3,9 @@ import clsx from 'clsx';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-import { FaPhoneFlip } from 'react-icons/fa6';
+import React, { useEffect } from 'react';
 import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { PiSoundcloudLogoFill } from 'react-icons/pi';
-import { TbMailFilled } from 'react-icons/tb';
 
 import { getFromLocalStorage } from '@/lib/helper';
 
@@ -34,8 +32,6 @@ const UpcomingGigs = dynamic(() => import('@/app/components/UpcomingGigs'), {
 import { gigs } from '../app/gigsData';
 
 export default function HomePage() {
-  const [phoneLink, setPhoneLink] = useState('tel:+31683421604');
-
   const [mode, setMode] = React.useState<'dark' | 'light'>('light');
   function toggleMode() {
     const newMode = mode === 'dark' ? 'light' : 'dark';
@@ -47,16 +43,6 @@ export default function HomePage() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const userAgent = navigator.userAgent;
-    const isMobile =
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        userAgent
-      );
-    if (!isMobile) {
-      setPhoneLink(
-        'https://api.whatsapp.com/send?phone=31683421604&_ga=2.113846863.934298603.1704190840-536151416.1704190839'
-      );
-    }
 
     // Check for saved theme preference first
     const savedTheme = getFromLocalStorage('theme-mode');
@@ -175,43 +161,32 @@ export default function HomePage() {
               </header>
             </div>
 
-            {/* Enhanced Contact Section with Better Mobile Touch Targets */}
+            {/* Contact + listening links */}
             <section className='mt-8 pb-8 pt-6'>
               <div className='flex flex-wrap items-center justify-center gap-4 md:gap-6'>
-                <a
-                  href='mailto:dj@henners.bio'
-                  className='fade-up group'
-                  aria-label='Email DJ Henners'
-                  target='_blank'
+                <Link
+                  href='/contact'
+                  className='fade-up group inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:ring-4 focus:ring-blue-300/50'
+                  aria-label='Open DJ Henners booking form'
                 >
-                  <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110 focus:ring-4 focus:ring-blue-300/50 md:h-20 md:w-20'>
-                    <TbMailFilled className='h-8 w-8 text-white md:h-10 md:w-10' />
-                  </div>
-                </a>
-
-                <a
-                  href={phoneLink}
-                  className='fade-up group'
-                  aria-label="Call or WhatsApp DJ Henners"
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110 focus:ring-4 focus:ring-green-300/50 md:h-20 md:w-20'>
-                    <FaPhoneFlip className='h-7 w-7 text-white md:h-9 md:w-9' />
-                  </div>
-                </a>
+                  Booking form
+                </Link>
 
                 <a
                   href='https://soundcloud.com/hennerrsss'
                   className='fade-up group'
                   aria-label='Listen to DJ Henners on SoundCloud'
                   target='_blank'
+                  rel='noopener noreferrer'
                 >
-                  <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110 focus:ring-4 focus:ring-orange-300/50 md:h-20 md:w-20'>
+                  <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl focus:ring-4 focus:ring-orange-300/50 md:h-20 md:w-20'>
                     <PiSoundcloudLogoFill className='h-8 w-8 text-white md:h-10 md:w-10' />
                   </div>
                 </a>
               </div>
+              <p className='fade-up mt-4 text-sm text-gray-600 delay-150 dark:text-gray-400'>
+                No public email, phone, or WhatsApp links — inquiries go through the form.
+              </p>
             </section>
 
             {/* Music Player Section */}

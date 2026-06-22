@@ -226,8 +226,8 @@ ${mediaFiles.videos.map(video => `• ${video.name} (${video.size}) - https://dj
 PROFESSIONAL DOCUMENTS:
 ${mediaFiles.documents.map(doc => `• ${doc.name} (${doc.size}) - https://dj.henners.bio${doc.downloadUrl}`).join('\n')}
 
-CONTACT INFORMATION:
-Email: dj@henners.bio
+CONTACT:
+Booking form: https://dj.henners.bio/contact
 Website: https://dj.henners.bio
 Location: Amsterdam, Netherlands
 
@@ -550,13 +550,13 @@ All materials cleared for promotional use by event organizers and press.
                 <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
                   Don't see what you're looking for? Get in touch and we'll provide exactly what you need for your event or publication.
                 </p>
-                <Link href="mailto:dj@henners.bio?subject=Press Kit Inquiry">
+                <Link href="/contact">
                   <Button
                     variant={mode === 'dark' ? 'light' : 'dark'}
                     size="base"
                     className="px-10 py-5 text-lg shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:scale-105"
                   >
-                    Contact for Custom Materials
+                    Request Custom Materials
                   </Button>
                 </Link>
               </div>

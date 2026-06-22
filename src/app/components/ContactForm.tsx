@@ -36,6 +36,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -48,47 +49,39 @@ const ContactForm: React.FC<ContactFormProps> = ({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setStatusMessage('');
     
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(`Booking Inquiry: ${formData.eventType} - ${formData.eventDate}`);
-      const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-Event Type: ${formData.eventType}
-Event Date: ${formData.eventDate}
-Venue: ${formData.venue}
-Location: ${formData.location}
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-Message:
-${formData.message}
-
----
-Sent via DJ Henners booking form
-      `);
-      
-      const mailtoLink = `mailto:dj@henners.bio?subject=${subject}&body=${body}`;
-      window.location.href = mailtoLink;
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.ok) {
+        throw new Error(data.error || 'Could not send booking inquiry.');
+      }
       
       setSubmitStatus('success');
+      setStatusMessage('Thanks — your booking inquiry was sent. I’ll reply after I’ve seen it.');
+      setFormData({
+        name: '',
+        email: '',
+        eventType: '',
+        eventDate: '',
+        venue: '',
+        location: '',
+        message: ''
+      });
       
-      // Reset form after success
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          eventType: '',
-          eventDate: '',
-          venue: '',
-          location: '',
-          message: ''
-        });
-        setSubmitStatus('idle');
-      }, 3000);
-      
-    } catch {
+    } catch (error) {
       setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 5000);
+      setStatusMessage(error instanceof Error ? error.message : 'Could not send booking inquiry. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -130,15 +123,15 @@ Sent via DJ Henners booking form
         {/* Success/Error Messages */}
         {submitStatus === 'success' && (
           <div className="mb-6 p-4 rounded-lg bg-green-100 border border-green-300 text-green-800">
-            <p className="font-medium">Thank you for your inquiry!</p>
-            <p className="text-sm">Your email client should have opened with your booking details. If not, please email dj@henners.bio directly.</p>
+            <p className="font-medium">Inquiry sent.</p>
+            <p className="text-sm">{statusMessage}</p>
           </div>
         )}
         
         {submitStatus === 'error' && (
           <div className="mb-6 p-4 rounded-lg bg-red-100 border border-red-300 text-red-800">
             <p className="font-medium">Something went wrong.</p>
-            <p className="text-sm">Please try again or email dj@henners.bio directly.</p>
+            <p className="text-sm">{statusMessage}</p>
           </div>
         )}
 
@@ -278,31 +271,10 @@ Sent via DJ Henners booking form
           </Button>
           
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-            This will open your email client with your inquiry details
+            Sends privately through the booking form — no public email, phone, or WhatsApp needed.
           </p>
         </div>
       </form>
-
-      {/* Additional Contact Info */}
-      <div className={`
-        mt-8 p-6 rounded-lg text-center
-        ${mode === 'dark' 
-          ? 'bg-gray-800/50 border border-gray-700' 
-          : 'bg-gray-50 border border-gray-200'
-        }
-      `}>
-        <p className="text-gray-600 dark:text-gray-400 mb-2">
-          Prefer to reach out directly?
-        </p>
-        <p className="font-medium">
-          <a 
-            href="mailto:dj@henners.bio" 
-            className="text-blue-500 hover:text-blue-600 transition-colors"
-          >
-            dj@henners.bio
-          </a>
-        </p>
-      </div>
     </div>
   );
 };

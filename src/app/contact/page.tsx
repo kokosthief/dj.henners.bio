@@ -2,7 +2,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-import { FaArrowLeft, FaEnvelope, FaMusic, FaPhoneFlip } from 'react-icons/fa6';
+import { FaArrowLeft, FaMusic } from 'react-icons/fa6';
 import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { PiSoundcloudLogoFill } from 'react-icons/pi';
 
@@ -82,35 +82,20 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* Quick Contact Options */}
-        <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
+        {/* Public links */}
+        <div className="mb-16 flex flex-wrap items-center justify-center gap-6">
           <a
-            href="mailto:dj@henners.bio"
-            className="group flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            target="_blank"
-          >
-            <FaEnvelope className="w-5 h-5" />
-            <span className="font-medium">dj@henners.bio</span>
-          </a>
-          
-          <a
-            href="https://api.whatsapp.com/send?phone=31683421604"
-            className="group flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            href="https://soundcloud.com/hennerrsss"
+            className="group flex items-center gap-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 px-6 py-3 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaPhoneFlip className="w-5 h-5" />
-            <span className="font-medium">WhatsApp</span>
-          </a>
-          
-          <a
-            href="https://soundcloud.com/hennerrsss"
-            className="group flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            target="_blank"
-          >
-            <PiSoundcloudLogoFill className="w-5 h-5" />
+            <PiSoundcloudLogoFill className="h-5 w-5" />
             <span className="font-medium">SoundCloud</span>
           </a>
+          <span className="text-sm text-gray-600 dark:text-gray-400">
+            Booking inquiries go through the private form below.
+          </span>
         </div>
 
         {/* Main Contact Form */}

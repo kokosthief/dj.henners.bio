@@ -54,8 +54,6 @@ export function generateStructuredData() {
     "name": "DJ Henners - Ecstatic Dance DJ Services",
     "description": "Ecstatic Dance DJ in Amsterdam providing transformative musical experiences for events, festivals, and ceremonies across the Netherlands.",
     "url": baseUrl,
-    "telephone": "+31683421604",
-    "email": "dj@henners.bio",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Amsterdam",

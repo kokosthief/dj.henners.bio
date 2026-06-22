@@ -40,7 +40,7 @@ const TechnicalRider: React.FC<TechnicalRiderProps> = ({
           Ecstatic Dance DJ | Amsterdam, Netherlands
         </div>
         <div className="text-sm text-gray-500 dark:text-gray-500 mt-2">
-          Email: dj@henners.bio | SoundCloud: https://soundcloud.com/hennerrsss
+          Bookings: https://dj.henners.bio/contact | SoundCloud: https://soundcloud.com/hennerrsss
         </div>
       </div>
 
@@ -128,7 +128,7 @@ const TechnicalRider: React.FC<TechnicalRiderProps> = ({
             <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
               <li>• Please ensure all equipment is tested and working prior to the event</li>
               <li>• Setup time required: 30 minutes for soundcheck</li>
-              <li>• Any questions regarding technical specifications should be directed to dj@henners.bio</li>
+              <li>• Any questions regarding technical specifications should be sent through the booking form</li>
             </ul>
           </div>
         </div>
