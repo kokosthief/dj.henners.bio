@@ -225,9 +225,6 @@ export default function HomePage() {
                   </div>
                 </a>
               </div>
-              <p className='fade-up mt-4 text-sm text-gray-600 delay-150 dark:text-gray-400'>
-                Simple message form. No public email, phone, or WhatsApp links.
-              </p>
             </section>
 
             {/* Music Player Section */}
