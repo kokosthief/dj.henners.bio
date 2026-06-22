@@ -40,7 +40,7 @@ const TechnicalRider: React.FC<TechnicalRiderProps> = ({
           Ecstatic Dance DJ | Amsterdam, Netherlands
         </div>
         <div className="text-sm text-gray-500 dark:text-gray-500 mt-2">
-          Bookings: https://dj.henners.bio/contact | SoundCloud: https://soundcloud.com/hennerrsss
+          Bookings: https://dj.henners.bio/?contact=1 | SoundCloud: https://soundcloud.com/hennerrsss/friday-ecstatic-dance-odessa-14-12-25
         </div>
       </div>
 

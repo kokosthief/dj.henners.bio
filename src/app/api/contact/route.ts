@@ -5,13 +5,11 @@ const MAX_FIELD_LENGTH = 4000;
 type ContactPayload = {
   name?: string;
   email?: string;
-  eventType?: string;
-  eventDate?: string;
-  venue?: string;
-  location?: string;
   message?: string;
   website?: string;
 };
+
+type ContactFields = Required<Omit<ContactPayload, 'website'>>;
 
 function sanitize(value = '') {
   return String(value).replace(/[<>]/g, '').trim().slice(0, MAX_FIELD_LENGTH);
@@ -28,23 +26,19 @@ async function readPayload(request: NextRequest): Promise<ContactPayload> {
   return Object.fromEntries(formData.entries()) as ContactPayload;
 }
 
-async function sendTelegram(fields: Required<Omit<ContactPayload, 'website'>>) {
+async function sendTelegram(fields: ContactFields) {
   const token = process.env.CONTACT_TELEGRAM_BOT_TOKEN;
   const chatId = process.env.CONTACT_TELEGRAM_CHAT_ID;
   if (!token || !chatId) return false;
 
   const text = [
-    'New DJ Henners booking inquiry',
+    'New DJ Henners website message',
     '',
     `Name: ${fields.name}`,
     `Email: ${fields.email}`,
-    `Event type: ${fields.eventType}`,
-    `Event date: ${fields.eventDate}`,
-    fields.venue ? `Venue: ${fields.venue}` : null,
-    `Location: ${fields.location}`,
     '',
-    fields.message || 'No extra details provided.',
-  ].filter(Boolean).join('\n');
+    fields.message,
+  ].join('\n');
 
   const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: 'POST',
@@ -64,10 +58,10 @@ async function sendTelegram(fields: Required<Omit<ContactPayload, 'website'>>) {
   return true;
 }
 
-async function sendResend(fields: Required<Omit<ContactPayload, 'website'>>) {
+async function sendResend(fields: ContactFields) {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL;
-  const from = process.env.CONTACT_FROM_EMAIL || 'contact@henners.bio';
+  const from = process.env.CONTACT_FROM_EMAIL || 'DJ Henners <contact@henners.bio>';
   if (!apiKey || !to) return false;
 
   const response = await fetch('https://api.resend.com/emails', {
@@ -80,17 +74,8 @@ async function sendResend(fields: Required<Omit<ContactPayload, 'website'>>) {
       from,
       to,
       reply_to: fields.email,
-      subject: `DJ Henners booking: ${fields.eventType} — ${fields.eventDate}`,
-      text: [
-        `Name: ${fields.name}`,
-        `Email: ${fields.email}`,
-        `Event type: ${fields.eventType}`,
-        `Event date: ${fields.eventDate}`,
-        `Venue: ${fields.venue || '-'}`,
-        `Location: ${fields.location}`,
-        '',
-        fields.message || 'No extra details provided.',
-      ].join('\n'),
+      subject: `DJ Henners website message from ${fields.name}`,
+      text: [`Name: ${fields.name}`, `Email: ${fields.email}`, '', fields.message].join('\n'),
     }),
   });
 
@@ -114,16 +99,12 @@ export async function POST(request: NextRequest) {
     const fields = {
       name: sanitize(payload.name),
       email: sanitize(payload.email),
-      eventType: sanitize(payload.eventType),
-      eventDate: sanitize(payload.eventDate),
-      venue: sanitize(payload.venue),
-      location: sanitize(payload.location),
       message: sanitize(payload.message),
     };
 
-    if (!fields.name || !fields.email || !fields.eventType || !fields.eventDate || !fields.location) {
+    if (!fields.name || !fields.email || !fields.message) {
       return NextResponse.json(
-        { ok: false, error: 'Name, email, event type, event date and location are required.' },
+        { ok: false, error: 'Name, email and message are required.' },
         { status: 400 }
       );
     }
@@ -135,22 +116,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const sentTelegram = await sendTelegram(fields);
     const sentEmail = await sendResend(fields);
+    const sentTelegram = sentEmail ? false : await sendTelegram(fields);
 
-    if (!sentTelegram && !sentEmail) {
-      console.error('DJ contact form is not configured: set CONTACT_TELEGRAM_BOT_TOKEN + CONTACT_TELEGRAM_CHAT_ID or RESEND_API_KEY + CONTACT_TO_EMAIL.');
+    if (!sentEmail && !sentTelegram) {
+      console.error('DJ contact form is not configured: set RESEND_API_KEY + CONTACT_TO_EMAIL or CONTACT_TELEGRAM_BOT_TOKEN + CONTACT_TELEGRAM_CHAT_ID.');
       return NextResponse.json(
-        { ok: false, error: 'Booking form is not configured yet. Please try again later.' },
+        { ok: false, error: 'Contact form is not configured yet. Please try again later.' },
         { status: 503 }
       );
     }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, delivered: sentEmail ? 'email' : 'telegram' });
   } catch (error) {
     console.error(error);
     return NextResponse.json(
-      { ok: false, error: 'Could not send booking inquiry. Please try again later.' },
+      { ok: false, error: 'Could not send message. Please try again later.' },
       { status: 500 }
     );
   }

@@ -227,7 +227,7 @@ PROFESSIONAL DOCUMENTS:
 ${mediaFiles.documents.map(doc => `• ${doc.name} (${doc.size}) - https://dj.henners.bio${doc.downloadUrl}`).join('\n')}
 
 CONTACT:
-Booking form: https://dj.henners.bio/contact
+Contact form: https://dj.henners.bio/?contact=1
 Website: https://dj.henners.bio
 Location: Amsterdam, Netherlands
 
@@ -550,7 +550,7 @@ All materials cleared for promotional use by event organizers and press.
                 <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
                   Don't see what you're looking for? Get in touch and we'll provide exactly what you need for your event or publication.
                 </p>
-                <Link href="/contact">
+                <Link href="/?contact=1">
                   <Button
                     variant={mode === 'dark' ? 'light' : 'dark'}
                     size="base"

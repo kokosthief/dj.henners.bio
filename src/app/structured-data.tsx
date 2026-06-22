@@ -14,8 +14,7 @@ export function generateStructuredData() {
     "image": `${baseUrl}/images/henners-dj.jpg`,
     "sameAs": [
       "https://soundcloud.com/hennerrsss",
-      "https://instagram.com/djhenners",
-      "https://facebook.com/djhenners"
+      "https://www.instagram.com/srrenneh/"
     ],
     "jobTitle": "Professional Ecstatic Dance DJ",
     "worksFor": {
@@ -154,7 +153,7 @@ export function generateStructuredData() {
     },
     "offers": {
       "@type": "Offer",
-      "url": `${baseUrl}/contact`,
+      "url": `${baseUrl}/?contact=1`,
       "availability": "https://schema.org/InStock"
     }
   };

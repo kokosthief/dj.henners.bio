@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
+import { FaInstagram } from 'react-icons/fa';
 import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { PiSoundcloudLogoFill } from 'react-icons/pi';
 
@@ -13,6 +14,7 @@ import Button from '@/components/buttons/Button';
 import IconButton from '@/components/buttons/IconButton';
 import UnderlineLink from '@/components/links/UnderlineLink';
 
+import ContactForm from '@/app/components/ContactForm';
 import ImageSlideshow from '@/app/components/ImageSlideshow';
 import GoogleAnalytics from '@/app/google-analytics';
 
@@ -33,6 +35,7 @@ import { gigs } from '../app/gigsData';
 
 export default function HomePage() {
   const [mode, setMode] = React.useState<'dark' | 'light'>('light');
+  const [isContactOpen, setIsContactOpen] = React.useState(false);
   function toggleMode() {
     const newMode = mode === 'dark' ? 'light' : 'dark';
     setMode(newMode);
@@ -75,6 +78,31 @@ export default function HomePage() {
       };
     }
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('contact') === '1') {
+      setIsContactOpen(true);
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isContactOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsContactOpen(false);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isContactOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -164,18 +192,31 @@ export default function HomePage() {
             {/* Contact + listening links */}
             <section className='mt-8 pb-8 pt-6'>
               <div className='flex flex-wrap items-center justify-center gap-4 md:gap-6'>
-                <Link
-                  href='/contact'
-                  className='fade-up group inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:ring-4 focus:ring-blue-300/50'
-                  aria-label='Open DJ Henners booking form'
+                <button
+                  type='button'
+                  onClick={() => setIsContactOpen(true)}
+                  className='fade-up group inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300/50'
+                  aria-label='Open simple contact form'
                 >
-                  Booking form
-                </Link>
+                  Get in contact
+                </button>
 
                 <a
-                  href='https://soundcloud.com/hennerrsss'
+                  href='https://www.instagram.com/srrenneh/'
                   className='fade-up group'
-                  aria-label='Listen to DJ Henners on SoundCloud'
+                  aria-label='Follow Henners on Instagram'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-500 via-purple-500 to-orange-400 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl focus:ring-4 focus:ring-pink-300/50 md:h-20 md:w-20'>
+                    <FaInstagram className='h-8 w-8 text-white md:h-10 md:w-10' />
+                  </div>
+                </a>
+
+                <a
+                  href='https://soundcloud.com/hennerrsss/friday-ecstatic-dance-odessa-14-12-25'
+                  className='fade-up group'
+                  aria-label='Listen to the available DJ Henners mix on SoundCloud'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -185,7 +226,7 @@ export default function HomePage() {
                 </a>
               </div>
               <p className='fade-up mt-4 text-sm text-gray-600 delay-150 dark:text-gray-400'>
-                No public email, phone, or WhatsApp links — inquiries go through the form.
+                Simple message form. No public email, phone, or WhatsApp links.
               </p>
             </section>
 
@@ -249,6 +290,46 @@ export default function HomePage() {
           </div>
         </div>
       </main>
+
+      {isContactOpen && (
+        <div
+          className='fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-sm'
+          role='dialog'
+          aria-modal='true'
+          aria-labelledby='contact-modal-title'
+          onClick={() => setIsContactOpen(false)}
+        >
+          <div
+            className={clsx(
+              'relative w-full max-w-xl rounded-2xl border p-6 text-left shadow-2xl md:p-8',
+              mode === 'dark'
+                ? 'border-gray-700 bg-gray-900 text-white'
+                : 'border-gray-200 bg-white text-gray-900'
+            )}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type='button'
+              onClick={() => setIsContactOpen(false)}
+              className='absolute right-4 top-4 rounded-full px-3 py-1 text-2xl leading-none text-gray-500 transition-colors hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:text-gray-400 dark:hover:text-white'
+              aria-label='Close contact form'
+            >
+              ×
+            </button>
+            <div className='mb-6 pr-8 text-center'>
+              <h2 id='contact-modal-title' className='text-3xl font-bold'>
+                <span className='bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent'>
+                  Get in contact
+                </span>
+              </h2>
+              <p className='mt-3 text-gray-600 dark:text-gray-400'>
+                Simple message. Name, email, what you want to say.
+              </p>
+            </div>
+            <ContactForm mode={mode} onSuccess={() => setTimeout(() => setIsContactOpen(false), 1200)} />
+          </div>
+        </div>
+      )}
     </main>
   );
 }

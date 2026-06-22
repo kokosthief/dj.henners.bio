@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     images: [`${siteConfig.url}/images/henners-dj.jpg`],
-    creator: '@djhenners'
+    creator: '@srrenneh'
   },
   alternates: {
     canonical: siteConfig.url
