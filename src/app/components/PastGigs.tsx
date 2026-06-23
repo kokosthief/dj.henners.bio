@@ -40,7 +40,7 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
   const years = new Set(pastGigs.map((gig) => gig.date.slice(0, 4))).size;
 
   return (
-    <section id="past-gigs" className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-6 lg:px-8">
+    <section id="past-gigs" className="mx-auto w-full max-w-6xl px-5 pb-20 pt-8 sm:px-6 lg:px-8">
       <div className="mb-10 grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Track record</p>
