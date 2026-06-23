@@ -105,10 +105,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.serviceSchema) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.faqSchema) }}
-        />
         {structuredData.eventSchemas.map((schema, index) => (
           <script
             key={`event-schema-${index}`}

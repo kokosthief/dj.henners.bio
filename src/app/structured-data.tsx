@@ -3,34 +3,6 @@ import { siteConfig } from '@/constant/config';
 
 const baseUrl = siteConfig.url;
 
-export const faqItems = [
-  {
-    question: 'What does an ecstatic dance facilitator do?',
-    answer:
-      'An ecstatic dance facilitator shapes a safe, intentional movement journey. For Henners, that includes musical curation, emotional pacing, ceremony-aware space holding, and a flow that supports grounding, release, joy, softness, and integration.',
-  },
-  {
-    question: 'Where is Henners based?',
-    answer:
-      'Henners is based in Amsterdam and has played ecstatic dance floors, ceremonies, retreats, and festivals across the Netherlands and Europe.',
-  },
-  {
-    question: 'Is Henners currently taking bookings?',
-    answer:
-      'Henners is currently taking a pause from DJing and gigging. New gatherings, mixes, or selected future invitations will be shared through the site when the timing feels right.',
-  },
-  {
-    question: 'What kind of music does Henners play?',
-    answer:
-      'Henners blends global rhythms, organic percussion, African-inspired grooves, melodic electronic music, ceremonial textures, and spacious integration music into conscious dance journeys.',
-  },
-  {
-    question: 'Can organizers still contact Henners?',
-    answer:
-      'Yes. Organizers can use the contact form or press kit for context, photos, music links, and technical information, while respecting the current pause from regular gigging.',
-  },
-];
-
 export function generateStructuredData() {
   const pastGigs = gigs.filter((gig) => new Date(gig.date) < new Date());
   const upcomingGigs = gigs.filter((gig) => new Date(gig.date) >= new Date());
@@ -89,19 +61,6 @@ export function generateStructuredData() {
     },
   };
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
-
   const eventSchemas = upcomingGigs.map((gig) => ({
     '@context': 'https://schema.org',
     '@type': 'MusicEvent',
@@ -140,7 +99,6 @@ export function generateStructuredData() {
   return {
     personSchema,
     serviceSchema,
-    faqSchema,
     eventSchemas,
     webSiteSchema,
     pastGigCount: pastGigs.length,

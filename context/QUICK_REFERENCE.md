@@ -155,7 +155,7 @@ npm run test         # Run tests
 ## 📞 Contact Information
 - **Email**: dj@henners.bio
 - **Phone**: +31683421604
-- **SoundCloud**: https://soundcloud.com/henners_music
+- **SoundCloud**: https://soundcloud.com/srenneh
 - **Location**: Amsterdam, Netherlands
 
 ## 🏗️ Architecture Highlights

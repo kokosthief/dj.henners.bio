@@ -1,7 +1,7 @@
 export const siteConfig = {
   title: 'Henners | Ecstatic Dance Facilitator & DJ in Amsterdam',
   description:
-    'Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces for retreats, festivals, and communities across the Netherlands.',
+    'Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces for retreats, festivals, and communities across the Netherlands and the world.',
   url: 'https://dj.henners.bio',
   keywords: [
     'ecstatic dance facilitator Amsterdam',
@@ -38,10 +38,10 @@ export const siteConfig = {
       'Festival and Retreat DJ Sets',
       'Movement Space Holding',
     ],
-    serviceAreas: ['Amsterdam', 'Utrecht', 'Rotterdam', 'The Hague', 'Netherlands', 'Europe'],
+    serviceAreas: ['Amsterdam', 'Utrecht', 'Rotterdam', 'The Hague', 'Netherlands', 'Europe', 'Worldwide'],
   },
   social: {
-    soundcloud: 'https://soundcloud.com/hennerrsss',
+    soundcloud: 'https://soundcloud.com/srenneh',
     instagram: 'https://www.instagram.com/srrenneh/',
     hipsy: 'https://hipsy.nl/events?query=Henners',
   },

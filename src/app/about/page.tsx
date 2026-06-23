@@ -10,7 +10,7 @@ import HennersSpaceholding from '../../../public/images/henners-spaceholding.jpg
 export const metadata: Metadata = {
   title: 'About Henners — Ecstatic Dance Facilitator in Amsterdam',
   description:
-    'About Henners, an Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces across the Netherlands.',
+    'About Henners, an Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces across the Netherlands and the world.',
   alternates: { canonical: `${siteConfig.url}/about` },
 };
 
@@ -26,7 +26,7 @@ export default function AboutPage() {
             Henners is an Amsterdam-based ecstatic dance facilitator and DJ. His work sits between music curation and space-holding: guiding rooms through rhythm, emotion, release, softness, and connection.
           </p>
           <p className="mt-6 leading-8 text-slate-400">
-            Since 2021, Henners has played and facilitated ecstatic dance floors, ceremonies, community gatherings, retreats, and festivals across the Netherlands and Europe. His sets draw on global rhythms, organic percussion, melodic electronic music, African-inspired grooves, and spacious integration textures.
+            Since 2021, Henners has played and facilitated ecstatic dance floors, ceremonies, community gatherings, retreats, and festivals across the Netherlands and Europe. His sets draw on global rhythms, organic percussion, melodic electronic music, African-inspired grooves, and spacious integration textures. The deeper intention is to let DJing become a tool for travel: carrying these movement journeys into new rooms, cultures, and communities around the world.
           </p>
           <p className="mt-6 leading-8 text-slate-400">
             He is currently taking a pause from DJing and gigging. New mixes, gatherings, or selected future invitations will be shared when the timing feels right.

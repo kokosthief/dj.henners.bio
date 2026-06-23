@@ -15,7 +15,6 @@ module.exports = {
     const priorityByPath = {
       '/': 1,
       '/about': 0.85,
-      '/faq': 0.8,
       '/contact': 0.75,
       '/media-package': 0.7,
     };

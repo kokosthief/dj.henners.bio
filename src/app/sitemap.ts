@@ -24,12 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
-      url: `${siteConfig.url}/faq`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${siteConfig.url}/contact`,
       lastModified,
       changeFrequency: 'monthly',

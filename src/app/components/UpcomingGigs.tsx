@@ -17,7 +17,7 @@ const UpcomingGigs: React.FC<UpcomingGigsProps> = ({ gigs }) => {
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
   return (
-    <section id="upcoming" className="mx-auto w-full max-w-5xl px-5 py-16 sm:px-6 lg:px-8">
+    <section id="upcoming" className="mx-auto w-full max-w-5xl px-5 py-8 sm:px-6 lg:px-8">
       <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Next</p>

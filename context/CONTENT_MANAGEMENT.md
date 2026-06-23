@@ -59,7 +59,7 @@ interface Gig {
 - **Email**: dj@henners.bio
 - **Phone**: +31683421604
 - **WhatsApp**: Automatic redirect for mobile users
-- **SoundCloud**: https://soundcloud.com/henners_music
+- **SoundCloud**: https://soundcloud.com/srenneh
 
 ## 🎯 Upcoming Events (Current)
 

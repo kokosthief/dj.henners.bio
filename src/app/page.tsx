@@ -5,13 +5,9 @@ import ContactForm from '@/app/components/ContactForm';
 import PastGigs from '@/app/components/PastGigs';
 import SoundCloudWidget from '@/app/components/SoundCloudWidget';
 import UpcomingGigs from '@/app/components/UpcomingGigs';
-import { faqItems } from '@/app/structured-data';
 import { siteConfig } from '@/constant/config';
 
 import { gigs } from './gigsData';
-import HennersCeremony from '../../public/images/henners-ceremony.jpg';
-import HennersDj from '../../public/images/henners-dj.jpg';
-import HennersPfp from '../../public/images/henners-pfp.jpg';
 import HennersSpaceholding from '../../public/images/henners-spaceholding.jpg';
 
 const facilitationCards = [
@@ -30,7 +26,7 @@ const facilitationCards = [
 ];
 
 const stats = [
-  { value: 'Amsterdam', label: 'based in the Netherlands' },
+  { value: 'Amsterdam', label: 'based, travelling outward' },
   { value: '2021', label: 'facilitating since' },
   { value: `${gigs.filter((gig) => new Date(gig.date) < new Date()).length}+`, label: 'documented dance floors' },
 ];
@@ -64,7 +60,7 @@ export default function HomePage() {
             Ecstatic Dance Facilitator & DJ in Amsterdam
           </h1>
           <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-300">
-            I guide conscious dance journeys that move from grounding to release, joy, stillness, and connection — for ecstatic dance floors, ceremonies, retreats, and festivals across the Netherlands.
+            I guide conscious dance journeys that move from grounding to release, joy, stillness, and connection — for ecstatic dance floors, ceremonies, retreats, and festivals across the Netherlands and the world.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link href="#listen" className="rounded-full bg-amber-200 px-6 py-4 text-center font-semibold text-slate-950 shadow-xl shadow-amber-500/20 transition hover:bg-amber-100">
@@ -121,19 +117,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto grid max-w-6xl gap-5 px-5 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
-        {[
-          { image: HennersCeremony, alt: 'Ceremony music facilitation with Henners', title: 'Ceremony-aware' },
-          { image: HennersDj, alt: 'Henners DJing an ecstatic dance journey', title: 'Rhythm-led' },
-          { image: HennersPfp, alt: 'Portrait of Henners', title: 'Human, warm, present' },
-        ].map((item) => (
-          <figure key={item.title} className="group overflow-hidden rounded-[1.7rem] border border-white/10 bg-white/[0.04]">
-            <Image src={item.image} alt={item.alt} className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" placeholder="blur" />
-            <figcaption className="p-5 text-sm font-semibold uppercase tracking-[0.22em] text-slate-300">{item.title}</figcaption>
-          </figure>
-        ))}
-      </section>
-
       <SoundCloudWidget />
       <UpcomingGigs gigs={gigs} />
       <PastGigs gigs={gigs} />
@@ -156,26 +139,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-5xl px-5 py-20 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">FAQ</p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Quick answers for dancers, organizers, and AI search</h2>
-        <div className="mt-8 grid gap-4">
-          {faqItems.map((item) => (
-            <details key={item.question} className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 open:border-amber-200/30">
-              <summary className="cursor-pointer text-lg font-semibold text-white">{item.question}</summary>
-              <p className="mt-4 leading-8 text-slate-300">{item.answer}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
       <footer className="relative z-10 border-t border-white/10 px-5 py-10 text-sm text-slate-400 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Henners · Ecstatic Dance Facilitator & DJ · Amsterdam</p>
           <div className="flex gap-4">
             <a href={siteConfig.social.soundcloud} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">SoundCloud</a>
             <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">Instagram</a>
-            <Link href="/faq" className="hover:text-amber-200">FAQ</Link>
             <Link href="/about" className="hover:text-amber-200">About</Link>
           </div>
         </div>
