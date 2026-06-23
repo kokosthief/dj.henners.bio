@@ -14,7 +14,7 @@ const SoundCloudWidget: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <section id="listen" className="mx-auto w-full max-w-6xl px-5 py-6 sm:px-6 lg:px-8">
+    <section id="listen" className="relative z-10 mx-auto w-full max-w-6xl px-5 py-6 sm:px-6 lg:px-8">
       <div className="grid gap-6 rounded-[2rem] border border-amber-200/15 bg-white/[0.06] p-6 shadow-2xl shadow-cyan-950/20 backdrop-blur sm:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div>
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Listen</p>
