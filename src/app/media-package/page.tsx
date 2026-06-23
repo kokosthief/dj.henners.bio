@@ -13,6 +13,7 @@ interface MediaFile {
   downloadUrl: string;
   description: string;
   duration?: string;
+  posterUrl?: string;
 }
 
 const artistInfo = {
@@ -26,6 +27,9 @@ const artistInfo = {
 
 const mediaFiles = {
   images: [
+    { name: 'Rijksmuseum DJ Booth', format: 'PNG', size: '1.0 MB', downloadUrl: '/downloads/high-res/rijksmuseum-dj-booth.png', description: 'DJing at Rijksmuseum in Amsterdam' },
+    { name: 'Rijksmuseum Dancefloor', format: 'PNG', size: '1.4 MB', downloadUrl: '/downloads/high-res/rijksmuseum-dancefloor.png', description: 'Rijksmuseum dancefloor from the DJ booth' },
+    { name: 'Rijksmuseum Close Up', format: 'PNG', size: '2.1 MB', downloadUrl: '/downloads/high-res/rijksmuseum-close-up.png', description: 'Close-up DJing at Rijksmuseum in Amsterdam' },
     { name: 'Black Abyss', format: 'JPG', size: '4.5 MB', downloadUrl: '/downloads/high-res/black abyss.jpg', description: 'Mystical black abyss portrait' },
     { name: 'Cacao Ceremony', format: 'JPG', size: '104 KB', downloadUrl: '/downloads/high-res/cacao.jpg', description: 'Sacred cacao ceremony moment' },
     { name: 'Ceremony Space', format: 'JPG', size: '756 KB', downloadUrl: '/downloads/high-res/ceremony.jpg', description: 'Holding ceremony space' },
@@ -39,6 +43,9 @@ const mediaFiles = {
     { name: 'Wonder', format: 'JPG', size: '5.5 MB', downloadUrl: '/downloads/high-res/wonder.jpg', description: 'Sense of wonder captured' },
   ],
   videos: [
+    { name: 'Ambrosia at Het Sieraad', format: 'MP4', size: '1.9 MB', duration: '0:07', downloadUrl: '/downloads/videos/ambrosia-het-sieraad.mp4', posterUrl: '/images/video-posters/ambrosia-het-sieraad.jpg', description: 'DJing for Ambrosia at Het Sieraad' },
+    { name: 'Lundjuweel 2025', format: 'MP4', size: '6.5 MB', duration: '0:15', downloadUrl: '/downloads/videos/lundjuweel-2025.mp4', posterUrl: '/images/video-posters/lundjuweel-2025.jpg', description: 'DJing at Lundjuweel 2025' },
+    { name: 'Ambrosia at Rijksmuseum', format: 'MP4', size: '9.8 MB', duration: '0:48', downloadUrl: '/downloads/videos/ambrosia-rijksmuseum.mp4', posterUrl: '/images/video-posters/ambrosia-rijksmuseum.jpg', description: 'DJing for Ambrosia at Rijksmuseum' },
     { name: 'EDFH Basement Session', format: 'MP4', size: '2.2 MB', duration: '~1 min', downloadUrl: '/downloads/videos/edfh basement.mp4', description: 'Ecstatic Dance basement session' },
     { name: 'Movement Journey', format: 'MOV', size: '17 MB', duration: '~3 min', downloadUrl: '/downloads/videos/movement journey.mov', description: 'Movement journey footage' },
     { name: 'New Years Eve', format: 'MP4', size: '2.0 MB', duration: '~1 min', downloadUrl: '/downloads/videos/new years eve.mp4', description: 'New Year’s Eve celebration' },
@@ -200,6 +207,41 @@ export default function MediaPackagePage() {
           <div className="rounded-3xl border border-white/10 bg-[#0b1220]/85 p-5 sm:p-6">
             <p className="whitespace-pre-line text-base leading-8 text-slate-300">{selectedBio.copy}</p>
           </div>
+        </div>
+      </section>
+
+      <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
+        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Recent footage</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white">Dance floor proof.</h2>
+          </div>
+          <p className="max-w-xl text-sm leading-7 text-slate-400">
+            Short clips for organizers who want a quick feel for the room: Ambrosia at Het Sieraad, Lundjuweel, and Ambrosia at Rijksmuseum.
+          </p>
+        </div>
+        <div className="grid gap-5 lg:grid-cols-3">
+          {mediaFiles.videos.slice(0, 3).map((video) => (
+            <article key={`preview-${video.name}`} className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.045] shadow-2xl shadow-black/25">
+              <video
+                className="aspect-[9/12] w-full bg-black object-cover"
+                controls
+                preload="metadata"
+                playsInline
+                poster={video.posterUrl}
+                src={video.downloadUrl}
+                aria-label={video.description}
+              />
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-white">{video.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-400">{video.description}</p>
+                <a href={video.downloadUrl} download className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-amber-200 hover:text-amber-100">
+                  <FaDownload className="h-3.5 w-3.5" />
+                  Download clip
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

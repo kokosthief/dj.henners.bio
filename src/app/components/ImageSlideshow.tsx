@@ -7,6 +7,9 @@ import HennersCeremonyJpg from '../../../public/images/henners-ceremony.jpg';
 import HennersDjJpg from '../../../public/images/henners-dj.jpg';
 import HennersPfpJpg from '../../../public/images/henners-pfp.jpg';
 import HennersSpaceholdingJpg from '../../../public/images/henners-spaceholding.jpg';
+import RijksmuseumCloseUpJpg from '../../../public/images/rijksmuseum-close-up.jpg';
+import RijksmuseumDancefloorJpg from '../../../public/images/rijksmuseum-dancefloor.jpg';
+import RijksmuseumDjBoothJpg from '../../../public/images/rijksmuseum-dj-booth.jpg';
 
 interface ImageData {
   src: StaticImageData;
@@ -15,6 +18,21 @@ interface ImageData {
 }
 
 const images: ImageData[] = [
+  {
+    src: RijksmuseumDjBoothJpg,
+    alt: 'Henners DJing at Rijksmuseum in Amsterdam',
+    title: 'Rijksmuseum · Amsterdam'
+  },
+  {
+    src: RijksmuseumDancefloorJpg,
+    alt: 'Rijksmuseum dancefloor from the DJ booth',
+    title: 'Ambrosia at Rijksmuseum'
+  },
+  {
+    src: RijksmuseumCloseUpJpg,
+    alt: 'Close-up of Henners DJing at Rijksmuseum',
+    title: 'Rijksmuseum DJ set'
+  },
   {
     src: HennersDjJpg,
     alt: 'DJ Henners performing',

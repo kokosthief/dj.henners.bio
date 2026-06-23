@@ -8,7 +8,7 @@ import UpcomingGigs from '@/app/components/UpcomingGigs';
 import { siteConfig } from '@/constant/config';
 
 import { gigs } from './gigsData';
-import HennersSpaceholding from '../../public/images/henners-spaceholding.jpg';
+import RijksmuseumCloseUp from '../../public/images/rijksmuseum-close-up.jpg';
 
 const facilitationCards = [
   {
@@ -84,16 +84,16 @@ export default function HomePage() {
           <div className="absolute -inset-8 rounded-[3rem] bg-cyan-400/10 blur-3xl" />
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40">
             <Image
-              src={HennersSpaceholding}
-              alt="Henners holding space as an ecstatic dance facilitator"
-              className="aspect-[4/5] w-full object-cover"
+              src={RijksmuseumCloseUp}
+              alt="Henners DJing at Rijksmuseum in Amsterdam"
+              className="aspect-[4/5] w-full object-cover object-[58%_center]"
               priority
               sizes="(max-width: 1024px) 100vw, 46vw"
               placeholder="blur"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Movement · ceremony · music</p>
-              <p className="mt-2 text-lg text-white">When joy is evoked, I support that. When tears come, I nurture them.</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Rijksmuseum · Amsterdam</p>
+              <p className="mt-2 text-lg text-white">Warm rooms, big energy, and a dance floor that can travel.</p>
             </div>
           </div>
         </div>
