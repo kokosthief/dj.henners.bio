@@ -7,16 +7,16 @@ const track = {
   artistUrl: 'https://soundcloud.com/srenneh',
   trackUrl: 'https://soundcloud.com/srenneh/friday-ecstatic-dance-odessa-14-12-25',
   embedUrl:
-    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2213010161&color=%23d8a94f&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false',
+    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2213010161&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
 };
 
 const SoundCloudWidget: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <section id="listen" className="relative z-10 mx-auto w-full max-w-6xl px-5 py-6 sm:px-6 lg:px-8">
-      <div className="grid gap-6 rounded-[2rem] border border-amber-200/15 bg-white/[0.06] p-6 shadow-2xl shadow-cyan-950/20 backdrop-blur sm:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-        <div>
+    <section id="listen" className="relative z-10 mx-auto w-full max-w-6xl px-0 py-6 sm:px-6 lg:px-8">
+      <div className="grid min-w-0 gap-6 overflow-hidden border-y border-amber-200/15 bg-white/[0.06] px-4 py-7 shadow-2xl shadow-cyan-950/20 backdrop-blur sm:rounded-[2rem] sm:border sm:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+        <div className="min-w-0 px-1 sm:px-0">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Listen</p>
           <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">A recorded ecstatic dance journey</h2>
           <p className="mt-4 text-base leading-8 text-slate-300">
@@ -28,10 +28,10 @@ const SoundCloudWidget: React.FC = () => {
         </div>
 
         {!loaded ? (
-          <div className="rounded-3xl border border-white/10 bg-[#0b1220] p-5 sm:p-6">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <h3 className="text-lg font-semibold text-white">{track.title}</h3>
+          <div className="min-w-0 rounded-3xl border border-white/10 bg-[#0b1220] p-4 sm:p-6">
+            <div className="flex min-w-0 flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
+                <h3 className="break-words text-lg font-semibold text-white">{track.title}</h3>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
                   Player kept unloaded until you click, keeping the page fast while still making the mix easy to reach.
                 </p>
@@ -56,22 +56,24 @@ const SoundCloudWidget: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="rounded-3xl border border-white/10 bg-[#0b1220] p-5 sm:p-6">
-            <h3 className="mb-4 text-lg font-semibold text-white">{track.title}</h3>
-            <iframe
-              className="h-[166px] w-full rounded-2xl"
-              width="100%"
-              height="166"
-              scrolling="no"
-              frameBorder="no"
-              allow="autoplay; encrypted-media"
-              sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-              src={track.embedUrl}
-              title={`SoundCloud Player - ${track.title}`}
-              loading="lazy"
-            />
-            <p className="mt-3 truncate text-xs text-slate-500">
-              <a href={track.artistUrl} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">HENNERS</a>
+          <div className="min-w-0 overflow-hidden rounded-3xl border border-white/10 bg-[#0b1220] p-4 sm:p-6">
+            <h3 className="mb-4 break-words text-lg font-semibold text-white">{track.title}</h3>
+            <div className="max-w-full overflow-hidden rounded-2xl bg-white">
+              <iframe
+                className="block h-[300px] w-full max-w-full border-0"
+                width="100%"
+                height="300"
+                scrolling="no"
+                frameBorder="no"
+                allow="autoplay; encrypted-media"
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                src={track.embedUrl}
+                title={`SoundCloud Player - ${track.title}`}
+                loading="lazy"
+              />
+            </div>
+            <p className="mt-3 max-w-full overflow-hidden text-ellipsis whitespace-nowrap break-normal text-[10px] font-light leading-5 text-slate-500 [line-break:anywhere]">
+              <a href={track.artistUrl} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">HENNERS / SRENNEH</a>
               {' · '}
               <a href={track.trackUrl} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">{track.title}</a>
             </p>

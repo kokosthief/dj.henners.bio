@@ -6,10 +6,13 @@
 html {
   background-color: #070b12;
   overscroll-behavior: none;
+  overflow-x: clip;
 }
 
 body {
+  width: 100%;
   background: #070b12;
+  overflow-x: clip;
 }
 
 :root {

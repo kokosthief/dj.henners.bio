@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { Overpass, Rowdies } from 'next/font/google';
 import * as React from 'react';
 
@@ -25,6 +25,12 @@ const rowdies = Rowdies({
   preload: false,
   adjustFontFallback: true,
 });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
