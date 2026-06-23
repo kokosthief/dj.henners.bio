@@ -80,7 +80,7 @@ export function generateStructuredData() {
     },
     offers: {
       '@type': 'Offer',
-      url: siteConfig.social.hipsy,
+      url: `${baseUrl}/#upcoming`,
       availability: 'https://schema.org/InStock',
     },
   }));

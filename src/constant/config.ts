@@ -43,7 +43,6 @@ export const siteConfig = {
   social: {
     soundcloud: 'https://soundcloud.com/srenneh',
     instagram: 'https://www.instagram.com/srrenneh/',
-    hipsy: 'https://hipsy.nl/events?query=Henners',
   },
   contact: {
     email: 'dj@henners.bio',

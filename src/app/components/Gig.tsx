@@ -1,7 +1,5 @@
 import React from 'react';
 
-import UnderlineLink from '@/components/links/UnderlineLink';
-
 import { Gig as GigType } from '@/app/gigsData';
 
 interface GigProps {
@@ -29,9 +27,9 @@ const Gig: React.FC<GigProps> = ({ gig, isUpcoming }) => {
             <h3 className="mt-2 text-2xl font-semibold text-white">{gig.event}</h3>
             <p className="mt-2 text-slate-400">{gig.venue} · {gig.location}</p>
           </div>
-          <UnderlineLink href="https://hipsy.nl/events?query=Henners" className="text-amber-200">
-            View event
-          </UnderlineLink>
+          <p className="rounded-full border border-amber-200/30 px-3 py-1 text-sm font-semibold text-amber-100">
+            Upcoming
+          </p>
         </div>
       </article>
     );

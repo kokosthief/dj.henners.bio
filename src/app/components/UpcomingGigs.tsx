@@ -18,21 +18,11 @@ const UpcomingGigs: React.FC<UpcomingGigsProps> = ({ gigs }) => {
   return (
     <section id="upcoming" className="relative z-10 mx-auto w-full max-w-6xl scroll-mt-6 px-5 py-6 sm:px-6 lg:px-8">
       <div className="rounded-[2rem] border border-cyan-200/25 bg-[#101923] p-6 shadow-2xl shadow-cyan-950/20 sm:p-8">
-        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Next</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-              {upcomingGigs.length > 0 ? 'Upcoming gigs' : 'A small pause from DJing'}
-            </h2>
-          </div>
-          <a
-            href="https://hipsy.nl/events?query=Henners"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold text-amber-200 transition hover:text-amber-100"
-          >
-            Check Hipsy listings →
-          </a>
+        <div className="mb-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Next</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            {upcomingGigs.length > 0 ? 'Upcoming gigs' : 'A small pause from DJing'}
+          </h2>
         </div>
 
         {upcomingGigs.length > 0 ? (
