@@ -123,9 +123,9 @@ export default function MediaPackagePage() {
   };
 
   const handlePackageDownload = () => {
-    const packageContent = `HENNERS / SRENNEH — PRESS KIT\n\nOfficial website: https://dj.henners.bio\nSoundCloud: https://soundcloud.com/srenneh\nContact: https://dj.henners.bio/?contact=1\nLocation: Amsterdam, Netherlands\n\nBIO — SHORT\n${artistInfo.short}\n\nBIO — MEDIUM\n${artistInfo.medium}\n\nBIO — LONG\n${artistInfo.long}\n\nPHOTOS\n${mediaFiles.images.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n\nVIDEOS\n${mediaFiles.videos.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n\nDOCUMENTS\n${mediaFiles.documents.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n`;
+    const packageContent = `HENNERS — PRESS KIT\n\nOfficial website: https://dj.henners.bio\nSoundCloud: https://soundcloud.com/srenneh\nContact: https://dj.henners.bio/?contact=1\nLocation: Amsterdam, Netherlands\n\nBIO — SHORT\n${artistInfo.short}\n\nBIO — MEDIUM\n${artistInfo.medium}\n\nBIO — LONG\n${artistInfo.long}\n\nPHOTOS\n${mediaFiles.images.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n\nVIDEOS\n${mediaFiles.videos.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n\nDOCUMENTS\n${mediaFiles.documents.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n`;
 
-    downloadTextFile('Henners-Srenneh-Press-Kit-Links.txt', packageContent);
+    downloadTextFile('Henners-Press-Kit-Links.txt', packageContent);
   };
 
   return (
@@ -147,7 +147,7 @@ export default function MediaPackagePage() {
             Press kit · organizer resources
           </p>
           <h1 className="max-w-4xl font-primary text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Henners / Srenneh press kit
+            Henners press kit
           </h1>
           <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-300">
             Photos, biographies, video assets, and technical context for ecstatic dance floors, retreats, ceremonies, festivals, and conscious movement events.

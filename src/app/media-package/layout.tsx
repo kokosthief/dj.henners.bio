@@ -1,12 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Press Kit - Henners / Srenneh | Ecstatic Dance Facilitator & DJ',
+  title: 'Press Kit - Henners | Ecstatic Dance Facilitator & DJ',
   description:
-    'Press kit for Henners / Srenneh: biography, high-resolution photos, videos, technical rider, and organizer resources for ecstatic dance, retreats, ceremonies, and festivals.',
+    'Press kit for Henners: biography, high-resolution photos, videos, technical rider, and organizer resources for ecstatic dance, retreats, ceremonies, and festivals.',
   keywords: [
     'Henners press kit',
-    'Srenneh press kit',
     'ecstatic dance facilitator press kit',
     'ecstatic dance DJ photos',
     'Amsterdam ecstatic dance DJ',
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
     'retreat DJ press kit',
   ],
   openGraph: {
-    title: 'Press Kit - Henners / Srenneh',
+    title: 'Press Kit - Henners',
     description:
       'Biography, photos, video assets, and technical context for ecstatic dance floors, retreats, ceremonies, and festivals.',
     images: ['/images/henners-spaceholding.jpg'],
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Press Kit - Henners / Srenneh',
+    title: 'Press Kit - Henners',
     description:
       'Biography, photos, video assets, and technical context for ecstatic dance floors, retreats, ceremonies, and festivals.',
     images: ['/images/henners-spaceholding.jpg'],
