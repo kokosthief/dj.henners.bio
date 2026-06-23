@@ -76,7 +76,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
   };
 
   const inputClasses = `
-    w-full rounded-lg border px-4 py-3 transition-all duration-300
+    w-full rounded-xl border px-4 py-3 text-base transition-all duration-300
     ${mode === 'dark'
       ? 'border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20'
       : 'border-gray-300 bg-white text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20'
@@ -163,13 +163,13 @@ const ContactForm: React.FC<ContactFormProps> = ({
         />
       </div>
 
-      <div className="mt-6 text-center">
+      <div className="mt-6">
         <Button
           type="submit"
           variant={mode === 'dark' ? 'light' : 'dark'}
           leftIcon={FaPaperPlane}
           isLoading={isSubmitting}
-          className="px-8 py-4 text-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+          className="w-full px-6 py-4 text-base shadow-lg transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl sm:w-auto sm:px-8 sm:text-lg"
         >
           {isSubmitting ? 'Sending...' : 'Send message'}
         </Button>

@@ -121,9 +121,9 @@ export default function HomePage() {
       <UpcomingGigs gigs={gigs} />
       <PastGigs gigs={gigs} />
 
-      <section className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-6 lg:px-8">
-        <div className="grid gap-8 rounded-[2rem] border border-white/10 bg-white/[0.05] p-8 md:grid-cols-[0.8fr_1.2fr] md:p-10">
-          <div>
+      <section className="relative z-10 mx-auto w-full max-w-6xl px-0 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <div className="grid gap-8 border-y border-white/10 bg-white/[0.05] px-4 py-8 sm:rounded-[2rem] sm:border sm:p-8 md:grid-cols-[0.8fr_1.2fr] md:p-10">
+          <div className="max-w-3xl px-2 sm:px-0">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">For organizers</p>
             <h2 className="mt-3 text-3xl font-semibold text-white">Press kit, context & future invitations</h2>
             <p className="mt-5 leading-8 text-slate-300">
@@ -133,7 +133,7 @@ export default function HomePage() {
               View press kit
             </Link>
           </div>
-          <div id="contact" className="rounded-[1.5rem] bg-[#080d16] p-5 md:p-6">
+          <div id="contact" className="rounded-[1.5rem] bg-[#080d16] p-4 sm:p-6">
             <ContactForm mode="dark" />
           </div>
         </div>
