@@ -6,6 +6,7 @@ import '@/styles/globals.css';
 
 import { siteConfig } from '@/constant/config';
 
+import GoogleAnalytics from './google-analytics';
 import { generateStructuredData } from './structured-data';
 
 const overpass = Overpass({
@@ -13,29 +14,40 @@ const overpass = Overpass({
   display: 'swap',
   variable: '--font-overpass',
   preload: true,
-  adjustFontFallback: true
+  adjustFontFallback: true,
 });
 
 const rowdies = Rowdies({
   subsets: ['latin'],
-  weight: ['300', '400', '700'],
+  weight: ['400'],
   display: 'swap',
   variable: '--font-rowdies',
-  preload: true,
-  adjustFontFallback: true
+  preload: false,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
-    template: `%s | ${siteConfig.title}`,
+    template: `%s | Henners`,
   },
   description: siteConfig.description,
-  keywords: siteConfig.keywords,
-  authors: [{ name: 'DJ Henners', url: siteConfig.url }],
-  creator: 'DJ Henners',
-  robots: { index: true, follow: true },
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: 'Henners', url: siteConfig.url }],
+  creator: 'Henners',
+  publisher: 'Henners',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   icons: {
     icon: '/favicon/favicon.ico',
     shortcut: '/favicon/favicon-16x16.png',
@@ -46,13 +58,15 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: siteConfig.title,
     description: siteConfig.description,
-    siteName: siteConfig.title,
-    images: [{
-      url: `${siteConfig.url}/images/henners-dj.jpg`,
-      width: 1200,
-      height: 630,
-      alt: 'DJ Henners - Ecstatic Dance DJ in Amsterdam'
-    }],
+    siteName: 'Henners',
+    images: [
+      {
+        url: `${siteConfig.url}/images/henners-spaceholding.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Henners holding space for an ecstatic dance journey in Amsterdam',
+      },
+    ],
     type: 'website',
     locale: 'en_US',
   },
@@ -60,13 +74,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/images/henners-dj.jpg`],
-    creator: '@srrenneh'
+    images: [`${siteConfig.url}/images/henners-spaceholding.jpg`],
+    creator: '@srrenneh',
   },
   alternates: {
-    canonical: siteConfig.url
+    canonical: siteConfig.url,
   },
-  category: 'Music & Entertainment'
+  category: 'Music & Entertainment',
 };
 
 export default function RootLayout({
@@ -75,67 +89,47 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const structuredData = generateStructuredData();
-  
+
   return (
-    <html lang="en">
+    <html lang="en" className="dark scroll-smooth">
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData.organizationSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.personSchema) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData.localBusinessSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.webSiteSchema) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData.serviceSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.serviceSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.faqSchema) }}
+        />
+        {structuredData.eventSchemas.map((schema, index) => (
+          <script
+            key={`event-schema-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
         <link rel="canonical" href={siteConfig.url} />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://widget.sndcdn.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://region1.google-analytics.com" />
         <link rel="preconnect" href="https://w.soundcloud.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://api-widget.soundcloud.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://i1.sndcdn.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://wave.sndcdn.com" crossOrigin="anonymous" />
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-              *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
-              html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
-              body{margin:0;line-height:inherit}
-              .dark{background:linear-gradient(135deg,#0a0a0a 0%,#0d324d 100%);color:#fff}
-              .bg-gradient-dark{background:linear-gradient(135deg,#0a0a0a 0%,#0d324d 100%)}
-              .fade-up{animation:fadeUp 1s ease-out forwards}
-              @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-              .animate-gentle-pulse{animation:gentlePulse 3s ease-in-out infinite}
-              @keyframes gentlePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-              .min-h-screen{min-height:100vh}
-              .flex{display:flex}
-              .items-center{align-items:center}
-              .justify-center{justify-content:center}
-              .text-center{text-align:center}
-            `,
-          }}
-        />
         <meta name="geo.region" content="NL-NH" />
         <meta name="geo.placename" content="Amsterdam" />
         <meta name="geo.position" content="52.3676;4.9041" />
         <meta name="ICBM" content="52.3676, 4.9041" />
-        <meta name="language" content="en,nl" />
-        <meta name="distribution" content="global" />
-        <meta name="target" content="all" />
-        <meta name="audience" content="all" />
-        <meta name="coverage" content="Worldwide" />
       </head>
-      <body className={`dark ${overpass.variable} ${rowdies.variable}`}>{children}</body>
+      <body className={`${overpass.variable} ${rowdies.variable} bg-[#070b12] font-primary text-white antialiased`}>
+        {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
+        {children}
+      </body>
     </html>
   );
 }

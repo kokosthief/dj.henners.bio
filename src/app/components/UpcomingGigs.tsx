@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 import Gig from './Gig';
@@ -6,31 +7,46 @@ import { Gig as GigType } from '../gigsData';
 interface UpcomingGigsProps {
   gigs: GigType[];
 }
+
 const UpcomingGigs: React.FC<UpcomingGigsProps> = ({ gigs }) => {
   const currentDate = new Date();
-  currentDate.setDate(currentDate.getDate() - 1); // Subtract one day from the current date
+  currentDate.setDate(currentDate.getDate() - 1);
 
-  const upcomingGigs = gigs.filter((gig) => new Date(gig.date) > currentDate);
+  const upcomingGigs = gigs
+    .filter((gig) => new Date(gig.date) > currentDate)
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
   return (
-    <div id='upcomingGigs' className='upcomingGigs'>
-      <h1 className='mb-5 mt-5 underline decoration-indigo-400 decoration-solid decoration-4 underline-offset-8'>
-        {upcomingGigs.length > 0 ? 'Upcoming' : "What's Next"}
-      </h1>
+    <section id="upcoming" className="mx-auto w-full max-w-5xl px-5 py-16 sm:px-6 lg:px-8">
+      <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Next</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            {upcomingGigs.length > 0 ? 'Upcoming gatherings' : 'A small pause from DJing'}
+          </h2>
+        </div>
+        <Link href="#contact" className="text-sm font-semibold text-amber-200 transition hover:text-amber-100">
+          Contact for future invitations →
+        </Link>
+      </div>
+
       {upcomingGigs.length > 0 ? (
-        upcomingGigs.map((gig) => (
-          <div key={gig.date} style={{ marginBottom: '15px' }}>
-            <Gig gig={gig} isUpcoming />
-          </div>
-        ))
+        <div className="grid gap-4">
+          {upcomingGigs.map((gig) => (
+            <Gig key={`${gig.date}-${gig.venue}-${gig.event}`} gig={gig} isUpcoming />
+          ))}
+        </div>
       ) : (
-        <div className='text-center py-8'>
-          <p className='text-lg max-w-2xl mx-auto'>
-            New dates will appear here when they are confirmed.
+        <div className="rounded-[2rem] border border-cyan-200/15 bg-cyan-200/[0.06] p-8 text-slate-200 shadow-2xl shadow-cyan-950/20">
+          <p className="max-w-3xl text-xl leading-9">
+            After many beautiful dance floors, I’m taking space to rest, listen, and let the next chapter unfold naturally.
+          </p>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-400">
+            Thank you for the support, movement, and magic so far. New mixes, gatherings, and selected future invitations will appear here when the timing feels right.
           </p>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

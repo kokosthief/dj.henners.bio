@@ -1,31 +1,20 @@
 export const siteConfig = {
-  title: 'DJ Henners | Ecstatic Dance DJ Amsterdam & Netherlands',
-  description: 'Ecstatic Dance DJ in Amsterdam & Netherlands. DJ Henners creates transformative musical journeys with global rhythms, African beats & conscious dance. Book the best ecstatic dance DJ for festivals, events & ceremonies across Holland.',
+  title: 'Henners | Ecstatic Dance Facilitator & DJ in Amsterdam',
+  description:
+    'Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces for retreats, festivals, and communities across the Netherlands.',
   url: 'https://dj.henners.bio',
   keywords: [
-    // Primary Dutch/Netherlands terms
-    'ecstatic dance dj nederland',
-    'ecstatic dance dj amsterdam',
-    'beste ecstatic dance dj holland',
-    'bewuste dans dj nederland',
-    'ecstatic dance amsterdam evenementen',
-    'dj henners amsterdam',
-
-    // English terms for international reach
-    'best ecstatic dance dj netherlands',
-    'top ecstatic dance dj amsterdam',
-    'professional ecstatic dance dj holland',
-    'conscious dance dj amsterdam',
-    'transformative music dj netherlands',
-    'global rhythms dj amsterdam',
-    'african beats dj holland',
-    'festival dj netherlands',
-    'ceremony dj amsterdam',
-    'spiritual music dj holland',
-    'dance events amsterdam',
-    'ecstatic dance facilitator netherlands',
-    'conscious movement dj amsterdam',
-    'mindful dance dj holland'
+    'ecstatic dance facilitator Amsterdam',
+    'ecstatic dance DJ Amsterdam',
+    'ecstatic dance facilitator Netherlands',
+    'conscious dance facilitator',
+    'conscious dance DJ Netherlands',
+    'ceremony music facilitator',
+    'movement journey DJ',
+    'ecstatic dance ceremony Amsterdam',
+    'festival ecstatic dance DJ',
+    'DJ Henners',
+    'Henners ecstatic dance',
   ],
   location: {
     city: 'Amsterdam',
@@ -33,14 +22,31 @@ export const siteConfig = {
     region: 'North Holland',
     coordinates: {
       lat: 52.3676,
-      lng: 4.9041
-    }
+      lng: 4.9041,
+    },
   },
   business: {
-    name: 'DJ Henners',
-    type: 'Professional DJ Services',
+    name: 'Henners',
+    legalName: 'DJ Henners',
+    type: 'Ecstatic Dance Facilitation and DJ Services',
     foundedYear: 2021,
-    specialties: ['Ecstatic Dance', 'Conscious Dance', 'Festival DJ', 'Ceremony Music'],
-    serviceAreas: ['Amsterdam', 'Utrecht', 'Rotterdam', 'The Hague', 'Netherlands', 'Europe']
-  }
-};
+    status: 'Currently taking a pause from DJing and gigging',
+    specialties: [
+      'Ecstatic Dance Facilitation',
+      'Conscious Dance Journeys',
+      'Ceremony Music',
+      'Festival and Retreat DJ Sets',
+      'Movement Space Holding',
+    ],
+    serviceAreas: ['Amsterdam', 'Utrecht', 'Rotterdam', 'The Hague', 'Netherlands', 'Europe'],
+  },
+  social: {
+    soundcloud: 'https://soundcloud.com/hennerrsss',
+    instagram: 'https://www.instagram.com/srrenneh/',
+    hipsy: 'https://hipsy.nl/events?query=Henners',
+  },
+  contact: {
+    email: 'dj@henners.bio',
+    phone: '+316****1604',
+  },
+} as const;

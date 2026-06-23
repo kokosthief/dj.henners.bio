@@ -1,167 +1,148 @@
+import { gigs } from '@/app/gigsData';
 import { siteConfig } from '@/constant/config';
 
+const baseUrl = siteConfig.url;
+
+export const faqItems = [
+  {
+    question: 'What does an ecstatic dance facilitator do?',
+    answer:
+      'An ecstatic dance facilitator shapes a safe, intentional movement journey. For Henners, that includes musical curation, emotional pacing, ceremony-aware space holding, and a flow that supports grounding, release, joy, softness, and integration.',
+  },
+  {
+    question: 'Where is Henners based?',
+    answer:
+      'Henners is based in Amsterdam and has played ecstatic dance floors, ceremonies, retreats, and festivals across the Netherlands and Europe.',
+  },
+  {
+    question: 'Is Henners currently taking bookings?',
+    answer:
+      'Henners is currently taking a pause from DJing and gigging. New gatherings, mixes, or selected future invitations will be shared through the site when the timing feels right.',
+  },
+  {
+    question: 'What kind of music does Henners play?',
+    answer:
+      'Henners blends global rhythms, organic percussion, African-inspired grooves, melodic electronic music, ceremonial textures, and spacious integration music into conscious dance journeys.',
+  },
+  {
+    question: 'Can organizers still contact Henners?',
+    answer:
+      'Yes. Organizers can use the contact form or press kit for context, photos, music links, and technical information, while respecting the current pause from regular gigging.',
+  },
+];
+
 export function generateStructuredData() {
-  const baseUrl = siteConfig.url;
+  const pastGigs = gigs.filter((gig) => new Date(gig.date) < new Date());
+  const upcomingGigs = gigs.filter((gig) => new Date(gig.date) >= new Date());
 
-  // Organization Schema
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "DJ Henners",
-    "alternateName": "Henners",
-    "description": siteConfig.description,
-    "url": baseUrl,
-    "image": `${baseUrl}/images/henners-dj.jpg`,
-    "sameAs": [
-      "https://soundcloud.com/hennerrsss",
-      "https://www.instagram.com/srrenneh/"
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${baseUrl}/#person`,
+    name: 'Henners',
+    alternateName: ['DJ Henners', 'Henry Willmott'],
+    description: siteConfig.description,
+    url: baseUrl,
+    image: `${baseUrl}/images/henners-spaceholding.jpg`,
+    sameAs: [siteConfig.social.soundcloud, siteConfig.social.instagram],
+    jobTitle: 'Ecstatic Dance Facilitator and DJ',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: siteConfig.location.city,
+      addressRegion: siteConfig.location.region,
+      addressCountry: siteConfig.location.country,
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: siteConfig.location.coordinates.lat,
+      longitude: siteConfig.location.coordinates.lng,
+    },
+    knowsAbout: [
+      'Ecstatic Dance Facilitation',
+      'Conscious Dance',
+      'Movement Facilitation',
+      'Ceremony Music',
+      'Space Holding',
+      'Music Curation',
+      'Global Rhythms',
+      'African-inspired Dance Music',
+      'Festival DJ Sets',
+      'Retreat Music',
     ],
-    "jobTitle": "Professional Ecstatic Dance DJ",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "DJ Henners Professional Services"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": siteConfig.location.city,
-      "addressCountry": siteConfig.location.country,
-      "addressRegion": siteConfig.location.region
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": siteConfig.location.coordinates.lat,
-      "longitude": siteConfig.location.coordinates.lng
-    },
-    "knowsAbout": [
-      "Ecstatic Dance",
-      "Conscious Dance",
-      "DJ Performance",
-      "Music Curation",
-      "Event Facilitation",
-      "Global Rhythms",
-      "African Music",
-      "Transformative Music",
-      "Ceremony Music",
-      "Festival Performance"
-    ]
   };
 
-  // Local Business Schema
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "DJ Henners - Ecstatic Dance DJ Services",
-    "description": "Ecstatic Dance DJ in Amsterdam providing transformative musical experiences for events, festivals, and ceremonies across the Netherlands.",
-    "url": baseUrl,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Amsterdam",
-      "addressCountry": "Netherlands",
-      "addressRegion": "North Holland"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 52.3676,
-      "longitude": 4.9041
-    },
-    "openingHours": "Mo-Su 09:00-22:00",
-    "priceRange": "€€€",
-    "servesCuisine": "Music & Entertainment",
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 52.3676,
-        "longitude": 4.9041
-      },
-      "geoRadius": "500000"
-    },
-    "areaServed": [
-      "Amsterdam",
-      "Netherlands",
-      "Utrecht",
-      "Rotterdam",
-      "The Hague",
-      "Europe"
-    ]
-  };
-
-  // Service Schema
   const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Professional Ecstatic Dance DJ Services",
-    "description": "Expert DJ services specializing in ecstatic dance, conscious movement, festivals, and transformative musical experiences.",
-    "provider": {
-      "@type": "Person",
-      "name": "DJ Henners"
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${baseUrl}/#ecstatic-dance-facilitation`,
+    name: 'Ecstatic Dance Facilitation and DJ Journeys',
+    description:
+      'Ecstatic dance facilitation, conscious dance DJ sets, ceremony music, and movement journeys for communities, retreats, ceremonies, and festivals.',
+    provider: { '@id': `${baseUrl}/#person` },
+    serviceType: 'Ecstatic Dance Facilitation',
+    areaServed: siteConfig.business.serviceAreas.map((name) => ({ '@type': 'Place', name })),
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/LimitedAvailability',
+      url: `${baseUrl}/#contact`,
+      description: siteConfig.business.status,
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Netherlands"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "DJ Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Ecstatic Dance DJ Performance",
-            "description": "Professional DJ services for ecstatic dance events and conscious movement sessions"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Festival DJ Performance",
-            "description": "High-energy DJ sets for festivals and large-scale events"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Ceremony Music Facilitation",
-            "description": "Sacred and transformative music for ceremonies and spiritual gatherings"
-          }
-        }
-      ]
-    }
   };
 
-  // Event Schema for upcoming gigs
-  const eventSchema = {
-    "@context": "https://schema.org",
-    "@type": "MusicEvent",
-    "name": "Ecstatic Dance with DJ Henners",
-    "description": "Transformative ecstatic dance experience with Amsterdam conscious dance DJ",
-    "performer": {
-      "@type": "Person",
-      "name": "DJ Henners"
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
+  const eventSchemas = upcomingGigs.map((gig) => ({
+    '@context': 'https://schema.org',
+    '@type': 'MusicEvent',
+    name: `${gig.event} with Henners`,
+    startDate: gig.date,
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    eventStatus: 'https://schema.org/EventScheduled',
+    performer: { '@id': `${baseUrl}/#person` },
+    location: {
+      '@type': 'Place',
+      name: gig.venue,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: gig.location,
+        addressCountry: gig.country,
+      },
     },
-    "location": {
-      "@type": "Place",
-      "name": "Amsterdam",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Amsterdam",
-        "addressCountry": "Netherlands"
-      }
+    offers: {
+      '@type': 'Offer',
+      url: siteConfig.social.hipsy,
+      availability: 'https://schema.org/InStock',
     },
-    "offers": {
-      "@type": "Offer",
-      "url": `${baseUrl}/?contact=1`,
-      "availability": "https://schema.org/InStock"
-    }
+  }));
+
+  const webSiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${baseUrl}/#website`,
+    name: siteConfig.title,
+    url: baseUrl,
+    description: siteConfig.description,
+    about: { '@id': `${baseUrl}/#person` },
+    inLanguage: 'en',
   };
 
   return {
-    organizationSchema,
-    localBusinessSchema,
+    personSchema,
     serviceSchema,
-    eventSchema
+    faqSchema,
+    eventSchemas,
+    webSiteSchema,
+    pastGigCount: pastGigs.length,
   };
 }

@@ -26,7 +26,7 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000, // 1 year
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    deviceSizes: [360, 640, 768, 1024, 1280, 1536, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   
@@ -57,7 +57,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://widget.sndcdn.com https://w.soundcloud.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://i1.sndcdn.com https://www.google-analytics.com; connect-src 'self' https://api-widget.soundcloud.com https://playbook.media-streaming.soundcloud.cloud https://wave.sndcdn.com https://www.google-analytics.com; frame-src https://w.soundcloud.com; media-src https://playback.media-streaming.soundcloud.cloud;",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://widget.sndcdn.com https://w.soundcloud.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://i1.sndcdn.com https://www.google-analytics.com; connect-src 'self' https://api-widget.soundcloud.com https://playbook.media-streaming.soundcloud.cloud https://wave.sndcdn.com https://www.google-analytics.com https://region1.google-analytics.com; frame-src https://w.soundcloud.com; media-src https://playback.media-streaming.soundcloud.cloud;",
           },
           {
             key: 'Strict-Transport-Security',

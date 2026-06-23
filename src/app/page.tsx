@@ -1,332 +1,185 @@
-'use client';
-import clsx from 'clsx';
-import dynamic from 'next/dynamic';
-import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
-import { FaInstagram } from 'react-icons/fa';
-import { IoMdMoon, IoMdSunny } from 'react-icons/io';
-import { PiSoundcloudLogoFill } from 'react-icons/pi';
-
-import { getFromLocalStorage } from '@/lib/helper';
-
-import Button from '@/components/buttons/Button';
-import IconButton from '@/components/buttons/IconButton';
-import UnderlineLink from '@/components/links/UnderlineLink';
 
 import ContactForm from '@/app/components/ContactForm';
-import ImageSlideshow from '@/app/components/ImageSlideshow';
-import GoogleAnalytics from '@/app/google-analytics';
+import PastGigs from '@/app/components/PastGigs';
+import SoundCloudWidget from '@/app/components/SoundCloudWidget';
+import UpcomingGigs from '@/app/components/UpcomingGigs';
+import { faqItems } from '@/app/structured-data';
+import { siteConfig } from '@/constant/config';
 
-const PastGigs = dynamic(() => import('@/app/components/PastGigs'), {
-  loading: () => <div className="h-48 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse"></div>,
-});
+import { gigs } from './gigsData';
+import HennersCeremony from '../../public/images/henners-ceremony.jpg';
+import HennersDj from '../../public/images/henners-dj.jpg';
+import HennersPfp from '../../public/images/henners-pfp.jpg';
+import HennersSpaceholding from '../../public/images/henners-spaceholding.jpg';
 
-const SoundCloudWidget = dynamic(() => import('@/app/components/SoundCloudWidget'), {
-  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse"></div>,
-  ssr: false,
-});
+const facilitationCards = [
+  {
+    title: 'Ecstatic dance journeys',
+    body: 'A carefully paced arc from arrival and grounding into rhythm, release, play, stillness, and integration.',
+  },
+  {
+    title: 'Ceremony & space-holding',
+    body: 'Music selected for emotional safety and depth — supportive when joy rises, tender when tears come.',
+  },
+  {
+    title: 'Retreats, festivals & communities',
+    body: 'Professional conscious dance sets for intimate rooms, festival stages, cacao ceremonies, and movement communities.',
+  },
+];
 
-const UpcomingGigs = dynamic(() => import('@/app/components/UpcomingGigs'), {
-  loading: () => <div className="h-32 bg-gray-100 dark:bg-gray-800 rounded-lg animate-pulse"></div>,
-});
-
-import { gigs } from '../app/gigsData';
+const stats = [
+  { value: 'Amsterdam', label: 'based in the Netherlands' },
+  { value: '2021', label: 'facilitating since' },
+  { value: `${gigs.filter((gig) => new Date(gig.date) < new Date()).length}+`, label: 'documented dance floors' },
+];
 
 export default function HomePage() {
-  const [mode, setMode] = React.useState<'dark' | 'light'>('light');
-  const [isContactOpen, setIsContactOpen] = React.useState(false);
-  function toggleMode() {
-    const newMode = mode === 'dark' ? 'light' : 'dark';
-    setMode(newMode);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('theme-mode', newMode);
-    }
-  }
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    // Check for saved theme preference first
-    const savedTheme = getFromLocalStorage('theme-mode');
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-      setMode(savedTheme);
-    } else {
-      // Fall back to system preference if no saved theme
-      const handleChange = (e?: MediaQueryListEvent) => {
-        const matches = e ? e.matches : mediaQuery.matches;
-        const systemTheme = matches ? 'dark' : 'light';
-        setMode(systemTheme);
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('theme-mode', systemTheme);
-        }
-      };
-
-      if (mediaQuery.addEventListener) {
-        mediaQuery.addEventListener('change', handleChange);
-      } else {
-        mediaQuery.addListener(handleChange);
-      }
-      handleChange();
-
-      return () => {
-        if (mediaQuery.removeEventListener) {
-          mediaQuery.removeEventListener('change', handleChange);
-        } else {
-          mediaQuery.removeListener(handleChange);
-        }
-      };
-    }
-  }, []);
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('contact') === '1') {
-      setIsContactOpen(true);
-      window.history.replaceState({}, '', window.location.pathname);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!isContactOpen) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setIsContactOpen(false);
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isContactOpen]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.pageYOffset;
-      const newAngle = 135 + scrollPosition * 0.1;
-      document.body.style.background = `linear-gradient(${newAngle}deg, #0a0a0a 0%, #0d324d 100%)`;
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <main>
-      <Head>
-        <title>DJ Henners | #1 Ecstatic Dance DJ Amsterdam & Netherlands</title>
-        <meta name="description" content="Ecstatic Dance DJ in Amsterdam & Netherlands. DJ Henners creates transformative musical journeys with global rhythms, African beats & conscious dance. Book the best ecstatic dance DJ for festivals, events & ceremonies across Holland." />
-        <meta name="keywords" content="ecstatic dance dj nederland, ecstatic dance dj amsterdam, beste ecstatic dance dj holland, bewuste dans dj nederland, dj henners amsterdam, best ecstatic dance dj netherlands, conscious dance dj amsterdam" />
-        <link rel="canonical" href="https://dj.henners.bio" />
-      </Head>
-      {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
+    <main className="overflow-hidden bg-[#070b12] text-white">
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.18),transparent_32rem),radial-gradient(circle_at_top_right,rgba(251,191,36,0.14),transparent_30rem),linear-gradient(180deg,#070b12_0%,#0a1220_48%,#05070b_100%)]" />
 
-      <main className={clsx(mode === 'dark' ? 'bg-gradient-dark' : 'bg-white')}>
-        <div
-          className={clsx(
-            'layout min-h-screen',
-            mode === 'dark' ? 'text-white' : 'text-black'
-          )}
-        >
-          <div className=' flex min-h-screen flex-col items-center justify-center pb-6 text-center md:pt-6'>
-            <div className='fade-up fixed right-10 top-6 hidden md:block'>
-              <IconButton
-                onClick={toggleMode}
-                variant={mode === 'dark' ? 'light' : 'dark'}
-                className='animate-gentle-pulse focus:ring focus:ring-blue-300 focus:ring-opacity-50'
-                icon={mode === 'dark' ? IoMdSunny : IoMdMoon} // Switching Icons Here
-                aria-label={
-                  mode === 'dark'
-                    ? 'Switch to light mode'
-                    : 'Switch to dark mode'
-                }
-              />
+      <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-6 lg:px-8">
+        <Link href="/" className="font-secondary text-2xl tracking-wide text-white">
+          HENNERS
+        </Link>
+        <nav aria-label="Primary navigation" className="hidden items-center gap-7 text-sm font-semibold text-slate-300 md:flex">
+          <Link href="#facilitation" className="hover:text-amber-200">Facilitation</Link>
+          <Link href="#listen" className="hover:text-amber-200">Listen</Link>
+          <Link href="#upcoming" className="hover:text-amber-200">Gigs</Link>
+          <Link href="/media-package" className="hover:text-amber-200">Press kit</Link>
+        </nav>
+        <Link href="#contact" className="rounded-full border border-amber-200/40 px-4 py-2 text-sm font-semibold text-amber-100 transition hover:bg-amber-200 hover:text-slate-950">
+          Contact
+        </Link>
+      </header>
+
+      <section className="relative z-10 mx-auto grid max-w-7xl gap-12 px-5 pb-20 pt-12 sm:px-6 md:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8">
+        <div>
+          <p className="mb-5 inline-flex rounded-full border border-cyan-200/20 bg-cyan-200/10 px-4 py-2 text-sm font-semibold text-cyan-100">
+            Currently taking a pause from DJing and gigging
+          </p>
+          <h1 className="max-w-4xl font-primary text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Ecstatic Dance Facilitator & DJ in Amsterdam
+          </h1>
+          <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-300">
+            I guide conscious dance journeys that move from grounding to release, joy, stillness, and connection — for ecstatic dance floors, ceremonies, retreats, and festivals across the Netherlands.
+          </p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Link href="#listen" className="rounded-full bg-amber-200 px-6 py-4 text-center font-semibold text-slate-950 shadow-xl shadow-amber-500/20 transition hover:bg-amber-100">
+              Listen to a journey
+            </Link>
+            <Link href="#facilitation" className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-white transition hover:border-cyan-200/50 hover:bg-white/10">
+              Explore facilitation
+            </Link>
+          </div>
+          <dl className="mt-10 grid gap-4 sm:grid-cols-3">
+            {stats.map((stat) => (
+              <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                <dt className="text-2xl font-semibold text-white">{stat.value}</dt>
+                <dd className="mt-1 text-sm text-slate-400">{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <div className="relative">
+          <div className="absolute -inset-8 rounded-[3rem] bg-cyan-400/10 blur-3xl" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40">
+            <Image
+              src={HennersSpaceholding}
+              alt="Henners holding space as an ecstatic dance facilitator"
+              className="aspect-[4/5] w-full object-cover"
+              priority
+              sizes="(max-width: 1024px) 100vw, 46vw"
+              placeholder="blur"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Movement · ceremony · music</p>
+              <p className="mt-2 text-lg text-white">When joy is evoked, I support that. When tears come, I nurture them.</p>
             </div>
-
-            {/* Enhanced Hero Section */}
-            <div className='fade-up relative mb-8'>
-              {/* Dynamic Image Slideshow */}
-              <div className='relative mx-auto mb-6 w-full max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl'>
-                <ImageSlideshow
-                  autoPlay={true}
-                  interval={8000}
-                  showControls={true}
-                  className="w-full h-auto"
-                />
-              </div>
-
-              {/* Enhanced Branding */}
-              <header className='mb-6 px-2 text-center'>
-                <h1 className='fade-up group relative mx-auto mt-8 w-fit text-5xl font-bold ease-in md:text-6xl lg:text-7xl'>
-                  <span className='bg-gradient-to-r from-blue-400 via-cyan-500 to-blue-600 bg-clip-text text-transparent'>
-                    HENNERS
-                  </span>
-                  <div className='absolute -bottom-2 left-0 h-1.5 w-full rounded-full bg-gradient-to-r from-blue-300 via-cyan-400 to-yellow-300 transition-all duration-300 group-hover:h-2'></div>
-                  {/* Glowing effect */}
-                  <div className='absolute -inset-4 -z-10 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-xl transition-all duration-300 group-hover:blur-2xl'></div>
-                </h1>
-
-                <p className='fade-up mt-6 text-lg font-medium text-gray-900 delay-75 md:text-xl dark:text-gray-100'>
-                  Ecstatic Dance DJ • Amsterdam • Netherlands
-                </p>
-
-                <div className='fade-up mt-8 space-y-4 delay-100'>
-                  <p className='text-xl font-semibold md:text-2xl lg:text-3xl'>
-                    Amsterdam based ecstatic dance DJ creating transformative musical journeys.
-                  </p>
-                  <p className='text-xl font-semibold md:text-2xl lg:text-3xl'>
-                    When joy is evoked, I support that. When tears come, I nurture them.
-                  </p>
-                  <p className='text-xl font-semibold md:text-2xl lg:text-3xl'>
-                    Specializing in conscious dance journeys, transformative experiences & ceremonies across the Netherlands.
-                  </p>
-                </div>
-              </header>
-            </div>
-
-            {/* Contact + listening links */}
-            <section className='mt-8 pb-8 pt-6'>
-              <div className='flex flex-wrap items-center justify-center gap-4 md:gap-6'>
-                <button
-                  type='button'
-                  onClick={() => setIsContactOpen(true)}
-                  className='fade-up group inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300/50'
-                  aria-label='Open simple contact form'
-                >
-                  Get in contact
-                </button>
-
-                <a
-                  href='https://www.instagram.com/srrenneh/'
-                  className='fade-up group'
-                  aria-label='Follow Henners on Instagram'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-500 via-purple-500 to-orange-400 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl focus:ring-4 focus:ring-pink-300/50 md:h-20 md:w-20'>
-                    <FaInstagram className='h-8 w-8 text-white md:h-10 md:w-10' />
-                  </div>
-                </a>
-
-                <a
-                  href='https://soundcloud.com/hennerrsss/friday-ecstatic-dance-odessa-14-12-25'
-                  className='fade-up group'
-                  aria-label='Listen to the available DJ Henners mix on SoundCloud'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl focus:ring-4 focus:ring-orange-300/50 md:h-20 md:w-20'>
-                    <PiSoundcloudLogoFill className='h-8 w-8 text-white md:h-10 md:w-10' />
-                  </div>
-                </a>
-              </div>
-            </section>
-
-            {/* Music Player Section */}
-            <section className='mt-12 mb-8'>
-              <SoundCloudWidget />
-            </section>
-
-            {/* Upcoming Gigs Section */}
-            <section className='mb-12'>
-              <UpcomingGigs gigs={gigs} />
-            </section>
-
-            {/* Mission Statement Section */}
-            <section className='my-16 px-6 sm:px-8 lg:px-0 lg:w-2/3 mx-auto'>
-              <div className='text-center'>
-                <div className='mb-6 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
-                <p className='fade-up text-xl font-medium leading-relaxed delay-150 ease-in md:text-2xl lg:text-3xl'>
-                  I yearn to move your soul through music, to take you on a
-                  journey that awakens the spirit and connects the tribe.
-                </p>
-                <div className='mt-6 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
-              </div>
-            </section>
-
-            {/* Past Gigs Section */}
-            <section className='mt-16'>
-              <PastGigs gigs={gigs} />
-            </section>
-            {/* Media Package Link */}
-            <section className='mt-16 text-center'>
-              <div className='mb-8 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
-              <div className='mb-8'>
-                <h3 className='text-2xl font-semibold mb-4'>For Event Organizers</h3>
-                <p className='text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto'>
-                  Access high-resolution photos, technical rider, artist bios, and all professional materials needed for bookings and promotions.
-                </p>
-                <Link href='/media-package'>
-                  <Button
-                    variant={mode === 'dark' ? 'light' : 'dark'}
-                    className='px-8 py-3 text-lg hover:scale-105 transition-transform duration-300'
-                  >
-                    View Press Kit
-                  </Button>
-                </Link>
-              </div>
-            </section>
-
-            {/* Footer */}
-            <footer className='mt-12 pb-8 pt-8'>
-              <div className='text-center text-sm text-gray-600 dark:text-gray-400'>
-                <div className='mb-4 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600'></div>
-                <p suppressHydrationWarning>
-                  © {new Date().getFullYear()} DJ Henners • Built by{' '}
-                  <UnderlineLink href='https://dev.hrwillmott.com' className='text-blue-500 hover:text-blue-600'>
-                    HRWILLMOTT
-                  </UnderlineLink>
-                </p>
-              </div>
-            </footer>
           </div>
         </div>
-      </main>
+      </section>
 
-      {isContactOpen && (
-        <div
-          className='fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-sm'
-          role='dialog'
-          aria-modal='true'
-          aria-labelledby='contact-modal-title'
-          onClick={() => setIsContactOpen(false)}
-        >
-          <div
-            className={clsx(
-              'relative w-full max-w-xl rounded-2xl border p-6 text-left shadow-2xl md:p-8',
-              mode === 'dark'
-                ? 'border-gray-700 bg-gray-900 text-white'
-                : 'border-gray-200 bg-white text-gray-900'
-            )}
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type='button'
-              onClick={() => setIsContactOpen(false)}
-              className='absolute right-4 top-4 rounded-full px-3 py-1 text-2xl leading-none text-gray-500 transition-colors hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:text-gray-400 dark:hover:text-white'
-              aria-label='Close contact form'
-            >
-              ×
-            </button>
-            <div className='mb-6 pr-8 text-center'>
-              <h2 id='contact-modal-title' className='text-3xl font-bold'>
-                <span className='bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent'>
-                  Get in contact
-                </span>
-              </h2>
-              <p className='mt-3 text-gray-600 dark:text-gray-400'>
-                Simple message. Name, email, what you want to say.
-              </p>
-            </div>
-            <ContactForm mode={mode} onSuccess={() => setTimeout(() => setIsContactOpen(false), 1200)} />
+      <section id="facilitation" className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">What I facilitate</p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Not just tracks. A held journey.</h2>
+          <p className="mt-6 text-lg leading-8 text-slate-300">
+            Ecstatic dance works when the room feels safe enough to move honestly. My work is musical, but it is also relational: reading the floor, protecting the arc, and giving the body permission to feel.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {facilitationCards.map((card) => (
+            <article key={card.title} className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 transition hover:border-amber-200/30 hover:bg-white/[0.08]">
+              <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
+              <p className="mt-4 leading-7 text-slate-400">{card.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="relative z-10 mx-auto grid max-w-6xl gap-5 px-5 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
+        {[
+          { image: HennersCeremony, alt: 'Ceremony music facilitation with Henners', title: 'Ceremony-aware' },
+          { image: HennersDj, alt: 'Henners DJing an ecstatic dance journey', title: 'Rhythm-led' },
+          { image: HennersPfp, alt: 'Portrait of Henners', title: 'Human, warm, present' },
+        ].map((item) => (
+          <figure key={item.title} className="group overflow-hidden rounded-[1.7rem] border border-white/10 bg-white/[0.04]">
+            <Image src={item.image} alt={item.alt} className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" placeholder="blur" />
+            <figcaption className="p-5 text-sm font-semibold uppercase tracking-[0.22em] text-slate-300">{item.title}</figcaption>
+          </figure>
+        ))}
+      </section>
+
+      <SoundCloudWidget />
+      <UpcomingGigs gigs={gigs} />
+      <PastGigs gigs={gigs} />
+
+      <section className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-6 lg:px-8">
+        <div className="grid gap-8 rounded-[2rem] border border-white/10 bg-white/[0.05] p-8 md:grid-cols-[0.8fr_1.2fr] md:p-10">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">For organizers</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white">Press kit, context & future invitations</h2>
+            <p className="mt-5 leading-8 text-slate-300">
+              If you are holding an ecstatic dance, retreat, ceremony, or festival floor, the press kit has photos, music, bio material, and technical context.
+            </p>
+            <Link href="/media-package" className="mt-7 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-100">
+              View press kit
+            </Link>
+          </div>
+          <div id="contact" className="rounded-[1.5rem] bg-[#080d16] p-5 md:p-6">
+            <ContactForm mode="dark" />
           </div>
         </div>
-      )}
+      </section>
+
+      <section className="relative z-10 mx-auto max-w-5xl px-5 py-20 sm:px-6 lg:px-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">FAQ</p>
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Quick answers for dancers, organizers, and AI search</h2>
+        <div className="mt-8 grid gap-4">
+          {faqItems.map((item) => (
+            <details key={item.question} className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 open:border-amber-200/30">
+              <summary className="cursor-pointer text-lg font-semibold text-white">{item.question}</summary>
+              <p className="mt-4 leading-8 text-slate-300">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <footer className="relative z-10 border-t border-white/10 px-5 py-10 text-sm text-slate-400 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <p>© {new Date().getFullYear()} Henners · Ecstatic Dance Facilitator & DJ · Amsterdam</p>
+          <div className="flex gap-4">
+            <a href={siteConfig.social.soundcloud} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">SoundCloud</a>
+            <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">Instagram</a>
+            <Link href="/faq" className="hover:text-amber-200">FAQ</Link>
+            <Link href="/about" className="hover:text-amber-200">About</Link>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
