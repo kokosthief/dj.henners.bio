@@ -1,15 +1,14 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import ContactForm from '@/app/components/ContactForm';
 import ContactQueryScroll from '@/app/components/ContactQueryScroll';
+import ImageSlideshow from '@/app/components/ImageSlideshow';
 import PastGigs from '@/app/components/PastGigs';
 import SoundCloudWidget from '@/app/components/SoundCloudWidget';
 import UpcomingGigs from '@/app/components/UpcomingGigs';
 import { siteConfig } from '@/constant/config';
 
 import { gigs } from './gigsData';
-import RijksmuseumCloseUp from '../../public/images/rijksmuseum-close-up.jpg';
 
 const facilitationCards = [
   {
@@ -85,19 +84,18 @@ export default function HomePage() {
 
         <div className="relative">
           <div className="absolute -inset-8 rounded-[3rem] bg-cyan-400/10 blur-3xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40">
-            <Image
-              src={RijksmuseumCloseUp}
-              alt="Henners DJing at Rijksmuseum in Amsterdam"
-              className="aspect-[4/5] w-full object-cover object-[58%_center]"
-              loading="lazy"
-              sizes="(max-width: 1024px) calc(100vw - 2.5rem), 46vw"
-              placeholder="blur"
-              quality={70}
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl shadow-black/40 sm:p-4">
+            <ImageSlideshow
+              autoPlay
+              interval={3600}
+              showControls={false}
+              priority
+              imageClassName="aspect-[4/5]"
+              className="w-full"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Rijksmuseum · Amsterdam</p>
-              <p className="mt-2 text-lg text-white">Warm rooms, big energy, and a dance floor that can travel.</p>
+              <p className="mt-2 text-lg text-white">A moving glimpse of the rooms, rituals, and dance floors.</p>
             </div>
           </div>
         </div>

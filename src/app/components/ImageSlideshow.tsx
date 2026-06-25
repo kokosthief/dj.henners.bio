@@ -60,13 +60,17 @@ interface ImageSlideshowProps {
   interval?: number;
   showControls?: boolean;
   className?: string;
+  imageClassName?: string;
+  priority?: boolean;
 }
 
 const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
   autoPlay = true,
   interval = 5000,
   showControls = true,
-  className = ''
+  className = '',
+  imageClassName = 'aspect-[4/5]',
+  priority = false,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
@@ -104,16 +108,18 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
     <div className={`relative group ${className}`}>
       {/* Main Image Display */}
       <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white/20 md:rounded-3xl">
-        <div className="relative">
+        <div className={`relative w-full overflow-hidden bg-[#080d16] ${imageClassName}`}>
           <Image
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
-            className="w-full opacity-90 transition-transform duration-700 ease-in-out hover:scale-105 dark:opacity-100"
+            fill
+            className="object-cover opacity-90 transition-transform duration-700 ease-in-out hover:scale-105 dark:opacity-100"
             style={{
               willChange: 'transform',
               backfaceVisibility: 'hidden'
             }}
-            loading="lazy"
+            loading={priority ? undefined : 'lazy'}
+            priority={priority}
             sizes="(max-width: 640px) 320px, (max-width: 1024px) 520px, 520px"
             placeholder="blur"
             quality={60}
