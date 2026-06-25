@@ -57,9 +57,9 @@ const mediaFiles = {
     { name: 'This Is What We Do', format: 'MP4', size: '23 MB', duration: '~5 min', downloadUrl: '/downloads/videos/this is what we do.mp4', description: 'Ecstatic dance showcase footage' },
   ],
   documents: [
-    { name: 'Technical Rider - DJ Henners', format: 'PDF', size: '108 KB', downloadUrl: '/downloads/documents/technical-rider.pdf', description: 'Technical requirements and equipment specifications' },
-    { name: 'Artist Biography', format: 'PDF', size: '120 KB', downloadUrl: '/downloads/documents/artist-biography.pdf', description: 'Artist biography in multiple lengths' },
-    { name: 'Complete Press Kit', format: 'PDF', size: '160 KB', downloadUrl: '/downloads/documents/complete-press-kit.pdf', description: 'Bio, technical specs, booking context, and media assets' },
+    { name: 'Technical Rider - DJ Henners', format: 'PDF', size: '163 KB', downloadUrl: '/downloads/documents/technical-rider.pdf', description: 'Technical requirements and equipment specifications' },
+    { name: 'Artist Biography', format: 'PDF', size: '183 KB', downloadUrl: '/downloads/documents/artist-biography.pdf', description: 'Artist biography in multiple lengths' },
+    { name: 'Complete Press Kit', format: 'PDF', size: '202 KB', downloadUrl: '/downloads/documents/complete-press-kit.pdf', description: 'Bio, technical specs, booking context, and media assets' },
   ],
 };
 
