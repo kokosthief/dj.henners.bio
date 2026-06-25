@@ -28,19 +28,17 @@ const images: ImageData[] = [
   {
     src: RijksmuseumDancefloorJpg,
     alt: 'Rijksmuseum dancefloor from the DJ booth',
-    title: 'Ambrosia at Rijksmuseum',
-    caption: 'The view from the booth: bodies moving under the museum lights.'
+    title: 'Ambrosia at Rijksmuseum'
   },
   {
     src: RijksmuseumCloseUpJpg,
     alt: 'Close-up of Henners DJing at Rijksmuseum',
-    title: 'Rijksmuseum DJ set',
-    caption: 'A rare, beautiful floor. Big space, close attention.'
+    title: 'Rijksmuseum DJ set'
   },
   {
     src: HennersDjJpg,
     alt: 'DJ Henners performing',
-    title: 'In the mix',
+    title: 'In the mix at EDFH',
     caption: 'Following the room rather than forcing a fixed playlist.'
   },
   {
@@ -53,13 +51,13 @@ const images: ImageData[] = [
     src: HennersPfpJpg,
     alt: 'DJ Henners portrait',
     title: 'Henners',
-    caption: 'Amsterdam-based ecstatic dance DJ and facilitator.'
+    caption: 'Pls smile'
   },
   {
     src: HennersSpaceholdingJpg,
     alt: 'DJ Henners space holding',
     title: 'Holding space',
-    caption: 'Enough rhythm to move. Enough space to feel what is there.'
+    caption: 'Sometimes I don’t play, I just feel.'
   }
 ];
 
