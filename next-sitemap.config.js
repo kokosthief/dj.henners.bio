@@ -2,12 +2,14 @@
  * @type {import('next-sitemap').IConfig}
  * @see https://github.com/iamvishnusankar/next-sitemap#readme
  */
-const lastmod = '2026-06-24T00:00:00.000Z';
+const siteUrl = 'https://dj.srenneh.com';
+const lastmod = '2026-06-25T00:00:00.000Z';
 const image = (href, title) => ({ loc: new URL(href), title });
+const absolute = (path) => `${siteUrl}${path}`;
 
 // eslint-disable-next-line no-undef
 module.exports = {
-  siteUrl: 'https://dj.henners.bio',
+  siteUrl,
   generateRobotsTxt: true,
   exclude: ['/contact', '/manifest.webmanifest', '/sitemap.xml', '/sitemap-0.xml'],
   changefreq: 'monthly',
@@ -15,26 +17,40 @@ module.exports = {
   transform: async (config, path) => {
     const priorityByPath = {
       '/': 1,
+      '/ecstatic-dance-dj-amsterdam': 0.95,
+      '/ecstatic-dance-dj-netherlands': 0.9,
+      '/events': 0.88,
       '/about': 0.85,
-      '/media-package': 0.75,
+      '/media-package': 0.8,
     };
 
     const imageByPath = {
       '/': [
-        image('https://dj.henners.bio/images/og-henners-rijksmuseum-2026.jpg', 'Henners social preview'),
-        image('https://dj.henners.bio/images/rijksmuseum-close-up.jpg', 'Henners DJing at Rijksmuseum'),
-        image('https://dj.henners.bio/images/rijksmuseum-dj-booth.jpg', 'Rijksmuseum DJ booth'),
+        image(absolute('/images/og-henners-rijksmuseum-2026.jpg'), 'Henners social preview'),
+        image(absolute('/images/rijksmuseum-close-up.jpg'), 'Henners DJing at Rijksmuseum'),
+        image(absolute('/images/rijksmuseum-dj-booth.jpg'), 'Rijksmuseum DJ booth'),
+      ],
+      '/ecstatic-dance-dj-amsterdam': [
+        image(absolute('/images/og-henners-rijksmuseum-2026.jpg'), 'Henners ecstatic dance DJ Amsterdam'),
+        image(absolute('/images/rijksmuseum-dj-booth.jpg'), 'Henners DJing in Amsterdam'),
+      ],
+      '/ecstatic-dance-dj-netherlands': [
+        image(absolute('/images/og-henners-rijksmuseum-2026.jpg'), 'Henners ecstatic dance DJ Netherlands'),
+      ],
+      '/events': [
+        image(absolute('/images/og-henners-rijksmuseum-2026.jpg'), 'Henners event history'),
+        image(absolute('/images/rijksmuseum-dancefloor.jpg'), 'Rijksmuseum dancefloor'),
       ],
       '/about': [
-        image('https://dj.henners.bio/images/og-henners-rijksmuseum-2026.jpg', 'Henners social preview'),
-        image('https://dj.henners.bio/images/henners-spaceholding.jpg', 'Henners holding space'),
-        image('https://dj.henners.bio/images/henners-ceremony.jpg', 'Henners ceremony music'),
+        image(absolute('/images/og-henners-rijksmuseum-2026.jpg'), 'Henners social preview'),
+        image(absolute('/images/henners-spaceholding.jpg'), 'Henners holding space'),
+        image(absolute('/images/henners-ceremony.jpg'), 'Henners ceremony music'),
       ],
       '/media-package': [
-        image('https://dj.henners.bio/images/og-henners-rijksmuseum-2026.jpg', 'Henners press kit social preview'),
-        image('https://dj.henners.bio/images/rijksmuseum-dj-booth.jpg', 'Rijksmuseum DJ booth'),
-        image('https://dj.henners.bio/images/rijksmuseum-dancefloor.jpg', 'Rijksmuseum dancefloor'),
-        image('https://dj.henners.bio/images/rijksmuseum-close-up.jpg', 'Henners DJing at Rijksmuseum'),
+        image(absolute('/images/og-henners-rijksmuseum-2026.jpg'), 'Henners press kit social preview'),
+        image(absolute('/images/rijksmuseum-dj-booth.jpg'), 'Rijksmuseum DJ booth'),
+        image(absolute('/images/rijksmuseum-dancefloor.jpg'), 'Rijksmuseum dancefloor'),
+        image(absolute('/images/rijksmuseum-close-up.jpg'), 'Henners DJing at Rijksmuseum'),
       ],
     };
 

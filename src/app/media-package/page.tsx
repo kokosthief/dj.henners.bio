@@ -6,6 +6,9 @@ import React, { useState } from 'react';
 import { FaDownload, FaFilePdf, FaFileZipper, FaImage, FaVideo } from 'react-icons/fa6';
 
 import ImageSlideshow from '@/app/components/ImageSlideshow';
+import { siteConfig } from '@/constant/config';
+
+import { trackEvent } from '../analytics';
 
 interface MediaFile {
   name: string;
@@ -132,8 +135,11 @@ export default function MediaPackagePage() {
   };
 
   const handlePackageDownload = () => {
-    const packageContent = `HENNERS — PRESS KIT\n\nOfficial website: https://dj.henners.bio\nSoundCloud: https://soundcloud.com/srenneh\nContact: https://dj.henners.bio/#contact\nLocation: Amsterdam, Netherlands\n\nBIO — SHORT\n${artistInfo.short}\n\nBIO — MEDIUM\n${artistInfo.medium}\n\nBIO — LONG\n${artistInfo.long}\n\nPHOTOS\n${mediaFiles.images.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n\nVIDEOS\n${mediaFiles.videos.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n\nDOCUMENTS\n${mediaFiles.documents.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n`;
+    const packageContent = `HENNERS — PRESS KIT\n\nOfficial website: ${siteConfig.url}\nSoundCloud: https://soundcloud.com/srenneh\nContact: ${siteConfig.url}/#contact\nLocation: Amsterdam, Netherlands\n\nBIO — SHORT\n${artistInfo.short}\n\nBIO — MEDIUM\n${artistInfo.medium}\n\nBIO — LONG\n${artistInfo.long}\n\nPHOTOS\n${mediaFiles.images.map((file) => `• ${file.name} (${file.size}) — ${siteConfig.url}${file.downloadUrl}`).join('\n')}\n\nVIDEOS\n${mediaFiles.videos.map((file) => `• ${file.name} (${file.size}) — ${siteConfig.url}${file.downloadUrl}`).join('\n')}\n\nDOCUMENTS\n${mediaFiles.documents.map((file) => `• ${file.name} (${file.size}) — ${siteConfig.url}${file.downloadUrl}`).join('\n')}\n`;
 
+    trackEvent('press_kit_links_download', {
+      event_label: 'complete_press_kit_links',
+    });
     downloadTextFile('Henners-Press-Kit-Links.txt', packageContent);
   };
 
@@ -239,7 +245,12 @@ export default function MediaPackagePage() {
               ) : (
                 <button
                   type="button"
-                  onClick={() => setActiveVideo(video.downloadUrl)}
+                  onClick={() => {
+                    trackEvent('press_kit_video_play', {
+                      event_label: video.name,
+                    });
+                    setActiveVideo(video.downloadUrl);
+                  }}
                   className="group relative block aspect-[9/12] w-full overflow-hidden bg-black text-left"
                   aria-label={`Play ${video.name}`}
                 >

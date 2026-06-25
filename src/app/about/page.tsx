@@ -48,11 +48,18 @@ export default function AboutPage() {
             Henners is an Amsterdam-based ecstatic dance facilitator and DJ. His work sits between music curation and space-holding: guiding rooms through rhythm, emotion, release, softness, and connection.
           </p>
           <p className="mt-6 leading-8 text-slate-400">
-            Since 2021, Henners has played and facilitated ecstatic dance floors, ceremonies, community gatherings, retreats, and festivals across the Netherlands and Europe. His sets draw on global rhythms, organic percussion, melodic electronic music, African-inspired grooves, and spacious integration textures. The deeper intention is to let DJing become a tool for travel: carrying these movement journeys into new rooms, cultures, and communities around the world.
+            Since 2021, Henners has played and facilitated ecstatic dance floors, ceremonies, community gatherings, retreats, and festivals across the Netherlands and Europe. His sets draw on global rhythms, organic percussion, melodic electronic music, African-inspired grooves, and spacious integration textures.
           </p>
           <p className="mt-6 leading-8 text-slate-400">
-            He is currently taking a pause from DJing and gigging. New mixes, gatherings, or selected future invitations will be shared when the timing feels right.
+            The public identity is deliberately consistent: Henners — Ecstatic Dance Facilitator & DJ, Amsterdam. That same wording is intended to align across this site, Hipsy, SoundCloud, Mixcloud, Odessa listings, and organizer lineups so the work is easy to recognize and cite.
           </p>
+          <p className="mt-6 leading-8 text-slate-400">
+            He is currently taking a pause from regular DJing and gigging. New mixes, gatherings, or selected future invitations will be shared when the timing feels right.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/events" className="rounded-full border border-white/15 px-5 py-3 text-center font-semibold text-white hover:bg-white/10">View event history</Link>
+            <Link href="/media-package" className="rounded-full bg-amber-200 px-5 py-3 text-center font-semibold text-slate-950 hover:bg-amber-100">Open press kit</Link>
+          </div>
         </div>
         <div className="grid gap-5">
           <Image src={HennersSpaceholding} alt="Henners holding space during an ecstatic dance journey" className="rounded-[2rem] border border-white/10 object-cover shadow-2xl" placeholder="blur" />

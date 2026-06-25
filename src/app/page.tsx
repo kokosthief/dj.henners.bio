@@ -46,6 +46,7 @@ export default function HomePage() {
           <Link href="#facilitation" className="hover:text-amber-200">Facilitation</Link>
           <Link href="#listen" className="hover:text-amber-200">Listen</Link>
           <Link href="#upcoming" className="hover:text-amber-200">Gigs</Link>
+          <Link href="/events" className="hover:text-amber-200">Events</Link>
           <Link href="/media-package" className="hover:text-amber-200">Press kit</Link>
         </nav>
         <Link href="#contact" className="rounded-full border border-amber-200/40 px-4 py-2 text-sm font-semibold text-amber-100 transition hover:bg-amber-200 hover:text-slate-950">
@@ -148,6 +149,7 @@ export default function HomePage() {
           <div className="flex gap-4">
             <a href={siteConfig.social.soundcloud} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">SoundCloud</a>
             <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">Instagram</a>
+            <Link href="/events" className="hover:text-amber-200">Events</Link>
             <Link href="/about" className="hover:text-amber-200">About</Link>
           </div>
         </div>

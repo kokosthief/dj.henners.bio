@@ -100,6 +100,13 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
+        {structuredData.videoSchemas.map((schema, index) => (
+          <script
+            key={`video-schema-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
         <link rel="alternate" type="text/plain" href="/llms.txt" title="Henners AI reference" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Henners full AI reference" />
         <meta name="geo.region" content="NL-NH" />

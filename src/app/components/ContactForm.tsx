@@ -5,6 +5,8 @@ import { MdEmail } from 'react-icons/md';
 
 import Button from '@/components/buttons/Button';
 
+import { trackEvent } from '../analytics';
+
 interface ContactFormProps {
   mode?: 'dark' | 'light';
   className?: string;
@@ -49,7 +51,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
     setStatusMessage('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await window.fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,6 +67,10 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
       setSubmitStatus('success');
       setStatusMessage('Sent — I’ll reply when I’ve seen it.');
+      trackEvent('contact_form_submit', {
+        event_label: 'homepage_contact_form',
+        message_length: formData.message.length,
+      });
       setFormData({ name: '', email: '', message: '', website: '' });
       onSuccess?.();
     } catch (error) {

@@ -3,6 +3,30 @@ import { siteConfig } from '@/constant/config';
 
 const baseUrl = siteConfig.url;
 
+const proofVideos = [
+  {
+    name: 'Henners DJing for Ambrosia at Rijksmuseum Amsterdam',
+    description: 'Short press-kit video of Henners DJing for Ambrosia at Rijksmuseum in Amsterdam.',
+    contentUrl: '/downloads/videos/ambrosia-rijksmuseum.mp4',
+    thumbnailUrl: '/images/video-posters/ambrosia-rijksmuseum.jpg',
+    duration: 'PT48S',
+  },
+  {
+    name: 'Henners DJing for Ambrosia at Het Sieraad Amsterdam',
+    description: 'Short press-kit video of Henners DJing for Ambrosia at Het Sieraad in Amsterdam.',
+    contentUrl: '/downloads/videos/ambrosia-het-sieraad.mp4',
+    thumbnailUrl: '/images/video-posters/ambrosia-het-sieraad.jpg',
+    duration: 'PT7S',
+  },
+  {
+    name: 'Henners DJing at Lundjuweel 2025',
+    description: 'Short press-kit video of Henners DJing at Lundjuweel 2025.',
+    contentUrl: '/downloads/videos/lundjuweel-2025.mp4',
+    thumbnailUrl: '/images/video-posters/lundjuweel-2025.jpg',
+    duration: 'PT15S',
+  },
+];
+
 export function generateStructuredData() {
   const pastGigs = gigs.filter((gig) => new Date(gig.date) < new Date());
   const upcomingGigs = gigs.filter((gig) => new Date(gig.date) >= new Date());
@@ -16,7 +40,7 @@ export function generateStructuredData() {
     description: siteConfig.description,
     url: baseUrl,
     image: `${baseUrl}/images/og-henners-rijksmuseum-2026.jpg`,
-    sameAs: [siteConfig.social.soundcloud, siteConfig.social.instagram],
+    sameAs: [siteConfig.social.soundcloud, siteConfig.social.instagram, ...siteConfig.aliases],
     jobTitle: 'Ecstatic Dance Facilitator and DJ',
     address: {
       '@type': 'PostalAddress',
@@ -96,10 +120,26 @@ export function generateStructuredData() {
     inLanguage: 'en',
   };
 
+  const videoSchemas = proofVideos.map((video) => ({
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: video.name,
+    description: video.description,
+    thumbnailUrl: `${baseUrl}${video.thumbnailUrl}`,
+    contentUrl: `${baseUrl}${video.contentUrl}`,
+    embedUrl: `${baseUrl}/media-package`,
+    duration: video.duration,
+    uploadDate: '2026-06-25',
+    inLanguage: 'en',
+    creator: { '@id': `${baseUrl}/#person` },
+    publisher: { '@id': `${baseUrl}/#person` },
+  }));
+
   return {
     personSchema,
     serviceSchema,
     eventSchemas,
+    videoSchemas,
     webSiteSchema,
     pastGigCount: pastGigs.length,
   };

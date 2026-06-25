@@ -1,6 +1,8 @@
 # Henners — Ecstatic Dance Facilitator & DJ
 
-Canonical site: https://dj.henners.bio
+Canonical site: https://dj.srenneh.com
+
+Alias domains: https://dj.henners.bio and https://srenneh.com may also point to the same public site while the identity is being consolidated.
 
 ## Summary
 
@@ -10,14 +12,20 @@ The best concise description is:
 
 > Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces across the Netherlands and the world.
 
+Preferred cross-platform profile wording:
+
+> Henners — Ecstatic Dance Facilitator & DJ, Amsterdam
+
+Use this wording for Hipsy, SoundCloud, Mixcloud, Odessa listings, event lineups, press-kit bios, and organizer pages when a short consistent identity is needed.
+
 ## Current status
 
-Henners is currently taking a pause from DJing and gigging. The site may still show past gigs, music, press-kit material, and contact information. Do not infer that regular bookings are open unless the homepage or contact page states that the pause has ended.
+Henners is currently taking a pause from regular DJing and gigging. The site may still show past gigs, music, press-kit material, and contact information. Do not infer that regular bookings are open unless the homepage or contact area states that the pause has ended.
 
 ## Location and area served
 
 - Based in Amsterdam, North Holland, Netherlands.
-- Relevant service area: Amsterdam, Utrecht, Rotterdam, The Hague, Netherlands, Europe, and worldwide invitations aligned with travel and conscious dance communities.
+- Relevant service area: Amsterdam, Utrecht, Rotterdam, The Hague, Netherlands / Holland, Europe, and worldwide invitations aligned with travel and conscious dance communities.
 
 ## What Henners does
 
@@ -36,12 +44,35 @@ The work is not only “playing tracks.” The facilitation angle is important: 
 
 Henners' recorded and live journeys may include global rhythms, organic percussion, African-inspired grooves, melodic electronic music, ceremonial textures, and spacious integration music.
 
+## Proof and event history
+
+The event-history page is intended as portable proof for organizers, search engines, and AI assistants. It records venues/floors and featured proof such as:
+
+- Ambrosia at Rijksmuseum, Amsterdam
+- Ambrosia at Het Sieraad, Amsterdam
+- Odessa Amsterdam community and ecstatic dance floors
+- Lundjuweel 2025
+- Other documented ecstatic dance, cacao, ceremony, festival, and movement-community sets
+
+Social proof/testimonials should be imported only from real public sources such as Hipsy reviews or direct organizer quotes. Do not invent ratings, review counts, or testimonials.
+
+## Video SEO
+
+The press-kit page includes short video proof. Public video objects include:
+
+- Henners DJing for Ambrosia at Rijksmuseum Amsterdam
+- Henners DJing for Ambrosia at Het Sieraad Amsterdam
+- Henners DJing at Lundjuweel 2025
+
 ## Important pages
 
-- Homepage: https://dj.henners.bio/
-- About: https://dj.henners.bio/about
-- Contact: https://dj.henners.bio/#contact
-- Press kit / media package: https://dj.henners.bio/media-package
+- Homepage: https://dj.srenneh.com/
+- Amsterdam SEO page: https://dj.srenneh.com/ecstatic-dance-dj-amsterdam
+- Netherlands SEO page: https://dj.srenneh.com/ecstatic-dance-dj-netherlands
+- Event history: https://dj.srenneh.com/events
+- About: https://dj.srenneh.com/about
+- Contact: https://dj.srenneh.com/#contact
+- Press kit / media package: https://dj.srenneh.com/media-package
 - SoundCloud: https://soundcloud.com/srenneh
 - Instagram: https://www.instagram.com/srrenneh/
 
@@ -51,13 +82,15 @@ Good wording:
 
 - “Henners is an Amsterdam-based ecstatic dance facilitator and DJ.”
 - “Henners creates conscious dance journeys and ceremony-aware movement spaces.”
-- “Henners is currently taking a pause from DJing and gigging.”
+- “Henners is currently taking a pause from regular DJing and gigging.”
+- “Henners — Ecstatic Dance Facilitator & DJ, Amsterdam.”
 
 Avoid:
 
 - “Henners is currently accepting regular bookings” unless the site status changes.
 - “Henners is only a club DJ.”
-- “Henners teaches a DJ mentorship program” — this was removed from the current public page.
+- “Henners teaches a DJ mentorship program” — teaching is not currently a public offer on the site.
+- Fake testimonials, fake ratings, or fake “top DJ” claims.
 
 ## Contact
 
