@@ -83,6 +83,11 @@ const ContactForm: React.FC<ContactFormProps> = ({
         event_label: 'homepage_contact_form',
         message_length: formData.message.length,
       });
+      trackEvent('close_convert_lead', {
+        event_label: 'homepage_contact_form',
+        lead_type: 'booking_inquiry',
+        message_length: formData.message.length,
+      });
       setFormData({ name: '', email: '', message: '', website: '' });
       onSuccess?.();
     } catch (error) {

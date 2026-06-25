@@ -18,6 +18,7 @@ Contact funnel:
 - `contact_form_start` — first real contact-field edit, with `field_name`.
 - `contact_form_submit_attempt` — submit button pressed.
 - `contact_form_submit` — API accepted the message.
+- `close_convert_lead` — also emitted after an accepted contact message so GA4's existing key event records booking inquiries immediately.
 - `contact_form_error` — API/client error, with truncated `error_message`.
 
 Media / press kit:
@@ -32,11 +33,12 @@ Media / press kit:
 
 Mark these as key events in GA4:
 
-1. `contact_form_submit`
-2. `press_kit_links_download`
-3. `press_kit_video_play`
-4. `soundcloud_player_load`
-5. Optional: `outbound_click` filtered to SoundCloud/Mixcloud/Hipsy later.
+1. `close_convert_lead` — already configured in this property; website now emits it on successful contact form sends.
+2. `contact_form_submit`
+3. `press_kit_links_download`
+4. `press_kit_video_play`
+5. `soundcloud_player_load`
+6. Optional: `outbound_click` filtered to SoundCloud/Mixcloud/Hipsy later.
 
 ## Recommended GA4 custom dimensions
 
