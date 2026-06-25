@@ -71,31 +71,6 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
 
-  // Preload adjacent images for smoother transitions
-  useEffect(() => {
-    const preloadImage = (index: number) => {
-      if (index >= 0 && index < images.length) {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = images[index].src.src;
-        document.head.appendChild(link);
-      }
-    };
-
-    // Preload next and previous images
-    const nextIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
-    const prevIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
-    preloadImage(nextIndex);
-    preloadImage(prevIndex);
-  }, [currentIndex]);
-
-  // Randomly select starting image on component mount
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * images.length);
-    setCurrentIndex(randomIndex);
-  }, []);
-
   // Auto-advance slideshow
   useEffect(() => {
     if (!isPlaying) return;
@@ -140,10 +115,10 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             }}
             priority={true}
             loading="eager"
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 384px, 384px"
+            sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1024px) calc(100vw - 4rem), 520px"
             placeholder="blur"
             fetchPriority="high"
-            quality={85}
+            quality={70}
           />
           {/* Subtle overlay for better text contrast */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

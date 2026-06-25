@@ -90,6 +90,7 @@ export default function HomePage() {
               priority
               sizes="(max-width: 1024px) 100vw, 46vw"
               placeholder="blur"
+              quality={70}
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Rijksmuseum · Amsterdam</p>

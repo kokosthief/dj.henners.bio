@@ -157,7 +157,7 @@ export default function MediaPackagePage() {
             Henners press kit
           </h1>
           <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-300">
-            Photos, biographies, video assets, and technical context for ecstatic dance floors, retreats, ceremonies, festivals, and conscious movement events.
+            Photos, biographies, video assets, and technical context for ecstatic dance floors, retreats, ceremonies, festivals, and conscious movement events. Page previews are optimized for fast loading; download links point to the high-resolution originals.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
