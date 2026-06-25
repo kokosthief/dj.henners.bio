@@ -83,7 +83,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Henners Event History',
-    description: 'Portable proof archive for Henners — ecstatic dance facilitator and DJ in Amsterdam.',
+    description: 'Event history for Henners — ecstatic dance facilitator and DJ in Amsterdam.',
     images: [`${siteConfig.url}/images/og-henners-rijksmuseum-2026.jpg`],
   },
 };
@@ -94,12 +94,12 @@ export default function EventsPage() {
       <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_30rem),radial-gradient(circle_at_top_right,rgba(251,191,36,0.12),transparent_28rem),linear-gradient(180deg,#070b12_0%,#0a1220_52%,#05070b_100%)]" />
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-6 lg:px-8">
         <Link href="/" className="text-sm font-semibold text-amber-200 hover:text-amber-100">← Back home</Link>
-        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Portable proof</p>
+        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Past rooms</p>
         <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight md:text-6xl">
           Event history for Henners — ecstatic dance DJ & facilitator
         </h1>
         <p className="mt-7 max-w-3xl text-xl leading-9 text-slate-300">
-          A crawlable archive of dance floors, ceremonies, festivals, and community gatherings. This page is built to make the track record easy for organizers, search engines, and AI assistants to understand.
+          A record of dance floors, ceremonies, festivals, and community gatherings I have played or helped hold. Mostly for organizers who want to see where the work has lived before.
         </p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -120,7 +120,7 @@ export default function EventsPage() {
 
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-8 sm:px-6 lg:px-8">
         <div className="mb-7">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Featured proof</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">A few rooms</p>
           <h2 className="mt-3 text-3xl font-semibold text-white">Named rooms organizers can recognize.</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">

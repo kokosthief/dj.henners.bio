@@ -43,11 +43,11 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
     <section id="past-gigs" className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-20 pt-8 sm:px-6 lg:px-8">
       <div className="mb-10 grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Track record</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Past rooms</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">Past gigs & dance floors</h2>
         </div>
         <p className="max-w-2xl text-lg leading-8 text-slate-300">
-          A living archive of ecstatic dance floors, ceremonies, festivals, and community gatherings — the proof behind the facilitation, not just a list of dates.
+          A record of the rooms, ceremonies, festivals, and community floors where this work has lived. Useful if you want context before reaching out.
         </p>
       </div>
 

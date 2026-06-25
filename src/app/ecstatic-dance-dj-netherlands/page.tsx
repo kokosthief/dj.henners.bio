@@ -69,15 +69,15 @@ export default function EcstaticDanceDjNetherlandsPage() {
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-7">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Local SEO clarity</p>
-            <h2 className="mt-3 text-3xl font-semibold text-white">Amsterdam-based, Netherlands-relevant, internationally portable.</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">From Amsterdam outward</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white">Amsterdam-based, with rooms across the Netherlands.</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              ['Amsterdam', 'Home base and strongest local signal.'],
-              ['Netherlands / Holland', 'Useful for Dutch organizers searching beyond a single city.'],
+              ['Amsterdam', 'Home base and the place most of the work grew from.'],
+              ['Netherlands / Holland', 'For Dutch organizers looking beyond one city.'],
               ['Retreats & festivals', 'The right frame for travel-connected bookings.'],
-              ['Press proof', 'Rijksmuseum, Ambrosia, Odessa, and other named floors create credibility.'],
+              ['Photos & footage', 'Rijksmuseum, Ambrosia, Odessa, and other named floors are covered in the press kit.'],
             ].map(([title, body]) => (
               <article key={title} className="rounded-[1.5rem] border border-white/10 bg-[#0b1220]/85 p-5">
                 <h3 className="text-xl font-semibold text-white">{title}</h3>
@@ -91,8 +91,8 @@ export default function EcstaticDanceDjNetherlandsPage() {
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-3 rounded-[2rem] border border-amber-200/15 bg-amber-200/[0.06] p-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-3xl font-semibold text-white">Need proof or media?</h2>
-            <p className="mt-3 max-w-2xl leading-8 text-slate-300">The event archive and press kit keep the public record portable across organizer pages and social profiles.</p>
+            <h2 className="text-3xl font-semibold text-white">Need photos, footage, or dates?</h2>
+            <p className="mt-3 max-w-2xl leading-8 text-slate-300">The event history and press kit are here if you need context before reaching out.</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link href="/events" className="rounded-full border border-white/15 px-5 py-3 text-center font-semibold text-white hover:bg-white/10">Event history</Link>

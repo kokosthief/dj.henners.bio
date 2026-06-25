@@ -69,9 +69,9 @@ export default function EcstaticDanceDjAmsterdamPage() {
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-4 md:grid-cols-3">
           {[
-            ['Amsterdam proof', 'Past and recent material includes Amsterdam floors such as Odessa, Ambrosia, Het Sieraad, and Rijksmuseum.'],
-            ['Facilitated journeys', 'Sets are shaped as somatic arcs rather than background music: grounding, build, release, and landing.'],
-            ['Organizer-ready', 'Press photos, video clips, bio copy, and technical context are available in the press kit.'],
+            ['Amsterdam rooms', 'Past and recent material includes Odessa, Ambrosia, Het Sieraad, and Rijksmuseum.'],
+            ['Music with a shape', 'The sets are not background music. They move from arrival into rhythm, release, and a landing that does not feel rushed.'],
+            ['For organizers', 'Photos, video clips, bio copy, and technical notes are in the press kit.'],
           ].map(([title, body]) => (
             <article key={title} className="rounded-[1.75rem] border border-white/10 bg-white/[0.05] p-6">
               <h2 className="text-2xl font-semibold text-white">{title}</h2>
@@ -83,7 +83,7 @@ export default function EcstaticDanceDjAmsterdamPage() {
 
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8">
         <div className="rounded-[2rem] border border-amber-200/15 bg-amber-200/[0.06] p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Search identity</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Listing copy</p>
           <h2 className="mt-3 text-3xl font-semibold text-white">Henners — Ecstatic Dance Facilitator & DJ, Amsterdam</h2>
           <p className="mt-5 max-w-3xl leading-8 text-slate-300">
             For listings, social profiles, lineups, and organizer copy, the clearest public wording is: Henners is an Amsterdam-based ecstatic dance facilitator and DJ.
