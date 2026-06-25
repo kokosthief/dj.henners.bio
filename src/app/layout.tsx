@@ -1,5 +1,4 @@
 import { Metadata, Viewport } from 'next';
-import { Overpass, Rowdies } from 'next/font/google';
 import * as React from 'react';
 
 import '@/styles/globals.css';
@@ -8,23 +7,6 @@ import { siteConfig } from '@/constant/config';
 
 import GoogleAnalytics from './google-analytics';
 import { generateStructuredData } from './structured-data';
-
-const overpass = Overpass({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-overpass',
-  preload: true,
-  adjustFontFallback: true,
-});
-
-const rowdies = Rowdies({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-  variable: '--font-rowdies',
-  preload: false,
-  adjustFontFallback: true,
-});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -120,16 +102,12 @@ export default function RootLayout({
         ))}
         <link rel="alternate" type="text/plain" href="/llms.txt" title="Henners AI reference" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Henners full AI reference" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://region1.google-analytics.com" />
-        <link rel="preconnect" href="https://w.soundcloud.com" crossOrigin="anonymous" />
         <meta name="geo.region" content="NL-NH" />
         <meta name="geo.placename" content="Amsterdam" />
         <meta name="geo.position" content="52.3676;4.9041" />
         <meta name="ICBM" content="52.3676, 4.9041" />
       </head>
-      <body className={`${overpass.variable} ${rowdies.variable} bg-[#070b12] font-primary text-white antialiased`}>
+      <body className="bg-[#070b12] font-primary text-white antialiased">
         {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
         {children}
       </body>

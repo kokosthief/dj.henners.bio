@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaDownload, FaFilePdf, FaFileZipper, FaImage, FaVideo } from 'react-icons/fa6';
@@ -121,6 +122,7 @@ function AssetList({
 export default function MediaPackagePage() {
   const [activeBio, setActiveBio] = useState<BioKey>('medium');
   const [copied, setCopied] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const selectedBio = bioOptions.find((bio) => bio.key === activeBio) ?? bioOptions[1];
 
   const handleCopyBio = async () => {
@@ -153,11 +155,11 @@ export default function MediaPackagePage() {
           <p className="mb-5 inline-flex rounded-full border border-cyan-200/20 bg-cyan-200/10 px-4 py-2 text-sm font-semibold text-cyan-100">
             Press kit · organizer resources
           </p>
-          <h1 className="max-w-4xl font-primary text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl font-primary text-3xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
             Henners press kit
           </h1>
-          <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-300">
-            Photos, biographies, video assets, and technical context for ecstatic dance floors, retreats, ceremonies, festivals, and conscious movement events. Page previews are optimized for fast loading; download links point to the high-resolution originals.
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-7 sm:text-xl sm:leading-9">
+            Bio, photos, videos, tech rider, and download links for organizers.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
@@ -174,7 +176,7 @@ export default function MediaPackagePage() {
           </div>
         </div>
 
-        <div className="min-w-0 rounded-[2rem] border border-white/10 bg-white/[0.05] p-4 shadow-2xl shadow-black/40 sm:p-6">
+        <div className="hidden min-w-0 rounded-[2rem] border border-white/10 bg-white/[0.05] p-4 shadow-2xl shadow-black/40 sm:p-6 md:block">
           <ImageSlideshow autoPlay={false} showControls className="w-full" />
         </div>
       </section>
@@ -223,15 +225,43 @@ export default function MediaPackagePage() {
         <div className="grid gap-5 lg:grid-cols-3">
           {mediaFiles.videos.slice(0, 3).map((video) => (
             <article key={`preview-${video.name}`} className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.045] shadow-2xl shadow-black/25">
-              <video
-                className="aspect-[9/12] w-full bg-black object-cover"
-                controls
-                preload="metadata"
-                playsInline
-                poster={video.posterUrl}
-                src={video.downloadUrl}
-                aria-label={video.description}
-              />
+              {activeVideo === video.downloadUrl ? (
+                <video
+                  className="aspect-[9/12] w-full bg-black object-cover"
+                  controls
+                  autoPlay
+                  preload="metadata"
+                  playsInline
+                  poster={video.posterUrl}
+                  src={video.downloadUrl}
+                  aria-label={video.description}
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setActiveVideo(video.downloadUrl)}
+                  className="group relative block aspect-[9/12] w-full overflow-hidden bg-black text-left"
+                  aria-label={`Play ${video.name}`}
+                >
+                  {video.posterUrl && (
+                    <Image
+                      src={video.posterUrl}
+                      alt=""
+                      fill
+                      className="object-cover opacity-90 transition duration-300 group-hover:scale-[1.02] group-hover:opacity-100"
+                      sizes="(max-width: 1024px) calc(100vw - 2.5rem), 350px"
+                      loading="lazy"
+                      quality={60}
+                    />
+                  )}
+                  <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/50 bg-black/45 text-white shadow-2xl backdrop-blur transition group-hover:scale-105 group-hover:bg-amber-200 group-hover:text-slate-950">
+                    <svg className="ml-1 h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                </button>
+              )}
               <div className="p-5">
                 <h3 className="text-lg font-semibold text-white">{video.name}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-400">{video.description}</p>

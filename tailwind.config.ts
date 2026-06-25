@@ -1,3 +1,4 @@
+import forms from '@tailwindcss/forms';
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
@@ -7,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['var(--font-overpass)', ...defaultTheme.fontFamily.sans],
-        secondary: ['var(--font-rowdies)', ...defaultTheme.fontFamily.sans],
+        primary: defaultTheme.fontFamily.sans,
+        secondary: defaultTheme.fontFamily.sans,
       },
       colors: {
         primary: {
@@ -54,5 +55,5 @@ export default {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [forms],
 } satisfies Config;

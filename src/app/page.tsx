@@ -58,11 +58,11 @@ export default function HomePage() {
           <p className="mb-5 inline-flex rounded-full border border-cyan-200/20 bg-cyan-200/10 px-4 py-2 text-sm font-semibold text-cyan-100">
             Currently taking a pause from DJing and gigging
           </p>
-          <h1 className="max-w-4xl font-primary text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl font-primary text-3xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
             Ecstatic Dance Facilitator & DJ in Amsterdam
           </h1>
-          <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-300">
-            I guide conscious dance journeys that move from grounding to release, joy, stillness, and connection — for ecstatic dance floors, ceremonies, retreats, and festivals across the Netherlands and the world.
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-7 sm:text-xl sm:leading-9">
+            Grounded ecstatic dance journeys for conscious floors, ceremonies, retreats, and festivals.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link href="#listen" className="rounded-full bg-amber-200 px-6 py-4 text-center font-semibold text-slate-950 shadow-xl shadow-amber-500/20 transition hover:bg-amber-100">
@@ -89,8 +89,8 @@ export default function HomePage() {
               src={RijksmuseumCloseUp}
               alt="Henners DJing at Rijksmuseum in Amsterdam"
               className="aspect-[4/5] w-full object-cover object-[58%_center]"
-              priority
-              sizes="(max-width: 1024px) 100vw, 46vw"
+              loading="lazy"
+              sizes="(max-width: 1024px) calc(100vw - 2.5rem), 46vw"
               placeholder="blur"
               quality={70}
             />
