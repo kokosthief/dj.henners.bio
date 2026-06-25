@@ -47,14 +47,14 @@ const PastGigs: React.FC<PastGigsProps> = ({ gigs }) => {
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">Past gigs & dance floors</h2>
         </div>
         <p className="max-w-2xl text-lg leading-8 text-slate-300">
-          A record of the rooms, ceremonies, festivals, and community floors where this work has lived. Useful if you want context before reaching out.
+          Past record of where I’ve gigged and how often.
         </p>
       </div>
 
       <div className="mb-8 grid gap-4 sm:grid-cols-3">
         <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6">
           <p className="text-4xl font-semibold text-white">{pastGigs.length}+</p>
-          <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">documented sets</p>
+          <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">gigs</p>
         </div>
         <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6">
           <p className="text-4xl font-semibold text-white">{years}</p>

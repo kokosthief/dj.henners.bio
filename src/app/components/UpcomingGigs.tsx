@@ -34,7 +34,7 @@ const UpcomingGigs: React.FC<UpcomingGigsProps> = ({ gigs }) => {
         ) : (
           <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-slate-200">
             <p className="max-w-3xl text-lg leading-8">
-              I’m taking a pause from regular DJing and gigging. New mixes, gatherings, and selected future dates will appear here when the timing feels right.
+              After six months away from regular DJing, I’m starting the next leg of the journey with more awareness — shaped by careful reflection and lived experience.
             </p>
           </div>
         )}

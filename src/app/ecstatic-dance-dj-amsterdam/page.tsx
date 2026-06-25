@@ -47,7 +47,7 @@ export default function EcstaticDanceDjAmsterdamPage() {
             Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating grounded, emotionally intelligent dance journeys for conscious floors, ceremonies, retreats, and festivals.
           </p>
           <p className="mt-6 leading-8 text-slate-400">
-            The work is not only a DJ set. It is a held arc: arrival, rhythm, release, play, tenderness, stillness, and integration. Amsterdam is the home base; the dance floor can travel when the room and invitation feel aligned.
+            The work is not only a DJ set. It follows an ecstatic dance arc: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness. Amsterdam is the home base; the dance floor can travel when the room and invitation feel aligned.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/media-package" className="rounded-full bg-amber-200 px-6 py-4 text-center font-semibold text-slate-950 hover:bg-amber-100">Open press kit</Link>
@@ -70,7 +70,7 @@ export default function EcstaticDanceDjAmsterdamPage() {
         <div className="grid gap-4 md:grid-cols-3">
           {[
             ['Amsterdam rooms', 'Past and recent material includes Odessa, Ambrosia, Het Sieraad, and Rijksmuseum.'],
-            ['Music with a shape', 'The sets are not background music. They move from arrival into rhythm, release, and a landing that does not feel rushed.'],
+            ['Music with a shape', 'The sets are not background music. They move through arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.'],
             ['For organizers', 'Photos, video clips, bio copy, and technical notes are in the press kit.'],
           ].map(([title, body]) => (
             <article key={title} className="rounded-[1.75rem] border border-white/10 bg-white/[0.05] p-6">

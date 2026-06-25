@@ -47,13 +47,13 @@ export default function EcstaticDanceDjNetherlandsPage() {
           Henners is an Amsterdam-based ecstatic dance facilitator and DJ with a track record across Dutch conscious dance floors, ceremonies, festivals, and community gatherings.
         </p>
         <p className="mt-6 max-w-3xl leading-8 text-slate-400">
-          The public identity is intentionally simple and consistent: Henners — Ecstatic Dance Facilitator & DJ, Amsterdam. That wording works across Hipsy, SoundCloud, Mixcloud, Odessa listings, press-kit material, and organizer lineups.
+          The work grew through Amsterdam and travels when the room, invitation, and timing feel aligned.
         </p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6">
             <p className="text-4xl font-semibold text-white">{dutchGigs.length}+</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">Dutch documented sets</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">Dutch gigs</p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6">
             <p className="text-4xl font-semibold text-white">{dutchVenues}</p>

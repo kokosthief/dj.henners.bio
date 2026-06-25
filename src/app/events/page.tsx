@@ -105,7 +105,7 @@ export default function EventsPage() {
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6">
             <p className="text-4xl font-semibold text-white">{pastGigs.length}+</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">documented sets</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-slate-400">gigs</p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6">
             <p className="text-4xl font-semibold text-white">{venueSummaries.length}</p>
