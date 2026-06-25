@@ -1,10 +1,12 @@
 import { Metadata, Viewport } from 'next';
 import * as React from 'react';
+import { Suspense } from 'react';
 
 import '@/styles/globals.css';
 
 import { siteConfig } from '@/constant/config';
 
+import SiteAnalytics from './components/SiteAnalytics';
 import GoogleAnalytics from './google-analytics';
 import { generateStructuredData } from './structured-data';
 
@@ -116,6 +118,9 @@ export default function RootLayout({
       </head>
       <body className="bg-[#070b12] font-primary text-white antialiased">
         {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
+        <Suspense fallback={null}>
+          <SiteAnalytics />
+        </Suspense>
         {children}
       </body>
     </html>

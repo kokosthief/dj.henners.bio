@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { FaPaperPlane, FaUser } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
@@ -35,9 +35,17 @@ const ContactForm: React.FC<ContactFormProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
+  const hasTrackedStart = useRef(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    if (!hasTrackedStart.current && name !== 'website') {
+      hasTrackedStart.current = true;
+      trackEvent('contact_form_start', {
+        event_label: 'homepage_contact_form',
+        field_name: name,
+      });
+    }
     setFormData(prev => ({
       ...prev,
       [name]: value,
@@ -49,6 +57,10 @@ const ContactForm: React.FC<ContactFormProps> = ({
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setStatusMessage('');
+    trackEvent('contact_form_submit_attempt', {
+      event_label: 'homepage_contact_form',
+      message_length: formData.message.length,
+    });
 
     try {
       const response = await window.fetch('/api/contact', {
@@ -75,7 +87,12 @@ const ContactForm: React.FC<ContactFormProps> = ({
       onSuccess?.();
     } catch (error) {
       setSubmitStatus('error');
-      setStatusMessage(error instanceof Error ? error.message : 'Could not send message. Please try again later.');
+      const message = error instanceof Error ? error.message : 'Could not send message. Please try again later.';
+      setStatusMessage(message);
+      trackEvent('contact_form_error', {
+        event_label: 'homepage_contact_form',
+        error_message: message.slice(0, 120),
+      });
     } finally {
       setIsSubmitting(false);
     }

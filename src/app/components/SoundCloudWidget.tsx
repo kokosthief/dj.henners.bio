@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 
+import { trackEvent } from '../analytics';
+
 const track = {
   title: "Friday Ecstatic Dance w/ Mozes' Soundbath @ Odessa 14-12-25",
   artistUrl: 'https://soundcloud.com/srenneh',
@@ -39,7 +41,13 @@ const SoundCloudWidget: React.FC = () => {
               <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
                 <button
                   type="button"
-                  onClick={() => setLoaded(true)}
+                  onClick={() => {
+                    trackEvent('soundcloud_player_load', {
+                      event_label: track.title,
+                      track_url: track.trackUrl,
+                    });
+                    setLoaded(true);
+                  }}
                   className="rounded-full bg-amber-200 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-amber-500/20 transition hover:bg-amber-100"
                 >
                   Load player

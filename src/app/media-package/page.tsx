@@ -130,6 +130,10 @@ export default function MediaPackagePage() {
 
   const handleCopyBio = async () => {
     await navigator.clipboard.writeText(selectedBio.copy);
+    trackEvent('press_kit_bio_copy', {
+      event_label: selectedBio.label,
+      bio_length: selectedBio.copy.length,
+    });
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1800);
   };

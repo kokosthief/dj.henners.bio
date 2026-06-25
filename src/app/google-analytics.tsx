@@ -21,6 +21,7 @@ export default function GoogleAnalytics() {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}', {
+            send_page_view: false,
             page_title: document.title,
             page_location: window.location.href,
             custom_map: {
