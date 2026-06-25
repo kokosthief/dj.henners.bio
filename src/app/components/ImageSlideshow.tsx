@@ -15,43 +15,51 @@ interface ImageData {
   src: StaticImageData;
   alt: string;
   title?: string;
+  caption?: string;
 }
 
 const images: ImageData[] = [
   {
     src: RijksmuseumDjBoothJpg,
     alt: 'Henners DJing at Rijksmuseum in Amsterdam',
-    title: 'Rijksmuseum · Amsterdam'
+    title: 'Rijksmuseum · Amsterdam',
+    caption: 'DJing for Ambrosia inside one of Amsterdam’s wildest rooms.'
   },
   {
     src: RijksmuseumDancefloorJpg,
     alt: 'Rijksmuseum dancefloor from the DJ booth',
-    title: 'Ambrosia at Rijksmuseum'
+    title: 'Ambrosia at Rijksmuseum',
+    caption: 'The view from the booth: bodies moving under the museum lights.'
   },
   {
     src: RijksmuseumCloseUpJpg,
     alt: 'Close-up of Henners DJing at Rijksmuseum',
-    title: 'Rijksmuseum DJ set'
+    title: 'Rijksmuseum DJ set',
+    caption: 'A rare, beautiful floor. Big space, close attention.'
   },
   {
     src: HennersDjJpg,
     alt: 'DJ Henners performing',
-    title: 'In the Mix'
+    title: 'In the mix',
+    caption: 'Following the room rather than forcing a fixed playlist.'
   },
   {
     src: HennersCeremonyJpg,
     alt: 'DJ Henners at ceremony',
-    title: 'Ceremony'
+    title: 'Ceremony',
+    caption: 'Warm music for the quieter, more ritual parts of the night.'
   },
   {
     src: HennersPfpJpg,
     alt: 'DJ Henners portrait',
-    title: 'Smile pls'
+    title: 'Henners',
+    caption: 'Amsterdam-based ecstatic dance DJ and facilitator.'
   },
   {
     src: HennersSpaceholdingJpg,
     alt: 'DJ Henners space holding',
-    title: 'Holding Space'
+    title: 'Holding space',
+    caption: 'Enough rhythm to move. Enough space to feel what is there.'
   }
 ];
 
@@ -125,14 +133,19 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             quality={60}
           />
           {/* Subtle overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 via-black/35 to-transparent" />
 
           {/* Image Title Overlay */}
           {images[currentIndex].title && (
-            <div className="absolute bottom-4 left-4 right-4 text-center">
-              <span className="inline-block rounded-full bg-black/50 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm">
+            <div className="absolute bottom-4 left-4 right-4 text-left">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-200 sm:text-sm">
                 {images[currentIndex].title}
-              </span>
+              </p>
+              {images[currentIndex].caption && (
+                <p className="mt-2 max-w-xl text-base leading-6 text-white sm:text-lg">
+                  {images[currentIndex].caption}
+                </p>
+              )}
             </div>
           )}
         </div>

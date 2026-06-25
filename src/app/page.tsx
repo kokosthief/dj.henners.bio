@@ -93,10 +93,6 @@ export default function HomePage() {
               imageClassName="aspect-[4/5]"
               className="w-full"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Rijksmuseum · Amsterdam</p>
-              <p className="mt-2 text-lg text-white">A moving glimpse of the rooms, rituals, and dance floors.</p>
-            </div>
           </div>
         </div>
       </section>
