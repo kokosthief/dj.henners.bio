@@ -15,7 +15,7 @@ export function generateStructuredData() {
     alternateName: ['DJ Henners', 'Henry Willmott'],
     description: siteConfig.description,
     url: baseUrl,
-    image: `${baseUrl}/images/henners-spaceholding.jpg`,
+    image: `${baseUrl}/images/og-henners-rijksmuseum-2026.jpg`,
     sameAs: [siteConfig.social.soundcloud, siteConfig.social.instagram],
     jobTitle: 'Ecstatic Dance Facilitator and DJ',
     address: {

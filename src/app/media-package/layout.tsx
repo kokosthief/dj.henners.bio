@@ -1,9 +1,15 @@
 import { Metadata } from 'next';
 
+import { siteConfig } from '@/constant/config';
+
+const title = 'Press Kit';
+const description =
+  'Press kit for Henners: biography, optimized preview photos, high-resolution downloads, videos, technical rider, and organizer resources for ecstatic dance, retreats, ceremonies, and festivals.';
+const ogImage = `${siteConfig.url}/images/og-henners-rijksmuseum-2026.jpg`;
+
 export const metadata: Metadata = {
-  title: 'Press Kit - Henners | Ecstatic Dance Facilitator & DJ',
-  description:
-    'Press kit for Henners: biography, high-resolution photos, videos, technical rider, and organizer resources for ecstatic dance, retreats, ceremonies, and festivals.',
+  title,
+  description,
   keywords: [
     'Henners press kit',
     'ecstatic dance facilitator press kit',
@@ -14,19 +20,26 @@ export const metadata: Metadata = {
     'conscious dance facilitator',
     'retreat DJ press kit',
   ],
+  alternates: { canonical: `${siteConfig.url}/media-package` },
   openGraph: {
-    title: 'Press Kit - Henners',
-    description:
-      'Biography, photos, video assets, and technical context for ecstatic dance floors, retreats, ceremonies, and festivals.',
-    images: ['/images/henners-spaceholding.jpg'],
+    url: `${siteConfig.url}/media-package`,
+    title: 'Henners Press Kit',
+    description,
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Henners press kit — ecstatic dance facilitator and DJ',
+      },
+    ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Press Kit - Henners',
-    description:
-      'Biography, photos, video assets, and technical context for ecstatic dance floors, retreats, ceremonies, and festivals.',
-    images: ['/images/henners-spaceholding.jpg'],
+    title: 'Henners Press Kit',
+    description,
+    images: [ogImage],
   },
 };
 

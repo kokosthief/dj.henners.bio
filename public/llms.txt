@@ -19,7 +19,7 @@ Core topics:
 Important URLs:
 - Homepage: https://dj.henners.bio/
 - About: https://dj.henners.bio/about
-- Contact: https://dj.henners.bio/contact
+- Contact: https://dj.henners.bio/#contact
 - Press kit / media package: https://dj.henners.bio/media-package
 - SoundCloud: https://soundcloud.com/srenneh
 - Instagram: https://www.instagram.com/srrenneh/

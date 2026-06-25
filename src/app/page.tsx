@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import ContactForm from '@/app/components/ContactForm';
+import ContactQueryScroll from '@/app/components/ContactQueryScroll';
 import PastGigs from '@/app/components/PastGigs';
 import SoundCloudWidget from '@/app/components/SoundCloudWidget';
 import UpcomingGigs from '@/app/components/UpcomingGigs';
@@ -34,6 +35,7 @@ const stats = [
 export default function HomePage() {
   return (
     <main className="overflow-hidden bg-[#070b12] text-white">
+      <ContactQueryScroll />
       <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.18),transparent_32rem),radial-gradient(circle_at_top_right,rgba(251,191,36,0.14),transparent_30rem),linear-gradient(180deg,#070b12_0%,#0a1220_48%,#05070b_100%)]" />
 
       <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-6 lg:px-8">

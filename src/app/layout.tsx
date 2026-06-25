@@ -67,10 +67,10 @@ export const metadata: Metadata = {
     siteName: 'Henners',
     images: [
       {
-        url: `${siteConfig.url}/images/henners-spaceholding.jpg`,
+        url: `${siteConfig.url}/images/og-henners-rijksmuseum-2026.jpg`,
         width: 1200,
         height: 630,
-        alt: 'Henners holding space for an ecstatic dance journey in Amsterdam',
+        alt: 'Henners — Ecstatic Dance Facilitator and DJ in Amsterdam',
       },
     ],
     type: 'website',
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/images/henners-spaceholding.jpg`],
+    images: [`${siteConfig.url}/images/og-henners-rijksmuseum-2026.jpg`],
     creator: '@srrenneh',
   },
   alternates: {
@@ -118,7 +118,8 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
-        <link rel="canonical" href={siteConfig.url} />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="Henners AI reference" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Henners full AI reference" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://region1.google-analytics.com" />

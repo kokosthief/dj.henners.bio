@@ -8,10 +8,32 @@ import HennersCeremony from '../../../public/images/henners-ceremony.jpg';
 import HennersSpaceholding from '../../../public/images/henners-spaceholding.jpg';
 
 export const metadata: Metadata = {
-  title: 'About Henners — Ecstatic Dance Facilitator in Amsterdam',
+  title: 'About Henners',
   description:
     'About Henners, an Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces across the Netherlands and the world.',
   alternates: { canonical: `${siteConfig.url}/about` },
+  openGraph: {
+    url: `${siteConfig.url}/about`,
+    title: 'About Henners',
+    description:
+      'Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces.',
+    images: [
+      {
+        url: `${siteConfig.url}/images/og-henners-rijksmuseum-2026.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Henners — ecstatic dance facilitator and DJ in Amsterdam',
+      },
+    ],
+    type: 'profile',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Henners',
+    description:
+      'Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces.',
+    images: [`${siteConfig.url}/images/og-henners-rijksmuseum-2026.jpg`],
+  },
 };
 
 export default function AboutPage() {

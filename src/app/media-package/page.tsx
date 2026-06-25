@@ -130,7 +130,7 @@ export default function MediaPackagePage() {
   };
 
   const handlePackageDownload = () => {
-    const packageContent = `HENNERS — PRESS KIT\n\nOfficial website: https://dj.henners.bio\nSoundCloud: https://soundcloud.com/srenneh\nContact: https://dj.henners.bio/?contact=1\nLocation: Amsterdam, Netherlands\n\nBIO — SHORT\n${artistInfo.short}\n\nBIO — MEDIUM\n${artistInfo.medium}\n\nBIO — LONG\n${artistInfo.long}\n\nPHOTOS\n${mediaFiles.images.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n\nVIDEOS\n${mediaFiles.videos.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n\nDOCUMENTS\n${mediaFiles.documents.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n`;
+    const packageContent = `HENNERS — PRESS KIT\n\nOfficial website: https://dj.henners.bio\nSoundCloud: https://soundcloud.com/srenneh\nContact: https://dj.henners.bio/#contact\nLocation: Amsterdam, Netherlands\n\nBIO — SHORT\n${artistInfo.short}\n\nBIO — MEDIUM\n${artistInfo.medium}\n\nBIO — LONG\n${artistInfo.long}\n\nPHOTOS\n${mediaFiles.images.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n\nVIDEOS\n${mediaFiles.videos.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n\nDOCUMENTS\n${mediaFiles.documents.map((file) => `• ${file.name} (${file.size}) — https://dj.henners.bio${file.downloadUrl}`).join('\n')}\n`;
 
     downloadTextFile('Henners-Press-Kit-Links.txt', packageContent);
   };
@@ -168,7 +168,7 @@ export default function MediaPackagePage() {
               <FaFileZipper className="h-5 w-5" />
               Download links package
             </button>
-            <Link href="/?contact=1" className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-white transition hover:border-cyan-200/50 hover:bg-white/10">
+            <Link href="/#contact" className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-white transition hover:border-cyan-200/50 hover:bg-white/10">
               Request something specific
             </Link>
           </div>
@@ -286,7 +286,7 @@ export default function MediaPackagePage() {
           <p className="mx-auto mt-4 max-w-2xl leading-8 text-slate-300">
             Send the event context and what you need. I’ll share the most suitable material for the floor, ceremony, retreat, or publication.
           </p>
-          <Link href="/?contact=1" className="mt-7 inline-flex rounded-full bg-amber-200 px-6 py-4 font-semibold text-slate-950 transition hover:bg-amber-100">
+          <Link href="/#contact" className="mt-7 inline-flex rounded-full bg-amber-200 px-6 py-4 font-semibold text-slate-950 transition hover:bg-amber-100">
             Contact for materials
           </Link>
         </div>
