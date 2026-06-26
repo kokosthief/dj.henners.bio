@@ -35,7 +35,7 @@ const images: ImageData[] = [
     src: RijksmuseumDjBoothJpg,
     alt: 'Henners DJing at Rijksmuseum in Amsterdam',
     title: 'Rijksmuseum · Amsterdam',
-    caption: 'DJing for Ambrosia inside one of Amsterdam’s wildest rooms.'
+    caption: 'Ambrosia special at one of a kind location.'
   },
   {
     src: RijksmuseumDancefloorJpg,
@@ -51,7 +51,7 @@ const images: ImageData[] = [
     src: HennersDjJpg,
     alt: 'DJ Henners performing',
     title: 'In the mix at EDFH',
-    caption: 'Following the room rather than forcing a fixed playlist.'
+    caption: 'Vibing with the energy in the room rather than a fixed set.'
   },
   {
     src: SilentDanceWaterJpg,
@@ -85,7 +85,7 @@ const images: ImageData[] = [
     src: HennersCeremonyJpg,
     alt: 'DJ Henners at ceremony',
     title: 'Ceremony',
-    caption: 'Warm music for the quieter, more ritual parts of the night.'
+    caption: 'Opening ceremony at Ecstatic Dance Festival Holland'
   },
   {
     src: ForestListeningJpg,
@@ -146,7 +146,7 @@ const images: ImageData[] = [
     src: HennersSpaceholdingJpg,
     alt: 'DJ Henners space holding',
     title: 'Holding space',
-    caption: 'Sometimes I don’t play, I just feel.'
+    caption: 'Feeling into, holding space.'
   }
 ];
 

@@ -105,7 +105,7 @@ function AssetList({
         </div>
         <h2 className="text-2xl font-semibold text-white">{title}</h2>
       </div>
-      <div className="space-y-3">
+      <div className={`grid gap-3 ${files.length > 10 ? 'xl:grid-cols-2' : ''}`}>
         {files.map((file) => (
           <a
             key={`${title}-${file.name}`}
@@ -295,7 +295,7 @@ export default function MediaPackagePage() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto grid max-w-6xl gap-5 px-5 py-10 sm:px-6 lg:grid-cols-3 lg:px-8">
+      <section className="relative z-10 mx-auto grid max-w-7xl gap-5 px-5 py-10 sm:px-6 lg:grid-cols-[1.35fr_1fr_0.85fr] lg:px-8">
         <AssetList title="Photos" icon={FaImage} files={mediaFiles.images} />
         <AssetList title="Videos" icon={FaVideo} files={mediaFiles.videos} />
         <AssetList title="Documents" icon={FaFilePdf} files={mediaFiles.documents} />

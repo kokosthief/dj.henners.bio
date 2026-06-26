@@ -56,7 +56,7 @@ export default function HomePage() {
       <section className="relative z-10 mx-auto grid max-w-7xl gap-12 px-5 pb-20 pt-12 sm:px-6 md:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8">
         <div>
           <p className="mb-5 inline-flex rounded-full border border-cyan-200/20 bg-cyan-200/10 px-4 py-2 text-sm font-semibold text-cyan-100">
-            Six-month DJ pause; next leg beginning
+            New leg beginning with EDFH
           </p>
           <h1 className="max-w-4xl font-primary text-3xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
             Ecstatic Dance Facilitator & DJ in Amsterdam
@@ -68,8 +68,8 @@ export default function HomePage() {
             <Link href="#listen" className="rounded-full bg-amber-200 px-6 py-4 text-center font-semibold text-slate-950 shadow-xl shadow-amber-500/20 transition hover:bg-amber-100">
               Listen to a journey
             </Link>
-            <Link href="#facilitation" className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-white transition hover:border-cyan-200/50 hover:bg-white/10">
-              Explore facilitation
+            <Link href="/media-package" className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-white transition hover:border-cyan-200/50 hover:bg-white/10">
+              Press Kit
             </Link>
           </div>
           <dl className="mt-10 grid gap-4 sm:grid-cols-3">
