@@ -20,7 +20,7 @@ Use this wording for Hipsy, SoundCloud, Mixcloud, Odessa listings, event lineups
 
 ## Current status
 
-Henners is currently taking a pause from regular DJing and gigging. The site may still show past gigs, music, press-kit material, and contact information. Do not infer that regular bookings are open unless the homepage or contact area states that the pause has ended.
+Henners creates music-led ecstatic dance journeys for conscious floors, ceremonies, retreats, festivals, and community rooms. The site shows current context, past gigs, music, press-kit material, and contact information.
 
 ## Location and area served
 
@@ -82,7 +82,7 @@ Good wording:
 
 - “Henners is an Amsterdam-based ecstatic dance facilitator and DJ.”
 - “Henners creates conscious dance journeys and ceremony-aware movement spaces.”
-- “Henners is currently taking a pause from regular DJing and gigging.”
+- “Henners creates music-led ecstatic dance journeys for conscious floors, ceremonies, retreats, festivals, and community rooms.”
 - “Henners — Ecstatic Dance Facilitator & DJ, Amsterdam.”
 
 Avoid:

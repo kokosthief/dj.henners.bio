@@ -21,7 +21,7 @@ const UpcomingGigs: React.FC<UpcomingGigsProps> = ({ gigs }) => {
         <div className="mb-6">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Next</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-            {upcomingGigs.length > 0 ? 'Upcoming gigs' : 'A small pause from DJing'}
+            {upcomingGigs.length > 0 ? 'Upcoming gigs' : 'No upcoming gigs listed yet'}
           </h2>
         </div>
 
@@ -34,7 +34,7 @@ const UpcomingGigs: React.FC<UpcomingGigsProps> = ({ gigs }) => {
         ) : (
           <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-slate-200">
             <p className="max-w-3xl text-lg leading-8">
-              After six months away from regular DJing, I’m starting the next leg of the journey with more awareness — shaped by careful reflection and lived experience.
+              New gatherings and gigs will be added here when they are confirmed.
             </p>
           </div>
         )}

@@ -51,7 +51,7 @@ export default function AboutPage() {
             Since 2021, Henners has played and facilitated ecstatic dance floors, ceremonies, community gatherings, retreats, and festivals across the Netherlands and Europe. His sets draw on global rhythms, organic percussion, melodic electronic music, African-inspired grooves, and spacious integration textures.
           </p>
           <p className="mt-6 leading-8 text-slate-400">
-            After six months away from regular DJing, he is starting the next leg of the journey with more awareness — shaped by careful reflection and lived experience.
+            The work is rooted in listening: to the music, to the room, and to the moment when a floor needs more rhythm, more softness, more play, or more space.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/events" className="rounded-full border border-white/15 px-5 py-3 text-center font-semibold text-white hover:bg-white/10">View event history</Link>

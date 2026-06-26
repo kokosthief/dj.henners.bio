@@ -82,7 +82,7 @@ His work grew through Amsterdam’s ecstatic dance scene, including years of com
 
 Musically, his sound draws from global rhythms, earthy grooves, deep percussion, warm melodic textures, and spacious integration tracks. The aim is simple: help people move honestly, feel safely, and reconnect with themselves and each other through dance."""
 
-pause_note = "Henners has been on a pause from DJing and gigging for six months, using that time for reflection, awareness, and lived experience. He is beginning another leg of the journey with more care, clarity, and attention to what the work is actually asking for."
+current_note = "Henners is focused on music-led ecstatic dance journeys for conscious floors, ceremonies, retreats, festivals, and community rooms. The work is rooted in listening: to the music, to the room, and to what the moment asks for."
 
 photos = [
     ("Rijksmuseum DJ Booth", "/downloads/high-res/rijksmuseum-dj-booth.png"),
@@ -123,7 +123,7 @@ def cover(title: str, subtitle: str, kind: str) -> str:
         <div class="card dark-card"><strong>Website</strong><br>{shell_link(SITE, SITE)}</div>
         <div class="card dark-card"><strong>SoundCloud</strong><br>{shell_link(SOUNDCLOUD, SOUNDCLOUD)}</div>
         <div class="card dark-card"><strong>Contact</strong><br>{shell_link(CONTACT, CONTACT)}</div>
-        <div class="card dark-card"><strong>Status</strong><br>{esc(pause_note)}</div>
+        <div class="card dark-card"><strong>Current focus</strong><br>{esc(current_note)}</div>
       </div>
       <div class="footer">Updated {UPDATED} · Canonical URL: {SITE}</div>
     </section>
@@ -138,7 +138,7 @@ def bio_document() -> str:
       <div class="card"><h3>Short bio</h3><p>{esc(artist_short)}</p></div>
       <div class="card"><h3>Medium bio</h3><p>{esc(artist_medium)}</p></div>
       <div class="card"><h3>Long bio</h3><p>{esc(artist_long)}</p></div>
-      <div class="card"><h3>Current note</h3><p>{esc(pause_note)}</p></div>
+      <div class="card"><h3>Current focus</h3><p>{esc(current_note)}</p></div>
       <div class="footer">Henners · Artist Biography · {SITE}</div>
     </section>
     <section class="page section">
@@ -187,7 +187,7 @@ def press_kit_document() -> str:
         <div class="card"><h3>Website</h3><p>{shell_link(SITE, SITE)}</p></div>
         <div class="card"><h3>Listen</h3><p>{shell_link(SOUNDCLOUD, SOUNDCLOUD)}</p></div>
         <div class="card"><h3>Contact</h3><p>{shell_link(CONTACT, CONTACT)}</p></div>
-        <div class="card"><h3>Current status</h3><p>{esc(pause_note)}</p></div>
+        <div class="card"><h3>Current focus</h3><p>{esc(current_note)}</p></div>
       </div>
       <h3>Short bio</h3><p>{esc(artist_short)}</p>
       <h3>Long bio</h3><p>{esc(artist_long)}</p>

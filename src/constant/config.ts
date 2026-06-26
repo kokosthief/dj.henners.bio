@@ -31,7 +31,7 @@ export const siteConfig = {
     legalName: 'DJ Henners',
     type: 'Ecstatic Dance Facilitation and DJ Services',
     foundedYear: 2021,
-    status: 'Currently taking a pause from DJing and gigging',
+    status: 'Ecstatic dance facilitator and DJ in Amsterdam',
     specialties: [
       'Ecstatic Dance Facilitation',
       'Conscious Dance Journeys',
