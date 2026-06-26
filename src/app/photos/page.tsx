@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function PhotosPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#100d0a] text-[#f8f1e7]">
-      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(120,72,38,0.18),transparent_30rem),radial-gradient(circle_at_top_right,rgba(251,191,36,0.12),transparent_28rem),linear-gradient(180deg,#100d0a_0%,#17110d_52%,#0b0907_100%)]" />
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[#100d0a]" />
 
       <section className="relative z-10 mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
         <Link href="/" className="text-sm font-semibold text-amber-200 hover:text-amber-100">← Back home</Link>
@@ -60,7 +60,7 @@ export default function PhotosPage() {
       <section className="relative z-10 mx-auto max-w-7xl px-5 pb-24 sm:px-6 lg:px-8">
         <div className="grid auto-rows-[18rem] gap-4 md:grid-cols-3">
           {photos.map((photo) => (
-            <figure key={photo.src} className={`group relative overflow-hidden rounded-[1.25rem] border border-stone-700/70 bg-[#17110d]/80 shadow-2xl shadow-black/20 ${photo.className ?? ''}`}>
+            <figure key={photo.src} className={`group relative overflow-hidden rounded-xl border border-stone-700/70 bg-[#17110d]/80 shadow-lg shadow-black/15 ${photo.className ?? ''}`}>
               <Image
                 src={photo.src}
                 alt={photo.alt}

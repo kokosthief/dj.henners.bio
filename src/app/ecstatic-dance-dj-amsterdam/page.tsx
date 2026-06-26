@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function EcstaticDanceDjAmsterdamPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#100d0a] text-[#f8f1e7]">
-      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(120,72,38,0.18),transparent_30rem),radial-gradient(circle_at_top_right,rgba(251,191,36,0.12),transparent_28rem),linear-gradient(180deg,#100d0a_0%,#17110d_52%,#0b0907_100%)]" />
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[#100d0a]" />
       <section className="relative z-10 mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
         <div>
           <Link href="/" className="text-sm font-semibold text-amber-200 hover:text-amber-100">← Back home</Link>
@@ -54,11 +54,11 @@ export default function EcstaticDanceDjAmsterdamPage() {
             <Link href="/#contact" className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-stone-50 hover:border-amber-200/60 hover:bg-stone-100/10">Contact Henners</Link>
           </div>
         </div>
-        <div className="overflow-hidden rounded-[1.35rem] border border-stone-700/70 bg-[#17110d]/80 p-4 shadow-2xl shadow-black/40">
+        <div className="overflow-hidden rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-4 shadow-lg shadow-black/20">
           <Image
             src={RijksmuseumBooth}
             alt="Henners DJing an ecstatic dance floor in Amsterdam"
-            className="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
+            className="aspect-[4/5] w-full rounded-xl object-cover"
             placeholder="blur"
             sizes="(max-width: 1024px) calc(100vw - 2.5rem), 46vw"
             quality={70}
@@ -73,7 +73,7 @@ export default function EcstaticDanceDjAmsterdamPage() {
             ['Music with a shape', 'The sets are not background music. They move through arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.'],
             ['For organizers', 'Photos, video clips, bio copy, and technical notes are in the press kit.'],
           ].map(([title, body]) => (
-            <article key={title} className="rounded-[1.25rem] border border-stone-700/70 bg-[#17110d]/80 p-6">
+            <article key={title} className="rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-6">
               <h2 className="text-2xl font-semibold text-stone-50">{title}</h2>
               <p className="mt-4 leading-7 text-stone-400">{body}</p>
             </article>
@@ -82,7 +82,7 @@ export default function EcstaticDanceDjAmsterdamPage() {
       </section>
 
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8">
-        <div className="rounded-[1.35rem] border border-amber-200/15 bg-amber-200/[0.06] p-8">
+        <div className="rounded-xl border border-amber-200/15 bg-amber-200/[0.06] p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Listing copy</p>
           <h2 className="mt-3 text-3xl font-semibold text-stone-50">Henners — Ecstatic Dance Facilitator & DJ, Amsterdam</h2>
           <p className="mt-5 max-w-3xl leading-8 text-stone-300">

@@ -202,13 +202,13 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
   return (
     <div className={`relative group ${className}`}>
       {/* Main Image Display */}
-      <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white/20 md:rounded-3xl">
+      <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-stone-700/70 md:rounded-xl">
         <div className={`relative w-full overflow-hidden bg-[#080d16] ${imageClassName}`}>
           <Image
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
             fill
-            className="object-cover opacity-90 transition-transform duration-700 ease-in-out hover:scale-105 dark:opacity-100"
+            className="object-cover opacity-90 transition-transform duration-700 ease-in-out  dark:opacity-100"
             style={{
               objectPosition: images[currentIndex].objectPosition,
               willChange: 'transform',

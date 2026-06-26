@@ -59,8 +59,8 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="grid gap-5">
-          <Image src={HennersSpaceholding} alt="Henners holding space during an ecstatic dance journey" className="rounded-[1.25rem] border border-stone-700/70 object-cover shadow-2xl shadow-black/30" placeholder="blur" />
-          <Image src={HennersCeremony} alt="Ceremony music and conscious dance facilitation by Henners" className="rounded-[1.25rem] border border-stone-700/70 object-cover shadow-2xl shadow-black/30" placeholder="blur" />
+          <Image src={HennersSpaceholding} alt="Henners holding space during an ecstatic dance journey" className="rounded-xl border border-stone-700/70 object-cover shadow-lg shadow-black/20" placeholder="blur" />
+          <Image src={HennersCeremony} alt="Ceremony music and conscious dance facilitation by Henners" className="rounded-xl border border-stone-700/70 object-cover shadow-lg shadow-black/20" placeholder="blur" />
         </div>
       </section>
     </main>

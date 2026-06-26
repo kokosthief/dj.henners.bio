@@ -197,7 +197,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           variant={mode === 'dark' ? 'light' : 'dark'}
           leftIcon={FaPaperPlane}
           isLoading={isSubmitting}
-          className="w-full px-6 py-4 text-base shadow-lg transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl sm:w-auto sm:px-8 sm:text-lg"
+          className="w-full px-6 py-4 text-base shadow-lg transition-all duration-300 hover:shadow-lg sm:w-auto sm:px-8 sm:text-lg"
         >
           {isSubmitting ? 'Sending...' : 'Send message'}
         </Button>

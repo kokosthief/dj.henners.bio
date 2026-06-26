@@ -98,7 +98,7 @@ function AssetList({
   files: MediaFile[];
 }) {
   return (
-    <section className="rounded-[1.25rem] border border-stone-700/70 bg-[#17110d]/80 p-5 shadow-2xl shadow-black/20 sm:p-6">
+    <section className="rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-5 shadow-lg shadow-black/15 sm:p-6">
       <div className="mb-5 flex items-center gap-3">
         <div className="rounded-2xl border border-amber-200/20 bg-amber-200/10 p-3 text-amber-200">
           <Icon className="h-5 w-5" />
@@ -154,7 +154,7 @@ export default function MediaPackagePage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#100d0a] text-[#f8f1e7]">
-      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(120,72,38,0.18),transparent_30rem),radial-gradient(circle_at_top_right,rgba(251,191,36,0.14),transparent_32rem),linear-gradient(180deg,#100d0a_0%,#17110d_52%,#0b0907_100%)]" />
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[#100d0a]" />
 
       <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-6 lg:px-8">
         <Link href="/" className="font-secondary text-2xl tracking-wide text-stone-50">
@@ -191,13 +191,13 @@ export default function MediaPackagePage() {
           </div>
         </div>
 
-        <div className="hidden min-w-0 rounded-[1.35rem] border border-stone-700/70 bg-[#17110d]/80 p-4 shadow-2xl shadow-black/40 sm:p-6 md:block">
+        <div className="hidden min-w-0 rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-4 shadow-lg shadow-black/20 sm:p-6 md:block">
           <ImageSlideshow autoPlay={false} showControls className="w-full" />
         </div>
       </section>
 
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
-        <div className="grid gap-6 rounded-[1.35rem] border border-stone-700/70 bg-[#17110d]/80 p-5 sm:p-8 lg:grid-cols-[0.7fr_1.3fr]">
+        <div className="grid gap-6 rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-5 sm:p-8 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Bio copy</p>
             <h2 className="mt-3 text-3xl font-semibold text-stone-50">Use the length that fits.</h2>
@@ -221,7 +221,7 @@ export default function MediaPackagePage() {
               {copied ? 'Copied' : 'Copy bio'}
             </button>
           </div>
-          <div className="rounded-3xl border border-stone-700/70 bg-[#120d09]/90 p-5 sm:p-6">
+          <div className="rounded-xl border border-stone-700/70 bg-[#120d09]/90 p-5 sm:p-6">
             <p className="whitespace-pre-line text-base leading-8 text-stone-300">{selectedBio.copy}</p>
           </div>
         </div>
@@ -239,7 +239,7 @@ export default function MediaPackagePage() {
         </div>
         <div className="grid gap-5 lg:grid-cols-3">
           {mediaFiles.videos.slice(0, 3).map((video) => (
-            <article key={`preview-${video.name}`} className="overflow-hidden rounded-[1.25rem] border border-stone-700/70 bg-[#17110d]/80 shadow-2xl shadow-black/25">
+            <article key={`preview-${video.name}`} className="overflow-hidden rounded-xl border border-stone-700/70 bg-[#17110d]/80 shadow-lg shadow-black/20">
               {activeVideo === video.downloadUrl ? (
                 <video
                   className="aspect-[9/12] w-full bg-black object-cover"
@@ -275,7 +275,7 @@ export default function MediaPackagePage() {
                     />
                   )}
                   <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-stone-200/50 bg-black/45 text-stone-50 shadow-2xl transition group-hover:scale-105 group-hover:bg-amber-200 group-hover:text-stone-950">
+                  <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-stone-200/50 bg-black/45 text-stone-50 shadow-lg transition group- group-hover:bg-amber-200 group-hover:text-stone-950">
                     <svg className="ml-1 h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M8 5v14l11-7z" />
                     </svg>
@@ -302,7 +302,7 @@ export default function MediaPackagePage() {
       </section>
 
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
-        <div className="grid gap-6 rounded-[1.35rem] border border-stone-700/70 bg-[#17110d]/80 p-6 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="grid gap-6 rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-6 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Technical rider</p>
             <h2 className="mt-3 text-3xl font-semibold text-stone-50">Simple setup context.</h2>
@@ -321,7 +321,7 @@ export default function MediaPackagePage() {
               ['Setup', 'Allow roughly 30 minutes for setup, linking players, and soundcheck.'],
               ['Hospitality', 'Water, tea, fruit, and a clean towel in or near the booth.'],
             ].map(([title, body]) => (
-              <article key={title} className="rounded-3xl border border-stone-700/70 bg-[#120d09]/90 p-5">
+              <article key={title} className="rounded-xl border border-stone-700/70 bg-[#120d09]/90 p-5">
                 <h3 className="text-xl font-semibold text-stone-50">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-stone-400">{body}</p>
               </article>
@@ -331,7 +331,7 @@ export default function MediaPackagePage() {
       </section>
 
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8">
-        <div className="rounded-[1.35rem] border border-amber-200/15 bg-amber-200/[0.06] p-8 text-center shadow-2xl shadow-black/20">
+        <div className="rounded-xl border border-amber-200/15 bg-amber-200/[0.06] p-8 text-center shadow-lg shadow-black/15">
           <h2 className="text-3xl font-semibold text-stone-50">Need a different crop, bio, or format?</h2>
           <p className="mx-auto mt-4 max-w-2xl leading-8 text-stone-300">
             Send the event context and what you need. I’ll share the most suitable material for the floor, ceremony, retreat, or publication.

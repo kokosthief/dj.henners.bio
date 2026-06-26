@@ -36,7 +36,7 @@ export default function HomePage() {
   return (
     <main className="overflow-hidden bg-[#100d0a] text-[#f8f1e7]">
       <ContactQueryScroll />
-      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(120,72,38,0.20),transparent_34rem),radial-gradient(circle_at_bottom_right,rgba(242,192,120,0.10),transparent_32rem),linear-gradient(180deg,#100d0a_0%,#17110d_52%,#0b0907_100%)]" />
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[#100d0a]" />
 
       <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-6 lg:px-8">
         <Link href="/" className="font-secondary text-2xl tracking-wide text-stone-50">
@@ -86,8 +86,8 @@ export default function HomePage() {
         </div>
 
         <div className="relative">
-          <div className="absolute -inset-5 rounded-[1.35rem] bg-amber-900/10 blur-2xl" />
-          <div className="relative overflow-hidden rounded-[1.25rem] border border-stone-700/70 bg-[#1a130e] p-2 shadow-2xl shadow-black/35 sm:p-3">
+          <div className="absolute -inset-5 rounded-xl bg-amber-900/10 blur-2xl" />
+          <div className="relative overflow-hidden rounded-xl border border-stone-700/70 bg-[#1a130e] p-2 shadow-lg shadow-black/20 sm:p-3">
             <ImageSlideshow
               autoPlay
               interval={3600}
@@ -110,7 +110,7 @@ export default function HomePage() {
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {facilitationCards.map((card) => (
-            <article key={card.title} className="rounded-[1.7rem] border border-stone-700/70 bg-[#17110d]/85 p-6 shadow-2xl shadow-black/10 transition hover:border-amber-200/30 hover:bg-[#21170f]">
+            <article key={card.title} className="rounded-xl border border-stone-700/70 bg-[#17110d]/85 p-6 shadow-sm shadow-black/10 transition hover:border-amber-200/30 hover:bg-[#21170f]">
               <h3 className="text-2xl font-semibold text-stone-50">{card.title}</h3>
               <p className="mt-4 leading-7 text-stone-400">{card.body}</p>
             </article>
@@ -124,7 +124,7 @@ export default function HomePage() {
       <PastGigs gigs={gigs} />
 
       <section className="relative z-10 mx-auto w-full max-w-6xl px-0 py-14 sm:px-6 sm:py-20 lg:px-8">
-        <div className="grid gap-8 border-y border-stone-700/70 bg-[#17110d]/80 px-4 py-8 sm:rounded-[1.35rem] sm:border sm:p-8 md:grid-cols-[0.8fr_1.2fr] md:p-10">
+        <div className="grid gap-8 border-y border-stone-700/70 bg-[#17110d]/80 px-4 py-8 sm:rounded-xl sm:border sm:p-8 md:grid-cols-[0.8fr_1.2fr] md:p-10">
           <div className="max-w-3xl px-2 sm:px-0">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">For organizers</p>
             <h2 className="mt-3 text-3xl font-semibold text-stone-50">Press kit, context & future invitations</h2>
@@ -135,7 +135,7 @@ export default function HomePage() {
               View press kit
             </Link>
           </div>
-          <div id="contact" className="rounded-[1.5rem] bg-[#120d09] p-4 sm:p-6">
+          <div id="contact" className="rounded-xl bg-[#120d09] p-4 sm:p-6">
             <ContactForm mode="dark" />
           </div>
         </div>

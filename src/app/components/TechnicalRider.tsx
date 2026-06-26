@@ -152,7 +152,7 @@ const TechnicalRider: React.FC<TechnicalRiderProps> = ({
             variant={mode === 'dark' ? 'light' : 'dark'}
             leftIcon={FaDownload}
             onClick={handleDownload}
-            className="px-8 py-4 text-lg shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+            className="px-8 py-4 text-lg shadow-lg hover:shadow-lg transform transition-all duration-300  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
             aria-label="Download Technical Rider PDF"
           >
             Download Technical Rider
