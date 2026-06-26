@@ -36,25 +36,25 @@ export const metadata: Metadata = {
 
 export default function EcstaticDanceDjAmsterdamPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#070b12] text-white">
-      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_30rem),radial-gradient(circle_at_top_right,rgba(251,191,36,0.12),transparent_28rem),linear-gradient(180deg,#070b12_0%,#0a1220_52%,#05070b_100%)]" />
+    <main className="min-h-screen overflow-hidden bg-[#100d0a] text-[#f8f1e7]">
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(120,72,38,0.18),transparent_30rem),radial-gradient(circle_at_top_right,rgba(251,191,36,0.12),transparent_28rem),linear-gradient(180deg,#100d0a_0%,#17110d_52%,#0b0907_100%)]" />
       <section className="relative z-10 mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
         <div>
           <Link href="/" className="text-sm font-semibold text-amber-200 hover:text-amber-100">← Back home</Link>
-          <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Amsterdam ecstatic dance DJ</p>
+          <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Amsterdam ecstatic dance DJ</p>
           <h1 className="mt-4 text-5xl font-semibold tracking-tight md:text-6xl">Ecstatic Dance DJ in Amsterdam</h1>
-          <p className="mt-7 text-xl leading-9 text-slate-300">
+          <p className="mt-7 text-xl leading-9 text-stone-300">
             Henners is an Amsterdam-based ecstatic dance facilitator and DJ weaving global rhythms into soul-stirring journeys for ecstatic dance floors, ceremonies, retreats, and festivals.
           </p>
-          <p className="mt-6 leading-8 text-slate-400">
-            The work is not only a DJ set. It is a room being listened into: earth, rhythm, elation, introspection, release, play, connection, grounding, then stillness. Amsterdam is the home base; the dance floor can travel when the room and invitation feel aligned.
+          <p className="mt-6 leading-8 text-stone-400">
+            The work is not only a DJ set. It is a crafted arc held with care: earth, rhythm, elation, introspection, release, play, connection, grounding, then stillness. Amsterdam is the home base; the dance floor can travel when the room and invitation feel aligned.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/media-package" className="rounded-full bg-amber-200 px-6 py-4 text-center font-semibold text-slate-950 hover:bg-amber-100">Open press kit</Link>
-            <Link href="/#contact" className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-white hover:border-cyan-200/50 hover:bg-white/10">Contact Henners</Link>
+            <Link href="/media-package" className="rounded-full bg-amber-200 px-6 py-4 text-center font-semibold text-stone-950 hover:bg-amber-100">Open press kit</Link>
+            <Link href="/#contact" className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-stone-50 hover:border-amber-200/60 hover:bg-stone-100/10">Contact Henners</Link>
           </div>
         </div>
-        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] p-4 shadow-2xl shadow-black/40">
+        <div className="overflow-hidden rounded-[1.35rem] border border-stone-700/70 bg-[#17110d]/80 p-4 shadow-2xl shadow-black/40">
           <Image
             src={RijksmuseumBooth}
             alt="Henners DJing an ecstatic dance floor in Amsterdam"
@@ -73,19 +73,19 @@ export default function EcstaticDanceDjAmsterdamPage() {
             ['Music with a shape', 'The sets are not background music. They move through arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.'],
             ['For organizers', 'Photos, video clips, bio copy, and technical notes are in the press kit.'],
           ].map(([title, body]) => (
-            <article key={title} className="rounded-[1.75rem] border border-white/10 bg-white/[0.05] p-6">
-              <h2 className="text-2xl font-semibold text-white">{title}</h2>
-              <p className="mt-4 leading-7 text-slate-400">{body}</p>
+            <article key={title} className="rounded-[1.25rem] border border-stone-700/70 bg-[#17110d]/80 p-6">
+              <h2 className="text-2xl font-semibold text-stone-50">{title}</h2>
+              <p className="mt-4 leading-7 text-stone-400">{body}</p>
             </article>
           ))}
         </div>
       </section>
 
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8">
-        <div className="rounded-[2rem] border border-amber-200/15 bg-amber-200/[0.06] p-8">
+        <div className="rounded-[1.35rem] border border-amber-200/15 bg-amber-200/[0.06] p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Listing copy</p>
-          <h2 className="mt-3 text-3xl font-semibold text-white">Henners — Ecstatic Dance Facilitator & DJ, Amsterdam</h2>
-          <p className="mt-5 max-w-3xl leading-8 text-slate-300">
+          <h2 className="mt-3 text-3xl font-semibold text-stone-50">Henners — Ecstatic Dance Facilitator & DJ, Amsterdam</h2>
+          <p className="mt-5 max-w-3xl leading-8 text-stone-300">
             For listings, social profiles, lineups, and organizer copy, the clearest public wording is: Henners is an Amsterdam-based ecstatic dance facilitator and DJ.
           </p>
         </div>

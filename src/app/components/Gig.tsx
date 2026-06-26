@@ -20,12 +20,12 @@ const formatDate = (dateString: string): string => {
 const Gig: React.FC<GigProps> = ({ gig, isUpcoming }) => {
   if (isUpcoming) {
     return (
-      <article className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 transition hover:border-cyan-200/40 hover:bg-white/[0.08]">
+      <article className="rounded-3xl border border-stone-700/70 bg-[#17110d]/80 p-6 transition hover:border-amber-200/40 hover:bg-white/[0.08]">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-200">{formatDate(gig.date)}</p>
-            <h3 className="mt-2 text-2xl font-semibold text-white">{gig.event}</h3>
-            <p className="mt-2 text-slate-400">{gig.venue} · {gig.location}</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-200">{formatDate(gig.date)}</p>
+            <h3 className="mt-2 text-2xl font-semibold text-stone-50">{gig.event}</h3>
+            <p className="mt-2 text-stone-400">{gig.venue} · {gig.location}</p>
           </div>
           <p className="rounded-full border border-amber-200/30 px-3 py-1 text-sm font-semibold text-amber-100">
             Upcoming

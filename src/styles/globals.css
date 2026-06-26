@@ -4,14 +4,14 @@
 @tailwind utilities;
 
 html {
-  background-color: #070b12;
+  background-color: #100d0a;
   overscroll-behavior: none;
   overflow-x: clip;
 }
 
 body {
   width: 100%;
-  background: #070b12;
+  background: #100d0a;
   overflow-x: clip;
 }
 
@@ -116,7 +116,7 @@ body {
 }
 
 .bg-gradient-dark {
-  background: linear-gradient(135deg, #0a0a0a 0%, #0d324d 100%);
+  background: linear-gradient(135deg, #100d0a 0%, #24170f 100%);
 }
 
 @keyframes fadeUp {

@@ -230,7 +230,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
                 {images[currentIndex].title}
               </p>
               {images[currentIndex].caption && (
-                <p className="mt-2 max-w-xl text-base leading-6 text-white sm:text-lg">
+                <p className="mt-2 max-w-xl text-base leading-6 text-stone-50 sm:text-lg">
                   {images[currentIndex].caption}
                 </p>
               )}
@@ -244,7 +244,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             {/* Previous/Next Buttons */}
             <button
               onClick={goToPrevious}
-              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:left-4 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-stone-50 opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:left-4 focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Previous image"
               type="button"
             >
@@ -255,7 +255,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
 
             <button
               onClick={goToNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:right-4 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-stone-50 opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:right-4 focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Next image"
               type="button"
             >
@@ -267,7 +267,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             {/* Play/Pause Button */}
             <button
               onClick={togglePlayPause}
-              className="absolute right-2 top-2 rounded-full bg-black/30 p-2 text-white opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:right-4 md:top-4 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute right-2 top-2 rounded-full bg-black/30 p-2 text-stone-50 opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:right-4 md:top-4 focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
               type="button"
             >
@@ -292,8 +292,8 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300 transition-transform duration-300 ${index === currentIndex
-                  ? 'w-8 bg-blue-500 transform scale-110'
+              className={`h-4 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-200 transition-transform duration-300 ${index === currentIndex
+                  ? 'w-8 bg-amber-300 transform scale-110'
                   : 'w-4 bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500 transform scale-100'
                 }`}
               style={{

@@ -106,8 +106,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
   const inputClasses = `
     w-full rounded-xl border px-4 py-3 text-base transition-all duration-300
     ${mode === 'dark'
-      ? 'border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20'
-      : 'border-gray-300 bg-white text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20'
+      ? 'border-stone-600 bg-[#1a130e] text-stone-50 placeholder-stone-500 focus:border-amber-200 focus:ring-2 focus:ring-amber-200/20'
+      : 'border-stone-300 bg-white text-stone-900 placeholder-stone-500 focus:border-amber-700 focus:ring-2 focus:ring-amber-700/15'
     }
     focus:outline-none
   `;

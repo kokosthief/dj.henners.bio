@@ -49,7 +49,7 @@ const TechnicalRider: React.FC<TechnicalRiderProps> = ({
 
         {/* DJ Set Requirements */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white" id="requirements-section">
+          <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-stone-50" id="requirements-section">
             DJ SET REQUIREMENTS
           </h2>
 
@@ -88,16 +88,16 @@ const TechnicalRider: React.FC<TechnicalRiderProps> = ({
 
           {/* Technical Support */}
           <div className="mb-6">
-            <h3 className="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400" id="technical-support">
+            <h3 className="text-xl font-semibold mb-4 text-amber-700 dark:text-amber-300" id="technical-support">
               Technical Support
             </h3>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
               <li className="flex items-start">
-                <span className="text-blue-500 mr-3 mt-1">•</span>
+                <span className="text-amber-500 mr-3 mt-1">•</span>
                 A sound engineer on-site before and during my set
               </li>
               <li className="flex items-start">
-                <span className="text-blue-500 mr-3 mt-1">•</span>
+                <span className="text-amber-500 mr-3 mt-1">•</span>
                 A stage contact/FOH to assist with setup/soundcheck
               </li>
             </ul>
@@ -138,7 +138,7 @@ const TechnicalRider: React.FC<TechnicalRiderProps> = ({
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             Thank you for ensuring these requirements are met for an optimal performance experience.
           </p>
-          <div className="font-semibold text-gray-800 dark:text-white">
+          <div className="font-semibold text-gray-800 dark:text-stone-50">
             DJ Henners<br />
             <span className="text-sm text-gray-600 dark:text-gray-400">Amsterdam, Netherlands</span>
           </div>

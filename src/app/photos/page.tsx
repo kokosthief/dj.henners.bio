@@ -35,23 +35,23 @@ export const metadata: Metadata = {
 
 export default function PhotosPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#070b12] text-white">
-      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.16),transparent_30rem),radial-gradient(circle_at_top_right,rgba(251,191,36,0.12),transparent_28rem),linear-gradient(180deg,#070b12_0%,#0a1220_52%,#05070b_100%)]" />
+    <main className="min-h-screen overflow-hidden bg-[#100d0a] text-[#f8f1e7]">
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,rgba(120,72,38,0.18),transparent_30rem),radial-gradient(circle_at_top_right,rgba(251,191,36,0.12),transparent_28rem),linear-gradient(180deg,#100d0a_0%,#17110d_52%,#0b0907_100%)]" />
 
       <section className="relative z-10 mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
         <Link href="/" className="text-sm font-semibold text-amber-200 hover:text-amber-100">← Back home</Link>
-        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Photos</p>
+        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Photos</p>
         <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight md:text-6xl">
           Dance floors, ceremonies, and moments around the music.
         </h1>
-        <p className="mt-7 max-w-3xl text-xl leading-9 text-slate-300">
+        <p className="mt-7 max-w-3xl text-xl leading-9 text-stone-300">
           A small visual record of rooms I have played or helped hold. For downloads and organizer material, use the press kit.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/media-package" className="rounded-full bg-amber-200 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-100">
+          <Link href="/media-package" className="rounded-full bg-amber-200 px-5 py-3 text-sm font-semibold text-stone-950 hover:bg-amber-100">
             Press kit downloads
           </Link>
-          <Link href="/events" className="rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">
+          <Link href="/events" className="rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-stone-50 hover:bg-stone-100/10">
             Past gigs
           </Link>
         </div>
@@ -60,7 +60,7 @@ export default function PhotosPage() {
       <section className="relative z-10 mx-auto max-w-7xl px-5 pb-24 sm:px-6 lg:px-8">
         <div className="grid auto-rows-[18rem] gap-4 md:grid-cols-3">
           {photos.map((photo) => (
-            <figure key={photo.src} className={`group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/20 ${photo.className ?? ''}`}>
+            <figure key={photo.src} className={`group relative overflow-hidden rounded-[1.25rem] border border-stone-700/70 bg-[#17110d]/80 shadow-2xl shadow-black/20 ${photo.className ?? ''}`}>
               <Image
                 src={photo.src}
                 alt={photo.alt}
@@ -69,8 +69,8 @@ export default function PhotosPage() {
                 className="object-cover transition duration-500 group-hover:scale-[1.03]"
               />
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 pt-16">
-                <h2 className="text-xl font-semibold text-white">{photo.title}</h2>
-                <p className="mt-1 max-w-md text-sm leading-6 text-slate-200">{photo.caption}</p>
+                <h2 className="text-xl font-semibold text-stone-50">{photo.title}</h2>
+                <p className="mt-1 max-w-md text-sm leading-6 text-stone-200">{photo.caption}</p>
               </figcaption>
             </figure>
           ))}
