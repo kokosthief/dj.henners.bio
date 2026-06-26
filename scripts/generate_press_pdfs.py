@@ -80,7 +80,7 @@ artist_long = """Henners is an Amsterdam-based ecstatic dance facilitator and DJ
 
 Rooted in his time aboard the Odessa ship, Henners weaves global rhythms, African-inspired grooves, melody, silence, and spacious integration into rooms where joy, introspection, and connection can flourish. Whether the floor feels rooted in the earth or soaring through the cosmos, the invitation is the same: move freely, awaken the spirit, and dance the full spectrum of emotions that life brings.
 
-Rather than forcing a fixed set, Henners listens into the room. His music can invite people to bounce, shake, soften, release, reflect, play, and return to stillness — following the energy of the floor while holding the arc with care."""
+Henners crafts each journey with the arc of 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness. The path is prepared with care, while staying alive enough to shift when the energy of the room asks for something different."""
 
 current_note = "Henners is focused on music-led ecstatic dance journeys rooted in listening: to the room, the rhythm, the body, and what the moment asks for."
 
