@@ -22,7 +22,7 @@ const SoundCloudWidget: React.FC = () => {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Listen</p>
           <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">A recorded ecstatic dance journey</h2>
           <p className="mt-4 text-base leading-8 text-slate-300">
-            A taste of the arc: grounded arrival, rhythmic build, spacious release, and a soft landing back into the body.
+            A taste of the arc: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.
           </p>
           <p className="mt-5 max-w-xl text-sm leading-7 text-slate-400">
             This is the kind of musical container I bring to ecstatic dance floors, retreats, ceremonies, and communities that want movement with depth.
