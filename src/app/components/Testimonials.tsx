@@ -51,7 +51,7 @@ export default function Testimonials() {
                 </figure>
               ))}
             </div>
-            <p className="mt-1 text-xs uppercase tracking-[0.22em] text-stone-500">
+            <p className="mt-1 text-xs uppercase tracking-[0.22em] text-stone-400">
               {testimonials.length} notes · swipe / scroll
             </p>
           </div>
