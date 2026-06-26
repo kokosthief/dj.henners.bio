@@ -20,5 +20,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/images/:path*', '/_next/image'],
+  matcher: ['/images/:path*'],
 };
