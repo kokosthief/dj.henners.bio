@@ -20,19 +20,17 @@ export default function Testimonials() {
             href="https://hipsy.nl/henners"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-4 border border-stone-700/80 bg-[#15100c] px-4 py-3 transition hover:border-[#d7b56d]/70 hover:bg-[#1b130d]"
+            className="mt-8 inline-block"
+            aria-label="View Henners on Hipsy"
           >
             <Image
               src="/images/badges/hipsy-review-badge-green.png"
               alt="Hipsy reviews for Henners"
-              width={82}
-              height={111}
+              width={112}
+              height={151}
               unoptimized
-              className="h-auto w-14"
+              className="h-auto w-24"
             />
-            <span className="text-sm font-semibold leading-6 text-stone-100">
-              Source profile<br />on Hipsy
-            </span>
           </a>
         </div>
 
