@@ -3,10 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { FaDownload, FaFilePdf, FaFileZipper, FaImage, FaVideo } from 'react-icons/fa6';
+import { FaDownload, FaFilePdf, FaImage, FaVideo } from 'react-icons/fa6';
 
 import ImageSlideshow from '@/app/components/ImageSlideshow';
-import { siteConfig } from '@/constant/config';
 
 import { trackEvent } from '../analytics';
 
@@ -22,11 +21,11 @@ interface MediaFile {
 
 const artistInfo = {
   short:
-    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ weaving global rhythms into soul-stirring dance journeys where joy, introspection, and connection can flourish.',
+    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc dance journeys through rhythm, release, play, grounding, and stillness.',
   medium:
-    'Shaped by Amsterdam’s vibrant ecstatic dance scene and rooted in his time aboard the Odessa ship, Henners creates spaces where dancers can move freely, awaken the spirit, and travel through the full spectrum of emotion: earth, rhythm, joy, introspection, connection, release, and stillness.',
+    'Shaped by Amsterdam’s conscious dance scene and years around the Odessa ship, Henners crafts full-arc journeys inspired by 5Rhythms and the hero’s journey: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.',
   long:
-    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s vibrant conscious dance scene. For more than four years, he has guided dancers through soul-stirring journeys on ecstatic dance floors, ceremonies, festivals, retreats, and community gatherings.\n\nRooted in his time aboard the Odessa ship, Henners weaves global rhythms, African-inspired grooves, melody, silence, and spacious integration into rooms where joy, introspection, and connection can flourish. Whether the floor feels rooted in the earth or soaring through the cosmos, the invitation is the same: move freely, awaken the spirit, and dance the full spectrum of emotions that life brings.\n\nHenners crafts each journey with the arc of 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness. The path is prepared with care, while staying alive enough to shift when the energy of the room asks for something different.',
+    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s conscious dance scene, rooted in years around the Odessa ship.\n\nHis sets are prepared as full journeys, with 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.\n\nThe music moves between global rhythms, African-inspired grooves, earthy percussion, melody, silence, and spacious integration. Sometimes it invites people to bounce, shake, and sweat. Sometimes it gives the room space to soften, feel, and come back to itself.\n\nThe journey is prepared with care, but never fixed shut. Henners holds the arc while staying responsive to the energy of the room.',
 };
 
 const mediaFiles = {
@@ -62,9 +61,8 @@ const mediaFiles = {
     { name: 'This Is What We Do', format: 'MP4', size: '23 MB', duration: '~5 min', downloadUrl: '/downloads/videos/this is what we do.mp4', description: 'Ecstatic dance showcase footage' },
   ],
   documents: [
-    { name: 'Technical Rider - DJ Henners', format: 'PDF', size: '163 KB', downloadUrl: '/downloads/documents/technical-rider.pdf', description: 'Technical requirements and equipment specifications' },
-    { name: 'Artist Biography', format: 'PDF', size: '183 KB', downloadUrl: '/downloads/documents/artist-biography.pdf', description: 'Artist biography in multiple lengths' },
-    { name: 'Complete Press Kit', format: 'PDF', size: '202 KB', downloadUrl: '/downloads/documents/complete-press-kit.pdf', description: 'Bio, technical specs, booking context, and media assets' },
+    { name: 'Technical Rider', format: 'PDF', size: '126 KB', downloadUrl: '/downloads/documents/technical-rider.pdf', description: 'Simple one-page setup note' },
+    { name: 'Artist Biography', format: 'PDF', size: '101 KB', downloadUrl: '/downloads/documents/artist-biography.pdf', description: 'Plain bio copy in short, medium, and long versions' },
   ],
 };
 
@@ -76,17 +74,6 @@ const bioOptions = [
 
 type BioKey = (typeof bioOptions)[number]['key'];
 
-function downloadTextFile(filename: string, content: string) {
-  const blob = new Blob([content], { type: 'text/plain' });
-  const url = window.URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  window.URL.revokeObjectURL(url);
-}
 
 function AssetList({
   title,
@@ -143,15 +130,6 @@ export default function MediaPackagePage() {
     window.setTimeout(() => setCopied(false), 1800);
   };
 
-  const handlePackageDownload = () => {
-    const packageContent = `HENNERS — PRESS KIT\n\nOfficial website: ${siteConfig.url}\nSoundCloud: https://soundcloud.com/srenneh\nContact: ${siteConfig.url}/#contact\nLocation: Amsterdam, Netherlands\n\nBIO — SHORT\n${artistInfo.short}\n\nBIO — MEDIUM\n${artistInfo.medium}\n\nBIO — LONG\n${artistInfo.long}\n\nPHOTOS\n${mediaFiles.images.map((file) => `• ${file.name} (${file.size}) — ${siteConfig.url}${file.downloadUrl}`).join('\n')}\n\nVIDEOS\n${mediaFiles.videos.map((file) => `• ${file.name} (${file.size}) — ${siteConfig.url}${file.downloadUrl}`).join('\n')}\n\nDOCUMENTS\n${mediaFiles.documents.map((file) => `• ${file.name} (${file.size}) — ${siteConfig.url}${file.downloadUrl}`).join('\n')}\n`;
-
-    trackEvent('press_kit_links_download', {
-      event_label: 'complete_press_kit_links',
-    });
-    downloadTextFile('Henners-Press-Kit-Links.txt', packageContent);
-  };
-
   return (
     <main className="min-h-screen overflow-hidden bg-[#100d0a] text-[#f8f1e7]">
       <div className="pointer-events-none fixed inset-0 -z-0 bg-[#100d0a]" />
@@ -174,20 +152,15 @@ export default function MediaPackagePage() {
             Henners press kit
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-stone-300 sm:mt-7 sm:text-xl sm:leading-9">
-            Bio, photos, videos, tech rider, and source material for organizers.
+            Bio copy, photos, videos, and a simple one-page technical setup note. Direct links are easier than a big bundled press document.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button
-              type="button"
-              onClick={handlePackageDownload}
-              className="inline-flex items-center justify-center gap-3 rounded-full bg-amber-200 px-6 py-4 font-semibold text-stone-950 shadow-xl shadow-amber-500/20 transition hover:bg-amber-100"
-            >
-              <FaFileZipper className="h-5 w-5" />
-              Download links package
-            </button>
-            <Link href="/#contact" className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-stone-50 transition hover:border-amber-200/60 hover:bg-stone-100/10">
+            <Link href="/#contact" className="rounded-full bg-amber-200 px-6 py-4 text-center font-semibold text-stone-950 transition hover:bg-amber-100">
               Request something specific
             </Link>
+            <a href="/downloads/documents/technical-rider.pdf" download className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-stone-50 transition hover:border-amber-200/60 hover:bg-stone-100/10">
+              Download simple rider
+            </a>
           </div>
         </div>
 
@@ -275,7 +248,7 @@ export default function MediaPackagePage() {
                     />
                   )}
                   <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-stone-200/50 bg-black/45 text-stone-50 shadow-lg transition group- group-hover:bg-amber-200 group-hover:text-stone-950">
+                  <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-stone-200/50 bg-black/45 text-stone-50 shadow-lg transition group-hover:bg-amber-200 group-hover:text-stone-950">
                     <svg className="ml-1 h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M8 5v14l11-7z" />
                     </svg>
@@ -307,7 +280,7 @@ export default function MediaPackagePage() {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Technical rider</p>
             <h2 className="mt-3 text-3xl font-semibold text-stone-50">Simple setup context.</h2>
             <p className="mt-5 leading-8 text-stone-300">
-              For public DJ sets, please provide a professional sound system, engineer or stage contact, booth monitoring, and enough setup time for a calm soundcheck.
+              Most ecstatic dance rooms do not need a complicated rider. I travel with my computer and prefer the lightest working setup: ideally a Pioneer DDJ controller ready to plug in.
             </p>
             <a href="/downloads/documents/technical-rider.pdf" download className="mt-7 inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-semibold text-stone-950 transition hover:bg-amber-100">
               <FaDownload className="h-4 w-4" />
@@ -316,10 +289,10 @@ export default function MediaPackagePage() {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {[
-              ['Audio', 'Pioneer DJM-900NXS2 or newer, 3× CDJ-3000 / CDJ-2000NXS2, stereo booth monitors.'],
-              ['Support', 'Sound engineer or stage contact available before and during the set.'],
-              ['Setup', 'Allow roughly 30 minutes for setup, linking players, and soundcheck.'],
-              ['Hospitality', 'Water, tea, fruit, and a clean towel in or near the booth.'],
+              ['Club setup', 'CDJs and mixer are perfect when the venue already has a proper booth setup.'],
+              ['Ecstatic dance setup', 'Please arrange a Pioneer DDJ controller for laptop plug-and-play where possible.'],
+              ['Backup', 'If needed I can bring my own controller + computer; organizer provides RCA / correct cable into the sound system.'],
+              ['Arrival', 'A stable table, power, line check, and someone who knows the sound system.'],
             ].map(([title, body]) => (
               <article key={title} className="rounded-xl border border-stone-700/70 bg-[#120d09]/90 p-5">
                 <h3 className="text-xl font-semibold text-stone-50">{title}</h3>

@@ -1,7 +1,7 @@
 export const siteConfig = {
   title: 'Henners | Ecstatic Dance Facilitator & DJ in Amsterdam',
   description:
-    'Amsterdam-based ecstatic dance facilitator and DJ weaving global rhythms into soul-stirring dance journeys where joy, introspection, and connection can flourish.',
+    'Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc dance journeys through rhythm, release, play, grounding, and stillness.',
   url: 'https://dj.srenneh.com',
   aliases: ['https://dj.henners.bio', 'https://srenneh.com'],
   keywords: [

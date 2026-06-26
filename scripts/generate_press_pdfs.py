@@ -15,216 +15,128 @@ CONTACT = f"{SITE}/#contact"
 UPDATED = "June 2026"
 
 BASE_CSS = """
-@page { size: A4; margin: 16mm; }
-:root { color-scheme: light; }
+@page { size: A4; margin: 18mm; }
 * { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: #172033;
-  background: #f7f3ea;
-  font-size: 11.4pt;
+  color: #1f1b16;
+  background: #fffdf8;
+  font-size: 11pt;
   line-height: 1.48;
 }
-a { color: #0f5f72; text-decoration: none; }
-.page {
-  min-height: calc(297mm - 32mm);
-  page-break-after: always;
-  position: relative;
-  padding: 0;
-}
-.page:last-child { page-break-after: auto; }
-.cover {
-  min-height: calc(297mm - 32mm);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 26mm 19mm 18mm;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(15,95,114,.23), transparent 34%),
-    radial-gradient(circle at 90% 8%, rgba(183,126,42,.22), transparent 30%),
-    linear-gradient(135deg, #07101a, #111928 62%, #05080d);
-  color: white;
-  border-radius: 18px;
-}
-.eyebrow { letter-spacing: .22em; text-transform: uppercase; font-size: 8.5pt; color: #d8b56a; font-weight: 700; }
-h1 { margin: 14px 0 16px; font-size: 38pt; line-height: .95; letter-spacing: -.045em; }
-h2 { margin: 0 0 12px; font-size: 24pt; line-height: 1.05; letter-spacing: -.035em; color: #101827; }
-h3 { margin: 18px 0 7px; font-size: 14.5pt; color: #101827; }
-p { margin: 0 0 10px; }
-ul { margin: 7px 0 14px 18px; padding: 0; }
-li { margin: 0 0 6px; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.card {
-  background: rgba(255,255,255,.76);
-  border: 1px solid rgba(23,32,51,.12);
-  border-radius: 14px;
-  padding: 14px 15px;
-  break-inside: avoid;
-}
-.dark-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: #e9eef8; }
-.dark-card strong { color: white; }
-.section { padding: 5mm 2mm 0; }
-.meta { color: #5d6878; font-size: 9.5pt; }
-.cover .meta { color: #cbd5e1; }
-.pill { display: inline-block; border: 1px solid rgba(216,181,106,.55); border-radius: 999px; padding: 6px 10px; color: #f4d98c; font-weight: 700; }
-.footer { position: absolute; left: 2mm; right: 2mm; bottom: 0; color: #7a8492; font-size: 8.5pt; border-top: 1px solid rgba(23,32,51,.12); padding-top: 7px; }
-.cover .footer { color: #cbd5e1; border-top-color: rgba(255,255,255,.18); left: 19mm; right: 19mm; bottom: 18mm; }
-.small { font-size: 9.5pt; color: #5d6878; }
-.quote { font-size: 17pt; line-height: 1.24; letter-spacing: -.02em; color: #101827; }
+a { color: #5b3b18; text-decoration: none; }
+h1 { margin: 0 0 8mm; font-size: 26pt; line-height: 1.05; letter-spacing: -.02em; }
+h2 { margin: 9mm 0 3mm; font-size: 14pt; }
+h3 { margin: 5mm 0 2mm; font-size: 11.5pt; }
+p { margin: 0 0 4mm; }
+ul { margin: 2mm 0 5mm 5mm; padding-left: 4mm; }
+li { margin: 0 0 2mm; }
+.header { border-bottom: 1px solid #d8d0c3; padding-bottom: 5mm; margin-bottom: 7mm; }
+.eyebrow { letter-spacing: .16em; text-transform: uppercase; font-size: 8pt; color: #7a6146; font-weight: 700; margin-bottom: 2mm; }
+.meta { color: #62584d; font-size: 9.5pt; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; }
+.box { border-top: 1px solid #d8d0c3; padding-top: 4mm; break-inside: avoid; }
+.footer { position: fixed; left: 18mm; right: 18mm; bottom: 12mm; border-top: 1px solid #d8d0c3; padding-top: 3mm; color: #756b60; font-size: 8.5pt; }
 """
 
-artist_short = "Henners is an Amsterdam-based ecstatic dance facilitator and DJ weaving global rhythms into soul-stirring dance journeys where joy, introspection, and connection can flourish."
-artist_medium = "Shaped by Amsterdam’s vibrant ecstatic dance scene and rooted in his time aboard the Odessa ship, Henners creates spaces where dancers can move freely, awaken the spirit, and travel through the full spectrum of emotion: earth, rhythm, joy, introspection, connection, release, and stillness."
-artist_long = """Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s vibrant conscious dance scene. For more than four years, he has guided dancers through soul-stirring journeys on ecstatic dance floors, ceremonies, festivals, retreats, and community gatherings.
+artist_short = "Henners is an Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc dance journeys through rhythm, release, play, grounding, and stillness."
+artist_medium = "Amsterdam-based ecstatic dance facilitator and DJ shaped by the city’s conscious dance scene and years around the Odessa ship. Henners crafts full-arc dance journeys inspired by 5Rhythms and the hero’s journey — moving through arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness."
+artist_long = """Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s conscious dance scene, rooted in years around the Odessa ship.
 
-Rooted in his time aboard the Odessa ship, Henners weaves global rhythms, African-inspired grooves, melody, silence, and spacious integration into rooms where joy, introspection, and connection can flourish. Whether the floor feels rooted in the earth or soaring through the cosmos, the invitation is the same: move freely, awaken the spirit, and dance the full spectrum of emotions that life brings.
+His sets are crafted as full journeys, with 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.
 
-Henners crafts each journey with the arc of 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness. The path is prepared with care, while staying alive enough to shift when the energy of the room asks for something different."""
+The music moves between global rhythms, African-inspired grooves, earthy percussion, melody, silence, and spacious integration. Sometimes it invites people to bounce, shake, and sweat. Sometimes it gives the room space to soften, feel, and come back to itself.
 
-current_note = "Henners is focused on music-led ecstatic dance journeys rooted in listening: to the room, the rhythm, the body, and what the moment asks for."
+The journey is prepared with care, but never fixed shut. Henners holds the arc while staying responsive to the energy of the room."""
 
-photos = [
-    ("Rijksmuseum DJ Booth", "/downloads/high-res/rijksmuseum-dj-booth.png"),
-    ("Rijksmuseum Dancefloor", "/downloads/high-res/rijksmuseum-dancefloor.png"),
-    ("Rijksmuseum Close Up", "/downloads/high-res/rijksmuseum-close-up.png"),
-    ("Under the Sun DJ", "/images/gallery/under-the-sun-dj.jpg"),
-    ("Under the Sun Circle", "/images/gallery/under-the-sun-circle.jpg"),
-    ("EDFH Yellow Room", "/images/gallery/edfh-yellow-room.jpg"),
-    ("Silent Dance Water", "/images/gallery/silent-dance-water.jpg"),
-    ("Forest Listening", "/images/gallery/forest-listening.jpg"),
-]
-
-videos = [
-    ("Ambrosia at Rijksmuseum", "/downloads/videos/ambrosia-rijksmuseum.mp4"),
-    ("Ambrosia at Het Sieraad", "/downloads/videos/ambrosia-het-sieraad.mp4"),
-    ("Lundjuweel 2025", "/downloads/videos/lundjuweel-2025.mp4"),
-]
 
 def esc(text: str) -> str:
     return html.escape(text).replace("\n", "<br>")
 
-def shell_link(label: str, href: str) -> str:
+
+def link(label: str, href: str) -> str:
     return f'<a href="{href}">{esc(label)}</a>'
 
-def doc(title: str, body: str) -> str:
-    return f"""<!doctype html><html><head><meta charset='utf-8'><title>{esc(title)}</title><style>{BASE_CSS}</style></head><body>{body}</body></html>"""
 
-def cover(title: str, subtitle: str, kind: str) -> str:
-    return f"""
-    <section class="page cover">
-      <div>
-        <div class="eyebrow">HENNERS · {esc(kind)}</div>
-        <h1>{esc(title)}</h1>
-        <p style="font-size:16pt;line-height:1.35;max-width:145mm;color:#e9eef8">{esc(subtitle)}</p>
-        <p class="pill" style="margin-top:18px">Ecstatic Dance Facilitator & DJ · Amsterdam</p>
-      </div>
-      <div class="grid">
-        <div class="card dark-card"><strong>Website</strong><br>{shell_link(SITE, SITE)}</div>
-        <div class="card dark-card"><strong>SoundCloud</strong><br>{shell_link(SOUNDCLOUD, SOUNDCLOUD)}</div>
-        <div class="card dark-card"><strong>Contact</strong><br>{shell_link(CONTACT, CONTACT)}</div>
-        <div class="card dark-card"><strong>Current focus</strong><br>{esc(current_note)}</div>
-      </div>
-      <div class="footer">Updated {UPDATED} · Canonical URL: {SITE}</div>
-    </section>
-    """
+def page(title: str, subtitle: str, body: str) -> str:
+    return f"""<!doctype html>
+<html><head><meta charset='utf-8'><title>{esc(title)}</title><style>{BASE_CSS}</style></head>
+<body>
+  <div class="header">
+    <div class="eyebrow">Henners · Ecstatic Dance Facilitator & DJ · Amsterdam</div>
+    <h1>{esc(title)}</h1>
+    <p class="meta">{esc(subtitle)}</p>
+    <p class="meta">Website: {link(SITE, SITE)} · SoundCloud: {link(SOUNDCLOUD, SOUNDCLOUD)} · Contact: {link(CONTACT, CONTACT)}</p>
+  </div>
+  {body}
+  <div class="footer">Updated {UPDATED} · {SITE}</div>
+</body></html>"""
+
 
 def bio_document() -> str:
-    body = cover("Artist Biography", "Bio copy and positioning for organizers, publications, and conscious dance communities.", "Biography")
-    body += f"""
-    <section class="page section">
-      <p class="eyebrow">Biography</p>
-      <h2>Short, medium, and long versions</h2>
-      <div class="card"><h3>Short bio</h3><p>{esc(artist_short)}</p></div>
-      <div class="card"><h3>Medium bio</h3><p>{esc(artist_medium)}</p></div>
-      <div class="card"><h3>Long bio</h3><p>{esc(artist_long)}</p></div>
-      <div class="card"><h3>Current focus</h3><p>{esc(current_note)}</p></div>
-      <div class="footer">Henners · Artist Biography · {SITE}</div>
-    </section>
-    <section class="page section">
-      <p class="eyebrow">Context</p>
-      <h2>Musical approach</h2>
-      <p class="quote">Whether rooted in the earth or soaring through the cosmos, let the music stir the full spectrum.</p>
-      <div class="grid">
-        <div class="card"><h3>Sound</h3><p>Global rhythms, African-inspired grooves, earthy percussion, warm melody, silence, spacious integration, and emotional pacing.</p></div>
-        <div class="card"><h3>Role</h3><p>Not just track selection: reading the room, protecting transitions, and supporting honest movement on the floor.</p></div>
-        <div class="card"><h3>Suitable contexts</h3><p>Ecstatic dance, retreats, ceremonies, festivals, cacao gatherings, intimate movement rooms, and conscious community floors.</p></div>
-        <div class="card"><h3>Location</h3><p>Amsterdam-based, Netherlands-focused, with international context and travel history.</p></div>
-      </div>
-      <div class="footer">Henners · Artist Biography · {SITE}</div>
-    </section>
+    body = f"""
+    <h2>Short bio</h2>
+    <p>{esc(artist_short)}</p>
+
+    <h2>Medium bio</h2>
+    <p>{esc(artist_medium)}</p>
+
+    <h2>Long bio</h2>
+    <p>{esc(artist_long)}</p>
     """
-    return doc("Henners Artist Biography", body)
+    return page("Artist Biography", "Plain bio copy for event pages, listings, organizers, and publications.", body)
+
 
 def rider_document() -> str:
-    body = cover("Technical Rider", "Simple technical and hospitality context for a calm, professional ecstatic dance DJ set.", "Technical Rider")
-    body += f"""
-    <section class="page section">
-      <p class="eyebrow">DJ set requirements</p>
-      <h2>Audio, setup, and support</h2>
-      <div class="grid">
-        <div class="card"><h3>Audio equipment</h3><ul><li>Professional sound system appropriate for full-range dance music.</li><li>Pioneer DJM-900NXS2 mixer or newer.</li><li>Three Pioneer CDJ-3000 players, or CDJ-2000NXS2 where agreed.</li><li>Linked players with required LAN cables/switch.</li><li>Stereo booth monitors with independent level control.</li></ul></div>
-        <div class="card"><h3>Technical support</h3><ul><li>Sound engineer or stage/FOH contact available before and during the set.</li><li>All equipment tested before arrival.</li><li>Enough setup time for linking players, checking USBs, and a calm soundcheck.</li></ul></div>
-        <div class="card"><h3>Setup timing</h3><ul><li>Allow roughly 30 minutes for setup and soundcheck.</li><li>Please confirm DJ booth position, changeover flow, and who handles final sound approval.</li></ul></div>
-        <div class="card"><h3>Hospitality</h3><ul><li>Water, tea, fruit, and a clean towel in or near the booth.</li><li>A grounded, low-stress arrival helps protect the musical arc of the session.</li></ul></div>
+    body = """
+    <h2>Preferred setup</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>Club / festival environment</h3>
+        <ul>
+          <li>Professional sound system suitable for full-range dance music.</li>
+          <li>Pioneer CDJ setup with mixer, already connected to the sound system.</li>
+          <li>Booth monitor if available.</li>
+          <li>Someone on site who knows the system and can help with line check.</li>
+        </ul>
       </div>
-      <div class="card"><h3>Questions or alternatives</h3><p>If the venue has a different setup, send details through the contact form before the event: {shell_link(CONTACT, CONTACT)}.</p></div>
-      <div class="footer">Henners · Technical Rider · {SITE}</div>
-    </section>
-    """
-    return doc("Henners Technical Rider", body)
+      <div class="box">
+        <h3>Most ecstatic dance setups</h3>
+        <ul>
+          <li>Please arrange a Pioneer DDJ controller for laptop plug-and-play where possible.</li>
+          <li>I travel with my computer and prefer to keep the setup light.</li>
+          <li>Please have the controller connected to the sound system before arrival.</li>
+          <li>A simple soundcheck / line check is enough if everything is prepared.</li>
+        </ul>
+      </div>
+    </div>
 
-def press_kit_document() -> str:
-    photo_links = "".join(f"<li>{esc(name)} — {shell_link(SITE + path, SITE + path)}</li>" for name, path in photos)
-    video_links = "".join(f"<li>{esc(name)} — {shell_link(SITE + path, SITE + path)}</li>" for name, path in videos)
-    body = cover("Complete Press Kit", "Biography, positioning, media links, technical context, and current status for organizers.", "Press Kit")
-    body += f"""
-    <section class="page section">
-      <p class="eyebrow">Overview</p>
-      <h2>Who this is for</h2>
-      <div class="card"><p>{esc(artist_medium)}</p></div>
-      <div class="grid">
-        <div class="card"><h3>Website</h3><p>{shell_link(SITE, SITE)}</p></div>
-        <div class="card"><h3>Listen</h3><p>{shell_link(SOUNDCLOUD, SOUNDCLOUD)}</p></div>
-        <div class="card"><h3>Contact</h3><p>{shell_link(CONTACT, CONTACT)}</p></div>
-        <div class="card"><h3>Current focus</h3><p>{esc(current_note)}</p></div>
-      </div>
-      <h3>Short bio</h3><p>{esc(artist_short)}</p>
-      <h3>Long bio</h3><p>{esc(artist_long)}</p>
-      <div class="footer">Henners · Complete Press Kit · {SITE}</div>
-    </section>
-    <section class="page section">
-      <p class="eyebrow">Organizer context</p>
-      <h2>Sound, floor, and proof</h2>
-      <div class="grid">
-        <div class="card"><h3>Set shape</h3><p>Grounded arrival, rhythmic build, release, play, stillness, and integration.</p></div>
-        <div class="card"><h3>Rooms</h3><p>Ecstatic dance, retreats, festivals, ceremonies, cacao gatherings, and conscious movement communities.</p></div>
-        <div class="card"><h3>Notable contexts</h3><p>Amsterdam ecstatic dance scene, Odessa community floors, Ambrosia, Rijksmuseum footage, Lundjuweel, and Netherlands/international movement spaces.</p></div>
-        <div class="card"><h3>Technical baseline</h3><p>Professional sound system, Pioneer mixer/players, stereo booth monitoring, stage contact, and a calm 30-minute setup window.</p></div>
-      </div>
-      <div class="footer">Henners · Complete Press Kit · {SITE}</div>
-    </section>
-    <section class="page section">
-      <p class="eyebrow">Media links</p>
-      <h2>Photos, videos, and documents</h2>
-      <div class="grid">
-        <div class="card"><h3>Selected photos</h3><ul>{photo_links}</ul></div>
-        <div class="card"><h3>Selected videos</h3><ul>{video_links}</ul></div>
-      </div>
-      <div class="card"><h3>Documents</h3><ul>
-        <li>Artist Biography — {shell_link(SITE + '/downloads/documents/artist-biography.pdf', SITE + '/downloads/documents/artist-biography.pdf')}</li>
-        <li>Technical Rider — {shell_link(SITE + '/downloads/documents/technical-rider.pdf', SITE + '/downloads/documents/technical-rider.pdf')}</li>
-        <li>Press Kit Page — {shell_link(SITE + '/media-package', SITE + '/media-package')}</li>
-      </ul></div>
-      <div class="footer">Henners · Complete Press Kit · {SITE}</div>
-    </section>
+    <h2>Backup option</h2>
+    <p>If necessary, I can bring my own controller with my computer. In that case the organizer needs to provide a working connection into the stereo / PA system, normally RCA cables or the correct adapter for the venue system.</p>
+
+    <h2>Please confirm before the event</h2>
+    <ul>
+      <li>What sound system is being used?</li>
+      <li>Will there be CDJs + mixer, a Pioneer DDJ controller, or should I bring my own controller?</li>
+      <li>Which cable input is available into the mixer / stereo / PA?</li>
+      <li>Who is the technical contact on arrival?</li>
+      <li>When can I do a quick line check?</li>
+    </ul>
+
+    <h2>Useful but not dramatic</h2>
+    <ul>
+      <li>Water nearby.</li>
+      <li>A small stable table / booth space.</li>
+      <li>Enough time to plug in calmly before people arrive.</li>
+    </ul>
     """
-    return doc("Henners Complete Press Kit", body)
+    return page("Technical Rider", "Simple one-page setup note. No overcomplicated stage requirements.", body)
+
 
 DOCS = {
     "artist-biography.pdf": bio_document(),
     "technical-rider.pdf": rider_document(),
-    "complete-press-kit.pdf": press_kit_document(),
 }
 
 chrome_candidates = [
@@ -233,7 +145,7 @@ chrome_candidates = [
     "google-chrome",
     "chromium",
 ]
-chrome = next((c for c in chrome_candidates if Path(c).exists() or '/' not in c), None)
+chrome = next((c for c in chrome_candidates if Path(c).exists() or "/" not in c), None)
 if not chrome:
     raise SystemExit("No Chrome/Chromium binary found for HTML-to-PDF generation")
 

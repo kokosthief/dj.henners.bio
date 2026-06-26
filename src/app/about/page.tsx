@@ -10,7 +10,7 @@ import HennersSpaceholding from '../../../public/images/henners-spaceholding.jpg
 export const metadata: Metadata = {
   title: 'About Henners',
   description:
-    'About Henners, an Amsterdam-based ecstatic dance facilitator and DJ weaving global rhythms into ecstatic dance journeys rooted in joy, introspection, connection, and the full spectrum of emotion.',
+    'About Henners, an Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc dance journeys through rhythm, release, play, grounding, and stillness.',
   alternates: { canonical: `${siteConfig.url}/about` },
   openGraph: {
     url: `${siteConfig.url}/about`,
@@ -45,10 +45,10 @@ export default function AboutPage() {
           <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">About</p>
           <h1 className="mt-4 text-5xl font-semibold tracking-tight md:text-6xl">Henners — ecstatic dance facilitator & DJ</h1>
           <p className="mt-7 text-xl leading-9 text-stone-300">
-            Henners is an Amsterdam-based ecstatic dance facilitator and DJ shaped by the city’s vibrant ecstatic dance scene and years of guiding dancers through soul-stirring journeys.
+            Henners is an Amsterdam-based ecstatic dance facilitator and DJ shaped by Amsterdam’s conscious dance scene and years around the Odessa ship.
           </p>
           <p className="mt-6 leading-8 text-stone-400">
-            Rooted in his time aboard the Odessa ship and Amsterdam’s wider conscious dance community, he weaves global rhythms, African-inspired grooves, melody, silence, and spacious integration into rooms where joy, introspection, and connection can flourish.
+            Rooted in his time aboard the Odessa ship and Amsterdam’s wider conscious dance community, he crafts full-arc journeys through global rhythms, African-inspired grooves, earthy percussion, melody, silence, and spacious integration.
           </p>
           <p className="mt-6 leading-8 text-stone-400">
             Whether the room feels rooted in the earth or suddenly somewhere cosmic, the work is the same: listen closely, follow the energy, and let people dance the full spectrum of what is alive.
