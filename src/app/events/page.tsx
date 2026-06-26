@@ -63,7 +63,7 @@ const formatDate = (dateString: string) => {
 export const metadata: Metadata = {
   title: 'Event History',
   description:
-    'A portable proof archive of Henners’ past ecstatic dance, ceremony, festival, and community dance floors in Amsterdam, the Netherlands, and beyond.',
+    'Past record of where Henners has gigged and how often, including ecstatic dance floors, ceremonies, festivals, and community gatherings in Amsterdam, the Netherlands, and beyond.',
   alternates: { canonical: `${siteConfig.url}/events` },
   openGraph: {
     url: `${siteConfig.url}/events`,

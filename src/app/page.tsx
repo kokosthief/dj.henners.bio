@@ -5,6 +5,7 @@ import ContactQueryScroll from '@/app/components/ContactQueryScroll';
 import ImageSlideshow from '@/app/components/ImageSlideshow';
 import PastGigs from '@/app/components/PastGigs';
 import SoundCloudWidget from '@/app/components/SoundCloudWidget';
+import Testimonials from '@/app/components/Testimonials';
 import UpcomingGigs from '@/app/components/UpcomingGigs';
 import { siteConfig } from '@/constant/config';
 
@@ -45,6 +46,8 @@ export default function HomePage() {
           <Link href="#facilitation" className="hover:text-amber-200">Facilitation</Link>
           <Link href="#listen" className="hover:text-amber-200">Listen</Link>
           <Link href="#upcoming" className="hover:text-amber-200">Gigs</Link>
+          <Link href="#reviews" className="hover:text-amber-200">Reviews</Link>
+          <Link href="/photos" className="hover:text-amber-200">Photos</Link>
           <Link href="/events" className="hover:text-amber-200">Events</Link>
           <Link href="/media-package" className="hover:text-amber-200">Press kit</Link>
         </nav>
@@ -117,6 +120,7 @@ export default function HomePage() {
 
       <SoundCloudWidget />
       <UpcomingGigs gigs={gigs} />
+      <Testimonials />
       <PastGigs gigs={gigs} />
 
       <section className="relative z-10 mx-auto w-full max-w-6xl px-0 py-14 sm:px-6 sm:py-20 lg:px-8">
@@ -143,6 +147,7 @@ export default function HomePage() {
           <div className="flex gap-4">
             <a href={siteConfig.social.soundcloud} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">SoundCloud</a>
             <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">Instagram</a>
+            <Link href="/photos" className="hover:text-amber-200">Photos</Link>
             <Link href="/events" className="hover:text-amber-200">Events</Link>
             <Link href="/about" className="hover:text-amber-200">About</Link>
           </div>
