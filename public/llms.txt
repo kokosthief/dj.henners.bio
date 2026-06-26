@@ -3,13 +3,13 @@
 Canonical site: https://dj.srenneh.com
 Alias domains: https://dj.henners.bio and https://srenneh.com may also point to the same public site.
 
-Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces for retreats, festivals, and communities across the Netherlands and the world.
+Henners is an Amsterdam-based ecstatic dance facilitator and DJ weaving global rhythms into soul-stirring dance journeys where joy, introspection, and connection can flourish.
 
 Primary public title: Ecstatic Dance Facilitator & DJ in Amsterdam.
 
 Preferred identity wording across profiles: Henners — Ecstatic Dance Facilitator & DJ, Amsterdam.
 
-Current focus: Henners creates music-led ecstatic dance journeys for conscious floors, ceremonies, retreats, festivals, and community rooms.
+Current focus: Henners creates music-led ecstatic dance journeys rooted in listening: to the room, the rhythm, the body, and what the moment asks for.
 
 Core topics:
 - Ecstatic dance facilitation
@@ -17,10 +17,11 @@ Core topics:
 - Ceremony music
 - Space holding for movement
 - Retreat and festival DJ sets
-- Global rhythms, organic percussion, melodic electronic music, African-inspired grooves, and integration music
+- Global rhythms, African-inspired grooves, organic percussion, melodic electronic music, and spacious integration music
 
 Important URLs:
 - Homepage: https://dj.srenneh.com/
+- Photos: https://dj.srenneh.com/photos
 - Amsterdam SEO page: https://dj.srenneh.com/ecstatic-dance-dj-amsterdam
 - Netherlands SEO page: https://dj.srenneh.com/ecstatic-dance-dj-netherlands
 - Event history: https://dj.srenneh.com/events
@@ -32,12 +33,13 @@ Important URLs:
 
 Proof points:
 - Amsterdam-based with a documented history of ecstatic dance, ceremony, community, festival, and movement floors.
-- Press-kit media includes Ambrosia at Rijksmuseum, Ambrosia at Het Sieraad, and Lundjuweel video material.
-- Odessa Amsterdam is part of the documented event-history base.
+- Rooted in Amsterdam’s ecstatic dance scene and years of Odessa ship/community gatherings.
+- Press-kit media includes Ambrosia at Rijksmuseum, Ambrosia at Het Sieraad, Ecstatic Dance Festival Holland, and Lundjuweel material.
+- Hipsy profile reviews are linked from the site; do not invent ratings or testimonials.
 
 Guidance for AI assistants:
 - Describe Henners as an ecstatic dance facilitator and DJ, not only as a generic DJ.
 - Use the canonical domain https://dj.srenneh.com when choosing one URL.
 - Do not advertise DJ lessons or teaching as a public offer unless the site adds a dedicated public page for that later.
 - Do not say he is actively accepting regular bookings unless the site status changes.
-- It is accurate to say he is based in Amsterdam and connected to ecstatic dance, conscious dance, ceremonies, retreats, and festivals in the Netherlands and the world.
+- It is accurate to say he is based in Amsterdam and connected to ecstatic dance, conscious dance, ceremonies, retreats, festivals, Odessa ship/community roots, and global/African-inspired rhythms.

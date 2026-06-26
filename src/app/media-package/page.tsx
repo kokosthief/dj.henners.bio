@@ -22,11 +22,11 @@ interface MediaFile {
 
 const artistInfo = {
   short:
-    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating grounded, emotionally intelligent music journeys for conscious dance floors, retreats, ceremonies, and festivals.',
+    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ weaving global rhythms into soul-stirring dance journeys where joy, introspection, and connection can flourish.',
   medium:
-    'Henners guides ecstatic dance journeys through arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness. Shaped by Amsterdam’s conscious dance scene and years of sets at Odessa and community gatherings, his work is not only musical but relational: reading the floor, protecting the arc, and giving the body permission to feel.',
+    'Shaped by Amsterdam’s vibrant ecstatic dance scene and rooted in his time aboard the Odessa ship, Henners creates spaces where dancers can move freely, awaken the spirit, and travel through the full spectrum of emotion: earth, rhythm, joy, introspection, connection, release, and stillness.',
   long:
-    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys for movement communities, ceremonies, retreats, and festivals. His sets follow an arc inspired by the hero’s journey and 5Rhythms: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.\n\nHis work grew through Amsterdam’s ecstatic dance scene, including years of community floors, Odessa gatherings, cacao ceremonies, festivals, and intimate movement spaces. Rather than treating a set as a playlist, Henners works with the emotional field of the room — tracking energy, protecting transitions, and supporting both joy and tenderness when they arise.\n\nMusically, his sound draws from global rhythms, earthy grooves, deep percussion, warm melodic textures, and spacious integration tracks. The aim is simple: help people move honestly, feel safely, and reconnect with themselves and each other through dance.',
+    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s vibrant conscious dance scene. For more than four years, he has guided dancers through soul-stirring journeys on ecstatic dance floors, ceremonies, festivals, retreats, and community gatherings.\n\nRooted in his time aboard the Odessa ship, Henners weaves global rhythms, African-inspired grooves, melody, silence, and spacious integration into rooms where joy, introspection, and connection can flourish. Whether the floor feels rooted in the earth or soaring through the cosmos, the invitation is the same: move freely, awaken the spirit, and dance the full spectrum of emotions that life brings.\n\nRather than forcing a fixed set, Henners listens into the room. His music can invite people to bounce, shake, soften, release, reflect, play, and return to stillness — following the energy of the floor while holding the arc with care.',
 };
 
 const mediaFiles = {
@@ -174,7 +174,7 @@ export default function MediaPackagePage() {
             Henners press kit
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-7 sm:text-xl sm:leading-9">
-            Bio, photos, videos, tech rider, and download links for organizers.
+            Bio, photos, videos, tech rider, and source material for organizers.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button

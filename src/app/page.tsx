@@ -13,23 +13,23 @@ import { gigs } from './gigsData';
 
 const facilitationCards = [
   {
-    title: 'Ecstatic dance journeys',
-    body: 'A journey through arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness — inspired by the hero’s journey and 5Rhythms.',
+    title: 'Rooted and cosmic',
+    body: 'Whether the room wants earth, fire, softness, or lift-off, the music follows the full spectrum of the floor.',
   },
   {
-    title: 'Ceremony & space-holding',
-    body: 'Music selected for emotional safety and depth — supportive when joy rises, tender when tears come.',
+    title: 'Joy and introspection',
+    body: 'Global rhythms, African-inspired grooves, melody, silence, and space for both elation and reflection.',
   },
   {
-    title: 'Retreats, festivals & communities',
-    body: 'Professional conscious dance sets for intimate rooms, festival stages, cacao ceremonies, and movement communities.',
+    title: 'Born from the scene',
+    body: 'Shaped through Amsterdam’s ecstatic dance scene, Odessa ship gatherings, ceremonies, festivals, and community floors.',
   },
 ];
 
 const stats = [
-  { value: 'Amsterdam', label: 'based, travelling outward' },
-  { value: '2021', label: 'facilitating since' },
-  { value: `${gigs.filter((gig) => new Date(gig.date) < new Date()).length}+`, label: 'documented dance floors' },
+  { value: 'Amsterdam', label: 'rooted in the scene' },
+  { value: 'Odessa', label: 'ship-born community roots' },
+  { value: `${gigs.filter((gig) => new Date(gig.date) < new Date()).length}+`, label: 'rooms danced through' },
 ];
 
 export default function HomePage() {
@@ -65,7 +65,7 @@ export default function HomePage() {
             Ecstatic Dance Facilitator & DJ in Amsterdam
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-7 sm:text-xl sm:leading-9">
-            Grounded ecstatic dance journeys for conscious floors, ceremonies, retreats, and festivals.
+            Soul-stirring dance journeys through earth, rhythm, emotion, connection, and the occasional trip through the cosmos.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link href="#listen" className="rounded-full bg-amber-200 px-6 py-4 text-center font-semibold text-slate-950 shadow-xl shadow-amber-500/20 transition hover:bg-amber-100">
@@ -102,15 +102,15 @@ export default function HomePage() {
 
       <section id="facilitation" className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">What I facilitate</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Not just tracks. A held journey.</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Vibes first</p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Rooted in the floor. Open to the cosmos.</h2>
           <p className="mt-6 text-lg leading-8 text-slate-300">
-            Ecstatic dance works when the room feels safe enough to move honestly. My work is musical, but it is also relational: reading the floor, protecting the arc, and giving the body permission to feel.
+            The best dance floors are not forced. They are listened into. I weave global rhythms, earthy grooves, and spacious moments so joy, introspection, chaos, connection, and stillness can all have their place.
           </p>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {facilitationCards.map((card) => (
-            <article key={card.title} className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 transition hover:border-amber-200/30 hover:bg-white/[0.08]">
+            <article key={card.title} className="rounded-[1.7rem] border border-amber-200/10 bg-[#14110d]/70 p-6 shadow-2xl shadow-black/10 transition hover:border-amber-200/35 hover:bg-[#1b150f]/85">
               <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
               <p className="mt-4 leading-7 text-slate-400">{card.body}</p>
             </article>
@@ -129,7 +129,7 @@ export default function HomePage() {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">For organizers</p>
             <h2 className="mt-3 text-3xl font-semibold text-white">Press kit, context & future invitations</h2>
             <p className="mt-5 leading-8 text-slate-300">
-              If you are holding an ecstatic dance, retreat, ceremony, or festival floor, the press kit has photos, music, bio material, and technical context.
+              If you are holding an ecstatic dance, retreat, ceremony, festival, or community floor, the press kit has photos, music, bio material, and technical context.
             </p>
             <Link href="/media-package" className="mt-7 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-100">
               View press kit

@@ -74,15 +74,15 @@ li { margin: 0 0 6px; }
 .quote { font-size: 17pt; line-height: 1.24; letter-spacing: -.02em; color: #101827; }
 """
 
-artist_short = "Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating grounded, emotionally intelligent music journeys for conscious dance floors, retreats, ceremonies, and festivals."
-artist_medium = "Henners guides ecstatic dance journeys through arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness. Shaped by Amsterdam’s conscious dance scene and years of sets at Odessa and community gatherings, his work is not only musical but relational: reading the floor, protecting the arc, and giving the body permission to feel."
-artist_long = """Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys for movement communities, ceremonies, retreats, and festivals. His sets follow an arc inspired by the hero’s journey and 5Rhythms: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.
+artist_short = "Henners is an Amsterdam-based ecstatic dance facilitator and DJ weaving global rhythms into soul-stirring dance journeys where joy, introspection, and connection can flourish."
+artist_medium = "Shaped by Amsterdam’s vibrant ecstatic dance scene and rooted in his time aboard the Odessa ship, Henners creates spaces where dancers can move freely, awaken the spirit, and travel through the full spectrum of emotion: earth, rhythm, joy, introspection, connection, release, and stillness."
+artist_long = """Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s vibrant conscious dance scene. For more than four years, he has guided dancers through soul-stirring journeys on ecstatic dance floors, ceremonies, festivals, retreats, and community gatherings.
 
-His work grew through Amsterdam’s ecstatic dance scene, including years of community floors, Odessa gatherings, cacao ceremonies, festivals, and intimate movement spaces. Rather than treating a set as a playlist, Henners works with the emotional field of the room — tracking energy, protecting transitions, and supporting both joy and tenderness when they arise.
+Rooted in his time aboard the Odessa ship, Henners weaves global rhythms, African-inspired grooves, melody, silence, and spacious integration into rooms where joy, introspection, and connection can flourish. Whether the floor feels rooted in the earth or soaring through the cosmos, the invitation is the same: move freely, awaken the spirit, and dance the full spectrum of emotions that life brings.
 
-Musically, his sound draws from global rhythms, earthy grooves, deep percussion, warm melodic textures, and spacious integration tracks. The aim is simple: help people move honestly, feel safely, and reconnect with themselves and each other through dance."""
+Rather than forcing a fixed set, Henners listens into the room. His music can invite people to bounce, shake, soften, release, reflect, play, and return to stillness — following the energy of the floor while holding the arc with care."""
 
-current_note = "Henners is focused on music-led ecstatic dance journeys for conscious floors, ceremonies, retreats, festivals, and community rooms. The work is rooted in listening: to the music, to the room, and to what the moment asks for."
+current_note = "Henners is focused on music-led ecstatic dance journeys rooted in listening: to the room, the rhythm, the body, and what the moment asks for."
 
 photos = [
     ("Rijksmuseum DJ Booth", "/downloads/high-res/rijksmuseum-dj-booth.png"),
@@ -144,9 +144,9 @@ def bio_document() -> str:
     <section class="page section">
       <p class="eyebrow">Context</p>
       <h2>Musical approach</h2>
-      <p class="quote">A held arc: arrival, grounding, rhythm, release, play, stillness, and integration.</p>
+      <p class="quote">Whether rooted in the earth or soaring through the cosmos, let the music stir the full spectrum.</p>
       <div class="grid">
-        <div class="card"><h3>Sound</h3><p>Global rhythms, earthy grooves, deep percussion, warm melodic textures, spacious integration tracks, and emotional pacing.</p></div>
+        <div class="card"><h3>Sound</h3><p>Global rhythms, African-inspired grooves, earthy percussion, warm melody, silence, spacious integration, and emotional pacing.</p></div>
         <div class="card"><h3>Role</h3><p>Not just track selection: reading the room, protecting transitions, and supporting honest movement on the floor.</p></div>
         <div class="card"><h3>Suitable contexts</h3><p>Ecstatic dance, retreats, ceremonies, festivals, cacao gatherings, intimate movement rooms, and conscious community floors.</p></div>
         <div class="card"><h3>Location</h3><p>Amsterdam-based, Netherlands-focused, with international context and travel history.</p></div>

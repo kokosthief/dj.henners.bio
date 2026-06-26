@@ -10,13 +10,13 @@ const dutchVenues = new Set(dutchGigs.map((gig) => gig.venue)).size;
 export const metadata: Metadata = {
   title: 'Ecstatic Dance DJ Netherlands',
   description:
-    'Henners is an Amsterdam-based ecstatic dance DJ and facilitator with documented dance floors across the Netherlands, available for aligned ceremonies, retreats, festivals, and movement communities.',
+    'Henners is an Amsterdam-based ecstatic dance DJ and facilitator with a lived history across Dutch ecstatic dance floors, ceremonies, festivals, and movement communities.',
   alternates: { canonical: `${siteConfig.url}/ecstatic-dance-dj-netherlands` },
   openGraph: {
     url: `${siteConfig.url}/ecstatic-dance-dj-netherlands`,
     title: 'Ecstatic Dance DJ Netherlands — Henners',
     description:
-      'Amsterdam-based ecstatic dance DJ and facilitator with documented dance floors across the Netherlands.',
+      'Amsterdam-based ecstatic dance DJ and facilitator with a lived history across Dutch ecstatic dance floors.',
     images: [
       {
         url: `${siteConfig.url}/images/og-henners-rijksmuseum-2026.jpg`,
@@ -44,7 +44,7 @@ export default function EcstaticDanceDjNetherlandsPage() {
         <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Netherlands / Holland</p>
         <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight md:text-6xl">Ecstatic Dance DJ in the Netherlands</h1>
         <p className="mt-7 max-w-3xl text-xl leading-9 text-slate-300">
-          Henners is an Amsterdam-based ecstatic dance facilitator and DJ with a track record across Dutch conscious dance floors, ceremonies, festivals, and community gatherings.
+          Henners is an Amsterdam-based ecstatic dance facilitator and DJ with a track record across Dutch ecstatic dance floors, ceremonies, festivals, and community gatherings.
         </p>
         <p className="mt-6 max-w-3xl leading-8 text-slate-400">
           The work grew through Amsterdam and travels when the room, invitation, and timing feel aligned.

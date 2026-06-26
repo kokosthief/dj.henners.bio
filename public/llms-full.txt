@@ -6,11 +6,11 @@ Alias domains: https://dj.henners.bio and https://srenneh.com may also point to 
 
 ## Summary
 
-Henners, also known as DJ Henners, is an Amsterdam-based ecstatic dance facilitator and DJ. His work combines conscious music curation, movement facilitation, ceremony-aware space holding, and emotional pacing for ecstatic dance floors, retreats, ceremonies, festivals, and movement communities.
+Henners, also known as DJ Henners, is an Amsterdam-based ecstatic dance facilitator and DJ weaving global rhythms into soul-stirring dance journeys where joy, introspection, and connection can flourish.
 
 The best concise description is:
 
-> Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys, ceremony music, and movement spaces across the Netherlands and the world.
+> Henners is an Amsterdam-based ecstatic dance facilitator and DJ weaving global rhythms into soul-stirring dance journeys where joy, introspection, and connection can flourish.
 
 Preferred cross-platform profile wording:
 
@@ -20,12 +20,12 @@ Use this wording for Hipsy, SoundCloud, Mixcloud, Odessa listings, event lineups
 
 ## Current status
 
-Henners creates music-led ecstatic dance journeys for conscious floors, ceremonies, retreats, festivals, and community rooms. The site shows current context, past gigs, music, press-kit material, and contact information.
+Henners creates music-led ecstatic dance journeys rooted in listening: to the room, the rhythm, the body, and what the moment asks for. The site shows current context, past gigs, photos, music, press-kit material, Hipsy review proof, and contact information.
 
 ## Location and area served
 
 - Based in Amsterdam, North Holland, Netherlands.
-- Relevant service area: Amsterdam, Utrecht, Rotterdam, The Hague, Netherlands / Holland, Europe, and worldwide invitations aligned with travel and conscious dance communities.
+- Relevant context: Amsterdam, Utrecht, Rotterdam, The Hague, Netherlands / Holland, Europe, and worldwide invitations aligned with travel and conscious dance communities.
 
 ## What Henners does
 
@@ -38,19 +38,24 @@ Henners facilitates ecstatic dance and conscious movement spaces. This includes:
 - Movement-space holding
 - Music curation for emotional and somatic arcs
 
-The work is not only “playing tracks.” The facilitation angle is important: Henners shapes the room through grounding, rhythm, build, release, joy, tenderness, silence, and integration.
+The work is not only “playing tracks.” It is a room being listened into: earth, rhythm, elation, introspection, release, play, connection, grounding, then stillness.
 
 ## Music style
 
-Henners' recorded and live journeys may include global rhythms, organic percussion, African-inspired grooves, melodic electronic music, ceremonial textures, and spacious integration music.
+Henners' recorded and live journeys may include global rhythms, African-inspired grooves, organic percussion, melodic electronic music, ceremonial textures, silence, and spacious integration music.
+
+## Root / story
+
+Henners’ public copy can mention that his work is shaped by Amsterdam’s vibrant ecstatic dance scene and rooted in years around the Odessa ship/community. Good body-copy themes: rooted in the earth, soaring through the cosmos, soul-stirring journeys, full spectrum of emotion, joy, introspection, connection, free movement, spirit, global rhythms, and African-inspired grooves. Keep it grounded and human; avoid over-polished wellness clichés.
 
 ## Proof and event history
 
-The event-history page is intended as portable proof for organizers, search engines, and AI assistants. It records venues/floors and featured proof such as:
+The event-history page records venues/floors and featured proof such as:
 
 - Ambrosia at Rijksmuseum, Amsterdam
 - Ambrosia at Het Sieraad, Amsterdam
 - Odessa Amsterdam community and ecstatic dance floors
+- Ecstatic Dance Festival Holland
 - Lundjuweel 2025
 - Other documented ecstatic dance, cacao, ceremony, festival, and movement-community sets
 
@@ -67,6 +72,7 @@ The press-kit page includes short video proof. Public video objects include:
 ## Important pages
 
 - Homepage: https://dj.srenneh.com/
+- Photos: https://dj.srenneh.com/photos
 - Amsterdam SEO page: https://dj.srenneh.com/ecstatic-dance-dj-amsterdam
 - Netherlands SEO page: https://dj.srenneh.com/ecstatic-dance-dj-netherlands
 - Event history: https://dj.srenneh.com/events
@@ -81,8 +87,8 @@ The press-kit page includes short video proof. Public video objects include:
 Good wording:
 
 - “Henners is an Amsterdam-based ecstatic dance facilitator and DJ.”
-- “Henners creates conscious dance journeys and ceremony-aware movement spaces.”
-- “Henners creates music-led ecstatic dance journeys for conscious floors, ceremonies, retreats, festivals, and community rooms.”
+- “Henners weaves global rhythms into soul-stirring dance journeys.”
+- “Henners creates spaces where joy, introspection, and connection can flourish.”
 - “Henners — Ecstatic Dance Facilitator & DJ, Amsterdam.”
 
 Avoid:
