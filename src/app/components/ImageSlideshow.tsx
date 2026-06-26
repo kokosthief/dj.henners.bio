@@ -2,9 +2,11 @@
 import Image, { StaticImageData } from 'next/image';
 import React, { useEffect, useState } from 'react';
 
+import AmbrosiaHetSieraadDjJpg from '../../../public/images/gallery/ambrosia-het-sieraad-dj.jpg';
+import AmbrosiaHetSieraadFloorJpg from '../../../public/images/gallery/ambrosia-het-sieraad-floor.jpg';
 import BalconyMoroccoJpg from '../../../public/images/gallery/balcony-morocco.jpg';
 import CoffeeOutsideJpg from '../../../public/images/gallery/coffee-outside.jpg';
-import EdfhYellowRoomJpg from '../../../public/images/gallery/edfh-yellow-room.jpg';
+import EdfhBasementBwJpg from '../../../public/images/gallery/edfh-basement-bw.jpg';
 import ForestListeningJpg from '../../../public/images/gallery/forest-listening.jpg';
 import ForestLookingUpJpg from '../../../public/images/gallery/forest-looking-up.jpg';
 import ForestSittingJpg from '../../../public/images/gallery/forest-sitting.jpg';
@@ -15,7 +17,6 @@ import UnderTheSunDjJpg from '../../../public/images/gallery/under-the-sun-dj.jp
 import WaterReflectionJpg from '../../../public/images/gallery/water-reflection.jpg';
 // Import JPG images (WebP served via Next.js optimization in production)
 import HennersCeremonyJpg from '../../../public/images/henners-ceremony.jpg';
-import HennersDjJpg from '../../../public/images/henners-dj.jpg';
 import HennersPfpJpg from '../../../public/images/henners-pfp.jpg';
 import HennersSpaceholdingJpg from '../../../public/images/henners-spaceholding.jpg';
 import RijksmuseumCloseUpJpg from '../../../public/images/rijksmuseum-close-up.jpg';
@@ -48,10 +49,11 @@ const images: ImageData[] = [
     title: 'Rijksmuseum DJ set'
   },
   {
-    src: HennersDjJpg,
-    alt: 'DJ Henners performing',
+    src: EdfhBasementBwJpg,
+    alt: 'Henners DJing at Ecstatic Dance Festival Holland',
     title: 'In the mix at EDFH',
-    caption: 'Vibing with the energy in the room rather than a fixed set.'
+    caption: 'Black and white floor moment at Ecstatic Dance Festival Holland.',
+    objectPosition: '50% center'
   },
   {
     src: SilentDanceWaterJpg,
@@ -75,11 +77,18 @@ const images: ImageData[] = [
     objectPosition: '65% 38%'
   },
   {
-    src: EdfhYellowRoomJpg,
-    alt: 'Henners facilitating inside Ecstatic Dance Festival Holland',
-    title: 'EDFH',
-    caption: 'Some floors begin before the first track.',
-    objectPosition: '45% center'
+    src: AmbrosiaHetSieraadFloorJpg,
+    alt: 'Ambrosia dance floor at Het Sieraad in Amsterdam',
+    title: 'Ambrosia at Het Sieraad',
+    caption: 'Hands up in the old courtyard.',
+    objectPosition: '50% center'
+  },
+  {
+    src: AmbrosiaHetSieraadDjJpg,
+    alt: 'Henners DJing for Ambrosia at Het Sieraad',
+    title: 'Ambrosia · Het Sieraad',
+    caption: 'Close to the dancers, tucked into the room.',
+    objectPosition: '50% 38%'
   },
   {
     src: HennersCeremonyJpg,
@@ -218,7 +227,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             priority={priority}
             sizes="(max-width: 640px) 320px, (max-width: 1024px) 520px, 520px"
             placeholder="blur"
-            quality={60}
+            quality={80}
           />
           {/* Subtle overlay for better text contrast */}
           <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 via-black/35 to-transparent" />

@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact & Booking - DJ Henners | Book Ecstatic Dance Events',
     description: 'Contact DJ Henners for bookings and inquiries. Professional ecstatic dance DJ available for events, festivals, ceremonies, and private parties.',
-    images: ['/images/henners-dj.jpg'],
+    images: ['/images/gallery/edfh-basement-bw.jpg'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact & Booking - DJ Henners | Book Ecstatic Dance Events',
     description: 'Contact DJ Henners for bookings and inquiries. Professional ecstatic dance DJ available for events, festivals, ceremonies, and private parties.',
-    images: ['/images/henners-dj.jpg'],
+    images: ['/images/gallery/edfh-basement-bw.jpg'],
   },
 };
 

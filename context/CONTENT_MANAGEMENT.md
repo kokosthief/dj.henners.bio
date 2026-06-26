@@ -89,7 +89,7 @@ interface Gig {
 ## 🖼️ Visual Assets
 
 ### Photography
-- **Primary Image**: `henners-dj.jpg` (800x600)
+- **Primary Image**: use current gallery/press-kit images from `public/images/gallery/`
 - **Secondary Image**: `henners-jungle.jpg` (2448x3264)
 - **Favicon Set**: Complete favicon package for all devices
 

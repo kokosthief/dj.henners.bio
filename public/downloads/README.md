@@ -7,7 +7,7 @@ This folder contains high-resolution images and videos for professional use and 
 ```
 downloads/
 ├── high-res/                     # High-resolution images
-│   ├── henners-dj-hires.jpg
+│   ├── current high-res DJ photos
 │   ├── henners-pfp-hires.jpg  
 │   ├── henners-ceremony-hires.jpg
 │   └── henners-spaceholding-hires.jpg
