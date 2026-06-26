@@ -75,22 +75,24 @@ li { margin: 0 0 6px; }
 """
 
 artist_short = "Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating grounded, emotionally intelligent music journeys for conscious dance floors, retreats, ceremonies, and festivals."
-artist_medium = "Henners guides ecstatic dance journeys that move from grounding into rhythm, release, joy, stillness, and integration. Shaped by Amsterdam’s conscious dance scene and years of sets at Odessa and community gatherings, his work is not only musical but relational: reading the floor, protecting the arc, and giving the body permission to feel."
-artist_long = """Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys for movement communities, ceremonies, retreats, and festivals. His sets are designed as held arcs: a grounded arrival, a rhythmic build, space for release and play, and a soft landing back into the body.
+artist_medium = "Henners guides ecstatic dance journeys through arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness. Shaped by Amsterdam’s conscious dance scene and years of sets at Odessa and community gatherings, his work is not only musical but relational: reading the floor, protecting the arc, and giving the body permission to feel."
+artist_long = """Henners is an Amsterdam-based ecstatic dance facilitator and DJ creating conscious dance journeys for movement communities, ceremonies, retreats, and festivals. His sets follow an arc inspired by the hero’s journey and 5Rhythms: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.
 
 His work grew through Amsterdam’s ecstatic dance scene, including years of community floors, Odessa gatherings, cacao ceremonies, festivals, and intimate movement spaces. Rather than treating a set as a playlist, Henners works with the emotional field of the room — tracking energy, protecting transitions, and supporting both joy and tenderness when they arise.
 
 Musically, his sound draws from global rhythms, earthy grooves, deep percussion, warm melodic textures, and spacious integration tracks. The aim is simple: help people move honestly, feel safely, and reconnect with themselves and each other through dance."""
 
-pause_note = "Henners is currently taking a pause from DJing and gigging. This site remains as an archive, listening place, and clear reference for future invitations when the timing feels aligned."
+pause_note = "Henners has been on a pause from DJing and gigging for six months, using that time for reflection, awareness, and lived experience. He is beginning another leg of the journey with more care, clarity, and attention to what the work is actually asking for."
 
 photos = [
     ("Rijksmuseum DJ Booth", "/downloads/high-res/rijksmuseum-dj-booth.png"),
     ("Rijksmuseum Dancefloor", "/downloads/high-res/rijksmuseum-dancefloor.png"),
     ("Rijksmuseum Close Up", "/downloads/high-res/rijksmuseum-close-up.png"),
-    ("Cacao Ceremony", "/downloads/high-res/cacao.jpg"),
-    ("Ceremony Space", "/downloads/high-res/ceremony.jpg"),
-    ("Groove Session", "/downloads/high-res/groove.jpg"),
+    ("Under the Sun DJ", "/images/gallery/under-the-sun-dj.jpg"),
+    ("Under the Sun Circle", "/images/gallery/under-the-sun-circle.jpg"),
+    ("EDFH Yellow Room", "/images/gallery/edfh-yellow-room.jpg"),
+    ("Silent Dance Water", "/images/gallery/silent-dance-water.jpg"),
+    ("Forest Listening", "/images/gallery/forest-listening.jpg"),
 ]
 
 videos = [

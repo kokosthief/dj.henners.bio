@@ -2,6 +2,17 @@
 import Image, { StaticImageData } from 'next/image';
 import React, { useEffect, useState } from 'react';
 
+import BalconyMoroccoJpg from '../../../public/images/gallery/balcony-morocco.jpg';
+import CoffeeOutsideJpg from '../../../public/images/gallery/coffee-outside.jpg';
+import EdfhYellowRoomJpg from '../../../public/images/gallery/edfh-yellow-room.jpg';
+import ForestListeningJpg from '../../../public/images/gallery/forest-listening.jpg';
+import ForestLookingUpJpg from '../../../public/images/gallery/forest-looking-up.jpg';
+import ForestSittingJpg from '../../../public/images/gallery/forest-sitting.jpg';
+import PortraitSmileBwJpg from '../../../public/images/gallery/portrait-smile-bw.jpg';
+import SilentDanceWaterJpg from '../../../public/images/gallery/silent-dance-water.jpg';
+import UnderTheSunCircleJpg from '../../../public/images/gallery/under-the-sun-circle.jpg';
+import UnderTheSunDjJpg from '../../../public/images/gallery/under-the-sun-dj.jpg';
+import WaterReflectionJpg from '../../../public/images/gallery/water-reflection.jpg';
 // Import JPG images (WebP served via Next.js optimization in production)
 import HennersCeremonyJpg from '../../../public/images/henners-ceremony.jpg';
 import HennersDjJpg from '../../../public/images/henners-dj.jpg';
@@ -16,6 +27,7 @@ interface ImageData {
   alt: string;
   title?: string;
   caption?: string;
+  objectPosition?: string;
 }
 
 const images: ImageData[] = [
@@ -42,16 +54,93 @@ const images: ImageData[] = [
     caption: 'Following the room rather than forcing a fixed playlist.'
   },
   {
+    src: SilentDanceWaterJpg,
+    alt: 'Henners DJing a silent dance by the water',
+    title: 'Silent dance by the water',
+    caption: 'Headphones on. Water close. A different kind of floor.',
+    objectPosition: 'center center'
+  },
+  {
+    src: UnderTheSunDjJpg,
+    alt: 'Henners DJing outside at Under the Sun',
+    title: 'Under the Sun',
+    caption: 'Outdoor dance floor, late light, hands still on the decks.',
+    objectPosition: '50% 42%'
+  },
+  {
+    src: UnderTheSunCircleJpg,
+    alt: 'Henners facilitating a circle outdoors',
+    title: 'Circle before the dance',
+    caption: 'A moment before the music takes over.',
+    objectPosition: '65% 38%'
+  },
+  {
+    src: EdfhYellowRoomJpg,
+    alt: 'Henners facilitating inside Ecstatic Dance Festival Holland',
+    title: 'EDFH',
+    caption: 'Some floors begin before the first track.',
+    objectPosition: '45% center'
+  },
+  {
     src: HennersCeremonyJpg,
     alt: 'DJ Henners at ceremony',
     title: 'Ceremony',
     caption: 'Warm music for the quieter, more ritual parts of the night.'
   },
   {
+    src: ForestListeningJpg,
+    alt: 'Henners sitting in the forest listening',
+    title: 'Listening',
+    caption: 'Sometimes the set starts here.',
+    objectPosition: '50% 45%'
+  },
+  {
+    src: ForestLookingUpJpg,
+    alt: 'Henners lying under trees and looking up',
+    title: 'Looking up',
+    caption: 'Ground first. Music after.',
+    objectPosition: '55% 65%'
+  },
+  {
+    src: ForestSittingJpg,
+    alt: 'Henners sitting among trees in dappled light',
+    title: 'Forest pause',
+    caption: 'Quiet is part of the work too.',
+    objectPosition: '60% 45%'
+  },
+  {
+    src: WaterReflectionJpg,
+    alt: 'Henners reflected in water while holding a branch',
+    title: 'Reflection',
+    caption: 'A bit upside down, probably accurate.',
+    objectPosition: '55% 45%'
+  },
+  {
     src: HennersPfpJpg,
     alt: 'DJ Henners portrait',
     title: 'Henners',
     caption: 'Pls smile'
+  },
+  {
+    src: PortraitSmileBwJpg,
+    alt: 'Black and white smiling portrait of Henners',
+    title: 'Pls smile',
+    caption: 'There it is.',
+    objectPosition: 'center center'
+  },
+  {
+    src: CoffeeOutsideJpg,
+    alt: 'Henners sitting outside with a cup',
+    title: 'Pause',
+    caption: 'A small coffee. A bit of field research.',
+    objectPosition: '55% center'
+  },
+  {
+    src: BalconyMoroccoJpg,
+    alt: 'Henners on a balcony in evening light',
+    title: 'Elsewhere',
+    caption: 'Another leg of the journey.',
+    objectPosition: '65% center'
   },
   {
     src: HennersSpaceholdingJpg,
@@ -121,6 +210,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             fill
             className="object-cover opacity-90 transition-transform duration-700 ease-in-out hover:scale-105 dark:opacity-100"
             style={{
+              objectPosition: images[currentIndex].objectPosition,
               willChange: 'transform',
               backfaceVisibility: 'hidden'
             }}
