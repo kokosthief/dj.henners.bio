@@ -25,7 +25,7 @@ const artistInfo = {
   medium:
     'Shaped by Amsterdam’s conscious dance scene and years around the Odessa ship, Henners crafts full-arc journeys inspired by 5Rhythms and the hero’s journey: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.',
   long:
-    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s conscious dance scene, rooted in years around the Odessa ship.\n\nHis sets are prepared as full journeys, with 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.\n\nThe music moves between global rhythms, African-inspired grooves, earthy percussion, melody, silence, and spacious integration. Sometimes it invites people to bounce, shake, and sweat. Sometimes it gives the room space to soften, feel, and come back to itself.\n\nThe journey is prepared with care, but never fixed shut. Henners holds the arc while staying responsive to the energy of the room.',
+    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s conscious dance scene, rooted in years around the Odessa ship.\n\nHis sets are prepared as full journeys, with 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.\n\nThe music moves between global rhythms, African-inspired grooves, percussion, melody, silence, and spacious integration. Sometimes it invites people to bounce, shake, and sweat. Sometimes it gives the room space to soften, feel, and come back to itself.\n\nThe journey is prepared with care, but never fixed shut. Henners holds the arc while staying responsive to the energy of the room.',
 };
 
 const mediaFiles = {

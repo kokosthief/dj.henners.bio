@@ -1,30 +1,10 @@
 'use client';
-import Image, { StaticImageData } from 'next/image';
-import React, { useEffect, useState } from 'react';
 
-import AmbrosiaHetSieraadDjJpg from '../../../public/images/gallery/ambrosia-het-sieraad-dj.jpg';
-import AmbrosiaHetSieraadFloorJpg from '../../../public/images/gallery/ambrosia-het-sieraad-floor.jpg';
-import BalconyMoroccoJpg from '../../../public/images/gallery/balcony-morocco.jpg';
-import CoffeeOutsideJpg from '../../../public/images/gallery/coffee-outside.jpg';
-import EdfhBasementBwJpg from '../../../public/images/gallery/edfh-basement-bw.jpg';
-import ForestListeningJpg from '../../../public/images/gallery/forest-listening.jpg';
-import ForestLookingUpJpg from '../../../public/images/gallery/forest-looking-up.jpg';
-import ForestSittingJpg from '../../../public/images/gallery/forest-sitting.jpg';
-import PortraitSmileBwJpg from '../../../public/images/gallery/portrait-smile-bw.jpg';
-import SilentDanceWaterJpg from '../../../public/images/gallery/silent-dance-water.jpg';
-import UnderTheSunCircleJpg from '../../../public/images/gallery/under-the-sun-circle.jpg';
-import UnderTheSunDjJpg from '../../../public/images/gallery/under-the-sun-dj.jpg';
-import WaterReflectionJpg from '../../../public/images/gallery/water-reflection.jpg';
-// Import JPG images (WebP served via Next.js optimization in production)
-import HennersCeremonyJpg from '../../../public/images/henners-ceremony.jpg';
-import HennersPfpJpg from '../../../public/images/henners-pfp.jpg';
-import HennersSpaceholdingJpg from '../../../public/images/henners-spaceholding.jpg';
-import RijksmuseumCloseUpJpg from '../../../public/images/rijksmuseum-close-up.jpg';
-import RijksmuseumDancefloorJpg from '../../../public/images/rijksmuseum-dancefloor.jpg';
-import RijksmuseumDjBoothJpg from '../../../public/images/rijksmuseum-dj-booth.jpg';
+import Image from 'next/image';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 interface ImageData {
-  src: StaticImageData;
+  src: string;
   alt: string;
   title?: string;
   caption?: string;
@@ -33,130 +13,130 @@ interface ImageData {
 
 const images: ImageData[] = [
   {
-    src: RijksmuseumDjBoothJpg,
+    src: '/images/carousel/rijksmuseum-dj-booth.webp',
     alt: 'Henners DJing at Rijksmuseum in Amsterdam',
     title: 'Rijksmuseum · Amsterdam',
-    caption: 'Ambrosia special at one of a kind location.'
+    caption: 'Ambrosia special at one of a kind location.',
   },
   {
-    src: RijksmuseumDancefloorJpg,
+    src: '/images/carousel/rijksmuseum-dancefloor.webp',
     alt: 'Rijksmuseum dancefloor from the DJ booth',
-    title: 'Ambrosia at Rijksmuseum'
+    title: 'Ambrosia at Rijksmuseum',
   },
   {
-    src: RijksmuseumCloseUpJpg,
+    src: '/images/carousel/rijksmuseum-close-up.webp',
     alt: 'Close-up of Henners DJing at Rijksmuseum',
-    title: 'Rijksmuseum DJ set'
+    title: 'Rijksmuseum DJ set',
   },
   {
-    src: EdfhBasementBwJpg,
+    src: '/images/carousel/edfh-basement-bw.webp',
     alt: 'Henners DJing at Ecstatic Dance Festival Holland',
     title: 'In the mix at EDFH',
     caption: 'Black and white floor moment at Ecstatic Dance Festival Holland.',
-    objectPosition: '50% center'
+    objectPosition: '50% center',
   },
   {
-    src: SilentDanceWaterJpg,
+    src: '/images/carousel/silent-dance-water.webp',
     alt: 'Henners DJing a silent dance by the water',
     title: 'Silent dance by the water',
     caption: 'Headphones on. Water close. A different kind of floor.',
-    objectPosition: 'center center'
+    objectPosition: 'center center',
   },
   {
-    src: UnderTheSunDjJpg,
+    src: '/images/carousel/under-the-sun-dj.webp',
     alt: 'Henners DJing outside at Under the Sun',
     title: 'Under the Sun',
     caption: 'Outdoor dance floor, late light, hands still on the decks.',
-    objectPosition: '50% 42%'
+    objectPosition: '50% 42%',
   },
   {
-    src: UnderTheSunCircleJpg,
+    src: '/images/carousel/under-the-sun-circle.webp',
     alt: 'Henners facilitating a circle outdoors',
     title: 'Circle before the dance',
     caption: 'A moment before the music takes over.',
-    objectPosition: '65% 38%'
+    objectPosition: '65% 38%',
   },
   {
-    src: AmbrosiaHetSieraadFloorJpg,
+    src: '/images/carousel/ambrosia-het-sieraad-floor.webp',
     alt: 'Ambrosia dance floor at Het Sieraad in Amsterdam',
     title: 'Ambrosia at Het Sieraad',
     caption: 'Hands up in the old courtyard.',
-    objectPosition: '50% center'
+    objectPosition: '50% center',
   },
   {
-    src: AmbrosiaHetSieraadDjJpg,
+    src: '/images/carousel/ambrosia-het-sieraad-dj.webp',
     alt: 'Henners DJing for Ambrosia at Het Sieraad',
     title: 'Ambrosia · Het Sieraad',
     caption: 'Close to the dancers, tucked into the room.',
-    objectPosition: '50% 38%'
+    objectPosition: '50% 38%',
   },
   {
-    src: HennersCeremonyJpg,
+    src: '/images/carousel/henners-ceremony.webp',
     alt: 'DJ Henners at ceremony',
     title: 'Ceremony',
-    caption: 'Opening ceremony at Ecstatic Dance Festival Holland'
+    caption: 'Opening ceremony at Ecstatic Dance Festival Holland',
   },
   {
-    src: ForestListeningJpg,
+    src: '/images/carousel/forest-listening.webp',
     alt: 'Henners sitting in the forest listening',
     title: 'Listening',
     caption: 'Sometimes the set starts here.',
-    objectPosition: '50% 45%'
+    objectPosition: '50% 45%',
   },
   {
-    src: ForestLookingUpJpg,
+    src: '/images/carousel/forest-looking-up.webp',
     alt: 'Henners lying under trees and looking up',
     title: 'Looking up',
     caption: 'Ground first. Music after.',
-    objectPosition: '55% 65%'
+    objectPosition: '55% 65%',
   },
   {
-    src: ForestSittingJpg,
+    src: '/images/carousel/forest-sitting.webp',
     alt: 'Henners sitting among trees in dappled light',
     title: 'Forest pause',
     caption: 'Quiet is part of the work too.',
-    objectPosition: '60% 45%'
+    objectPosition: '60% 45%',
   },
   {
-    src: WaterReflectionJpg,
+    src: '/images/carousel/water-reflection.webp',
     alt: 'Henners reflected in water while holding a branch',
     title: 'Reflection',
     caption: 'A bit upside down, probably accurate.',
-    objectPosition: '55% 45%'
+    objectPosition: '55% 45%',
   },
   {
-    src: HennersPfpJpg,
+    src: '/images/carousel/henners-pfp.webp',
     alt: 'DJ Henners portrait',
     title: 'Henners',
-    caption: 'Pls smile'
+    caption: 'Pls smile',
   },
   {
-    src: PortraitSmileBwJpg,
+    src: '/images/carousel/portrait-smile-bw.webp',
     alt: 'Black and white smiling portrait of Henners',
     title: 'Pls smile',
     caption: 'There it is.',
-    objectPosition: 'center center'
+    objectPosition: 'center center',
   },
   {
-    src: CoffeeOutsideJpg,
+    src: '/images/carousel/coffee-outside.webp',
     alt: 'Henners sitting outside with a cup',
     title: 'Pause',
     caption: 'A small coffee. A bit of field research.',
-    objectPosition: '55% center'
+    objectPosition: '55% center',
   },
   {
-    src: BalconyMoroccoJpg,
+    src: '/images/carousel/balcony-morocco.webp',
     alt: 'Henners on a balcony in evening light',
     title: 'Elsewhere',
     caption: 'Another leg of the journey.',
-    objectPosition: '65% center'
+    objectPosition: '65% center',
   },
   {
-    src: HennersSpaceholdingJpg,
+    src: '/images/carousel/henners-spaceholding.webp',
     alt: 'DJ Henners space holding',
     title: 'Holding space',
-    caption: 'Feeling into, holding space.'
-  }
+    caption: 'Feeling into, holding space.',
+  },
 ];
 
 interface ImageSlideshowProps {
@@ -179,81 +159,127 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
 
-  // Auto-advance slideshow
+  const nextIndex = useMemo(() => (currentIndex === images.length - 1 ? 0 : currentIndex + 1), [currentIndex]);
+  const previousIndex = useMemo(() => (currentIndex === 0 ? images.length - 1 : currentIndex - 1), [currentIndex]);
+
+  const goToPrevious = useCallback(() => {
+    setCurrentIndex((index) => (index === 0 ? images.length - 1 : index - 1));
+  }, []);
+
+  const goToNext = useCallback(() => {
+    setCurrentIndex((index) => (index === images.length - 1 ? 0 : index + 1));
+  }, []);
+
+  const togglePlayPause = useCallback(() => {
+    setIsPlaying((playing) => !playing);
+  }, []);
+
   useEffect(() => {
     if (!isPlaying) return;
 
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, interval);
-
+    const timer = setInterval(goToNext, interval);
     return () => clearInterval(timer);
-  }, [isPlaying, interval]);
+  }, [goToNext, interval, isPlaying]);
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
+  useEffect(() => {
+    if (!showControls) return;
 
-  const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1);
-  };
+    const handleKeyDown = (event: globalThis.KeyboardEvent) => {
+      const target = event.target as { tagName?: string; isContentEditable?: boolean } | null;
+      const tagName = target?.tagName?.toLowerCase();
+      if (tagName === 'input' || tagName === 'textarea' || tagName === 'select' || target?.isContentEditable) return;
 
-  const goToNext = () => {
-    setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1);
-  };
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goToPrevious();
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goToNext();
+      }
+      if (event.key === ' ') {
+        event.preventDefault();
+        togglePlayPause();
+      }
+      if (event.key === 'Home') {
+        event.preventDefault();
+        setCurrentIndex(0);
+      }
+      if (event.key === 'End') {
+        event.preventDefault();
+        setCurrentIndex(images.length - 1);
+      }
+    };
 
-  const togglePlayPause = () => {
-    setIsPlaying(!isPlaying);
-  };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [goToNext, goToPrevious, showControls, togglePlayPause]);
+
+  const current = images[currentIndex];
 
   return (
-    <div className={`relative group ${className}`}>
-      {/* Main Image Display */}
+    <div
+      className={`group relative ${className}`}
+      aria-label="Photo carousel. Use left and right arrow keys to change image, space to pause or play."
+      tabIndex={0}
+    >
       <div className="relative overflow-hidden rounded-[1.5rem] shadow-lg ring-1 ring-stone-700/70 md:rounded-[1.5rem]">
         <div className={`relative w-full overflow-hidden bg-[#080d16] ${imageClassName}`}>
           <Image
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt}
+            key={current.src}
+            src={current.src}
+            alt={current.alt}
             fill
-            className="object-cover opacity-90 transition-transform duration-700 ease-in-out  dark:opacity-100"
+            className="object-cover opacity-90 transition-opacity duration-200 ease-out dark:opacity-100"
             style={{
-              objectPosition: images[currentIndex].objectPosition,
-              willChange: 'transform',
-              backfaceVisibility: 'hidden'
+              objectPosition: current.objectPosition,
+              willChange: 'opacity',
+              backfaceVisibility: 'hidden',
             }}
             loading={priority ? undefined : 'lazy'}
             priority={priority}
-            sizes="(max-width: 640px) 320px, (max-width: 1024px) 520px, 520px"
-            placeholder="blur"
-            quality={85}
+            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 520px, 520px"
+            quality={72}
           />
-          {/* Subtle overlay for better text contrast */}
+          <Image
+            src={images[nextIndex].src}
+            alt=""
+            fill
+            aria-hidden="true"
+            className="pointer-events-none invisible object-cover"
+            sizes="1px"
+            quality={60}
+          />
+          <Image
+            src={images[previousIndex].src}
+            alt=""
+            fill
+            aria-hidden="true"
+            className="pointer-events-none invisible object-cover"
+            sizes="1px"
+            quality={60}
+          />
           <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 via-black/35 to-transparent" />
 
-          {/* Image Title Overlay */}
-          {images[currentIndex].title && (
+          {current.title && (
             <div className="absolute bottom-4 left-4 right-4 text-left">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#725332] sm:text-sm">
-                {images[currentIndex].title}
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#f4ead8] sm:text-sm">
+                {current.title}
               </p>
-              {images[currentIndex].caption && (
-                <p className="mt-2 max-w-xl text-base leading-6 text-[#2a2319] sm:text-lg">
-                  {images[currentIndex].caption}
+              {current.caption && (
+                <p className="mt-2 max-w-xl text-base leading-6 text-[#fff8ec] sm:text-lg">
+                  {current.caption}
                 </p>
               )}
             </div>
           )}
         </div>
 
-        {/* Navigation Controls */}
         {showControls && (
           <>
-            {/* Previous/Next Buttons */}
             <button
               onClick={goToPrevious}
-              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-[#2a2319] opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:left-4 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/45 p-2 text-[#fff8ec] opacity-100 transition-all duration-300 hover:bg-black/65 md:left-4 focus:outline-none focus:ring-2 focus:ring-white/60"
               aria-label="Previous image"
               type="button"
             >
@@ -264,7 +290,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
 
             <button
               onClick={goToNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-[#2a2319] opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:right-4 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/45 p-2 text-[#fff8ec] opacity-100 transition-all duration-300 hover:bg-black/65 md:right-4 focus:outline-none focus:ring-2 focus:ring-white/60"
               aria-label="Next image"
               type="button"
             >
@@ -273,10 +299,9 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
               </svg>
             </button>
 
-            {/* Play/Pause Button */}
             <button
               onClick={togglePlayPause}
-              className="absolute right-2 top-2 rounded-full bg-black/30 p-2 text-[#2a2319] opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:right-4 md:top-4 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute right-2 top-2 rounded-full bg-black/45 p-2 text-[#fff8ec] opacity-100 transition-all duration-300 hover:bg-black/65 md:right-4 md:top-4 focus:outline-none focus:ring-2 focus:ring-white/60"
               aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
               type="button"
             >
@@ -294,28 +319,29 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
         )}
       </div>
 
-      {/* Dot Indicators */}
       {showControls && (
-        <div className="mt-4 flex justify-center space-x-2">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-4 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-200 transition-transform duration-300 ${index === currentIndex
-                  ? 'w-8 bg-amber-300 transform scale-110'
-                  : 'w-4 bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500 transform scale-100'
+        <>
+          <p className="mt-3 text-center text-xs text-[#d6c6aa]">← / → change image · space pauses</p>
+          <div className="mt-3 flex flex-wrap justify-center gap-2">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-3 rounded-full transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-amber-200 ${index === currentIndex
+                  ? 'w-7 scale-110 bg-amber-300'
+                  : 'w-3 scale-100 bg-stone-400 hover:bg-stone-300'
                 }`}
-              style={{
-                willChange: 'transform',
-                backfaceVisibility: 'hidden'
-              }}
-              aria-label={`Go to image ${index + 1}`}
-              type="button"
-            />
-          ))}
-        </div>
+                style={{
+                  willChange: 'transform',
+                  backfaceVisibility: 'hidden',
+                }}
+                aria-label={`Go to image ${index + 1}`}
+                type="button"
+              />
+            ))}
+          </div>
+        </>
       )}
-
     </div>
   );
 };

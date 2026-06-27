@@ -147,7 +147,7 @@ export default function HumanVersionTwoPage() {
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">floor notes</p>
             <h2 className="mt-4 max-w-3xl text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-6xl">
-              people remember the journey, not the sales copy.
+              the room knows when the DJ can hold it.
             </h2>
           </div>
           <Link href="/media-package" className="w-fit rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#5e4a33] hover:border-[#2a2319] hover:text-[#2a2319]">
@@ -167,7 +167,7 @@ export default function HumanVersionTwoPage() {
 
       <section className="overflow-hidden border-y border-[#e0d2b9] bg-[#2a2319] py-6 text-[#fbf7ee]">
         <div className="flex min-w-max gap-8 whitespace-nowrap px-5 text-2xl tracking-[-0.04em] opacity-90 sm:justify-center">
-          <span>Odessa roots</span><span>·</span><span>Amsterdam floors</span><span>·</span><span>global rhythm</span><span>·</span><span>earth and cosmos</span><span>·</span><span>joy and introspection</span><span>·</span><span>prepared arc</span><span>·</span><span>room-first listening</span>
+          <span>Odessa roots</span><span>·</span><span>Amsterdam floors</span><span>·</span><span>global rhythm</span><span>·</span><span>sweat and stillness</span><span>·</span><span>joy and introspection</span><span>·</span><span>prepared arc</span><span>·</span><span>room-first listening</span>
         </div>
       </section>
 
@@ -214,7 +214,7 @@ export default function HumanVersionTwoPage() {
         <div className="rounded-[2rem] bg-[#eadfc9] p-8">
           <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">write</p>
           <h2 className="mt-5 text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-6xl">
-            send the room, not a perfect brief.
+            need a qualified ecstatic dance DJ?
           </h2>
           <p className="mt-6 text-lg leading-8 text-[#5e4a33]">
             Best useful details: city, date, floor size, sound system, whether there is a DDJ/controller available, and what kind of journey the group needs.

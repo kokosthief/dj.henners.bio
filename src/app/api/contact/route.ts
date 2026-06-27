@@ -40,7 +40,7 @@ async function sendTelegram(fields: ContactFields) {
     fields.message,
   ].join('\n');
 
-  const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+  const response = await globalThis.fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -64,7 +64,7 @@ async function sendResend(fields: ContactFields) {
   const from = process.env.CONTACT_FROM_EMAIL || 'DJ Henners <contact@henners.bio>';
   if (!apiKey || !to) return false;
 
-  const response = await fetch('https://api.resend.com/emails', {
+  const response = await globalThis.fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${apiKey}`,

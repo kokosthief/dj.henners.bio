@@ -48,10 +48,10 @@ export default function AboutPage() {
             Henners is an Amsterdam-based ecstatic dance facilitator and DJ shaped by Amsterdam’s conscious dance scene and years around the Odessa ship.
           </p>
           <p className="mt-6 leading-8 text-[#5f4a32]">
-            Rooted in his time aboard the Odessa ship and Amsterdam’s wider conscious dance community, he crafts full-arc journeys through global rhythms, African-inspired grooves, earthy percussion, melody, silence, and spacious integration.
+            Rooted in his time aboard the Odessa ship and Amsterdam’s wider conscious dance community, he crafts full-arc journeys through global rhythms, African-inspired grooves, percussion, melody, silence, and spacious integration.
           </p>
           <p className="mt-6 leading-8 text-[#5f4a32]">
-            Whether the room feels rooted in the earth or suddenly somewhere cosmic, the work is the same: listen closely, follow the energy, and let people dance the full spectrum of what is alive.
+            The work is straightforward: listen closely, follow the energy, and let people dance the full spectrum of what is alive without forcing the room into a script.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/events" className="rounded-full border border-[#d6c6aa] px-5 py-3 text-center font-semibold text-[#2a2319] hover:border-[#2a2319] hover:bg-[#eadfc9]">View event history</Link>

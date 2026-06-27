@@ -111,7 +111,7 @@ export default function HumanVersionFourPage() {
             <div className="bg-[#f4ead8] p-5 text-[#24170e] shadow-[10px_12px_0_rgba(0,0,0,0.28)] rotate-[1deg]">
               <p className="font-mono text-xs uppercase tracking-[0.24em] text-[#6b543b]">scrap from the floor</p>
               <p className="mt-5 text-2xl font-semibold leading-snug tracking-[-0.04em]">
-                “People remember the journey, not the sales copy.”
+                “The room knows when the DJ can hold it.”
               </p>
             </div>
             <div className="grid grid-cols-2 gap-px bg-[#f4ead8]/14 font-mono text-xs uppercase tracking-[0.18em] text-[#d6b47f]">

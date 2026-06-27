@@ -47,7 +47,7 @@ export default function EcstaticDanceDjAmsterdamPage() {
             Henners is an Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc journeys for ecstatic dance floors, ceremonies, retreats, and festivals.
           </p>
           <p className="mt-6 leading-8 text-[#5f4a32]">
-            The work is not only a DJ set. It is a crafted arc held with care: earth, rhythm, elation, introspection, release, play, connection, grounding, then stillness. Amsterdam is the home base; the dance floor can travel when the room and invitation feel aligned.
+            The work is not only a DJ set. It is a crafted arc held with care: rhythm, elation, introspection, release, play, connection, grounding, then stillness. Amsterdam is the home base; the dance floor can travel when the room and invitation feel aligned.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/media-package" className="rounded-full bg-[#2a2319] px-6 py-4 text-center font-semibold text-[#fbf7ee] hover:bg-[#55391f]">Open press kit</Link>
