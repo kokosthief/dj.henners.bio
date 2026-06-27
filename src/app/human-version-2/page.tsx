@@ -55,7 +55,7 @@ export default function HumanVersionTwoPage() {
         <Link href="/" className="text-lg font-semibold tracking-[-0.04em] text-[#2a2319]">
           Henners
         </Link>
-        <nav aria-label="Soft preview navigation" className="hidden gap-7 text-sm text-[#7b674c] md:flex">
+        <nav aria-label="Soft preview navigation" className="hidden gap-7 text-sm text-[#5f4a32] md:flex">
           <a href="#journey" className="hover:text-[#2a2319]">journey</a>
           <a href="#floor" className="hover:text-[#2a2319]">floor notes</a>
           <a href="#rooms" className="hover:text-[#2a2319]">rooms</a>
@@ -68,7 +68,7 @@ export default function HumanVersionTwoPage() {
 
       <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-20 pt-6 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:pt-16">
         <div>
-          <p className="max-w-sm text-sm leading-6 text-[#8a704e]">
+          <p className="max-w-sm text-sm leading-6 text-[#6f5639]">
             Amsterdam ecstatic dance facilitator and DJ. Ship-born roots, festival floors, quiet ceremonies, sweaty rooms.
           </p>
           <h1 className="mt-8 max-w-4xl text-[clamp(3.7rem,11vw,9.5rem)] font-medium leading-[0.9] tracking-[-0.09em] text-[#2a2319]">
@@ -101,7 +101,7 @@ export default function HumanVersionTwoPage() {
                 className="object-cover saturate-[0.9]"
               />
             </div>
-            <figcaption className="px-2 pb-1 pt-4 text-sm italic text-[#7b674c]">
+            <figcaption className="px-2 pb-1 pt-4 text-sm italic text-[#5f4a32]">
               Het Sieraad, Amsterdam — the room already in motion.
             </figcaption>
           </figure>
@@ -111,7 +111,7 @@ export default function HumanVersionTwoPage() {
       <section id="journey" className="border-y border-[#e0d2b9] bg-[#f4ecdd] px-5 py-16 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-[#9a7a52]">the arc</p>
+            <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">the arc</p>
             <h2 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-6xl">
               crafted, but not stiff.
             </h2>
@@ -134,7 +134,7 @@ export default function HumanVersionTwoPage() {
       <section id="floor" className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-[#9a7a52]">floor notes</p>
+            <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">floor notes</p>
             <h2 className="mt-4 max-w-3xl text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-6xl">
               people remember the journey, not the sales copy.
             </h2>
@@ -148,7 +148,7 @@ export default function HumanVersionTwoPage() {
           {testimonials.slice(0, 3).map((note) => (
             <article key={`${note.person}-${note.date}`} className="rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-6">
               <blockquote className="text-2xl leading-snug tracking-[-0.04em] text-[#2a2319]">“{note.quote}”</blockquote>
-              <p className="mt-6 text-sm text-[#7b674c]">{note.person} · {note.event}</p>
+              <p className="mt-6 text-sm text-[#5f4a32]">{note.person} · {note.event}</p>
             </article>
           ))}
         </div>
@@ -174,7 +174,7 @@ export default function HumanVersionTwoPage() {
                 loading="eager"
               />
             </div>
-            <figcaption className="mt-3 text-sm italic text-[#7b674c]">{photo.note}</figcaption>
+            <figcaption className="mt-3 text-sm italic text-[#5f4a32]">{photo.note}</figcaption>
           </figure>
         ))}
       </section>
@@ -182,7 +182,7 @@ export default function HumanVersionTwoPage() {
       <section id="rooms" className="border-t border-[#e0d2b9] px-5 py-16 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-[#9a7a52]">recent rooms</p>
+            <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">recent rooms</p>
             <h2 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-5xl">
               not a brand story. a trail.
             </h2>
@@ -190,7 +190,7 @@ export default function HumanVersionTwoPage() {
           <div className="divide-y divide-[#e0d2b9] border-y border-[#e0d2b9]">
             {recentGigs.map((gig) => (
               <div key={`${gig.date}-${gig.event}-${gig.venue}`} className="grid gap-2 py-4 text-sm sm:grid-cols-[105px_1fr_1fr]">
-                <span className="text-[#9a7a52]">{gig.date}</span>
+                <span className="text-[#725332]">{gig.date}</span>
                 <span className="font-semibold text-[#2a2319]">{gig.event}</span>
                 <span className="text-[#6b573c]">{gig.venue}</span>
               </div>
@@ -201,7 +201,7 @@ export default function HumanVersionTwoPage() {
 
       <section id="contact" className="mx-auto grid max-w-6xl gap-8 px-5 pb-20 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="rounded-[2rem] bg-[#eadfc9] p-8">
-          <p className="text-sm uppercase tracking-[0.25em] text-[#9a7a52]">write</p>
+          <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">write</p>
           <h2 className="mt-5 text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-6xl">
             send the room, not a perfect brief.
           </h2>
@@ -214,7 +214,7 @@ export default function HumanVersionTwoPage() {
         </div>
       </section>
 
-      <footer className="border-t border-[#e0d2b9] px-5 py-8 text-sm text-[#7b674c] sm:px-8">
+      <footer className="border-t border-[#e0d2b9] px-5 py-8 text-sm text-[#5f4a32] sm:px-8">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p>preview route · not indexed · soft noticeboard version</p>
           <div className="flex flex-wrap gap-4">
