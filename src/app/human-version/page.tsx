@@ -181,7 +181,7 @@ export default function HumanVersionPage() {
               Ecstatic dance, ceremonies, retreats, festivals, community floors. Send the shape of the room, not a perfect brief.
             </p>
           </div>
-          <div className="bg-[#fffaf0] p-5 sm:p-8 [&_label]:!text-[#4b3726] [&_svg]:!text-[#4b3726]">
+          <div className="bg-[#fffaf0] p-5 sm:p-8">
             <ContactForm mode="light" />
           </div>
         </section>

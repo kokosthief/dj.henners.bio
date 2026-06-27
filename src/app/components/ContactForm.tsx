@@ -111,6 +111,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
     }
     focus:outline-none
   `;
+  const labelClasses = `mb-2 block text-sm font-medium ${mode === 'dark' ? 'text-stone-300' : 'text-gray-700'}`;
 
   return (
     <form onSubmit={handleSubmit} className={`w-full ${className}`}>
@@ -130,7 +131,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>
-          <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label className={labelClasses}>
             <FaUser className="mr-2 inline" />
             Name *
           </label>
@@ -146,7 +147,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label className={labelClasses}>
             <MdEmail className="mr-2 inline" />
             Email *
           </label>
@@ -177,7 +178,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
       </div>
 
       <div className="mt-4">
-        <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label className={labelClasses}>
           Message *
         </label>
         <textarea
