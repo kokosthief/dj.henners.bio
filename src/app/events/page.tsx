@@ -90,45 +90,45 @@ export const metadata: Metadata = {
 
 export default function EventsPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#100d0a] text-[#f8f1e7]">
-      <div className="pointer-events-none fixed inset-0 -z-0 bg-[#100d0a]" />
+    <main className="min-h-screen overflow-hidden bg-[#fbf7ee] text-[#2a2319]">
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[#fbf7ee]" />
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-6 lg:px-8">
-        <Link href="/" className="text-sm font-semibold text-amber-200 hover:text-amber-100">← Back home</Link>
-        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Past rooms</p>
+        <Link href="/" className="text-sm font-semibold text-[#725332] hover:text-[#5e4a33]">← Back home</Link>
+        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Past rooms</p>
         <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight md:text-6xl">
           Event history for Henners — ecstatic dance DJ & facilitator
         </h1>
-        <p className="mt-7 max-w-3xl text-xl leading-9 text-stone-300">
+        <p className="mt-7 max-w-3xl text-xl leading-9 text-[#493925]">
           A record of dance floors, ceremonies, festivals, and community gatherings I have played or helped hold. Mostly for organizers who want to see where the work has lived before.
         </p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-6">
-            <p className="text-4xl font-semibold text-stone-50">{pastGigs.length}+</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-stone-400">gigs</p>
+          <div className="rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-6">
+            <p className="text-4xl font-semibold text-[#2a2319]">{pastGigs.length}+</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-[#5f4a32]">gigs</p>
           </div>
-          <div className="rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-6">
-            <p className="text-4xl font-semibold text-stone-50">{venueSummaries.length}</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-stone-400">venues / floors</p>
+          <div className="rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-6">
+            <p className="text-4xl font-semibold text-[#2a2319]">{venueSummaries.length}</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-[#5f4a32]">venues / floors</p>
           </div>
-          <div className="rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-6">
-            <p className="text-4xl font-semibold text-stone-50">Amsterdam</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-stone-400">home base</p>
+          <div className="rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-6">
+            <p className="text-4xl font-semibold text-[#2a2319]">Amsterdam</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-[#5f4a32]">home base</p>
           </div>
         </div>
       </section>
 
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-8 sm:px-6 lg:px-8">
         <div className="mb-7">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">A few rooms</p>
-          <h2 className="mt-3 text-3xl font-semibold text-stone-50">Named rooms organizers can recognize.</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">A few rooms</p>
+          <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">Named rooms organizers can recognize.</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {featuredProof.map((item) => (
-            <article key={item.title} className="rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-6 shadow-lg shadow-black/15">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-200">{item.location}</p>
-              <h3 className="mt-3 text-2xl font-semibold text-stone-50">{item.title}</h3>
-              <p className="mt-4 leading-8 text-stone-300">{item.detail}</p>
+            <article key={item.title} className="rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-6 ">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#725332]">{item.location}</p>
+              <h3 className="mt-3 text-2xl font-semibold text-[#2a2319]">{item.title}</h3>
+              <p className="mt-4 leading-8 text-[#493925]">{item.detail}</p>
             </article>
           ))}
         </div>
@@ -137,23 +137,23 @@ export default function EventsPage() {
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-12 sm:px-6 lg:px-8">
         <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Archive by venue</p>
-            <h2 className="mt-3 text-3xl font-semibold text-stone-50">Past dance floors</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Archive by venue</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">Past dance floors</h2>
           </div>
-          <Link href="/media-package" className="inline-flex rounded-full border border-amber-200/40 px-5 py-3 text-sm font-semibold text-amber-100 hover:bg-amber-200 hover:text-stone-950">
+          <Link href="/media-package" className="inline-flex rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#5e4a33] hover:bg-[#2a2319] hover:text-[#fbf7ee]">
             Open press kit
           </Link>
         </div>
 
         <div className="grid gap-3">
           {venueSummaries.map((venue) => (
-            <details key={`${venue.venue}-${venue.location}`} className="group rounded-xl border border-stone-700/70 bg-[#120d09]/90 p-1 open:border-amber-200/35">
+            <details key={`${venue.venue}-${venue.location}`} className="group rounded-[1.5rem] border border-[#e0d2b9] bg-[#f4ecdd] p-1 open:border-[#d6c6aa]">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[1.3rem] px-5 py-4 transition hover:bg-stone-100/[0.05]">
                 <span>
-                  <span className="block text-lg font-semibold text-stone-50">{venue.venue}</span>
-                  <span className="text-sm text-stone-400">{venue.location} · latest documented: {formatDate(venue.latest)}</span>
+                  <span className="block text-lg font-semibold text-[#2a2319]">{venue.venue}</span>
+                  <span className="text-sm text-[#5f4a32]">{venue.location} · latest documented: {formatDate(venue.latest)}</span>
                 </span>
-                <span className="rounded-full border border-amber-200/30 px-3 py-1 text-sm font-semibold text-amber-100">
+                <span className="rounded-full border border-[#d6c6aa] px-3 py-1 text-sm font-semibold text-[#5e4a33]">
                   {venue.count} {venue.count === 1 ? 'set' : 'sets'}
                 </span>
               </summary>

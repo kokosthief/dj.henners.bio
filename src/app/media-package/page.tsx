@@ -87,12 +87,12 @@ function AssetList({
   files: MediaFile[];
 }) {
   return (
-    <section className="rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-5 shadow-lg shadow-black/15 sm:p-6">
+    <section className="rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-5  sm:p-6">
       <div className="mb-5 flex items-center gap-3">
-        <div className="rounded-2xl border border-amber-200/20 bg-amber-200/10 p-3 text-amber-200">
+        <div className="rounded-[1.5rem] border border-amber-200/20 bg-[#2a2319]/10 p-3 text-[#725332]">
           <Icon className="h-5 w-5" />
         </div>
-        <h2 className="text-2xl font-semibold text-stone-50">{title}</h2>
+        <h2 className="text-2xl font-semibold text-[#2a2319]">{title}</h2>
       </div>
       <div className={`grid gap-3 ${files.length > 10 ? 'xl:grid-cols-2' : ''}`}>
         {files.map((file) => (
@@ -100,15 +100,15 @@ function AssetList({
             key={`${title}-${file.name}`}
             href={file.downloadUrl}
             download
-            className="group flex min-w-0 items-center justify-between gap-4 rounded-2xl border border-stone-700/70 bg-[#120d09]/90 p-4 transition hover:border-amber-200/35 hover:bg-white/[0.07]"
+            className="group flex min-w-0 items-center justify-between gap-4 rounded-[1.5rem] border border-[#e0d2b9] bg-[#f4ecdd] p-4 transition hover:border-[#d6c6aa] hover:bg-[#eadfc9]"
           >
             <span className="min-w-0">
-              <span className="block truncate font-semibold text-stone-50">{file.name}</span>
-              <span className="mt-1 block truncate text-xs text-stone-400">
+              <span className="block truncate font-semibold text-[#2a2319]">{file.name}</span>
+              <span className="mt-1 block truncate text-xs text-[#5f4a32]">
                 {file.format} · {file.size}{file.duration ? ` · ${file.duration}` : ''}
               </span>
             </span>
-            <FaDownload className="h-4 w-4 shrink-0 text-amber-200 transition group-hover:translate-y-0.5" />
+            <FaDownload className="h-4 w-4 shrink-0 text-[#725332] transition group-hover:translate-y-0.5" />
           </a>
         ))}
       </div>
@@ -133,56 +133,78 @@ export default function MediaPackagePage() {
   };
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#100d0a] text-[#f8f1e7]">
-      <div className="pointer-events-none fixed inset-0 -z-0 bg-[#100d0a]" />
+    <main className="min-h-screen overflow-hidden bg-[#fbf7ee] text-[#2a2319]">
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[#fbf7ee]" />
 
-      <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-6 lg:px-8">
-        <Link href="/" className="font-secondary text-2xl tracking-wide text-stone-50">
-          HENNERS
-        </Link>
-        <Link href="/" className="rounded-full border border-amber-200/40 px-4 py-2 text-sm font-semibold text-amber-100 transition hover:bg-amber-200 hover:text-stone-950">
-          Back home
-        </Link>
+      <header className="relative z-20 border-b border-[#f4ead8]/10 bg-[#060504] px-5 py-4 sm:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
+          <Link href="/" className="font-mono text-xs uppercase tracking-[0.5em] text-[#f4ead8]">
+            Henners
+          </Link>
+          <nav aria-label="Press kit navigation" className="hidden items-center gap-6 font-mono text-xs uppercase tracking-[0.22em] text-[#d6b47f] md:flex">
+            <a href="#bio" className="hover:text-[#f4ead8]">bio</a>
+            <a href="#footage" className="hover:text-[#f4ead8]">footage</a>
+            <a href="#downloads" className="hover:text-[#f4ead8]">downloads</a>
+            <a href="#rider" className="hover:text-[#f4ead8]">rider</a>
+          </nav>
+          <Link href="/" className="rounded-full border border-[#f4ead8]/20 px-3 py-2 font-mono text-xs uppercase tracking-[0.16em] text-[#d6b47f] hover:border-[#f4ead8] hover:text-[#f4ead8]">
+            home
+          </Link>
+        </div>
       </header>
 
-      <section className="relative z-10 mx-auto grid max-w-7xl gap-10 px-5 pb-14 pt-8 sm:px-6 md:pt-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
-        <div>
-          <p className="mb-5 inline-flex rounded-full border border-amber-200/25 bg-[#21160f] px-4 py-2 text-sm font-semibold text-amber-100">
-            Press kit · organizer resources
-          </p>
-          <h1 className="max-w-4xl font-primary text-3xl font-semibold tracking-tight text-stone-50 sm:text-6xl lg:text-7xl">
-            Henners press kit
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-stone-300 sm:mt-7 sm:text-xl sm:leading-9">
-            Bio copy, photos, videos, and a simple one-page technical setup note. Direct links are easier than a big bundled press document.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/#contact" className="rounded-full bg-amber-200 px-6 py-4 text-center font-semibold text-stone-950 transition hover:bg-amber-100">
-              Request something specific
-            </Link>
-            <a href="/downloads/documents/technical-rider.pdf" download className="rounded-full border border-white/15 px-6 py-4 text-center font-semibold text-stone-50 transition hover:border-amber-200/60 hover:bg-stone-100/10">
-              Download simple rider
-            </a>
-          </div>
+      <section className="relative overflow-hidden bg-[#060504] px-5 pb-20 pt-16 text-[#f4ead8] sm:px-8 lg:pt-20">
+        <div className="absolute inset-0 opacity-35">
+          <Image
+            src="/images/gallery/edfh-basement-bw.jpg"
+            alt=""
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            className="object-cover grayscale contrast-125"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,5,4,0.96)_0%,rgba(6,5,4,0.78)_45%,rgba(6,5,4,0.52)_100%)]" />
         </div>
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+          <div>
+            <p className="mb-5 inline-flex rounded-full border border-[#f4ead8]/20 bg-[#060504]/45 px-4 py-2 text-sm font-semibold text-[#d6b47f]">
+              Press kit · organizer resources
+            </p>
+            <h1 className="max-w-4xl text-[clamp(3.8rem,11vw,10rem)] font-semibold leading-[0.82] tracking-[-0.1em] text-[#fff8ec]">
+              simple things organisers need.
+            </h1>
+            <p className="mt-7 max-w-2xl text-xl leading-9 text-[#ead8bd] sm:text-2xl sm:leading-10">
+              Bio copy, photos, videos, and a simple one-page technical setup note. Direct links are easier than a big bundled press document.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/#contact" className="rounded-full bg-[#f4ead8] px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#060504] transition hover:bg-[#d6b47f]">
+                Request something specific
+              </Link>
+              <a href="/downloads/documents/technical-rider.pdf" download className="rounded-full border border-[#f4ead8]/25 px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#f4ead8] transition hover:border-[#f4ead8]">
+                Download simple rider
+              </a>
+            </div>
+          </div>
 
-        <div className="hidden min-w-0 rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-4 shadow-lg shadow-black/20 sm:p-6 md:block">
-          <ImageSlideshow autoPlay={false} showControls className="w-full" />
+          <div className="hidden min-w-0 rounded-[1.75rem] border border-[#f4ead8]/15 bg-[#060504]/50 p-4 sm:p-6 md:block">
+            <ImageSlideshow autoPlay={false} showControls className="w-full" />
+          </div>
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
-        <div className="grid gap-6 rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-5 sm:p-8 lg:grid-cols-[0.7fr_1.3fr]">
+      <section id="bio" className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
+        <div className="grid gap-6 rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-5 sm:p-8 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Bio copy</p>
-            <h2 className="mt-3 text-3xl font-semibold text-stone-50">Use the length that fits.</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Bio copy</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">Use the length that fits.</h2>
             <div className="mt-6 flex flex-wrap gap-2">
               {bioOptions.map((bio) => (
                 <button
                   key={bio.key}
                   type="button"
                   onClick={() => setActiveBio(bio.key)}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition ${activeBio === bio.key ? 'bg-amber-200 text-stone-950' : 'border border-white/15 text-stone-200 hover:bg-stone-100/10'}`}
+                  className={`rounded-full px-4 py-2 text-sm font-semibold transition ${activeBio === bio.key ? 'bg-[#2a2319] text-[#fbf7ee]' : 'border border-[#d6c6aa] text-[#493925] hover:bg-[#eadfc9]'}`}
                 >
                   {bio.label}
                 </button>
@@ -191,30 +213,30 @@ export default function MediaPackagePage() {
             <button
               type="button"
               onClick={handleCopyBio}
-              className="mt-5 rounded-full border border-amber-200/40 px-5 py-3 text-sm font-semibold text-amber-100 transition hover:border-amber-100 hover:bg-stone-100/10"
+              className="mt-5 rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#5e4a33] transition hover:border-[#2a2319] hover:bg-[#eadfc9]"
             >
               {copied ? 'Copied' : 'Copy bio'}
             </button>
           </div>
-          <div className="rounded-xl border border-stone-700/70 bg-[#120d09]/90 p-5 sm:p-6">
-            <p className="whitespace-pre-line text-base leading-8 text-stone-300">{selectedBio.copy}</p>
+          <div className="rounded-[1.5rem] border border-[#e0d2b9] bg-[#f4ecdd] p-5 sm:p-6">
+            <p className="whitespace-pre-line text-base leading-8 text-[#493925]">{selectedBio.copy}</p>
           </div>
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
+      <section id="footage" className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
         <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Recent footage</p>
-            <h2 className="mt-3 text-3xl font-semibold text-stone-50">Dance floor proof.</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Recent footage</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">Dance floor proof.</h2>
           </div>
-          <p className="max-w-xl text-sm leading-7 text-stone-400">
+          <p className="max-w-xl text-sm leading-7 text-[#5f4a32]">
             Short clips for organizers who want a quick feel for the room: Ambrosia at Het Sieraad, Lundjuweel, and Ambrosia at Rijksmuseum.
           </p>
         </div>
         <div className="grid gap-5 lg:grid-cols-3">
           {mediaFiles.videos.slice(0, 3).map((video) => (
-            <article key={`preview-${video.name}`} className="overflow-hidden rounded-xl border border-stone-700/70 bg-[#17110d]/80 shadow-lg shadow-black/20">
+            <article key={`preview-${video.name}`} className="overflow-hidden rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 ">
               {activeVideo === video.downloadUrl ? (
                 <video
                   className="aspect-[9/12] w-full bg-black object-cover"
@@ -250,7 +272,7 @@ export default function MediaPackagePage() {
                     />
                   )}
                   <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-stone-200/50 bg-black/45 text-stone-50 shadow-lg transition group-hover:bg-amber-200 group-hover:text-stone-950">
+                  <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-stone-200/50 bg-black/45 text-[#f4ead8] shadow-lg transition group-hover:bg-[#f4ead8] group-hover:text-[#060504]">
                     <svg className="ml-1 h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M8 5v14l11-7z" />
                     </svg>
@@ -258,9 +280,9 @@ export default function MediaPackagePage() {
                 </button>
               )}
               <div className="p-5">
-                <h3 className="text-lg font-semibold text-stone-50">{video.name}</h3>
-                <p className="mt-2 text-sm leading-6 text-stone-400">{video.description}</p>
-                <a href={video.downloadUrl} download className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-amber-200 hover:text-amber-100">
+                <h3 className="text-lg font-semibold text-[#2a2319]">{video.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#5f4a32]">{video.description}</p>
+                <a href={video.downloadUrl} download className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#725332] hover:text-[#5e4a33]">
                   <FaDownload className="h-3.5 w-3.5" />
                   Download clip
                 </a>
@@ -270,21 +292,21 @@ export default function MediaPackagePage() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto grid max-w-7xl gap-5 px-5 py-10 sm:px-6 lg:grid-cols-[1.35fr_1fr_0.85fr] lg:px-8">
+      <section id="downloads" className="relative z-10 mx-auto grid max-w-7xl gap-5 px-5 py-10 sm:px-6 lg:grid-cols-[1.35fr_1fr_0.85fr] lg:px-8">
         <AssetList title="Photos" icon={FaImage} files={mediaFiles.images} />
         <AssetList title="Videos" icon={FaVideo} files={mediaFiles.videos} />
         <AssetList title="Documents" icon={FaFilePdf} files={mediaFiles.documents} />
       </section>
 
-      <section className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
-        <div className="grid gap-6 rounded-xl border border-stone-700/70 bg-[#17110d]/80 p-6 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <section id="rider" className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 lg:px-8">
+        <div className="grid gap-6 rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-6 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Technical rider</p>
-            <h2 className="mt-3 text-3xl font-semibold text-stone-50">Simple setup context.</h2>
-            <p className="mt-5 leading-8 text-stone-300">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Technical rider</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">Simple setup context.</h2>
+            <p className="mt-5 leading-8 text-[#493925]">
               Most ecstatic dance rooms do not need a complicated rider. I travel with my computer and prefer the lightest working setup: ideally a Pioneer DDJ controller ready to plug in.
             </p>
-            <a href="/downloads/documents/technical-rider.pdf" download className="mt-7 inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-semibold text-stone-950 transition hover:bg-amber-100">
+            <a href="/downloads/documents/technical-rider.pdf" download className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#2a2319] px-5 py-3 text-sm font-semibold text-[#fbf7ee] transition hover:bg-[#55391f]">
               <FaDownload className="h-4 w-4" />
               Download technical rider
             </a>
@@ -296,9 +318,9 @@ export default function MediaPackagePage() {
               ['Backup', 'If needed I can bring my own controller + computer; organizer provides RCA / correct cable into the sound system.'],
               ['Arrival', 'A stable table, power, line check, and someone who knows the sound system.'],
             ].map(([title, body]) => (
-              <article key={title} className="rounded-xl border border-stone-700/70 bg-[#120d09]/90 p-5">
-                <h3 className="text-xl font-semibold text-stone-50">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-stone-400">{body}</p>
+              <article key={title} className="rounded-[1.5rem] border border-[#e0d2b9] bg-[#f4ecdd] p-5">
+                <h3 className="text-xl font-semibold text-[#2a2319]">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#5f4a32]">{body}</p>
               </article>
             ))}
           </div>
@@ -306,23 +328,23 @@ export default function MediaPackagePage() {
       </section>
 
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-amber-200/15 bg-amber-200/[0.06] p-8 text-center shadow-lg shadow-black/15">
-          <h2 className="text-3xl font-semibold text-stone-50">Need a different crop, bio, or format?</h2>
-          <p className="mx-auto mt-4 max-w-2xl leading-8 text-stone-300">
+        <div className="rounded-[1.5rem] border border-[#e0d2b9] bg-[#2a2319]/[0.06] p-8 text-center ">
+          <h2 className="text-3xl font-semibold text-[#2a2319]">Need a different crop, bio, or format?</h2>
+          <p className="mx-auto mt-4 max-w-2xl leading-8 text-[#493925]">
             Send the event context and what you need. I’ll share the most suitable material for the floor, ceremony, retreat, or publication.
           </p>
-          <Link href="/#contact" className="mt-7 inline-flex rounded-full bg-amber-200 px-6 py-4 font-semibold text-stone-950 transition hover:bg-amber-100">
+          <Link href="/#contact" className="mt-7 inline-flex rounded-full bg-[#2a2319] px-6 py-4 font-semibold text-[#fbf7ee] transition hover:bg-[#55391f]">
             Contact for materials
           </Link>
         </div>
       </section>
 
-      <footer className="relative z-10 border-t border-stone-700/70 px-5 py-10 text-sm text-stone-400 sm:px-6 lg:px-8">
+      <footer className="relative z-10 border-t border-[#e0d2b9] px-5 py-10 text-sm text-[#5f4a32] sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Henners · Press kit · Amsterdam</p>
           <div className="flex gap-4">
-            <Link href="/" className="hover:text-amber-200">Home</Link>
-            <a href="https://soundcloud.com/srenneh" target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">SoundCloud</a>
+            <Link href="/" className="hover:text-[#725332]">Home</Link>
+            <a href="https://soundcloud.com/srenneh" target="_blank" rel="noopener noreferrer" className="hover:text-[#725332]">SoundCloud</a>
           </div>
         </div>
       </footer>

@@ -38,29 +38,29 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#100d0a] text-[#f8f1e7]">
+    <main className="min-h-screen bg-[#fbf7ee] text-[#2a2319]">
       <section className="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
-          <Link href="/" className="text-sm font-semibold text-amber-200 hover:text-amber-100">← Back home</Link>
-          <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">About</p>
+          <Link href="/" className="text-sm font-semibold text-[#725332] hover:text-[#5e4a33]">← Back home</Link>
+          <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">About</p>
           <h1 className="mt-4 text-5xl font-semibold tracking-tight md:text-6xl">Henners — ecstatic dance facilitator & DJ</h1>
-          <p className="mt-7 text-xl leading-9 text-stone-300">
+          <p className="mt-7 text-xl leading-9 text-[#493925]">
             Henners is an Amsterdam-based ecstatic dance facilitator and DJ shaped by Amsterdam’s conscious dance scene and years around the Odessa ship.
           </p>
-          <p className="mt-6 leading-8 text-stone-400">
+          <p className="mt-6 leading-8 text-[#5f4a32]">
             Rooted in his time aboard the Odessa ship and Amsterdam’s wider conscious dance community, he crafts full-arc journeys through global rhythms, African-inspired grooves, earthy percussion, melody, silence, and spacious integration.
           </p>
-          <p className="mt-6 leading-8 text-stone-400">
+          <p className="mt-6 leading-8 text-[#5f4a32]">
             Whether the room feels rooted in the earth or suddenly somewhere cosmic, the work is the same: listen closely, follow the energy, and let people dance the full spectrum of what is alive.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/events" className="rounded-full border border-stone-500/60 px-5 py-3 text-center font-semibold text-stone-100 hover:border-amber-200/60 hover:bg-stone-100/10">View event history</Link>
-            <Link href="/media-package" className="rounded-full bg-[#e7c083] px-5 py-3 text-center font-semibold text-stone-950 hover:bg-[#f1d29d]">Open press kit</Link>
+            <Link href="/events" className="rounded-full border border-[#d6c6aa] px-5 py-3 text-center font-semibold text-[#2a2319] hover:border-[#2a2319] hover:bg-[#eadfc9]">View event history</Link>
+            <Link href="/media-package" className="rounded-full bg-[#2a2319] px-5 py-3 text-center font-semibold text-[#fbf7ee] hover:bg-[#55391f]">Open press kit</Link>
           </div>
         </div>
         <div className="grid gap-5">
-          <Image src={HennersSpaceholding} alt="Henners holding space during an ecstatic dance journey" className="rounded-xl border border-stone-700/70 object-cover shadow-lg shadow-black/20" placeholder="blur" />
-          <Image src={HennersCeremony} alt="Ceremony music and conscious dance facilitation by Henners" className="rounded-xl border border-stone-700/70 object-cover shadow-lg shadow-black/20" placeholder="blur" />
+          <Image src={HennersSpaceholding} alt="Henners holding space during an ecstatic dance journey" className="rounded-[1.5rem] border border-[#e0d2b9] object-cover " placeholder="blur" />
+          <Image src={HennersCeremony} alt="Ceremony music and conscious dance facilitation by Henners" className="rounded-[1.5rem] border border-[#e0d2b9] object-cover " placeholder="blur" />
         </div>
       </section>
     </main>

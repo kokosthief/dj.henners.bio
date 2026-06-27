@@ -116,7 +116,7 @@ export default function RootLayout({
         <meta name="geo.position" content="52.3676;4.9041" />
         <meta name="ICBM" content="52.3676, 4.9041" />
       </head>
-      <body className="bg-[#100d0a] font-primary text-stone-50 antialiased">
+      <body className="bg-[#fbf7ee] text-[#2a2319] antialiased">
         {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
         <Suspense fallback={null}>
           <SiteAnalytics />

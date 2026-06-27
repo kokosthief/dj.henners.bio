@@ -35,23 +35,23 @@ export const metadata: Metadata = {
 
 export default function PhotosPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#100d0a] text-[#f8f1e7]">
-      <div className="pointer-events-none fixed inset-0 -z-0 bg-[#100d0a]" />
+    <main className="min-h-screen overflow-hidden bg-[#fbf7ee] text-[#2a2319]">
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[#fbf7ee]" />
 
       <section className="relative z-10 mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
-        <Link href="/" className="text-sm font-semibold text-amber-200 hover:text-amber-100">← Back home</Link>
-        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Photos</p>
+        <Link href="/" className="text-sm font-semibold text-[#725332] hover:text-[#5e4a33]">← Back home</Link>
+        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Photos</p>
         <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight md:text-6xl">
           Dance floors, ceremonies, and moments around the music.
         </h1>
-        <p className="mt-7 max-w-3xl text-xl leading-9 text-stone-300">
+        <p className="mt-7 max-w-3xl text-xl leading-9 text-[#493925]">
           A small visual record of rooms I have played or helped hold. For downloads and organizer material, use the press kit.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/media-package" className="rounded-full bg-amber-200 px-5 py-3 text-sm font-semibold text-stone-950 hover:bg-amber-100">
+          <Link href="/media-package" className="rounded-full bg-[#2a2319] px-5 py-3 text-sm font-semibold text-[#fbf7ee] hover:bg-[#55391f]">
             Press kit downloads
           </Link>
-          <Link href="/events" className="rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-stone-50 hover:bg-stone-100/10">
+          <Link href="/events" className="rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#2a2319] hover:bg-[#eadfc9]">
             Past gigs
           </Link>
         </div>
@@ -60,7 +60,7 @@ export default function PhotosPage() {
       <section className="relative z-10 mx-auto max-w-7xl px-5 pb-24 sm:px-6 lg:px-8">
         <div className="grid auto-rows-[18rem] gap-4 md:grid-cols-3">
           {photos.map((photo) => (
-            <figure key={photo.src} className={`group relative overflow-hidden rounded-xl border border-stone-700/70 bg-[#17110d]/80 shadow-lg shadow-black/15 ${photo.className ?? ''}`}>
+            <figure key={photo.src} className={`group relative overflow-hidden rounded-[1.5rem] border border-[#e0d2b9] bg-white/55  ${photo.className ?? ''}`}>
               <Image
                 src={photo.src}
                 alt={photo.alt}
@@ -69,8 +69,8 @@ export default function PhotosPage() {
                 className="object-cover transition duration-500 group-hover:scale-[1.03]"
               />
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 pt-16">
-                <h2 className="text-xl font-semibold text-stone-50">{photo.title}</h2>
-                <p className="mt-1 max-w-md text-sm leading-6 text-stone-200">{photo.caption}</p>
+                <h2 className="text-xl font-semibold text-[#fff8ec]">{photo.title}</h2>
+                <p className="mt-1 max-w-md text-sm leading-6 text-[#ead8bd]">{photo.caption}</p>
               </figcaption>
             </figure>
           ))}

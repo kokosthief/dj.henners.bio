@@ -17,24 +17,24 @@ const SoundCloudWidget: React.FC = () => {
 
   return (
     <section id="listen" className="relative z-10 mx-auto w-full max-w-6xl px-0 py-6 sm:px-6 lg:px-8">
-      <div className="grid min-w-0 gap-6 overflow-hidden border-y border-stone-700/70 bg-[#17110d]/90 px-4 py-7 shadow-lg shadow-black/15 sm:rounded-xl sm:border sm:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+      <div className="grid min-w-0 gap-6 overflow-hidden border-y border-[#e0d2b9] bg-white/55 px-4 py-7  sm:rounded-[1.5rem] sm:border sm:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div className="min-w-0 px-1 sm:px-0">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Listen</p>
-          <h2 className="text-3xl font-semibold tracking-tight text-stone-50 md:text-4xl">A recorded ecstatic dance journey</h2>
-          <p className="mt-4 text-base leading-8 text-stone-300">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Listen</p>
+          <h2 className="text-3xl font-semibold tracking-tight text-[#2a2319] md:text-4xl">A recorded ecstatic dance journey</h2>
+          <p className="mt-4 text-base leading-8 text-[#493925]">
             A taste of the arc: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.
           </p>
-          <p className="mt-5 max-w-xl text-sm leading-7 text-stone-400">
+          <p className="mt-5 max-w-xl text-sm leading-7 text-[#5f4a32]">
             This is the kind of musical container I bring to ecstatic dance floors, retreats, ceremonies, and communities that want movement with depth.
           </p>
         </div>
 
         {!loaded ? (
-          <div className="min-w-0 rounded-2xl border border-stone-700/70 bg-[#120d09] p-4 sm:p-6">
+          <div className="min-w-0 rounded-[1.5rem] border border-[#e0d2b9] bg-[#f4ecdd] p-4 sm:p-6">
             <div className="flex min-w-0 flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
               <div className="min-w-0">
-                <h3 className="break-words text-lg font-semibold text-stone-50">{track.title}</h3>
-                <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-400">
+                <h3 className="break-words text-lg font-semibold text-[#2a2319]">{track.title}</h3>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-[#5f4a32]">
                   Player kept unloaded until you click, keeping the page fast while still making the mix easy to reach.
                 </p>
               </div>
@@ -48,7 +48,7 @@ const SoundCloudWidget: React.FC = () => {
                     });
                     setLoaded(true);
                   }}
-                  className="rounded-full bg-[#e7c083] px-5 py-3 text-sm font-semibold text-stone-950 shadow-lg shadow-black/20 transition hover:bg-amber-100"
+                  className="rounded-full bg-[#2a2319] px-5 py-3 text-sm font-semibold text-[#fbf7ee]  transition hover:bg-[#55391f]"
                 >
                   Load player
                 </button>
@@ -56,7 +56,7 @@ const SoundCloudWidget: React.FC = () => {
                   href={track.trackUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-stone-500/60 px-5 py-3 text-center text-sm font-semibold text-stone-100 transition hover:border-amber-200/60 hover:bg-stone-100/10"
+                  className="rounded-full border border-[#d6c6aa] px-5 py-3 text-center text-sm font-semibold text-[#2a2319] transition hover:border-[#2a2319] hover:bg-[#eadfc9]"
                 >
                   Open on SoundCloud
                 </a>
@@ -64,9 +64,9 @@ const SoundCloudWidget: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="min-w-0 overflow-hidden rounded-2xl border border-stone-700/70 bg-[#120d09] p-4 sm:p-6">
-            <h3 className="mb-4 break-words text-lg font-semibold text-stone-50">{track.title}</h3>
-            <div className="max-w-full overflow-hidden rounded-2xl bg-white">
+          <div className="min-w-0 overflow-hidden rounded-[1.5rem] border border-[#e0d2b9] bg-[#f4ecdd] p-4 sm:p-6">
+            <h3 className="mb-4 break-words text-lg font-semibold text-[#2a2319]">{track.title}</h3>
+            <div className="max-w-full overflow-hidden rounded-[1.5rem] bg-white">
               <iframe
                 className="block h-[300px] w-full max-w-full border-0"
                 width="100%"
@@ -80,10 +80,10 @@ const SoundCloudWidget: React.FC = () => {
                 loading="lazy"
               />
             </div>
-            <p className="mt-3 max-w-full overflow-hidden text-ellipsis whitespace-nowrap break-normal text-[10px] font-light leading-5 text-stone-500 [line-break:anywhere]">
-              <a href={track.artistUrl} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">HENNERS / SRENNEH</a>
+            <p className="mt-3 max-w-full overflow-hidden text-ellipsis whitespace-nowrap break-normal text-[10px] font-light leading-5 text-[#725332] [line-break:anywhere]">
+              <a href={track.artistUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#725332]">HENNERS / SRENNEH</a>
               {' · '}
-              <a href={track.trackUrl} target="_blank" rel="noopener noreferrer" className="hover:text-amber-200">{track.title}</a>
+              <a href={track.trackUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#725332]">{track.title}</a>
             </p>
           </div>
         )}

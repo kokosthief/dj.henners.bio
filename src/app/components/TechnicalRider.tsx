@@ -43,28 +43,28 @@ const TechnicalRider: React.FC<TechnicalRiderProps> = ({
 
   return (
     <div className="w-full">
-      <div className="mb-8 border-b border-stone-300 pb-5 dark:border-stone-700">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-stone-500 dark:text-stone-400">
+      <div className="mb-8 border-b border-stone-300 pb-5 dark:border-[#e0d2b9]">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#725332] dark:text-[#5f4a32]">
           Henners · technical setup
         </p>
-        <h1 className="mt-3 text-3xl font-semibold text-stone-950 dark:text-stone-50">
+        <h1 className="mt-3 text-3xl font-semibold text-stone-950 dark:text-[#2a2319]">
           Simple technical rider
         </h1>
-        <p className="mt-4 max-w-2xl leading-7 text-stone-700 dark:text-stone-300">
+        <p className="mt-4 max-w-2xl leading-7 text-stone-700 dark:text-[#493925]">
           No dramatic stage requirements. Just a clear way to plug in, soundcheck, and play.
         </p>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">
         {setupItems.map((item) => (
-          <article key={item.title} className="border-t border-stone-300 pt-4 dark:border-stone-700">
-            <h2 className="text-xl font-semibold text-stone-950 dark:text-stone-50">{item.title}</h2>
-            <p className="mt-3 leading-7 text-stone-700 dark:text-stone-300">{item.body}</p>
+          <article key={item.title} className="border-t border-stone-300 pt-4 dark:border-[#e0d2b9]">
+            <h2 className="text-xl font-semibold text-stone-950 dark:text-[#2a2319]">{item.title}</h2>
+            <p className="mt-3 leading-7 text-stone-700 dark:text-[#493925]">{item.body}</p>
           </article>
         ))}
       </div>
 
-      <div className="mt-8 border-t border-stone-300 pt-5 text-sm leading-7 text-stone-600 dark:border-stone-700 dark:text-stone-400">
+      <div className="mt-8 border-t border-stone-300 pt-5 text-sm leading-7 text-stone-600 dark:border-[#e0d2b9] dark:text-[#5f4a32]">
         Please confirm the available setup before the event: CDJs + mixer, Pioneer DDJ controller, or whether I should bring my own controller.
       </div>
 

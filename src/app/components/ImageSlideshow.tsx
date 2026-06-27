@@ -211,7 +211,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
   return (
     <div className={`relative group ${className}`}>
       {/* Main Image Display */}
-      <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-stone-700/70 md:rounded-xl">
+      <div className="relative overflow-hidden rounded-[1.5rem] shadow-lg ring-1 ring-stone-700/70 md:rounded-[1.5rem]">
         <div className={`relative w-full overflow-hidden bg-[#080d16] ${imageClassName}`}>
           <Image
             src={images[currentIndex].src}
@@ -235,11 +235,11 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
           {/* Image Title Overlay */}
           {images[currentIndex].title && (
             <div className="absolute bottom-4 left-4 right-4 text-left">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-200 sm:text-sm">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#725332] sm:text-sm">
                 {images[currentIndex].title}
               </p>
               {images[currentIndex].caption && (
-                <p className="mt-2 max-w-xl text-base leading-6 text-stone-50 sm:text-lg">
+                <p className="mt-2 max-w-xl text-base leading-6 text-[#2a2319] sm:text-lg">
                   {images[currentIndex].caption}
                 </p>
               )}
@@ -253,7 +253,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             {/* Previous/Next Buttons */}
             <button
               onClick={goToPrevious}
-              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-stone-50 opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:left-4 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-[#2a2319] opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:left-4 focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Previous image"
               type="button"
             >
@@ -264,7 +264,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
 
             <button
               onClick={goToNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-stone-50 opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:right-4 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-[#2a2319] opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:right-4 focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Next image"
               type="button"
             >
@@ -276,7 +276,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             {/* Play/Pause Button */}
             <button
               onClick={togglePlayPause}
-              className="absolute right-2 top-2 rounded-full bg-black/30 p-2 text-stone-50 opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:right-4 md:top-4 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute right-2 top-2 rounded-full bg-black/30 p-2 text-[#2a2319] opacity-0 transition-all duration-300 hover:bg-black/50 group-hover:opacity-100 md:right-4 md:top-4 focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
               type="button"
             >

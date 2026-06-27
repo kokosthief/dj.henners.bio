@@ -104,14 +104,14 @@ const ContactForm: React.FC<ContactFormProps> = ({
   };
 
   const inputClasses = `
-    w-full rounded-xl border px-4 py-3 text-base transition-all duration-300
+    w-full rounded-[1.5rem] border px-4 py-3 text-base transition-all duration-300
     ${mode === 'dark'
-      ? 'border-stone-600 bg-[#1a130e] text-stone-50 placeholder-stone-500 focus:border-amber-200 focus:ring-2 focus:ring-amber-200/20'
+      ? 'border-[#f4ead8]/20 bg-[#060504]/55 text-[#f4ead8] placeholder-[#c8aa7a] focus:border-[#d6b47f] focus:ring-2 focus:ring-[#d6b47f]/20'
       : 'border-stone-300 bg-white text-stone-900 placeholder-stone-500 focus:border-amber-700 focus:ring-2 focus:ring-amber-700/15'
     }
     focus:outline-none
   `;
-  const labelClasses = `mb-2 block text-sm font-medium ${mode === 'dark' ? 'text-stone-300' : 'text-gray-700'}`;
+  const labelClasses = `mb-2 block text-sm font-medium ${mode === 'dark' ? 'text-[#ead8bd]' : 'text-gray-700'}`;
 
   return (
     <form onSubmit={handleSubmit} className={`w-full ${className}`}>
