@@ -11,7 +11,7 @@ const absolute = (path) => `${siteUrl}${path}`;
 module.exports = {
   siteUrl,
   generateRobotsTxt: true,
-  exclude: ['/contact', '/human-version', '/manifest.webmanifest', '/sitemap.xml', '/sitemap-0.xml'],
+  exclude: ['/contact', '/human-version', '/human-version-2', '/manifest.webmanifest', '/sitemap.xml', '/sitemap-0.xml'],
   changefreq: 'monthly',
   priority: 0.7,
   transform: async (config, path) => {
