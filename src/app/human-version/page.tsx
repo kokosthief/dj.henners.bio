@@ -6,27 +6,6 @@ import { gigs } from '@/app/gigsData';
 import { testimonials } from '@/app/testimonialsData';
 import { siteConfig } from '@/constant/config';
 
-const photoNotes = [
-  {
-    src: '/images/gallery/edfh-basement-bw.jpg',
-    alt: 'Henners DJing at Ecstatic Dance Festival Holland',
-    caption: 'EDFH · basement room',
-    className: 'rotate-[-1.5deg] md:col-span-5',
-  },
-  {
-    src: '/images/gallery/ambrosia-het-sieraad-floor.jpg',
-    alt: 'Ambrosia dance floor at Het Sieraad',
-    caption: 'Ambrosia · Het Sieraad',
-    className: 'rotate-[1deg] md:col-span-4 md:translate-y-10',
-  },
-  {
-    src: '/images/rijksmuseum-dj-booth.jpg',
-    alt: 'Henners DJing at Rijksmuseum Amsterdam',
-    caption: 'Rijksmuseum · Amsterdam',
-    className: 'rotate-[-0.5deg] md:col-span-3 md:-translate-y-8',
-  },
-];
-
 const recentRooms = gigs
   .filter((gig) => new Date(gig.date) < new Date())
   .slice(-7)
@@ -43,67 +22,76 @@ export const metadata = {
 
 export default function HumanVersionPage() {
   return (
-    <main className="min-h-screen bg-[#efe4cf] text-[#211a12] selection:bg-[#211a12] selection:text-[#f5ead6]">
-      <div className="mx-auto max-w-[1500px] border-x border-[#2d2418]/15 bg-[#f4ead8] shadow-[0_0_80px_rgba(41,31,19,0.18)]">
-        <header className="sticky top-0 z-40 border-b border-[#2d2418]/20 bg-[#f4ead8]/90 px-4 py-3 backdrop-blur-sm sm:px-8">
-          <div className="flex items-center justify-between gap-4">
-            <Link href="/" className="font-mono text-xs uppercase tracking-[0.45em] text-[#5c4630]">
-              Henners
-            </Link>
-            <nav aria-label="Preview navigation" className="hidden items-center gap-6 font-mono text-xs uppercase tracking-[0.22em] text-[#6b543b] md:flex">
-              <a href="#notes" className="hover:text-[#20160e]">notes</a>
-              <a href="#sound" className="hover:text-[#20160e]">sound</a>
-              <a href="#rooms" className="hover:text-[#20160e]">rooms</a>
-              <a href="#contact" className="hover:text-[#20160e]">contact</a>
-            </nav>
-            <Link href="/" className="border border-[#2d2418]/25 px-3 py-2 font-mono text-xs uppercase tracking-[0.18em] hover:bg-[#211a12] hover:text-[#f4ead8]">
-              current site
-            </Link>
-          </div>
-        </header>
+    <main className="min-h-screen bg-[#060504] text-[#f4ead8] selection:bg-[#f4ead8] selection:text-[#060504]">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#f4ead8]/10 bg-[#060504]/82 px-5 py-4 backdrop-blur-md sm:px-8">
+        <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-4">
+          <Link href="/" className="font-mono text-xs uppercase tracking-[0.5em] text-[#f4ead8]">
+            Henners
+          </Link>
+          <nav aria-label="Preview navigation" className="hidden items-center gap-6 font-mono text-xs uppercase tracking-[0.22em] text-[#d6b47f] md:flex">
+            <a href="#notes" className="hover:text-[#f4ead8]">notes</a>
+            <a href="#sound" className="hover:text-[#f4ead8]">sound</a>
+            <a href="#rooms" className="hover:text-[#f4ead8]">rooms</a>
+            <a href="#contact" className="hover:text-[#f4ead8]">contact</a>
+          </nav>
+          <Link href="/" className="border border-[#f4ead8]/20 px-3 py-2 font-mono text-xs uppercase tracking-[0.16em] text-[#d6b47f] hover:border-[#f4ead8] hover:text-[#f4ead8]">
+            current site
+          </Link>
+        </div>
+      </header>
 
-        <section className="grid min-h-[calc(100vh-57px)] border-b border-[#2d2418]/20 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="flex flex-col justify-between border-b border-[#2d2418]/20 p-5 sm:p-8 lg:border-b-0 lg:border-r">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#8a623d]">Amsterdam · ecstatic dance · field notes</p>
-              <h1 className="mt-8 max-w-4xl text-[clamp(3.2rem,10vw,9.2rem)] font-black leading-[0.84] tracking-[-0.08em] text-[#24170e]">
-                dance first. website second.
-              </h1>
-              <p className="mt-8 max-w-xl text-xl leading-8 text-[#4b3726] sm:text-2xl sm:leading-10">
-                Henners makes full-arc ecstatic dance journeys: prepared with care, loose enough to listen, rooted in rhythm, sweat, silence, and the room that is actually there.
+      <section className="relative min-h-screen overflow-hidden px-5 pb-16 pt-28 sm:px-8 lg:pt-32">
+        <div className="absolute inset-0 opacity-45">
+          <Image
+            src="/images/gallery/edfh-basement-bw.jpg"
+            alt=""
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            className="object-cover grayscale contrast-125"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,5,4,0.96)_0%,rgba(6,5,4,0.76)_40%,rgba(6,5,4,0.42)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(199,126,42,0.25),transparent_35%)]" />
+        </div>
+
+        <div className="relative mx-auto grid min-h-[calc(100vh-9rem)] max-w-[1500px] gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
+          <div className="pb-6">
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-[#d6b47f]">Amsterdam · ecstatic dance · late room energy</p>
+            <h1 className="mt-8 max-w-5xl text-[clamp(4.4rem,13vw,13rem)] font-semibold leading-[0.76] tracking-[-0.11em] text-[#fff8ec]">
+              hold the room until it opens.
+            </h1>
+            <p className="mt-8 max-w-2xl text-xl leading-9 text-[#ead8bd] sm:text-2xl sm:leading-10">
+              Henners crafts full-arc ecstatic dance journeys from Amsterdam: rhythm first, ceremony without stiffness, and enough trust for the floor to become honest.
+            </p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <a href={siteConfig.social.soundcloud} target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#f4ead8] px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#060504] hover:bg-[#d6b47f]">
+                listen
+              </a>
+              <Link href="/photos" className="rounded-full border border-[#f4ead8]/25 px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#f4ead8] hover:border-[#f4ead8]">
+                see floors
+              </Link>
+            </div>
+          </div>
+
+          <aside className="grid gap-3 pb-6 lg:max-w-md lg:justify-self-end">
+            <div className="border border-[#f4ead8]/15 bg-[#060504]/55 p-5 backdrop-blur-sm">
+              <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#d6b47f]">not a fixed set</p>
+              <p className="mt-4 text-lg leading-8 text-[#ead8bd]">
+                Prepared around Five Rhythms and hero’s journey shape; flexible enough to turn when the room clearly needs another door.
               </p>
             </div>
-
-            <div className="mt-12 grid gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#60482e] sm:grid-cols-3">
-              <div className="border-t border-[#2d2418]/25 pt-3">Odessa roots</div>
-              <div className="border-t border-[#2d2418]/25 pt-3">Rijksmuseum floor</div>
-              <div className="border-t border-[#2d2418]/25 pt-3">EDFH basement next</div>
+            <div className="grid grid-cols-2 gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8aa7a]">
+              <div className="border border-[#f4ead8]/15 p-4">Odessa roots</div>
+              <div className="border border-[#f4ead8]/15 p-4">global rhythm</div>
+              <div className="border border-[#f4ead8]/15 p-4">ritual energy</div>
+              <div className="border border-[#f4ead8]/15 p-4">grounded return</div>
             </div>
-          </div>
+          </aside>
+        </div>
+      </section>
 
-          <div className="relative overflow-hidden p-4 sm:p-8">
-            <div className="absolute left-6 top-8 hidden h-[82%] border-l border-dashed border-[#2d2418]/25 md:block" />
-            <div className="grid h-full auto-rows-min gap-5 md:grid-cols-12 md:items-start">
-              {photoNotes.map((photo, index) => (
-                <figure key={photo.src} className={`${photo.className} bg-[#fffaf0] p-3 shadow-[8px_10px_0_rgba(45,36,24,0.14)]`}>
-                  <div className="relative aspect-[4/5] overflow-hidden bg-[#dac9ae]">
-                    <Image
-                      src={photo.src}
-                      alt={photo.alt}
-                      fill
-                      sizes="(max-width: 768px) 90vw, 40vw"
-                      className="object-cover grayscale-[15%] contrast-[1.03]"
-                      priority={index === 0}
-                      quality={70}
-                    />
-                  </div>
-                  <figcaption className="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-[#6b543b]">{photo.caption}</figcaption>
-                </figure>
-              ))}
-            </div>
-          </div>
-        </section>
-
+      <div className="mx-auto max-w-[1500px] border-x border-[#2d2418]/15 bg-[#f4ead8] text-[#211a12] shadow-[0_0_80px_rgba(0,0,0,0.28)]">
         <section id="notes" className="grid border-b border-[#2d2418]/20 lg:grid-cols-[0.7fr_1.3fr]">
           <aside className="border-b border-[#2d2418]/20 p-5 sm:p-8 lg:border-b-0 lg:border-r">
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#8a623d]">instead of a pitch</p>
@@ -163,10 +151,10 @@ export default function HumanVersionPage() {
             <div className="sticky top-24">
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#8a623d]">what this version changes</p>
               <ul className="mt-6 space-y-5 text-lg leading-7 text-[#4b3726]">
-                <li>• no hero-card polish</li>
-                <li>• fewer rounded SaaS blocks</li>
+                <li>• dark room energy up top</li>
+                <li>• paper archive underneath</li>
                 <li>• reviews become the texture of the page</li>
-                <li>• photos feel like physical artifacts</li>
+                <li>• fewer rounded SaaS blocks</li>
                 <li>• the copy sounds like someone who was actually there</li>
               </ul>
             </div>
