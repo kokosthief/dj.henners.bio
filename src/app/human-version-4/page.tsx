@@ -92,7 +92,7 @@ export default function HumanVersionFourPage() {
           <div className="pb-8">
             <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#d6b47f]">Amsterdam · ecstatic dance · field notes after dark</p>
             <h1 className="mt-8 max-w-5xl text-[clamp(4.1rem,12vw,12.5rem)] font-black leading-[0.78] tracking-[-0.105em] text-[#fff8ec]">
-              dance first. hold the room.
+              ecstatic dance journeys from Amsterdam.
             </h1>
             <p className="mt-8 max-w-2xl text-xl leading-9 text-[#ead8bd] sm:text-2xl sm:leading-10">
               Full-arc ecstatic dance journeys: prepared with care, built around rhythm and release, loose enough to meet the floor that is actually there.

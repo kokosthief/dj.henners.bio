@@ -89,7 +89,7 @@ export default function HumanVersionThreePage() {
           <div className="pb-6">
             <p className="font-mono text-xs uppercase tracking-[0.35em] text-[#d6b47f]">Amsterdam · ecstatic dance · late room energy</p>
             <h1 className="mt-8 max-w-5xl text-[clamp(4.4rem,13vw,13rem)] font-semibold leading-[0.76] tracking-[-0.11em] text-[#fff8ec]">
-              hold the room until it opens.
+              ecstatic dance journeys from Amsterdam.
             </h1>
             <p className="mt-8 max-w-2xl text-xl leading-9 text-[#ead8bd] sm:text-2xl sm:leading-10">
               Henners crafts full-arc ecstatic dance journeys from Amsterdam: rhythm first, ceremony without stiffness, and enough trust for the floor to become honest.
