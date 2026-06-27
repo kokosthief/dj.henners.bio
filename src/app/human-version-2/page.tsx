@@ -51,60 +51,71 @@ export const metadata = {
 export default function HumanVersionTwoPage() {
   return (
     <main className="min-h-screen bg-[#fbf7ee] text-[#2a2319] selection:bg-[#2a2319] selection:text-[#fbf7ee]">
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-7 sm:px-8">
-        <Link href="/" className="text-lg font-semibold tracking-[-0.04em] text-[#2a2319]">
-          Henners
-        </Link>
-        <nav aria-label="Soft preview navigation" className="hidden gap-7 text-sm text-[#5f4a32] md:flex">
-          <a href="#journey" className="hover:text-[#2a2319]">journey</a>
-          <a href="#floor" className="hover:text-[#2a2319]">floor notes</a>
-          <a href="#rooms" className="hover:text-[#2a2319]">rooms</a>
-          <a href="#contact" className="hover:text-[#2a2319]">write</a>
-        </nav>
-        <Link href="/human-version" className="rounded-full border border-[#d6c6aa] px-4 py-2 text-sm text-[#6b573c] hover:border-[#2a2319] hover:text-[#2a2319]">
-          version 1
-        </Link>
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#f4ead8]/10 bg-[#060504]/82 px-5 py-4 backdrop-blur-md sm:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
+          <Link href="/" className="font-mono text-xs uppercase tracking-[0.5em] text-[#f4ead8]">
+            Henners
+          </Link>
+          <nav aria-label="Soft preview navigation" className="hidden items-center gap-6 font-mono text-xs uppercase tracking-[0.22em] text-[#d6b47f] md:flex">
+            <a href="#journey" className="hover:text-[#f4ead8]">journey</a>
+            <a href="#floor" className="hover:text-[#f4ead8]">floor notes</a>
+            <a href="#rooms" className="hover:text-[#f4ead8]">rooms</a>
+            <a href="#contact" className="hover:text-[#f4ead8]">write</a>
+          </nav>
+          <Link href="/human-version-3" className="rounded-full border border-[#f4ead8]/20 px-3 py-2 font-mono text-xs uppercase tracking-[0.16em] text-[#d6b47f] hover:border-[#f4ead8] hover:text-[#f4ead8]">
+            version 3
+          </Link>
+        </div>
       </header>
 
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-20 pt-6 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:pt-16">
-        <div>
-          <p className="max-w-sm text-sm leading-6 text-[#6f5639]">
-            Amsterdam ecstatic dance facilitator and DJ. Ship-born roots, festival floors, quiet ceremonies, sweaty rooms.
-          </p>
-          <h1 className="mt-8 max-w-4xl text-[clamp(3.7rem,11vw,9.5rem)] font-medium leading-[0.9] tracking-[-0.09em] text-[#2a2319]">
-            music for rooms that want to move.
-          </h1>
-          <p className="mt-8 max-w-2xl text-xl leading-9 text-[#5e4a33]">
-            A prepared journey with enough room to breathe. Earthy rhythm, melody, silence, chaos, softness, and the simple joy of a floor becoming one body for a while.
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a href={siteConfig.social.soundcloud} target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#2a2319] px-6 py-4 text-center text-sm font-semibold text-[#fbf7ee] hover:bg-[#55391f]">
-              listen on SoundCloud
-            </a>
-            <Link href="/photos" className="rounded-full border border-[#d6c6aa] px-6 py-4 text-center text-sm font-semibold text-[#5e4a33] hover:border-[#2a2319] hover:text-[#2a2319]">
-              look at the floors
-            </Link>
-          </div>
+      <section className="relative min-h-screen overflow-hidden px-5 pb-16 pt-28 sm:px-8 lg:pt-32">
+        <div className="absolute inset-0 opacity-45">
+          <Image
+            src="/images/gallery/edfh-basement-bw.jpg"
+            alt=""
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            className="object-cover grayscale contrast-125"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,5,4,0.96)_0%,rgba(6,5,4,0.76)_40%,rgba(6,5,4,0.42)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(199,126,42,0.25),transparent_35%)]" />
         </div>
 
-        <div className="relative lg:pl-10">
-          <div className="absolute -left-4 top-10 hidden h-28 w-28 rounded-full border border-[#d6c6aa] lg:block" />
-          <figure className="relative overflow-hidden rounded-[2rem] bg-[#eadfc9] p-3 shadow-[0_22px_70px_rgba(42,35,25,0.16)]">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.4rem]">
-              <Image
-                src="/images/gallery/ambrosia-het-sieraad-floor.jpg"
-                alt="Ambrosia dance floor at Het Sieraad in Amsterdam"
-                fill
-                priority
-                quality={75}
-                sizes="(max-width: 1024px) 90vw, 42vw"
-                className="object-cover saturate-[0.9]"
-              />
+        <div className="relative mx-auto grid min-h-[calc(100vh-9rem)] max-w-6xl gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
+          <div className="pb-6">
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-[#d6b47f]">Amsterdam · ecstatic dance · late room energy</p>
+            <h1 className="mt-8 max-w-5xl text-[clamp(4.4rem,13vw,13rem)] font-semibold leading-[0.76] tracking-[-0.11em] text-[#fff8ec]">
+              hold the room until it opens.
+            </h1>
+            <p className="mt-8 max-w-2xl text-xl leading-9 text-[#ead8bd] sm:text-2xl sm:leading-10">
+              Henners crafts full-arc ecstatic dance journeys from Amsterdam: rhythm first, ceremony without stiffness, and enough trust for the floor to become honest.
+            </p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <a href={siteConfig.social.soundcloud} target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#f4ead8] px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#060504] hover:bg-[#d6b47f]">
+                listen
+              </a>
+              <Link href="/photos" className="rounded-full border border-[#f4ead8]/25 px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#f4ead8] hover:border-[#f4ead8]">
+                see floors
+              </Link>
             </div>
-            <figcaption className="px-2 pb-1 pt-4 text-sm italic text-[#5f4a32]">
-              Het Sieraad, Amsterdam — the room already in motion.
-            </figcaption>
-          </figure>
+          </div>
+
+          <aside className="grid gap-3 pb-6 lg:max-w-md lg:justify-self-end">
+            <div className="border border-[#f4ead8]/15 bg-[#060504]/55 p-5 backdrop-blur-sm">
+              <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#d6b47f]">not a fixed set</p>
+              <p className="mt-4 text-lg leading-8 text-[#ead8bd]">
+                Prepared around Five Rhythms and hero’s journey shape; flexible enough to turn when the room clearly needs another door.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8aa7a]">
+              <div className="border border-[#f4ead8]/15 p-4">Odessa roots</div>
+              <div className="border border-[#f4ead8]/15 p-4">global rhythm</div>
+              <div className="border border-[#f4ead8]/15 p-4">ritual energy</div>
+              <div className="border border-[#f4ead8]/15 p-4">grounded return</div>
+            </div>
+          </aside>
         </div>
       </section>
 
