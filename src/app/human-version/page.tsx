@@ -84,10 +84,18 @@ export default function HumanVersionPage() {
           <div className="relative overflow-hidden p-4 sm:p-8">
             <div className="absolute left-6 top-8 hidden h-[82%] border-l border-dashed border-[#2d2418]/25 md:block" />
             <div className="grid h-full auto-rows-min gap-5 md:grid-cols-12 md:items-start">
-              {photoNotes.map((photo) => (
+              {photoNotes.map((photo, index) => (
                 <figure key={photo.src} className={`${photo.className} bg-[#fffaf0] p-3 shadow-[8px_10px_0_rgba(45,36,24,0.14)]`}>
                   <div className="relative aspect-[4/5] overflow-hidden bg-[#dac9ae]">
-                    <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 768px) 90vw, 40vw" className="object-cover grayscale-[15%] contrast-[1.03]" />
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="(max-width: 768px) 90vw, 40vw"
+                      className="object-cover grayscale-[15%] contrast-[1.03]"
+                      priority={index === 0}
+                      quality={70}
+                    />
                   </div>
                   <figcaption className="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-[#6b543b]">{photo.caption}</figcaption>
                 </figure>
@@ -173,7 +181,7 @@ export default function HumanVersionPage() {
               Ecstatic dance, ceremonies, retreats, festivals, community floors. Send the shape of the room, not a perfect brief.
             </p>
           </div>
-          <div className="bg-[#fffaf0] p-5 sm:p-8">
+          <div className="bg-[#fffaf0] p-5 sm:p-8 [&_label]:!text-[#4b3726] [&_svg]:!text-[#4b3726]">
             <ContactForm mode="light" />
           </div>
         </section>
