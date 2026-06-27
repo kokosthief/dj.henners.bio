@@ -148,7 +148,7 @@ export default function EventsPage() {
         <div className="grid gap-3">
           {venueSummaries.map((venue) => (
             <details key={`${venue.venue}-${venue.location}`} className="group rounded-[1.5rem] border border-[#e0d2b9] bg-[#f4ecdd] p-1 open:border-[#d6c6aa]">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[1.3rem] px-5 py-4 transition hover:bg-stone-100/[0.05]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[1.3rem] px-5 py-4 transition hover:bg-[#eadfc9]">
                 <span>
                   <span className="block text-lg font-semibold text-[#2a2319]">{venue.venue}</span>
                   <span className="text-sm text-[#5f4a32]">{venue.location} · latest documented: {formatDate(venue.latest)}</span>

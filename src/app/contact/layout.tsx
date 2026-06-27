@@ -1,31 +1,33 @@
 import { Metadata } from 'next';
 
+import { siteConfig } from '@/constant/config';
+
 export const metadata: Metadata = {
-  title: 'Contact & Booking - DJ Henners | Book Ecstatic Dance Events',
-  description: 'Contact DJ Henners for bookings and inquiries. Professional ecstatic dance DJ available for events, festivals, ceremonies, and private parties in Amsterdam and internationally.',
-  keywords: [
-    'book DJ Henners',
-    'ecstatic dance booking',
-    'DJ contact Amsterdam',
-    'event booking',
-    'festival DJ hire',
-    'ceremony DJ',
-    'private party DJ',
-    'conscious dance events',
-    'DJ booking form',
-    'Amsterdam event DJ'
-  ],
+  title: 'Contact Henners',
+  description:
+    'Contact Henners for ecstatic dance floors, ceremonies, retreats, festivals, and community gatherings. Amsterdam-based ecstatic dance facilitator and DJ.',
+  alternates: { canonical: `${siteConfig.url}/contact` },
   openGraph: {
-    title: 'Contact & Booking - DJ Henners | Book Ecstatic Dance Events',
-    description: 'Contact DJ Henners for bookings and inquiries. Professional ecstatic dance DJ available for events, festivals, ceremonies, and private parties.',
-    images: ['/images/gallery/edfh-basement-bw.jpg'],
+    url: `${siteConfig.url}/contact`,
+    title: 'Contact Henners',
+    description:
+      'Contact Henners for ecstatic dance floors, ceremonies, retreats, festivals, and community gatherings.',
+    images: [
+      {
+        url: `${siteConfig.url}/images/gallery/edfh-basement-bw.jpg`,
+        width: 1200,
+        height: 900,
+        alt: 'Henners — ecstatic dance facilitator and DJ',
+      },
+    ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact & Booking - DJ Henners | Book Ecstatic Dance Events',
-    description: 'Contact DJ Henners for bookings and inquiries. Professional ecstatic dance DJ available for events, festivals, ceremonies, and private parties.',
-    images: ['/images/gallery/edfh-basement-bw.jpg'],
+    title: 'Contact Henners',
+    description:
+      'Contact Henners for ecstatic dance floors, ceremonies, retreats, festivals, and community gatherings.',
+    images: [`${siteConfig.url}/images/gallery/edfh-basement-bw.jpg`],
   },
 };
 
