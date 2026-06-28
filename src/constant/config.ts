@@ -46,7 +46,7 @@ export const siteConfig = {
     instagram: 'https://www.instagram.com/srrenneh/',
   },
   contact: {
-    email: 'dj@henners.bio',
+    email: 'srrenneh@gmail.com',
     phone: '+316****1604',
   },
 } as const;

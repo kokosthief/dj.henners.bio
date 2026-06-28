@@ -18,6 +18,8 @@ interface FormData {
   email: string;
   message: string;
   website: string;
+  company: string;
+  startedAt: number;
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({
@@ -30,6 +32,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
     email: '',
     message: '',
     website: '',
+    company: '',
+    startedAt: Date.now(),
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,7 +43,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    if (!hasTrackedStart.current && name !== 'website') {
+    if (!hasTrackedStart.current && name !== 'website' && name !== 'company') {
       hasTrackedStart.current = true;
       trackEvent('contact_form_start', {
         event_label: 'homepage_contact_form',
@@ -88,7 +92,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         lead_type: 'booking_inquiry',
         message_length: formData.message.length,
       });
-      setFormData({ name: '', email: '', message: '', website: '' });
+      setFormData({ name: '', email: '', message: '', website: '', company: '', startedAt: Date.now() });
       onSuccess?.();
     } catch (error) {
       setSubmitStatus('error');
@@ -172,6 +176,17 @@ const ContactForm: React.FC<ContactFormProps> = ({
             tabIndex={-1}
             autoComplete="off"
             value={formData.website}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Company
+          <input
+            type="text"
+            name="company"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData.company}
             onChange={handleInputChange}
           />
         </label>
