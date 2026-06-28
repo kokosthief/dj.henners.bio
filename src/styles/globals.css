@@ -258,7 +258,7 @@ html[data-theme] [class*='text-[#d9c6a6]'] {
 }
 
 html[data-theme='dark'] [class*='text-gray-700'] {
-  color: var(--site-ink-soft) !important;
+  color: #2a2319 !important;
 }
 
 html[data-theme='dark'] input,
