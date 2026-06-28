@@ -20,7 +20,7 @@ const setupItems = [
   },
   {
     title: 'Backup',
-    body: 'If necessary, I can bring my own controller with my computer. The organizer then provides RCA cables or the correct connection into the stereo / PA system.',
+    body: 'If necessary, I can bring my own controller with my computer. The organiser then provides RCA cables or the correct connection into the stereo / PA system.',
   },
   {
     title: 'Arrival',

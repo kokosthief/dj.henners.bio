@@ -51,7 +51,7 @@ export default function HomePage() {
             <Link href="/media-package" className="hover:text-[#f4ead8]">press kit</Link>
           </nav>
           <a href="#contact" className="rounded-full border border-[#f4ead8]/20 px-3 py-2 font-mono text-xs uppercase tracking-[0.16em] text-[#d6b47f] hover:border-[#f4ead8] hover:text-[#f4ead8]">
-            write
+            contact
           </a>
         </div>
       </header>
@@ -78,23 +78,23 @@ export default function HomePage() {
               ecstatic dance journeys from Amsterdam.
             </h1>
             <p className="mt-8 max-w-2xl text-xl leading-9 text-[#ead8bd] sm:text-2xl sm:leading-10">
-              Henners is an Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc journeys: rhythm first, ceremony without stiffness, and enough trust for the floor to become honest.
+              Henners is an Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc journeys: rhythm first, ceremony without stiffness, and a room where people can properly arrive.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a href={siteConfig.social.soundcloud} target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#f4ead8] px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#060504] hover:bg-[#d6b47f]">
                 listen
               </a>
               <Link href="/photos" className="rounded-full border border-[#f4ead8]/25 px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#f4ead8] hover:border-[#f4ead8]">
-                see floors
+                past rooms
               </Link>
             </div>
           </div>
 
           <aside className="grid gap-3 pb-6 lg:max-w-md lg:justify-self-end">
             <div className="border border-[#f4ead8]/15 bg-[#060504]/55 p-5 backdrop-blur-sm">
-              <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#d6b47f]">not a fixed set</p>
+              <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#d6b47f]">prepared arc, live room</p>
               <p className="mt-4 text-lg leading-8 text-[#ead8bd]">
-                Prepared around Five Rhythms and hero’s journey shape; flexible enough to turn when the room clearly needs another door.
+                Built around Five Rhythms and the hero’s journey, with enough room to shift when the floor clearly needs something else.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8aa7a]">
@@ -112,12 +112,12 @@ export default function HomePage() {
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">the arc</p>
             <h2 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-6xl">
-              crafted, but not stiff.
+              a prepared journey, not a playlist.
             </h2>
           </div>
           <div>
             <p className="text-2xl leading-10 tracking-[-0.03em] text-[#493925]">
-              I’m less interested in playing a fixed set and more interested in holding a real arc: Five Rhythms, hero’s journey, nervous system, and old-fashioned dance-floor intuition all meeting in the same room.
+              I prepare the journey properly: Five Rhythms, hero’s journey, rhythm, release, play, grounding, stillness. Then I stay awake to the room and adjust when the floor asks for it.
             </p>
             <div className="mt-9 flex flex-wrap gap-2">
               {moments.map((moment) => (
@@ -135,11 +135,11 @@ export default function HomePage() {
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">floor notes</p>
             <h2 className="mt-4 max-w-3xl text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-6xl">
-              the room knows when the DJ can hold it.
+              notes from people who danced.
             </h2>
           </div>
           <Link href="/media-package" className="w-fit rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#5e4a33] hover:border-[#2a2319] hover:text-[#2a2319]">
-            plain press kit
+            press kit
           </Link>
         </div>
 
@@ -183,7 +183,7 @@ export default function HomePage() {
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">recent rooms</p>
             <h2 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-5xl">
-              not a brand story. a trail.
+              past rooms.
             </h2>
           </div>
           <div className="divide-y divide-[#e0d2b9] border-y border-[#e0d2b9]">
@@ -200,12 +200,12 @@ export default function HomePage() {
 
       <section id="contact" className="mx-auto grid max-w-6xl gap-8 px-5 pb-20 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="rounded-[2rem] bg-[#eadfc9] p-8">
-          <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">write</p>
+          <p className="text-sm uppercase tracking-[0.25em] text-[#725332]">contact</p>
           <h2 className="mt-5 text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-6xl">
-            need a qualified ecstatic dance DJ?
+            planning a floor?
           </h2>
           <p className="mt-6 text-lg leading-8 text-[#5e4a33]">
-            Be upfront about the room: city, date, floor size, sound system, whether there is a DDJ/controller available, and what kind of journey the group needs. I’m most useful when organisers need someone who can hold the full arc, not just play a nice playlist.
+            Send the basics: city, date, floor size, sound system, whether there is a DDJ/controller available, and what kind of journey the group needs. I’m most useful when organisers need someone who can hold the full arc, not just play a nice playlist.
           </p>
         </div>
         <div className="rounded-[2rem] border border-[#e0d2b9] bg-white/65 p-5 sm:p-8">

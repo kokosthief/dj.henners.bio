@@ -10,13 +10,13 @@ const dutchVenues = new Set(dutchGigs.map((gig) => gig.venue)).size;
 export const metadata: Metadata = {
   title: 'Ecstatic Dance DJ Netherlands',
   description:
-    'Henners is an Amsterdam-based ecstatic dance DJ and facilitator with a lived history across Dutch ecstatic dance floors, ceremonies, festivals, and movement communities.',
+    'Henners is an Amsterdam-based ecstatic dance DJ and facilitator with years of work across Dutch ecstatic dance floors, ceremonies, festivals, and movement communities.',
   alternates: { canonical: `${siteConfig.url}/ecstatic-dance-dj-netherlands` },
   openGraph: {
     url: `${siteConfig.url}/ecstatic-dance-dj-netherlands`,
     title: 'Ecstatic Dance DJ Netherlands — Henners',
     description:
-      'Amsterdam-based ecstatic dance DJ and facilitator with a lived history across Dutch ecstatic dance floors.',
+      'Amsterdam-based ecstatic dance DJ and facilitator with years of work across Dutch ecstatic dance floors.',
     images: [
       {
         url: `${siteConfig.url}/images/og-henners-rijksmuseum-2026.jpg`,
@@ -47,7 +47,7 @@ export default function EcstaticDanceDjNetherlandsPage() {
           Henners is an Amsterdam-based ecstatic dance facilitator and DJ with a track record across Dutch ecstatic dance floors, ceremonies, festivals, and community gatherings.
         </p>
         <p className="mt-6 max-w-3xl leading-8 text-[#5f4a32]">
-          The work grew through Amsterdam and travels when the room, invitation, and timing feel aligned.
+          The work grew through Amsterdam and travels for the right floor, retreat, festival, or community gathering.
         </p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -75,8 +75,8 @@ export default function EcstaticDanceDjNetherlandsPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {[
               ['Amsterdam', 'Home base and the place most of the work grew from.'],
-              ['Netherlands / Holland', 'For Dutch organizers looking beyond one city.'],
-              ['Retreats & festivals', 'The right frame for travel-connected bookings.'],
+              ['Netherlands / Holland', 'For Dutch organisers looking beyond one city.'],
+              ['Retreats & festivals', 'For floors that need a full-arc ecstatic dance journey outside Amsterdam.'],
               ['Photos & footage', 'Rijksmuseum, Ambrosia, Odessa, and other named floors are covered in the press kit.'],
             ].map(([title, body]) => (
               <article key={title} className="rounded-[1.5rem] border border-[#e0d2b9] bg-[#f4ecdd] p-5">

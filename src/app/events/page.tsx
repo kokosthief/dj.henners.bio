@@ -37,7 +37,7 @@ const featuredProof = [
   {
     title: 'Ambrosia at Het Sieraad',
     location: 'Het Sieraad, Amsterdam',
-    detail: 'Recent video material for organizers who want to feel the room energy and stage presence quickly.',
+    detail: 'Recent video material for organisers who want to feel the room energy and stage presence quickly.',
   },
   {
     title: 'Odessa Amsterdam',
@@ -96,10 +96,10 @@ export default function EventsPage() {
         <Link href="/" className="text-sm font-semibold text-[#725332] hover:text-[#5e4a33]">← Back home</Link>
         <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Past rooms</p>
         <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight md:text-6xl">
-          Event history for Henners — ecstatic dance DJ & facilitator
+          Past rooms and event history
         </h1>
         <p className="mt-7 max-w-3xl text-xl leading-9 text-[#493925]">
-          A record of dance floors, ceremonies, festivals, and community gatherings I have played or helped hold. Mostly for organizers who want to see where the work has lived before.
+          A record of dance floors, ceremonies, festivals, and community gatherings I have played or helped hold. Mostly for organisers who want to see where the work has lived before.
         </p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -121,7 +121,7 @@ export default function EventsPage() {
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-8 sm:px-6 lg:px-8">
         <div className="mb-7">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">A few rooms</p>
-          <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">Named rooms organizers can recognize.</h2>
+          <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">A few rooms people may know.</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {featuredProof.map((item) => (

@@ -45,7 +45,7 @@ export default function PhotosPage() {
           Dance floors, ceremonies, and moments around the music.
         </h1>
         <p className="mt-7 max-w-3xl text-xl leading-9 text-[#493925]">
-          A small visual record of rooms I have played or helped hold. For downloads and organizer material, use the press kit.
+          A small visual record of rooms I have played or helped hold. For downloads and organiser material, use the press kit.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/media-package" className="rounded-full bg-[#2a2319] px-5 py-3 text-sm font-semibold text-[#fbf7ee] hover:bg-[#55391f]">

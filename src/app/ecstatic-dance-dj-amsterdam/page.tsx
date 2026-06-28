@@ -47,7 +47,7 @@ export default function EcstaticDanceDjAmsterdamPage() {
             Henners is an Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc journeys for ecstatic dance floors, ceremonies, retreats, and festivals.
           </p>
           <p className="mt-6 leading-8 text-[#5f4a32]">
-            The work is not only a DJ set. It is a crafted arc held with care: rhythm, elation, introspection, release, play, connection, grounding, then stillness. Amsterdam is the home base; the dance floor can travel when the room and invitation feel aligned.
+            The set is prepared as a full arc: rhythm, elation, introspection, release, play, connection, grounding, then stillness. Amsterdam is the home base, with travel possible for the right floor, retreat, festival, or community gathering.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/media-package" className="rounded-full bg-[#2a2319] px-6 py-4 text-center font-semibold text-[#fbf7ee] hover:bg-[#55391f]">Open press kit</Link>
@@ -71,7 +71,7 @@ export default function EcstaticDanceDjAmsterdamPage() {
           {[
             ['Amsterdam rooms', 'Past and recent material includes Odessa, Ambrosia, Het Sieraad, and Rijksmuseum.'],
             ['Music with a shape', 'The sets are not background music. They move through arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.'],
-            ['For organizers', 'Photos, video clips, bio copy, and technical notes are in the press kit.'],
+            ['For organisers', 'Photos, video clips, bio copy, and technical notes are in the press kit.'],
           ].map(([title, body]) => (
             <article key={title} className="rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-6">
               <h2 className="text-2xl font-semibold text-[#2a2319]">{title}</h2>
@@ -86,7 +86,7 @@ export default function EcstaticDanceDjAmsterdamPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Listing copy</p>
           <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">Henners — Ecstatic Dance Facilitator & DJ, Amsterdam</h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#493925]">
-            For listings, social profiles, lineups, and organizer copy, the clearest public wording is: Henners is an Amsterdam-based ecstatic dance facilitator and DJ.
+            For listings, social profiles, lineups, and organiser copy, the clearest public wording is: Henners is an Amsterdam-based ecstatic dance facilitator and DJ.
           </p>
         </div>
       </section>

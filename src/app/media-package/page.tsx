@@ -23,9 +23,9 @@ const artistInfo = {
   short:
     'Henners is an Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc dance journeys through rhythm, release, play, grounding, and stillness.',
   medium:
-    'Shaped by Amsterdam’s conscious dance scene and years around the Odessa ship, Henners crafts full-arc journeys inspired by 5Rhythms and the hero’s journey: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.',
+    'Shaped by Amsterdam’s conscious dance scene and years around the Odessa ship, Henners builds prepared dance journeys with 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration, play, grounding, then stillness.',
   long:
-    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s conscious dance scene, rooted in years around the Odessa ship.\n\nHis sets are prepared as full journeys, with 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.\n\nThe music moves between global rhythms, African-inspired grooves, percussion, melody, silence, and spacious integration. Sometimes it invites people to bounce, shake, and sweat. Sometimes it gives the room space to soften, feel, and come back to itself.\n\nThe journey is prepared with care, but never fixed shut. Henners holds the arc while staying responsive to the energy of the room.',
+    'Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s conscious dance scene, rooted in years around the Odessa ship.\n\nHis sets are prepared as full journeys, with 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.\n\nThe music moves between global rhythms, African-inspired grooves, percussion, melody, silence, and the quiet landing after the peak. Sometimes it invites people to bounce, shake, and sweat. Sometimes it gives the room space to soften, feel, and come back to itself.\n\nThe journey is prepared with care, but never fixed shut. Henners holds the arc while staying responsive to the energy of the room.',
 };
 
 const mediaFiles = {
@@ -169,17 +169,17 @@ export default function MediaPackagePage() {
         <div className="relative z-10 mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <div>
             <p className="mb-5 inline-flex rounded-full border border-[#f4ead8]/20 bg-[#060504]/45 px-4 py-2 text-sm font-semibold text-[#d6b47f]">
-              Press kit · organizer resources
+              Press kit · organiser resources
             </p>
             <h1 className="max-w-4xl text-[clamp(3.8rem,11vw,10rem)] font-semibold leading-[0.82] tracking-[-0.1em] text-[#fff8ec]">
-              simple things organisers need.
+              bio, photos, footage, rider.
             </h1>
             <p className="mt-7 max-w-2xl text-xl leading-9 text-[#ead8bd] sm:text-2xl sm:leading-10">
               Bio copy, photos, videos, and a simple one-page technical setup note. Direct links are easier than a big bundled press document.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/#contact" className="rounded-full bg-[#f4ead8] px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#060504] transition hover:bg-[#d6b47f]">
-                Request something specific
+                need another format?
               </Link>
               <a href="/downloads/documents/technical-rider.pdf" download className="rounded-full border border-[#f4ead8]/25 px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#f4ead8] transition hover:border-[#f4ead8]">
                 Download simple rider
@@ -231,7 +231,7 @@ export default function MediaPackagePage() {
             <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">Dance floor proof.</h2>
           </div>
           <p className="max-w-xl text-sm leading-7 text-[#5f4a32]">
-            Short clips for organizers who want a quick feel for the room: Ambrosia at Het Sieraad, Lundjuweel, and Ambrosia at Rijksmuseum.
+            Short clips so organisers can feel the room quickly: Ambrosia at Het Sieraad, Lundjuweel, and Ambrosia at Rijksmuseum.
           </p>
         </div>
         <div className="grid gap-5 lg:grid-cols-3">
@@ -302,7 +302,7 @@ export default function MediaPackagePage() {
         <div className="grid gap-6 rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-6 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Technical rider</p>
-            <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">Simple setup context.</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-[#2a2319]">simple technical setup.</h2>
             <p className="mt-5 leading-8 text-[#493925]">
               Most ecstatic dance rooms do not need a complicated rider. I travel with my computer and prefer the lightest working setup: ideally a Pioneer DDJ controller ready to plug in.
             </p>
@@ -315,7 +315,7 @@ export default function MediaPackagePage() {
             {[
               ['Club setup', 'CDJs and mixer are perfect when the venue already has a proper booth setup.'],
               ['Ecstatic dance setup', 'Please arrange a Pioneer DDJ controller for laptop plug-and-play where possible.'],
-              ['Backup', 'If needed I can bring my own controller + computer; organizer provides RCA / correct cable into the sound system.'],
+              ['Backup', 'If needed I can bring my own controller + computer; organiser provides RCA / correct cable into the sound system.'],
               ['Arrival', 'A stable table, power, line check, and someone who knows the sound system.'],
             ].map(([title, body]) => (
               <article key={title} className="rounded-[1.5rem] border border-[#e0d2b9] bg-[#f4ecdd] p-5">
@@ -334,7 +334,7 @@ export default function MediaPackagePage() {
             Send the event context and what you need. I’ll share the most suitable material for the floor, ceremony, retreat, or publication.
           </p>
           <Link href="/#contact" className="mt-7 inline-flex rounded-full bg-[#2a2319] px-6 py-4 font-semibold text-[#fbf7ee] transition hover:bg-[#55391f]">
-            Contact for materials
+            ask for materials
           </Link>
         </div>
       </section>

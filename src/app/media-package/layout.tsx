@@ -4,7 +4,7 @@ import { siteConfig } from '@/constant/config';
 
 const title = 'Press Kit';
 const description =
-  'Press kit for Henners: biography, optimized preview photos, high-resolution downloads, videos, technical rider, and organizer resources for ecstatic dance, retreats, ceremonies, and festivals.';
+  'Press kit for Henners: bio copy, photos, video clips, technical rider, and organiser resources for ecstatic dance, retreats, ceremonies, and festivals.';
 const ogImage = `${siteConfig.url}/images/og-henners-rijksmuseum-2026.jpg`;
 
 export const metadata: Metadata = {

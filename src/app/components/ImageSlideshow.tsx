@@ -135,7 +135,7 @@ const images: ImageData[] = [
     src: '/images/carousel/henners-spaceholding.webp',
     alt: 'DJ Henners space holding',
     title: 'Holding space',
-    caption: 'Feeling into, holding space.',
+    caption: 'A quieter part of the same work.',
   },
 ];
 
