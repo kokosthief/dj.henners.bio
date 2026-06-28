@@ -133,63 +133,45 @@ export default function MediaPackagePage() {
   };
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#fbf7ee] text-[#2a2319]">
+    <main className="min-h-screen overflow-hidden bg-[#fbf7ee] text-[#2a2319] selection:bg-[#2a2319] selection:text-[#fbf7ee]">
       <div className="pointer-events-none fixed inset-0 -z-0 bg-[#fbf7ee]" />
 
-      <header className="relative z-20 border-b border-[#f4ead8]/10 bg-[#060504] px-5 py-4 sm:px-8">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
-          <Link href="/" className="font-mono text-xs uppercase tracking-[0.5em] text-[#f4ead8]">
-            Henners
-          </Link>
-          <nav aria-label="Press kit navigation" className="hidden items-center gap-6 font-mono text-xs uppercase tracking-[0.22em] text-[#d6b47f] md:flex">
-            <a href="#bio" className="hover:text-[#f4ead8]">bio</a>
-            <a href="#footage" className="hover:text-[#f4ead8]">footage</a>
-            <a href="#downloads" className="hover:text-[#f4ead8]">downloads</a>
-            <a href="#rider" className="hover:text-[#f4ead8]">rider</a>
-          </nav>
-          <Link href="/" className="rounded-full border border-[#f4ead8]/20 px-3 py-2 font-mono text-xs uppercase tracking-[0.16em] text-[#d6b47f] hover:border-[#f4ead8] hover:text-[#f4ead8]">
-            home
-          </Link>
-        </div>
-      </header>
-
-      <section className="relative overflow-hidden bg-[#060504] px-5 pb-20 pt-16 text-[#f4ead8] sm:px-8 lg:pt-20">
-        <div className="absolute inset-0 opacity-35">
-          <Image
-            src="/images/gallery/edfh-basement-bw.jpg"
-            alt=""
-            fill
-            priority
-            quality={75}
-            sizes="100vw"
-            className="object-cover grayscale contrast-125"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,5,4,0.96)_0%,rgba(6,5,4,0.78)_45%,rgba(6,5,4,0.52)_100%)]" />
-        </div>
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+      <section className="relative z-10 mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:px-8">
+        <Link href="/" className="font-mono text-xs uppercase tracking-[0.22em] text-[#725332] hover:text-[#2a2319]">← Back home</Link>
+        <div className="mt-10 grid gap-8 lg:grid-cols-[0.82fr_0.18fr] lg:items-end">
           <div>
-            <p className="mb-5 inline-flex rounded-full border border-[#f4ead8]/20 bg-[#060504]/45 px-4 py-2 text-sm font-semibold text-[#d6b47f]">
-              Press kit · organiser resources
-            </p>
-            <h1 className="max-w-4xl text-[clamp(3.8rem,11vw,10rem)] font-semibold leading-[0.82] tracking-[-0.1em] text-[#fff8ec]">
+            <p className="font-mono text-xs uppercase tracking-[0.32em] text-[#725332]">Press kit</p>
+            <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.07em] text-[#2a2319] md:text-7xl">
               bio, photos, footage, rider.
             </h1>
-            <p className="mt-7 max-w-2xl text-xl leading-9 text-[#ead8bd] sm:text-2xl sm:leading-10">
-              Bio copy, photos, videos, and a simple one-page technical setup note. Direct links are easier than a big bundled press document.
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#493925]">
+              A practical organiser page: bio copy, selected photos, short clips, and a simple technical setup note for event pages, line-ups, and promo.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/#contact" className="rounded-full bg-[#f4ead8] px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#060504] transition hover:bg-[#d6b47f]">
-                need another format?
-              </Link>
-              <a href="/downloads/documents/technical-rider.pdf" download className="rounded-full border border-[#f4ead8]/25 px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#f4ead8] transition hover:border-[#f4ead8]">
-                Download rider
-              </a>
-            </div>
           </div>
+          <div className="rounded-[1.25rem] border border-[#d6c6aa] bg-[#2a2319] p-5 text-right text-[#fbf7ee]">
+            <p className="text-4xl font-semibold tracking-[-0.08em]">{mediaFiles.images.length + mediaFiles.videos.length}</p>
+            <p className="mt-1 font-mono text-xs uppercase tracking-[0.18em] text-[#d6b47f]">media files</p>
+          </div>
+        </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a href="/downloads/documents/technical-rider.pdf" download className="rounded-full bg-[#2a2319] px-5 py-3 text-sm font-semibold text-[#fbf7ee] hover:bg-[#55391f]">
+            Download rider
+          </a>
+          <a href="/downloads/documents/artist-biography.pdf" download className="rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#5e4a33] hover:bg-[#eadfc9]">
+            Download bio
+          </a>
+          <Link href="/photos" className="rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#5e4a33] hover:bg-[#eadfc9]">
+            Photos page
+          </Link>
+          <Link href="/events" className="rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#5e4a33] hover:bg-[#eadfc9]">
+            Event archive
+          </Link>
+        </div>
+      </section>
 
-          <div className="hidden min-w-0 rounded-[1.75rem] border border-[#f4ead8]/15 bg-[#060504]/50 p-4 sm:p-6 md:block">
-            <ImageSlideshow autoPlay={false} showControls className="w-full" />
-          </div>
+      <section className="relative z-10 mx-auto max-w-6xl px-5 pb-10 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-4 sm:p-6">
+          <ImageSlideshow autoPlay={false} showControls className="w-full" />
         </div>
       </section>
 
@@ -351,10 +333,11 @@ export default function MediaPackagePage() {
 
       <footer className="relative z-10 border-t border-[#e0d2b9] px-5 py-10 text-sm text-[#5f4a32] sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} Henners · Press kit · Amsterdam</p>
+          <p>© {new Date().getFullYear()} Henners · Amsterdam</p>
           <div className="flex gap-4">
-            <Link href="/" className="hover:text-[#725332]">Home</Link>
-            <a href="https://soundcloud.com/srenneh" target="_blank" rel="noopener noreferrer" className="hover:text-[#725332]">SoundCloud</a>
+            <Link href="/events" className="hover:text-[#725332]">events</Link>
+            <Link href="/photos" className="hover:text-[#725332]">photos</Link>
+            <a href="https://soundcloud.com/srenneh" target="_blank" rel="noopener noreferrer" className="hover:text-[#725332]">soundcloud</a>
           </div>
         </div>
       </footer>
