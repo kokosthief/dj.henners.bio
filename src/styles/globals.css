@@ -4,14 +4,14 @@
 @tailwind utilities;
 
 html {
-  background-color: #100d0a;
+  background-color: var(--site-bg, #fbf7ee);
   overscroll-behavior: none;
   overflow-x: clip;
 }
 
 body {
   width: 100%;
-  background: #100d0a;
+  background: var(--site-bg, #fbf7ee);
   overflow-x: clip;
 }
 
@@ -42,6 +42,42 @@ body {
   --color-primary-900: rgb(var(--tw-color-primary-900)); /* #0c4a6e */
   --color-primary-950: rgb(var(--tw-color-primary-950)); /* #082f49 */
   /* #endregion  /**======== Primary Color =========== */
+
+  --site-bg: #fbf7ee;
+  --site-bg-soft: #f4ecdd;
+  --site-bg-card: rgba(255, 255, 255, 0.58);
+  --site-bg-card-solid: #fffaf1;
+  --site-bg-panel: #eadfc9;
+  --site-ink: #2a2319;
+  --site-ink-soft: #493925;
+  --site-muted: #5f4a32;
+  --site-accent: #725332;
+  --site-accent-soft: #d6b47f;
+  --site-border: #e0d2b9;
+  --site-border-strong: #d6c6aa;
+}
+
+html[data-theme='dark'] {
+  --site-bg: #100d0a;
+  --site-bg-soft: #18100a;
+  --site-bg-card: rgba(27, 22, 15, 0.72);
+  --site-bg-card-solid: #1b160f;
+  --site-bg-panel: #24170f;
+  --site-ink: #fff8ec;
+  --site-ink-soft: #ead8bd;
+  --site-muted: #d9c6a6;
+  --site-accent: #d6b47f;
+  --site-accent-soft: #c8aa7a;
+  --site-border: rgba(244, 234, 216, 0.16);
+  --site-border-strong: rgba(244, 234, 216, 0.28);
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
 }
 
 @layer base {
@@ -151,4 +187,123 @@ body {
 
 .animate-gentle-pulse {
   animation: gentlePulse 3s ease-in-out infinite;
+}
+
+
+/* Site-wide light/dark mode compatibility for the current hard-coded Tailwind palette. */
+.theme-toggle {
+  border-color: var(--site-border-strong);
+  background: color-mix(in srgb, var(--site-bg-card-solid) 86%, transparent);
+  color: var(--site-ink);
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: var(--site-ink);
+  color: var(--site-bg);
+}
+
+html[data-theme] body,
+html[data-theme] main {
+  background-color: var(--site-bg);
+  color: var(--site-ink);
+}
+
+html[data-theme] [class*='bg-[#fbf7ee]'],
+html[data-theme] [class*='bg-[#100d0a]'] {
+  background-color: var(--site-bg) !important;
+}
+
+html[data-theme] [class*='bg-[#f4ecdd]'],
+html[data-theme] [class*='bg-[#1b160f]'] {
+  background-color: var(--site-bg-soft) !important;
+}
+
+html[data-theme] [class*='bg-white/55'] {
+  background-color: var(--site-bg-card) !important;
+}
+
+html[data-theme] [class*='bg-[#eadfc9]'] {
+  background-color: var(--site-bg-panel) !important;
+}
+
+html[data-theme] [class*='border-[#e0d2b9]'],
+html[data-theme] [class*='border-[#f4ead8]/12'],
+html[data-theme] [class*='border-[#f4ead8]/15'] {
+  border-color: var(--site-border) !important;
+}
+
+html[data-theme] [class*='border-[#d6c6aa]'],
+html[data-theme] [class*='border-[#f4ead8]/20'],
+html[data-theme] [class*='border-[#f4ead8]/25'] {
+  border-color: var(--site-border-strong) !important;
+}
+
+html[data-theme] [class*='text-[#2a2319]'],
+html[data-theme] [class*='text-[#fff8ec]'],
+html[data-theme] [class*='text-[#f4ead8]'] {
+  color: var(--site-ink) !important;
+}
+
+html[data-theme] [class*='text-[#493925]'],
+html[data-theme] [class*='text-[#ead8bd]'] {
+  color: var(--site-ink-soft) !important;
+}
+
+html[data-theme] [class*='text-[#5f4a32]'],
+html[data-theme] [class*='text-[#6b573c]'],
+html[data-theme] [class*='text-[#d9c6a6]'] {
+  color: var(--site-muted) !important;
+}
+
+html[data-theme] [class*='text-[#725332]'],
+html[data-theme] [class*='text-[#d6b47f]'],
+html[data-theme] [class*='text-[#c8aa7a]'] {
+  color: var(--site-accent) !important;
+}
+
+html[data-theme='dark'] [class~='bg-[#2a2319]'] {
+  background-color: var(--site-bg-panel) !important;
+}
+
+html[data-theme='light'] [class~='bg-[#2a2319]'],
+html[data-theme='light'] [class~='bg-[#060504]'] {
+  background-color: var(--site-ink) !important;
+}
+
+html[data-theme='dark'] [class~='bg-[#060504]'],
+html[data-theme='dark'] [class~='bg-black'] {
+  background-color: #060504 !important;
+}
+
+html[data-theme] [class*='text-[#060504]'] {
+  color: var(--site-bg) !important;
+}
+
+html[data-theme='light'] .theme-preserve-dark,
+html[data-theme='dark'] .theme-preserve-dark {
+  background-color: #060504 !important;
+  color: #f4ead8 !important;
+}
+
+html[data-theme] .theme-preserve-dark [class*='text-[#fff8ec]'],
+html[data-theme] .theme-preserve-dark [class*='text-[#f4ead8]'] {
+  color: #fff8ec !important;
+}
+
+html[data-theme] .theme-preserve-dark [class*='text-[#ead8bd]'] {
+  color: #ead8bd !important;
+}
+
+html[data-theme] .theme-preserve-dark [class*='text-[#d6b47f]'],
+html[data-theme] .theme-preserve-dark [class*='text-[#c8aa7a]'] {
+  color: #d6b47f !important;
+}
+
+html[data-theme] .theme-preserve-dark [class*='bg-[#f4ead8]'] {
+  background-color: #f4ead8 !important;
+}
+
+html[data-theme] .theme-preserve-dark [class*='text-[#060504]'] {
+  color: #060504 !important;
 }

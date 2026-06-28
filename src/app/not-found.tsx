@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <main className="min-h-screen bg-[#fbf7ee] text-[#2a2319]">
-      <section className="relative overflow-hidden bg-[#060504] px-5 py-16 text-[#f4ead8] sm:px-8 lg:py-24">
+      <section className="theme-preserve-dark relative overflow-hidden bg-[#060504] px-5 py-16 text-[#f4ead8] sm:px-8 lg:py-24">
         <div className="absolute inset-0 opacity-35">
           <Image
             src={Basement}

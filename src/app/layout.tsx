@@ -7,6 +7,7 @@ import '@/styles/globals.css';
 import { siteConfig } from '@/constant/config';
 
 import SiteAnalytics from './components/SiteAnalytics';
+import ThemeToggle from './components/ThemeToggle';
 import GoogleAnalytics from './google-analytics';
 import { generateStructuredData } from './structured-data';
 
@@ -81,8 +82,13 @@ export default function RootLayout({
   const structuredData = generateStructuredData();
 
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-theme="light" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => { try { const stored = localStorage.getItem('henners-theme'); const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; const theme = stored || preferred; document.documentElement.dataset.theme = theme; document.documentElement.style.colorScheme = theme; } catch (_) { document.documentElement.dataset.theme = 'light'; } })();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.personSchema) }}
@@ -122,6 +128,7 @@ export default function RootLayout({
           <SiteAnalytics />
         </Suspense>
         {children}
+        <ThemeToggle />
       </body>
     </html>
   );

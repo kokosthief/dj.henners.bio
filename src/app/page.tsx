@@ -39,7 +39,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-[#fbf7ee] text-[#2a2319] selection:bg-[#2a2319] selection:text-[#fbf7ee]">
       <ContactQueryScroll />
 
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#f4ead8]/10 bg-[#060504]/82 px-5 py-4 backdrop-blur-md sm:px-8">
+      <header className="theme-preserve-dark fixed inset-x-0 top-0 z-50 border-b border-[#f4ead8]/10 bg-[#060504]/82 px-5 py-4 backdrop-blur-md sm:px-8">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
           <Link href="/" className="font-mono text-xs uppercase tracking-[0.5em] text-[#f4ead8]">
             Henners
@@ -57,7 +57,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section className="relative min-h-screen overflow-hidden px-5 pb-16 pt-28 sm:px-8 lg:pt-32">
+      <section className="theme-preserve-dark relative min-h-screen overflow-hidden px-5 pb-16 pt-28 sm:px-8 lg:pt-32">
         <div className="absolute inset-0 opacity-45">
           <Image
             src="/images/gallery/edfh-basement-bw.jpg"
@@ -157,7 +157,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="overflow-hidden border-y border-[#e0d2b9] bg-[#2a2319] py-6 text-[#fbf7ee]">
+      <section className="theme-preserve-dark overflow-hidden border-y border-[#e0d2b9] bg-[#2a2319] py-6 text-[#fbf7ee]">
         <div className="flex min-w-max gap-8 whitespace-nowrap px-5 text-2xl tracking-[-0.04em] opacity-90 sm:justify-center">
           <span>Odessa roots</span><span>·</span><span>Amsterdam floors</span><span>·</span><span>global rhythm</span><span>·</span><span>sweat and stillness</span><span>·</span><span>joy and introspection</span><span>·</span><span>prepared arc</span><span>·</span><span>room-first listening</span>
         </div>
