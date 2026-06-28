@@ -11,7 +11,7 @@ export const photos: PhotoItem[] = [
     src: '/images/rijksmuseum-dj-booth.jpg',
     alt: 'Henners DJing for Ambrosia at Rijksmuseum Amsterdam',
     title: 'Rijksmuseum · Amsterdam',
-    caption: 'Ambrosia special at one of a kind location.',
+    caption: 'Ambrosia special inside the Rijksmuseum.',
     className: 'md:col-span-2 md:row-span-2',
   },
   {

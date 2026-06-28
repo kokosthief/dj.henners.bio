@@ -263,7 +263,7 @@ export default function MediaPackagePage() {
                   {video.posterUrl && (
                     <Image
                       src={video.posterUrl}
-                      alt=""
+                      alt={`${video.name} video poster`}
                       fill
                       className="object-cover opacity-90 transition duration-300 group-hover:scale-[1.02] group-hover:opacity-100"
                       sizes="(max-width: 1024px) calc(100vw - 2.5rem), 350px"

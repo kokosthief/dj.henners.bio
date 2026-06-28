@@ -16,7 +16,7 @@ const images: ImageData[] = [
     src: '/images/carousel/rijksmuseum-dj-booth.webp',
     alt: 'Henners DJing at Rijksmuseum in Amsterdam',
     title: 'Rijksmuseum · Amsterdam',
-    caption: 'Ambrosia special at one of a kind location.',
+    caption: 'Ambrosia special inside the Rijksmuseum.'
   },
   {
     src: '/images/carousel/rijksmuseum-dancefloor.webp',
@@ -239,7 +239,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             loading={priority ? undefined : 'lazy'}
             priority={priority}
             sizes="(max-width: 640px) 90vw, (max-width: 1024px) 520px, 520px"
-            quality={72}
+            quality={75}
           />
           <Image
             src={images[nextIndex].src}
