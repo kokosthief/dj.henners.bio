@@ -321,7 +321,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
 
       {showControls && (
         <>
-          <p className="mt-3 text-center text-xs text-[#d6c6aa]">← / → change image · space pauses</p>
+          <p className="mt-3 text-center text-xs text-[#725332]">← / → change image · space pauses</p>
           <div className="mt-3 flex flex-wrap justify-center gap-2">
             {images.map((_, index) => (
               <button
