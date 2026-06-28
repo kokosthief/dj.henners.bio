@@ -98,11 +98,14 @@ export default function HomePage() {
                 Built around Five Rhythms and the hero’s journey, with enough room to shift when the floor clearly needs something else.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8aa7a]">
-              <div className="border border-[#f4ead8]/15 p-4">Odessa roots</div>
-              <div className="border border-[#f4ead8]/15 p-4">global rhythm</div>
-              <div className="border border-[#f4ead8]/15 p-4">ritual energy</div>
-              <div className="border border-[#f4ead8]/15 p-4">grounded return</div>
+            <div className="grid grid-cols-2 gap-3 font-mono text-[11px] uppercase tracking-[0.12em] text-[#c8aa7a] sm:text-xs sm:tracking-[0.14em]">
+              {['Odessa roots', 'global rhythm', 'ritual energy', 'grounded return'].map((signal) => (
+                <div key={signal} className="border border-[#f4ead8]/15 p-4">
+                  <span className="inline-block whitespace-nowrap bg-[#18100a]/90 px-1.5 py-0.5 text-[#fff8ec] shadow-[0_0_0_1px_rgba(244,234,216,0.04)]">
+                    {signal}
+                  </span>
+                </div>
+              ))}
             </div>
           </aside>
         </div>
