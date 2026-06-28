@@ -28,8 +28,9 @@ const proofPhotos = [
 
 const moments = ['arrival', 'flow', 'rhythm', 'release', 'play', 'grounding', 'stillness'];
 
-const recentGigs = gigs
-  .filter((gig) => new Date(gig.date) < new Date())
+const pastGigs = gigs.filter((gig) => new Date(gig.date) < new Date());
+
+const recentGigs = pastGigs
   .slice(-5)
   .reverse();
 
@@ -71,13 +72,13 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(199,126,42,0.25),transparent_35%)]" />
         </div>
 
-        <div className="relative mx-auto grid min-h-[calc(100vh-9rem)] max-w-6xl gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
+        <div className="relative mx-auto grid min-h-[calc(100vh-9rem)] max-w-6xl gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div className="pb-6">
             <p className="font-mono text-xs uppercase tracking-[0.35em] text-[#d6b47f]">Amsterdam · ecstatic dance · late room energy</p>
-            <h1 className="mt-8 max-w-5xl text-[clamp(4.4rem,13vw,13rem)] font-semibold leading-[0.76] tracking-[-0.11em] text-[#fff8ec]">
+            <h1 className="mt-8 max-w-4xl text-[clamp(3.35rem,7vw,7.25rem)] font-semibold leading-[0.88] tracking-[-0.075em] text-[#fff8ec]">
               ecstatic dance journeys from Amsterdam.
             </h1>
-            <p className="mt-8 max-w-2xl text-xl leading-9 text-[#ead8bd] sm:text-2xl sm:leading-10">
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-[#ead8bd] sm:text-xl sm:leading-9">
               Henners is an Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc journeys: rhythm first, ceremony without stiffness, and a room where people can properly arrive.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -90,10 +91,10 @@ export default function HomePage() {
             </div>
           </div>
 
-          <aside className="grid gap-3 pb-6 lg:max-w-md lg:justify-self-end">
+          <aside className="grid gap-3 pb-6 lg:max-w-sm lg:justify-self-end">
             <div className="border border-[#f4ead8]/15 bg-[#060504]/55 p-5 backdrop-blur-sm">
               <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#d6b47f]">prepared arc, live room</p>
-              <p className="mt-4 text-lg leading-8 text-[#ead8bd]">
+              <p className="mt-4 text-base leading-7 text-[#ead8bd]">
                 Built around Five Rhythms and the hero’s journey, with enough room to shift when the floor clearly needs something else.
               </p>
             </div>
@@ -185,6 +186,12 @@ export default function HomePage() {
             <h2 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.06em] text-[#2a2319] sm:text-5xl">
               past rooms.
             </h2>
+            <p className="mt-5 max-w-sm text-lg leading-8 text-[#5e4a33]">
+              {pastGigs.length}+ documented gigs in the archive. The full count and venue breakdown live on the events page.
+            </p>
+            <Link href="/events" className="mt-6 inline-flex rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#5e4a33] hover:bg-[#2a2319] hover:text-[#fbf7ee]">
+              full event archive
+            </Link>
           </div>
           <div className="divide-y divide-[#e0d2b9] border-y border-[#e0d2b9]">
             {recentGigs.map((gig) => (

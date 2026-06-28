@@ -94,18 +94,29 @@ export default function EventsPage() {
       <div className="pointer-events-none fixed inset-0 -z-0 bg-[#fbf7ee]" />
       <section className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-6 lg:px-8">
         <Link href="/" className="text-sm font-semibold text-[#725332] hover:text-[#5e4a33]">← Back home</Link>
-        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Past rooms</p>
-        <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight md:text-6xl">
-          Past rooms and event history
-        </h1>
-        <p className="mt-7 max-w-3xl text-xl leading-9 text-[#493925]">
-          A record of dance floors, ceremonies, festivals, and community gatherings I have played or helped hold. Mostly for organisers who want to see where the work has lived before.
+        <div className="mt-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#725332]">Past rooms</p>
+            <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight md:text-6xl">
+              Past rooms and event history
+            </h1>
+            <p className="mt-7 max-w-3xl text-xl leading-9 text-[#493925]">
+              A record of dance floors, ceremonies, festivals, and community gatherings I have played or helped hold. Mostly for organisers who want to see where the work has lived before.
+            </p>
+          </div>
+          <div className="w-fit rounded-[1.5rem] border border-[#d6c6aa] bg-[#2a2319] px-6 py-5 text-[#fbf7ee]">
+            <p className="text-5xl font-semibold tracking-[-0.08em]">{pastGigs.length}+</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.22em] text-[#d6b47f]">documented gigs</p>
+          </div>
+        </div>
+        <p className="mt-5 max-w-3xl text-sm leading-7 text-[#6b573c]">
+          Current SEO setup: one event-history archive page plus structured data for upcoming gigs. Individual event detail pages have not been added yet.
         </p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <div className="rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-6">
             <p className="text-4xl font-semibold text-[#2a2319]">{pastGigs.length}+</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-[#5f4a32]">gigs</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-[#5f4a32]">documented gigs</p>
           </div>
           <div className="rounded-[1.5rem] border border-[#e0d2b9] bg-white/55 p-6">
             <p className="text-4xl font-semibold text-[#2a2319]">{venueSummaries.length}</p>
