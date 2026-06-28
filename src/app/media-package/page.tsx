@@ -63,7 +63,7 @@ const mediaFiles = {
     { name: 'This Is What We Do', format: 'MP4', size: '23 MB', duration: '~5 min', downloadUrl: '/downloads/videos/this%20is%20what%20we%20do.mp4', description: 'Ecstatic dance showcase footage' },
   ],
   documents: [
-    { name: 'Technical Rider', format: 'PDF', size: '126 KB', downloadUrl: '/downloads/documents/technical-rider.pdf', description: 'Simple one-page setup note' },
+    { name: 'Technical Rider', format: 'PDF', size: '122 KB', downloadUrl: '/downloads/documents/technical-rider.pdf', description: 'Simple one-page setup note' },
     { name: 'Artist Biography', format: 'PDF', size: '101 KB', downloadUrl: '/downloads/documents/artist-biography.pdf', description: 'Plain bio copy in short, medium, and long versions' },
   ],
 };
@@ -182,7 +182,7 @@ export default function MediaPackagePage() {
                 need another format?
               </Link>
               <a href="/downloads/documents/technical-rider.pdf" download className="rounded-full border border-[#f4ead8]/25 px-6 py-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-[#f4ead8] transition hover:border-[#f4ead8]">
-                Download simple rider
+                Download rider
               </a>
             </div>
           </div>
@@ -210,13 +210,23 @@ export default function MediaPackagePage() {
                 </button>
               ))}
             </div>
-            <button
-              type="button"
-              onClick={handleCopyBio}
-              className="mt-5 rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#5e4a33] transition hover:border-[#2a2319] hover:bg-[#eadfc9]"
-            >
-              {copied ? 'Copied' : 'Copy bio'}
-            </button>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={handleCopyBio}
+                className="rounded-full border border-[#d6c6aa] px-5 py-3 text-sm font-semibold text-[#5e4a33] transition hover:border-[#2a2319] hover:bg-[#eadfc9]"
+              >
+                {copied ? 'Copied' : 'Copy bio'}
+              </button>
+              <a
+                href="/downloads/documents/artist-biography.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-full bg-[#2a2319] px-5 py-3 text-sm font-semibold text-[#fbf7ee] transition hover:bg-[#55391f]"
+              >
+                <FaDownload className="h-3.5 w-3.5" />
+                Download bio
+              </a>
+            </div>
           </div>
           <div className="rounded-[1.5rem] border border-[#e0d2b9] bg-[#f4ecdd] p-5 sm:p-6">
             <p className="whitespace-pre-line text-base leading-8 text-[#493925]">{selectedBio.copy}</p>

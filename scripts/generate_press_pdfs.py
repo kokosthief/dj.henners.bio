@@ -41,12 +41,12 @@ li { margin: 0 0 2mm; }
 """
 
 artist_short = "Henners is an Amsterdam-based ecstatic dance facilitator and DJ crafting full-arc dance journeys through rhythm, release, play, grounding, and stillness."
-artist_medium = "Amsterdam-based ecstatic dance facilitator and DJ shaped by the city’s conscious dance scene and years around the Odessa ship. Henners crafts full-arc dance journeys inspired by 5Rhythms and the hero’s journey — moving through arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness."
+artist_medium = "Shaped by Amsterdam’s conscious dance scene and years around the Odessa ship, Henners builds prepared dance journeys with 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration, play, grounding, then stillness."
 artist_long = """Henners is an Amsterdam-based ecstatic dance facilitator and DJ from the city’s conscious dance scene, rooted in years around the Odessa ship.
 
-His sets are crafted as full journeys, with 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.
+His sets are prepared as full journeys, with 5Rhythms and the hero’s journey in mind: arrival, flow, rhythm, chaos and release, integration and play, grounding, then stillness.
 
-The music moves between global rhythms, African-inspired grooves, earthy percussion, melody, silence, and spacious integration. Sometimes it invites people to bounce, shake, and sweat. Sometimes it gives the room space to soften, feel, and come back to itself.
+The music moves between global rhythms, African-inspired grooves, percussion, melody, silence, and the quiet landing after the peak. Sometimes it invites people to bounce, shake, and sweat. Sometimes it gives the room space to soften, feel, and come back to itself.
 
 The journey is prepared with care, but never fixed shut. Henners holds the arc while staying responsive to the energy of the room."""
 
@@ -85,7 +85,7 @@ def bio_document() -> str:
     <h2>Long bio</h2>
     <p>{esc(artist_long)}</p>
     """
-    return page("Artist Biography", "Plain bio copy for event pages, listings, organizers, and publications.", body)
+    return page("Artist Biography", "Plain bio copy for event pages, listings, organisers, and publications.", body)
 
 
 def rider_document() -> str:
@@ -122,13 +122,6 @@ def rider_document() -> str:
       <li>Which cable input is available into the mixer / stereo / PA?</li>
       <li>Who is the technical contact on arrival?</li>
       <li>When can I do a quick line check?</li>
-    </ul>
-
-    <h2>Useful but not dramatic</h2>
-    <ul>
-      <li>Water nearby.</li>
-      <li>A small stable table / booth space.</li>
-      <li>Enough time to plug in calmly before people arrive.</li>
     </ul>
     """
     return page("Technical Rider", "Simple one-page setup note. No overcomplicated stage requirements.", body)
