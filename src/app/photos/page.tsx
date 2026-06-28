@@ -59,7 +59,7 @@ export default function PhotosPage() {
               visual notes from the rooms.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[#d9c6a6]">
-              A small record of dance floors, ceremonies, and in-between moments. Same archive, tighter edit.
+              A small record of dance floors, ceremonies, festivals, and in-between moments around the music.
             </p>
           </div>
           <div className="rounded-[1.25rem] border border-[#f4ead8]/15 bg-[#1b160f] p-5 text-right">

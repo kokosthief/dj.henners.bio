@@ -9,7 +9,7 @@ const pastGigs = gigs
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const venueSummaries = Object.values(
-  pastGigs.reduce<Record<string, { venue: string; location: string; country: string; count: number; latest: string }>>((acc, gig) => {
+  pastGigs.reduce<Record<string, { venue: string; location: string; country: string; count: number; latest: string; gigs: typeof pastGigs }>>((acc, gig) => {
     const key = `${gig.venue}-${gig.location}`;
     if (!acc[key]) {
       acc[key] = {
@@ -18,9 +18,11 @@ const venueSummaries = Object.values(
         country: gig.country,
         count: 0,
         latest: gig.date,
+        gigs: [],
       };
     }
     acc[key].count += 1;
+    acc[key].gigs.push(gig);
     if (new Date(gig.date) > new Date(acc[key].latest)) {
       acc[key].latest = gig.date;
     }
@@ -30,24 +32,24 @@ const venueSummaries = Object.values(
 
 const featuredProof = [
   {
-    title: 'Ambrosia at Rijksmuseum',
-    location: 'Rijksmuseum, Amsterdam',
-    detail: 'Press-kit photos and video proof from a large Ambrosia dance floor in one of Amsterdam’s most recognizable cultural spaces.',
-  },
-  {
     title: 'Ambrosia at Het Sieraad',
     location: 'Het Sieraad, Amsterdam',
-    detail: 'Recent video material for organisers who want to feel the room energy and stage presence quickly.',
+    detail: 'A large Ambrosia ecstatic rave room in Amsterdam, with video material for organisers who want to feel the floor quickly.',
   },
   {
     title: 'Odessa Amsterdam',
     location: 'Amsterdam, Netherlands',
-    detail: 'A long-running base of community ecstatic dance, cacao, playground, Sunday, Wednesday, Friday, and Saturday floors.',
+    detail: 'The long-running home base: community ecstatic dance, cacao, playground, Sunday, Wednesday, Friday, and Saturday floors.',
   },
   {
-    title: 'Lundjuweel 2025',
-    location: 'Netherlands',
-    detail: 'Festival proof and short video material in the press kit.',
+    title: 'Kalani · Hawaiʻi Big Island',
+    location: 'Island of Hawaiʻi, USA',
+    detail: 'A meaningful stop at Kalani on the Big Island, widely known as one of the birthplaces of Ecstatic Dance.',
+  },
+  {
+    title: 'Ecstatic Dance Festival Holland',
+    location: 'Kasteel de Berckt, Netherlands',
+    detail: 'Festival sets at Ecstatic Dance Festival Holland, including the Kasteel de Berckt gathering and basement set.',
   },
 ];
 
@@ -168,6 +170,14 @@ export default function EventsPage() {
                   {venue.count} {venue.count === 1 ? 'set' : 'sets'}
                 </span>
               </summary>
+              <ul className="px-5 pb-5">
+                {venue.gigs.map((gig) => (
+                  <li key={`${gig.date}-${gig.event}`} className="grid gap-1 border-t border-[#e0d2b9] py-3 text-sm sm:grid-cols-[1fr_auto] sm:items-center">
+                    <span className="font-medium text-[#493925]">{gig.event.trim()}</span>
+                    <span className="text-[#725332]">{formatDate(gig.date)}</span>
+                  </li>
+                ))}
+              </ul>
             </details>
           ))}
         </div>
