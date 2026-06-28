@@ -4,18 +4,15 @@ import { useEffect, useState } from 'react';
 
 type Theme = 'light' | 'dark';
 
-const getInitialTheme = (): Theme => {
-  if (typeof document === 'undefined') return 'light';
-  return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
-};
-
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [theme, setTheme] = useState<Theme>('light');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
     const activeTheme: Theme = root.dataset.theme === 'dark' ? 'dark' : 'light';
     setTheme(activeTheme);
+    setMounted(true);
   }, []);
 
   const nextTheme: Theme = theme === 'dark' ? 'light' : 'dark';
@@ -33,10 +30,11 @@ export default function ThemeToggle() {
       type="button"
       onClick={updateTheme}
       className="theme-toggle fixed bottom-4 right-4 z-[90] rounded-full border px-4 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] shadow-xl backdrop-blur-md transition"
-      aria-label={`Switch to ${nextTheme} mode`}
-      aria-pressed={theme === 'dark'}
+      aria-label={mounted ? `Switch to ${nextTheme} mode` : 'Switch site colour mode'}
+      aria-pressed={mounted ? theme === 'dark' : undefined}
+      suppressHydrationWarning
     >
-      <span aria-hidden="true">{theme === 'dark' ? 'light' : 'dark'}</span>
+      <span aria-hidden="true">{mounted ? nextTheme : 'theme'}</span>
     </button>
   );
 }

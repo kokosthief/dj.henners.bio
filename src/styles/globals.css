@@ -271,6 +271,11 @@ html[data-theme='light'] [class~='bg-[#060504]'] {
   background-color: var(--site-ink) !important;
 }
 
+html[data-theme='light'] [class~='bg-[#2a2319]'] [class*='text-[#d6b47f]'],
+html[data-theme='light'] [class~='bg-[#060504]'] [class*='text-[#d6b47f]'] {
+  color: #d6b47f !important;
+}
+
 html[data-theme='dark'] [class~='bg-[#060504]'],
 html[data-theme='dark'] [class~='bg-black'] {
   background-color: #060504 !important;
