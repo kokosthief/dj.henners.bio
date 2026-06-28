@@ -75,7 +75,7 @@ export const photos: PhotoItem[] = [
     src: '/images/henners-spaceholding.jpg',
     alt: 'Henners holding space during an ecstatic dance journey',
     title: 'Holding space',
-    caption: 'Feeling into, holding space.',
+    caption: 'A quieter part of the same work.',
     className: 'md:col-span-2',
   },
 ];
